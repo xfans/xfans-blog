@@ -6,14 +6,14 @@
     <description>Recent content in onSaveInstanceState on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 09 Nov 2018 18:39:18 +0000</lastBuildDate><atom:link href="/tags/onsaveinstancestate/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 09 Nov 2018 10:39:18 +0000</lastBuildDate><atom:link href="/tags/onsaveinstancestate/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Activity中多个Fragment复杂嵌套页面onSaveInstanceState处理</title>
       <link>/archives/171/</link>
-      <pubDate>Fri, 09 Nov 2018 18:39:18 +0000</pubDate>
+      <pubDate>Fri, 09 Nov 2018 10:39:18 +0000</pubDate>
       
       <guid>/archives/171/</guid>
-      <description>æç §æç®åçååå³å¯:Activityå¤çèªå·±çSaveInstanceState,Fragmentå¤çèªå·±çSaveInstanceState,ä¸è¦è°ç¨Activityä¸Fragmentä¹é´æ°æ®ä¼ éçæ¹æ³.</description>
+      <description>按照最简单的原则即可:Activity处理自己的SaveInstanceState,Fragment处理自己的SaveInstanceState,不要调用Activity与Fragment之间数据传递的方法.</description>
     </item>
     
   </channel>

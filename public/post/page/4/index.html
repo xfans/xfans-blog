@@ -104,7 +104,7 @@
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      æå°æ¹æ³è°ç¨å æ  &lt;pre class=&#34;line-numbers prism-highlight&#34; data-start=&#34;1&#34;&gt;```java public static void showFillInStackTrace() { RuntimeException e = new RuntimeException(); Throwable e1 = e.fillInStackTrace(); Log.e(&#34;debug&#34;,&#34;fillInStackTrace&#34;,e1); } 
+      打印方法调用堆栈 
     </div>
   </div>
 
@@ -123,12 +123,12 @@
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      å®è£ create_ap pacman -S create_ap
-å¢å ä¸ä¸ªèæç½ç»æ¥å£å¹¶è®¾ç½®ä¸ä¸ªmacå°å sudo iw dev wlp3s0 interface add wlp3s0_ap type __ap
+      安装create_ap pacman -S create_ap
+增加一个虚拟网络接口并设置一个mac地址 sudo iw dev wlp3s0 interface add wlp3s0_ap type __ap
 sudo ip link set dev wlp3s0_ap address 04:e2:b9:17:18:72
-åå»ºAP sudo create_ap -c 11 wlp3s0_ap wlp3s0 xfans_ap 321321321
-create_apä¸è½½ https://github.com/oblique/create_ap
-åè https://wiki.archlinux.org/index.php/Software_access_point_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)
+创建AP sudo create_ap -c 11 wlp3s0_ap wlp3s0 xfans_ap 321321321
+create_ap下载 https://github.com/oblique/create_ap
+参考 https://wiki.archlinux.org/index.php/Software_access_point_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)
 https://www.zhihu.com/question/24961490
     </div>
   </div>
@@ -139,7 +139,7 @@ https://www.zhihu.com/question/24961490
             <div class="mb3 pa4 mid-gray overflow-hidden">
     
       <div class="f6">
-        October 2, 2017
+        October 1, 2017
       </div>
     
     <h1 class="f3 near-black">
@@ -148,7 +148,7 @@ https://www.zhihu.com/question/24961490
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      
+       
     </div>
   </div>
 
@@ -167,7 +167,7 @@ https://www.zhihu.com/question/24961490
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      åè®® XML-RPC_wpåè®®:https://codex.wordpress.org/XML-RPC_wp å°å:http://xxxx.com/xmlrpc Typecho XML-RPCåè®®:https://github.com/typecho/typecho/blob/master/var/Widget/XmlRpc.php#L2249-L2322 Demo XML-RPC_wpåè®®Demo:https://github.com/xfans/android-xmlrpc1 Typecho XML-RPCè¿åæ°æ®:IXR/Value.php 
+      协议 XML-RPC_wp协议:https://codex.wordpress.org/XML-RPC_wp 地址:http://xxxx.com/xmlrpc Typecho XML-RPC协议:https://github.com/typecho/typecho/blob/master/var/Widget/XmlRpc.php#L2249-L2322 Demo XML-RPC_wp协议Demo:https://github.com/xfans/android-xmlrpc1 Typecho XML-RPC返回数据:IXR/Value.php 
     </div>
   </div>
 
@@ -186,9 +186,9 @@ https://www.zhihu.com/question/24961490
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      æ¥æ¾å¯ç¨å æ ¸ pacman -Ss linux-headers
-pacman -S linuxXY linuxXY-headers
-æ³¨æ:XYä¸ºä½ è¦å®è£ ççæ¬å·,å¦:
+      查找可用内核 pacman -Ss linux-headers
+安装 pacman -S linuxXY linuxXY-headers
+注意:XY为你要安装的版本号,如:
 pacman -S linux49 linux49-headers
     </div>
   </div>
@@ -208,11 +208,30 @@ pacman -S linux49 linux49-headers
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      å¤è¾¹æ ¢,å¤ä»½ä¸
-wp.getUsersBlogs Retrieve the blogs of the users.
-Parameters string username string password Return Values array struct boolean isAdmin string url string blogid string blogName string xmlrpc wp.getTags Get list of all tags.
-Parameters int blog_id string username string password Return Values array struct int tag_id string name int count string slug string html_url string rss_url wp.getAuthors Get an array of users for the blog.
-Parameters int blog_id string username string password Return Values array struct int user_id string user_login string display_name string meta_value (Serialized PHP data) &hellip; wp.
+      <p>外边慢,备份下</p>
+<h2 id="wpgetusersblogs">wp.getUsersBlogs</h2>
+<p>Retrieve the blogs of the users.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li>string username</li>
+<li>string password</li>
+</ul>
+<h3 id="return-values">Return Values</h3>
+<ul>
+<li>array
+<ul>
+<li>struct
+<ul>
+<li>boolean isAdmin</li>
+<li>string url</li>
+<li>string blogid</li>
+<li>string blogName</li>
+<li>string xmlrpc</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
     </div>
   </div>
 
@@ -231,7 +250,7 @@ Parameters int blog_id string username string password Return Values array struc
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      &lt;pre class=&#34;prism-highlight line-numbers&#34; data-start=&#34;1&#34;&gt;```null sudo ln -sf /bin/python3.6 /bin/python sudo ln -sf /bin/python2.7 /bin/python 
+       
     </div>
   </div>
 
@@ -250,7 +269,7 @@ Parameters int blog_id string username string password Return Values array struc
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      &lt;pre class=&#34;prism-highlight line-numbers&#34; data-start=&#34;1&#34;&gt;```null sudo update-grub 
+       
     </div>
   </div>
 
@@ -269,7 +288,8 @@ Parameters int blog_id string username string password Return Values array struc
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      &lt;pre class=&#34;prism-highlight line-numbers&#34; data-start=&#34;1&#34;&gt;```null public class MainActivity extends Activity { @Override protected void onCreate(Bundle savedInstanceState) { super.onCreate(savedInstanceState); ImageView imageView = (ImageView) findViewById(R.id.yourImageView); imageView.setLayerType(View.LAYER_TYPE_SOFTWARE, null); try { SVG svg = SVG.getFromResource(this, R.raw.my_svg_file); Drawable drawable = new PictureDrawable(svg.renderToPicture()); imageView.setImageDrawable(drawable); } catch(SVGParseException e) {} } } å&amp;#156;°å&amp;#157;&amp;#128;:http://bigbadaboom.github.io/androidsvg/use\_with\_ImageView.html Github:https://github.com/BigBadaboom/androidsvg 
+      地址:http://bigbadaboom.github.io/androidsvg/use_with_ImageView.html
+Github:https://github.com/BigBadaboom/androidsvg
     </div>
   </div>
 
@@ -288,8 +308,8 @@ Parameters int blog_id string username string password Return Values array struc
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Manjaroå ³é­ç¬ç«æ¾å¡
-å®è£ bbswitch &lt;pre class=&#34;prism-highlight line-numbers&#34; data-start=&#34;1&#34;&gt;```null pacman -S bbswitch ### å&amp;#156;¨/etc/modules-load.dä¸&amp;#139;æ&amp;#150;°å»ºbbswitch.confï¼&amp;#140;å¹¶ä¿®æ&amp;#148;¹ä¸ºå¦&amp;#130;ä¸&amp;#139;å&amp;#134; å®¹ã&amp;#128;&amp;#130;è¿&amp;#153;æ ·æ¯&amp;#143;æ¬¡å&amp;#144;¯å&amp;#138;¨é&amp;#131;½ä¼&amp;#154;å&amp;#138; è½½bbswitchæ¨¡å&amp;#157;&amp;#151;äº&amp;#134; 
+      Manjaro关闭独立显卡
+安装bbswitch 在/etc/modules-load.d下新建bbswitch.conf，并修改为如下内容。这样每次启动都会加载bbswitch模块了 在/etc/modprobe.d/下新建bbswitch.conf，并修改为如下内容。这是bbswitch加载的参数，我们让其默认关闭 在/etc/modprobe.d/下新建nouveau_blacklist.conf，并修改为如下内容。有时候bbswitch加载了，但是不能关闭显卡，因为有些模块正在占用着，因此要禁掉。 在/usr/lib/systemd/system-shutdown/下新建nvidia_card_enable.sh，并修改为以下内容，记得加运行权限。每次reboot的时候，显卡都是关闭的，不管是重启到windows还是linux，都会找不到设备，必须彻底关机才行。解决该问题的办法就是每次重启都启用显卡 查看状态 原文 http://blog.csdn.net/gt945/article/details/10922263
     </div>
   </div>
 

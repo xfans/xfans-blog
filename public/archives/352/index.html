@@ -6,12 +6,20 @@
     
     <title>Flutter InheritedWidget源码解析 | </title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="ä½ç¨ InheritedWidgetæ¯ä¸ä¸ªå¨Widgetæ ä¸­ï¼ä»ä¸å¾ä¸ä¼ éä¿¡æ¯çå°é¨ä»¶ã
-ä¸»è¦ä»ä¸¤ä¸ªæ¹é¢çè§£æºç ï¼
-1.å­Widgetå¯ä»¥è·åå°ç¶æ§ä»¶ä¸­çInheritedWidgetï¼ä»èè·åå°InheritedWidgetçä¿¡æ¯ã
-2.å­Widgetè°ç¨dependOnInheritedWidgetOfExactTypeåï¼å½ç¶InheritedWidgetéå»ºåï¼ä¼è°ç¨å­æ§ä»¶éå»ºã
-åç 1.å­æ§ä»¶å¯ä»¥è·åå°ç¶æ§ä»¶ä¸­çInheritedWidget å¨Elementä¸­æä¸ªMapï¼
-&lt;pre class=&#34;wp-block-preformatted&#34;&gt;``` Map&lt;Type, InheritedElement&gt; _inheritedWidgets; å ¶ä¸­ä¿&amp;#157;å­&amp;#152;äº&amp;#134;è¯¥`Widget`ç&amp;#154;&amp;#132;ç&amp;#136;¶è&amp;#138;&amp;#130;ç&amp;#130;¹ä¸­ç&amp;#154;&amp;#132;`InheritedWidget`ã&amp;#128;&amp;#130;ä¼&amp;#154;å&amp;#156;¨`mount`\\`activate` æ&amp;#150;¹æ³&amp;#149;ä¸­èµ&amp;#139;å&amp;#128;¼ï¼&amp;#140;èµ&amp;#139;å&amp;#128;¼ç&amp;#154;&amp;#132;ä»£ç &amp;#129;å¦&amp;#130;ä¸&amp;#139;ï¼&amp;#154; å&amp;#156;¨`Element`ä¸­ ">
+    <meta name="description" content="作用 InheritedWidget是一个在Widget树中，从上往下传递信息的小部件。
+主要从两个方面理解源码：
+1.子Widget可以获取到父控件中的InheritedWidget，从而获取到InheritedWidget的信息。
+2.子Widget调用dependOnInheritedWidgetOfExactType后，当父InheritedWidget重建后，会调用子控件重建。
+原理 1.子控件可以获取到父控件中的InheritedWidget 在Element中有个Map：
+其中保存了该Widget的父节点中的InheritedWidget。会在mount`activate`
+方法中赋值，赋值的代码如下：
+在Element中
+在InheritedElement中
+经过上面两个方法，Widget本身就可以通过_inheritedWidgets获取到InheritedElement了
+2.子Widget调用dependOnInheritedWidgetOfExactType后，当父InheritedWidget重建后，会调用子控件重建 在InheritedElement中有个Map：
+当子Widget调用dependOnInheritedWidgetOfExactType方法时，会依次调用dependOnInheritedElement方法，InheritedElement的updateDependencies方法，setDependencies方法。将自己注册到父InheritedElement的_dependents中。
+当InheritedElement重建时会调用updated方法，然后会调用到notifyClients方法，最终调用Widget didChangeDependencies方法并重建子Widget。
+由上边的代码可以看出，只有当子Widget调用了dependOnInheritedWidgetOfExactType才会收到InheritedWidget的重建通知。">
     <meta name="generator" content="Hugo 0.117.0">
     
     
@@ -35,33 +43,57 @@
     
     
     <meta property="og:title" content="Flutter InheritedWidget源码解析" />
-<meta property="og:description" content="ä½ç¨ InheritedWidgetæ¯ä¸ä¸ªå¨Widgetæ ä¸­ï¼ä»ä¸å¾ä¸ä¼ éä¿¡æ¯çå°é¨ä»¶ã
-ä¸»è¦ä»ä¸¤ä¸ªæ¹é¢çè§£æºç ï¼
-1.å­Widgetå¯ä»¥è·åå°ç¶æ§ä»¶ä¸­çInheritedWidgetï¼ä»èè·åå°InheritedWidgetçä¿¡æ¯ã
-2.å­Widgetè°ç¨dependOnInheritedWidgetOfExactTypeåï¼å½ç¶InheritedWidgetéå»ºåï¼ä¼è°ç¨å­æ§ä»¶éå»ºã
-åç 1.å­æ§ä»¶å¯ä»¥è·åå°ç¶æ§ä»¶ä¸­çInheritedWidget å¨Elementä¸­æä¸ªMapï¼
-&lt;pre class=&#34;wp-block-preformatted&#34;&gt;``` Map&lt;Type, InheritedElement&gt; _inheritedWidgets; å ¶ä¸­ä¿&amp;#157;å­&amp;#152;äº&amp;#134;è¯¥`Widget`ç&amp;#154;&amp;#132;ç&amp;#136;¶è&amp;#138;&amp;#130;ç&amp;#130;¹ä¸­ç&amp;#154;&amp;#132;`InheritedWidget`ã&amp;#128;&amp;#130;ä¼&amp;#154;å&amp;#156;¨`mount`\\`activate` æ&amp;#150;¹æ³&amp;#149;ä¸­èµ&amp;#139;å&amp;#128;¼ï¼&amp;#140;èµ&amp;#139;å&amp;#128;¼ç&amp;#154;&amp;#132;ä»£ç &amp;#129;å¦&amp;#130;ä¸&amp;#139;ï¼&amp;#154; å&amp;#156;¨`Element`ä¸­ " />
+<meta property="og:description" content="作用 InheritedWidget是一个在Widget树中，从上往下传递信息的小部件。
+主要从两个方面理解源码：
+1.子Widget可以获取到父控件中的InheritedWidget，从而获取到InheritedWidget的信息。
+2.子Widget调用dependOnInheritedWidgetOfExactType后，当父InheritedWidget重建后，会调用子控件重建。
+原理 1.子控件可以获取到父控件中的InheritedWidget 在Element中有个Map：
+其中保存了该Widget的父节点中的InheritedWidget。会在mount`activate`
+方法中赋值，赋值的代码如下：
+在Element中
+在InheritedElement中
+经过上面两个方法，Widget本身就可以通过_inheritedWidgets获取到InheritedElement了
+2.子Widget调用dependOnInheritedWidgetOfExactType后，当父InheritedWidget重建后，会调用子控件重建 在InheritedElement中有个Map：
+当子Widget调用dependOnInheritedWidgetOfExactType方法时，会依次调用dependOnInheritedElement方法，InheritedElement的updateDependencies方法，setDependencies方法。将自己注册到父InheritedElement的_dependents中。
+当InheritedElement重建时会调用updated方法，然后会调用到notifyClients方法，最终调用Widget didChangeDependencies方法并重建子Widget。
+由上边的代码可以看出，只有当子Widget调用了dependOnInheritedWidgetOfExactType才会收到InheritedWidget的重建通知。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/archives/352/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2020-09-02T20:05:34+00:00" />
-<meta property="article:modified_time" content="2020-09-02T20:05:34+00:00" />
+<meta property="article:published_time" content="2020-09-02T12:05:34+00:00" />
+<meta property="article:modified_time" content="2020-09-02T12:05:34+00:00" />
 <meta itemprop="name" content="Flutter InheritedWidget源码解析">
-<meta itemprop="description" content="ä½ç¨ InheritedWidgetæ¯ä¸ä¸ªå¨Widgetæ ä¸­ï¼ä»ä¸å¾ä¸ä¼ éä¿¡æ¯çå°é¨ä»¶ã
-ä¸»è¦ä»ä¸¤ä¸ªæ¹é¢çè§£æºç ï¼
-1.å­Widgetå¯ä»¥è·åå°ç¶æ§ä»¶ä¸­çInheritedWidgetï¼ä»èè·åå°InheritedWidgetçä¿¡æ¯ã
-2.å­Widgetè°ç¨dependOnInheritedWidgetOfExactTypeåï¼å½ç¶InheritedWidgetéå»ºåï¼ä¼è°ç¨å­æ§ä»¶éå»ºã
-åç 1.å­æ§ä»¶å¯ä»¥è·åå°ç¶æ§ä»¶ä¸­çInheritedWidget å¨Elementä¸­æä¸ªMapï¼
-&lt;pre class=&#34;wp-block-preformatted&#34;&gt;``` Map&lt;Type, InheritedElement&gt; _inheritedWidgets; å ¶ä¸­ä¿&amp;#157;å­&amp;#152;äº&amp;#134;è¯¥`Widget`ç&amp;#154;&amp;#132;ç&amp;#136;¶è&amp;#138;&amp;#130;ç&amp;#130;¹ä¸­ç&amp;#154;&amp;#132;`InheritedWidget`ã&amp;#128;&amp;#130;ä¼&amp;#154;å&amp;#156;¨`mount`\\`activate` æ&amp;#150;¹æ³&amp;#149;ä¸­èµ&amp;#139;å&amp;#128;¼ï¼&amp;#140;èµ&amp;#139;å&amp;#128;¼ç&amp;#154;&amp;#132;ä»£ç &amp;#129;å¦&amp;#130;ä¸&amp;#139;ï¼&amp;#154; å&amp;#156;¨`Element`ä¸­ "><meta itemprop="datePublished" content="2020-09-02T20:05:34+00:00" />
-<meta itemprop="dateModified" content="2020-09-02T20:05:34+00:00" />
-<meta itemprop="wordCount" content="21">
+<meta itemprop="description" content="作用 InheritedWidget是一个在Widget树中，从上往下传递信息的小部件。
+主要从两个方面理解源码：
+1.子Widget可以获取到父控件中的InheritedWidget，从而获取到InheritedWidget的信息。
+2.子Widget调用dependOnInheritedWidgetOfExactType后，当父InheritedWidget重建后，会调用子控件重建。
+原理 1.子控件可以获取到父控件中的InheritedWidget 在Element中有个Map：
+其中保存了该Widget的父节点中的InheritedWidget。会在mount`activate`
+方法中赋值，赋值的代码如下：
+在Element中
+在InheritedElement中
+经过上面两个方法，Widget本身就可以通过_inheritedWidgets获取到InheritedElement了
+2.子Widget调用dependOnInheritedWidgetOfExactType后，当父InheritedWidget重建后，会调用子控件重建 在InheritedElement中有个Map：
+当子Widget调用dependOnInheritedWidgetOfExactType方法时，会依次调用dependOnInheritedElement方法，InheritedElement的updateDependencies方法，setDependencies方法。将自己注册到父InheritedElement的_dependents中。
+当InheritedElement重建时会调用updated方法，然后会调用到notifyClients方法，最终调用Widget didChangeDependencies方法并重建子Widget。
+由上边的代码可以看出，只有当子Widget调用了dependOnInheritedWidgetOfExactType才会收到InheritedWidget的重建通知。"><meta itemprop="datePublished" content="2020-09-02T12:05:34+00:00" />
+<meta itemprop="dateModified" content="2020-09-02T12:05:34+00:00" />
+<meta itemprop="wordCount" content="19">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Flutter InheritedWidget源码解析"/>
-<meta name="twitter:description" content="ä½ç¨ InheritedWidgetæ¯ä¸ä¸ªå¨Widgetæ ä¸­ï¼ä»ä¸å¾ä¸ä¼ éä¿¡æ¯çå°é¨ä»¶ã
-ä¸»è¦ä»ä¸¤ä¸ªæ¹é¢çè§£æºç ï¼
-1.å­Widgetå¯ä»¥è·åå°ç¶æ§ä»¶ä¸­çInheritedWidgetï¼ä»èè·åå°InheritedWidgetçä¿¡æ¯ã
-2.å­Widgetè°ç¨dependOnInheritedWidgetOfExactTypeåï¼å½ç¶InheritedWidgetéå»ºåï¼ä¼è°ç¨å­æ§ä»¶éå»ºã
-åç 1.å­æ§ä»¶å¯ä»¥è·åå°ç¶æ§ä»¶ä¸­çInheritedWidget å¨Elementä¸­æä¸ªMapï¼
-&lt;pre class=&#34;wp-block-preformatted&#34;&gt;``` Map&lt;Type, InheritedElement&gt; _inheritedWidgets; å ¶ä¸­ä¿&amp;#157;å­&amp;#152;äº&amp;#134;è¯¥`Widget`ç&amp;#154;&amp;#132;ç&amp;#136;¶è&amp;#138;&amp;#130;ç&amp;#130;¹ä¸­ç&amp;#154;&amp;#132;`InheritedWidget`ã&amp;#128;&amp;#130;ä¼&amp;#154;å&amp;#156;¨`mount`\\`activate` æ&amp;#150;¹æ³&amp;#149;ä¸­èµ&amp;#139;å&amp;#128;¼ï¼&amp;#140;èµ&amp;#139;å&amp;#128;¼ç&amp;#154;&amp;#132;ä»£ç &amp;#129;å¦&amp;#130;ä¸&amp;#139;ï¼&amp;#154; å&amp;#156;¨`Element`ä¸­ "/>
+<meta name="twitter:description" content="作用 InheritedWidget是一个在Widget树中，从上往下传递信息的小部件。
+主要从两个方面理解源码：
+1.子Widget可以获取到父控件中的InheritedWidget，从而获取到InheritedWidget的信息。
+2.子Widget调用dependOnInheritedWidgetOfExactType后，当父InheritedWidget重建后，会调用子控件重建。
+原理 1.子控件可以获取到父控件中的InheritedWidget 在Element中有个Map：
+其中保存了该Widget的父节点中的InheritedWidget。会在mount`activate`
+方法中赋值，赋值的代码如下：
+在Element中
+在InheritedElement中
+经过上面两个方法，Widget本身就可以通过_inheritedWidgets获取到InheritedElement了
+2.子Widget调用dependOnInheritedWidgetOfExactType后，当父InheritedWidget重建后，会调用子控件重建 在InheritedElement中有个Map：
+当子Widget调用dependOnInheritedWidgetOfExactType方法时，会依次调用dependOnInheritedElement方法，InheritedElement的updateDependencies方法，setDependencies方法。将自己注册到父InheritedElement的_dependents中。
+当InheritedElement重建时会调用updated方法，然后会调用到notifyClients方法，最终调用Widget didChangeDependencies方法并重建子Widget。
+由上边的代码可以看出，只有当子Widget调用了dependOnInheritedWidgetOfExactType才会收到InheritedWidget的重建通知。"/>
 
 	
   </head>
@@ -132,29 +164,40 @@
       
       
       
-      <time class="f6 mv4 dib tracked" datetime="2020-09-02T20:05:34Z">September 2, 2020</time>
+      <time class="f6 mv4 dib tracked" datetime="2020-09-02T12:05:34Z">September 2, 2020</time>
       
 
       
       
     </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h2 id="ä156ç148">ä½ç¨</h2>
-<p><code>InheritedWidget</code>æ¯ä¸ä¸ªå¨<code>Widget</code>æ ä¸­ï¼ä»ä¸å¾ä¸ä¼ éä¿¡æ¯çå°é¨ä»¶ã</p>
-<p>ä¸»è¦ä»ä¸¤ä¸ªæ¹é¢çè§£æºç ï¼</p>
-<p><strong>1.å­<code>Widget</code>å¯ä»¥è·åå°ç¶æ§ä»¶ä¸­ç<code>InheritedWidget</code>ï¼ä»èè·åå°InheritedWidgetçä¿¡æ¯ã</strong></p>
-<p><strong>2.å­<code>Widget</code>è°ç¨<code>dependOnInheritedWidgetOfExactType</code>åï¼å½ç¶<code>InheritedWidget</code>éå»ºåï¼ä¼è°ç¨å­æ§ä»¶éå»ºã</strong></p>
-<h2 id="å142159ç144134">åç</h2>
-<h3 id="1å144æ142äå143äè142å143150å136ç136æ142ääç154132inheritedwidget">1.å­æ§ä»¶å¯ä»¥è·åå°ç¶æ§ä»¶ä¸­ç<code>InheritedWidget</code></h3>
-<p>å¨<code>Element</code>ä¸­æä¸ªMapï¼</p>
-<pre tabindex="0"><code>&lt;pre class=&#34;wp-block-preformatted&#34;&gt;```
-Map&lt;Type, InheritedElement&gt; _inheritedWidgets;
-</code></pre><pre tabindex="0"><code>
-å ¶ä¸­ä¿&amp;#157;å­&amp;#152;äº&amp;#134;è¯¥`Widget`ç&amp;#154;&amp;#132;ç&amp;#136;¶è&amp;#138;&amp;#130;ç&amp;#130;¹ä¸­ç&amp;#154;&amp;#132;`InheritedWidget`ã&amp;#128;&amp;#130;ä¼&amp;#154;å&amp;#156;¨`mount`\\`activate`
-
-æ&amp;#150;¹æ³&amp;#149;ä¸­èµ&amp;#139;å&amp;#128;¼ï¼&amp;#140;èµ&amp;#139;å&amp;#128;¼ç&amp;#154;&amp;#132;ä»£ç &amp;#129;å¦&amp;#130;ä¸&amp;#139;ï¼&amp;#154;
-
-å&amp;#156;¨`Element`ä¸­
-</code></pre><!-- raw HTML omitted -->
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h2 id="作用">作用</h2>
+<p><code>InheritedWidget</code>是一个在<code>Widget</code>树中，从上往下传递信息的小部件。</p>
+<p>主要从两个方面理解源码：</p>
+<p><strong>1.子<code>Widget</code>可以获取到父控件中的<code>InheritedWidget</code>，从而获取到InheritedWidget的信息。</strong></p>
+<p><strong>2.子<code>Widget</code>调用<code>dependOnInheritedWidgetOfExactType</code>后，当父<code>InheritedWidget</code>重建后，会调用子控件重建。</strong></p>
+<h2 id="原理">原理</h2>
+<h3 id="1子控件可以获取到父控件中的inheritedwidget">1.子控件可以获取到父控件中的<code>InheritedWidget</code></h3>
+<p>在<code>Element</code>中有个Map：</p>
+<!-- raw HTML omitted -->
+<p>其中保存了该<code>Widget</code>的父节点中的<code>InheritedWidget</code>。会在<code>mount</code>`activate`</p>
+<p>方法中赋值，赋值的代码如下：</p>
+<p>在<code>Element</code>中</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>在<code>InheritedElement</code>中</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>经过上面两个方法，<code>Widget</code>本身就可以通过<code>_inheritedWidgets</code>获取到<code>InheritedElement</code>了</p>
+<h3 id="2子widget调用dependoninheritedwidgetofexacttype后当父inheritedwidget重建后会调用子控件重建">2.子<code>Widget</code>调用<code>dependOnInheritedWidgetOfExactType</code>后，当父<code>InheritedWidget</code>重建后，会调用子控件重建</h3>
+<p>在<code>InheritedElement</code>中有个Map：</p>
+<!-- raw HTML omitted -->
+<p>当子<code>Widget</code>调用<code>dependOnInheritedWidgetOfExactType</code>方法时，会依次调用<code>dependOnInheritedElement</code>方法，<code>InheritedElement</code>的<code>updateDependencies</code>方法，<code>setDependencies</code>方法。将自己注册到父<code>InheritedElement</code>的<code>_dependents</code>中。</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>当<code>InheritedElement</code>重建时会调用<code>updated</code>方法，然后会调用到<code>notifyClients</code>方法，最终调用<code>Widget didChangeDependencies</code>方法并重建子<code>Widget</code>。</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>由上边的代码可以看出，只有当子Widget调用了dependOnInheritedWidgetOfExactType才会收到InheritedWidget的重建通知。</p>
 <ul class="pa0">
   
 </ul>

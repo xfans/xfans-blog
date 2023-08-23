@@ -6,16 +6,25 @@
     <description>Recent content in 适配 on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 24 Feb 2018 11:16:16 +0000</lastBuildDate><atom:link href="/tags/%E9%80%82%E9%85%8D/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Feb 2018 03:16:16 +0000</lastBuildDate><atom:link href="/tags/%E9%80%82%E9%85%8D/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Android7,8的适配</title>
       <link>/archives/145/</link>
-      <pubDate>Sat, 24 Feb 2018 11:16:16 +0000</pubDate>
+      <pubDate>Sat, 24 Feb 2018 03:16:16 +0000</pubDate>
       
       <guid>/archives/145/</guid>
-      <description>èæ¯ ç¨æ·åé¦åä¸ºMate10 æ æ³ä½¿ç¨Appã
-åçº§ targetSdkVersion = 26
-éå°çé®é¢ ç½ç»è¯·æ±å¼å¸¸ TransactionTooLargeException éç¥æ¸ é FileUriExposedException Charlesæ æ³æHttps MODE_WORLD_READABLE no longer supported BadTokenException 7.1 Not allowed to start service getRunningServices deprecated in API level 26 As of O, this method is no longer available to third party applications. For backwards compatibility, it will still return the caller&amp;rsquo;s own services. ps:æ¶é´å¤ªé¿äºæ³èµ·æ¥ååï¼è¯¦æ æç©ºåæ´ç </description>
+      <description>背景 用户反馈华为Mate10 无法使用App。
+升级 targetSdkVersion = 26
+遇到的问题 网络请求异常
+TransactionTooLargeException
+通知渠道
+FileUriExposedException
+Charles无法抓Https
+MODE_WORLD_READABLE no longer supported
+BadTokenException 7.1
+Not allowed to start service
+getRunningServices deprecated in API level 26 As of O, this method is no longer available to third party applications. For backwards compatibility, it will still return the caller&amp;rsquo;s own services.
+ps:时间太长了想起来再写，详情有空再整理</description>
     </item>
     
   </channel>

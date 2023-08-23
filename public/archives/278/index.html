@@ -6,12 +6,12 @@
     
     <title>使用ffmpeg将MP4高质量的转换成GIF | </title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="æ¹æ³ ffmpeg -v warning -ss 00:00:02 -t 2 -i 5.mp4 -vf scale=300:-1 -gifflags &#43;transdiff -y 5.gif
--ss æªåå¼å§æ¶é´
--t æªåæ¶é¿
-5.mp4 æ¯è§é¢åç§°
-5.gif æ¯è½¬æ¢åçåç§°
-ç¸å ³é¾æ¥ http://blog.pkh.me/p/21-high-quality-gif-with-ffmpeg.html">
+    <meta name="description" content="方法 ffmpeg -v warning -ss 00:00:02 -t 2 -i 5.mp4 -vf scale=300:-1 -gifflags &#43;transdiff -y 5.gif
+-ss 截取开始时间
+-t 截取时长
+5.mp4 是视频名称
+5.gif 是转换后的名称
+相关链接 http://blog.pkh.me/p/21-high-quality-gif-with-ffmpeg.html">
     <meta name="generator" content="Hugo 0.117.0">
     
     
@@ -35,33 +35,33 @@
     
     
     <meta property="og:title" content="使用ffmpeg将MP4高质量的转换成GIF" />
-<meta property="og:description" content="æ¹æ³ ffmpeg -v warning -ss 00:00:02 -t 2 -i 5.mp4 -vf scale=300:-1 -gifflags &#43;transdiff -y 5.gif
--ss æªåå¼å§æ¶é´
--t æªåæ¶é¿
-5.mp4 æ¯è§é¢åç§°
-5.gif æ¯è½¬æ¢åçåç§°
-ç¸å ³é¾æ¥ http://blog.pkh.me/p/21-high-quality-gif-with-ffmpeg.html" />
+<meta property="og:description" content="方法 ffmpeg -v warning -ss 00:00:02 -t 2 -i 5.mp4 -vf scale=300:-1 -gifflags &#43;transdiff -y 5.gif
+-ss 截取开始时间
+-t 截取时长
+5.mp4 是视频名称
+5.gif 是转换后的名称
+相关链接 http://blog.pkh.me/p/21-high-quality-gif-with-ffmpeg.html" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/archives/278/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2018-07-14T17:20:00+00:00" />
-<meta property="article:modified_time" content="2018-07-14T17:20:00+00:00" />
+<meta property="article:published_time" content="2018-07-14T09:20:00+00:00" />
+<meta property="article:modified_time" content="2018-07-14T09:20:00+00:00" />
 <meta itemprop="name" content="使用ffmpeg将MP4高质量的转换成GIF">
-<meta itemprop="description" content="æ¹æ³ ffmpeg -v warning -ss 00:00:02 -t 2 -i 5.mp4 -vf scale=300:-1 -gifflags &#43;transdiff -y 5.gif
--ss æªåå¼å§æ¶é´
--t æªåæ¶é¿
-5.mp4 æ¯è§é¢åç§°
-5.gif æ¯è½¬æ¢åçåç§°
-ç¸å ³é¾æ¥ http://blog.pkh.me/p/21-high-quality-gif-with-ffmpeg.html"><meta itemprop="datePublished" content="2018-07-14T17:20:00+00:00" />
-<meta itemprop="dateModified" content="2018-07-14T17:20:00+00:00" />
-<meta itemprop="wordCount" content="27">
+<meta itemprop="description" content="方法 ffmpeg -v warning -ss 00:00:02 -t 2 -i 5.mp4 -vf scale=300:-1 -gifflags &#43;transdiff -y 5.gif
+-ss 截取开始时间
+-t 截取时长
+5.mp4 是视频名称
+5.gif 是转换后的名称
+相关链接 http://blog.pkh.me/p/21-high-quality-gif-with-ffmpeg.html"><meta itemprop="datePublished" content="2018-07-14T09:20:00+00:00" />
+<meta itemprop="dateModified" content="2018-07-14T09:20:00+00:00" />
+<meta itemprop="wordCount" content="26">
 <meta itemprop="keywords" content="ffmpeg," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="使用ffmpeg将MP4高质量的转换成GIF"/>
-<meta name="twitter:description" content="æ¹æ³ ffmpeg -v warning -ss 00:00:02 -t 2 -i 5.mp4 -vf scale=300:-1 -gifflags &#43;transdiff -y 5.gif
--ss æªåå¼å§æ¶é´
--t æªåæ¶é¿
-5.mp4 æ¯è§é¢åç§°
-5.gif æ¯è½¬æ¢åçåç§°
-ç¸å ³é¾æ¥ http://blog.pkh.me/p/21-high-quality-gif-with-ffmpeg.html"/>
+<meta name="twitter:description" content="方法 ffmpeg -v warning -ss 00:00:02 -t 2 -i 5.mp4 -vf scale=300:-1 -gifflags &#43;transdiff -y 5.gif
+-ss 截取开始时间
+-t 截取时长
+5.mp4 是视频名称
+5.gif 是转换后的名称
+相关链接 http://blog.pkh.me/p/21-high-quality-gif-with-ffmpeg.html"/>
 
 	
   </head>
@@ -132,19 +132,19 @@
       
       
       
-      <time class="f6 mv4 dib tracked" datetime="2018-07-14T17:20:00Z">July 14, 2018</time>
+      <time class="f6 mv4 dib tracked" datetime="2018-07-14T09:20:00Z">July 14, 2018</time>
       
 
       
       
     </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h2 id="æ150æ149">æ¹æ³</h2>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h2 id="方法">方法</h2>
 <p><code>ffmpeg -v warning -ss 00:00:02 -t 2 -i 5.mp4 -vf scale=300:-1 -gifflags +transdiff -y 5.gif</code></p>
-<p>-ss æªåå¼å§æ¶é´</p>
-<p>-t æªåæ¶é¿</p>
-<p>5.mp4 æ¯è§é¢åç§°</p>
-<p>5.gif æ¯è½¬æ¢åçåç§°</p>
-<h2 id="ç155å-é147æ142">ç¸å ³é¾æ¥</h2>
+<p>-ss 截取开始时间</p>
+<p>-t 截取时长</p>
+<p>5.mp4 是视频名称</p>
+<p>5.gif 是转换后的名称</p>
+<h2 id="相关链接">相关链接</h2>
 <p><a href="http://blog.pkh.me/p/21-high-quality-gif-with-ffmpeg.html">http://blog.pkh.me/p/21-high-quality-gif-with-ffmpeg.html</a></p>
 <ul class="pa0">
   

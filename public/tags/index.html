@@ -111,13 +111,17 @@
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      è¯´æ Flutter 2.5 çæ¬ä¸­çç ´åæ§æ¹å¨
-é»è®¤çè®¾å¤æå¨åæ»å¨ v2.2 çåå é¤äºåºå¼ç API Package ä»ç»: flutter_lints ThemeData ç accent å±æ§å·²è¢«å¼ç¨ æå¿è¯å«å¨æ¸ ç å° AnimationSheetBuilder.display æ¿æ¢ä¸º collate ä½¿ç¨ HTML ææ§½å¨ Web ä¸­æ¸²æå¹³å°è§å¾ å° LogicalKeySet è¿ç§»è³ SingleActivator é¡¹ç®ä½¿ç¨Flutter2.5ç¼è¯åï¼é¨åé¡µé¢çé¢è²åçäºååã
-éè¦å¯¹ThemeData ç accent å±æ§è¿è¡éé ã
-æ¹å¨ ä¸»é¢ä¿¡æ¯ ThemeData ä¸­ç accentColorãaccentColorBrightnessãaccentIconTheme å accentTextTheme å±æ§ç°å·²è¢«å¼ç¨ã
-Material è®¾è®¡è§è ä¸åä¸º Material ç»ä»¶æå®æä½¿ç¨ãå¼ºè°ãè²ãç»ä»¶çé»è®¤é¢è²æ¥èªæ´ä¸ªä¸»é¢ç é¢è²æ¹æ¡ãç°å¨éå¸¸ä½¿ç¨ ColorScheme ç secondary color ä»£æ¿ accentColorï¼å¹¶ä¸å¨éè¦å¯¹æ¯è²æ¶ä½¿ç¨ onSecondary å±æ§ã
-éé  éé åï¼
-theme: ThemeData( primaryColor: Color.fromRGBO(156, 184, 133, 1.
+      说明 Flutter 2.5 版本中的破坏性改动
+默认的设备拖动和滚动 v2.2 版后删除了废弃的 API Package 介绍: flutter_lints ThemeData 的 accent 属性已被弃用 手势识别器清理 将 AnimationSheetBuilder.display 替换为 collate 使用 HTML 插槽在 Web 中渲染平台视图 将 LogicalKeySet 迁移至 SingleActivator 项目使用Flutter2.5编译后，部分页面的颜色发生了变化。
+需要对ThemeData 的 accent 属性进行适配。
+改动 主题信息 ThemeData 中的 accentColor、accentColorBrightness、accentIconTheme 和 accentTextTheme 属性现已被弃用。
+Material 设计规范 不再为 Material 组件指定或使用「强调」色。组件的默认颜色来自整个主题的 颜色方案。现在通常使用 ColorScheme 的 secondary color 代替 accentColor，并且在需要对比色时使用 onSecondary 属性。
+适配 适配前：
+适配后：
+使用时：
+改为：
+相关链接 https://flutter.cn/docs/release/breaking-changes/theme-data-accent-properties
+https://flutter.cn/posts/whats-new-in-flutter-2-5
     </div>
   </div>
 
@@ -141,9 +145,14 @@ theme: ThemeData( primaryColor: Color.fromRGBO(156, 184, 133, 1.
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      è¯´æï¼ å¨æªå·æºçæ åµä¸ï¼å£è¢é 1çé»è®¤æ¡é¢å¦ä¸ï¼
-æ¹æ³ï¼ å®è´¨ä¸å°±æ¯ï¼èªå·±ç¼åä¸ä¸ªä¸Kindleå åç¸åçç¨åºï¼å¯å¨è¯¥ç¨åºæ¶ï¼å¯å¨ä½ è®¾ç½®çç¨åºãæ ¸å¿ä»£ç å¦ä¸ï¼å¾ç®åï¼
-&lt;pre class=&#34;wp-block-code&#34;&gt;``` val packageName = sp.getString(&#34;pkg&#34;, &#34;&#34;) if (TextUtils.isEmpty(packageName)) { tvTitle.text = &#34;è¯·è¾&amp;#147;å&amp;#133;¥åº&amp;#148;ç&amp;#148;¨å&amp;#140;&amp;#133;å&amp;#144;&amp;#141;,å¦&amp;#130;:org.koreader.launcher&#34; } else { val intent = packageManager.getLaunchIntentForPackage(packageName!!) startActivity(intent) finish() } å&amp;#143;¯ä»¥ä½¿ç&amp;#148;¨å·²ç»&amp;#143;ç¼&amp;#150;è¯&amp;#145;å¥½ç&amp;#154;&amp;#132;ç¨&amp;#139;åº&amp;#143;ï¼&amp;#154; &lt;figure class=&#34;wp-block-image size-large is-resized&#34;&gt;![](http://img.xfans.me/xfans/image/kdy_replace.png)&lt;/figure&gt;å®&amp;#137;è£ å&amp;#144;&amp;#142;è¾&amp;#147;å ¥è¦&amp;#129;æ&amp;#155;¿æ&amp;#141;¢ç&amp;#154;&amp;#132;å&amp;#140; å&amp;#144;&amp;#141;ï¼&amp;#140;ç&amp;#130;¹å&amp;#135;»ç¡®è®¤å&amp;#141;³å&amp;#143;¯ã&amp;#128;&amp;#130;ç&amp;#132;¶å&amp;#144;&amp;#142;ç&amp;#130;¹å&amp;#135;»æ¡&amp;#140;é&amp;#157;¢ç&amp;#154;&amp;#132;Kindleå&amp;#155;¾æ &amp;#135;å&amp;#141;³å&amp;#143;¯è¿&amp;#155;å ¥è®¾ç½®ç&amp;#154;&amp;#132;appã&amp;#128;&amp;#130;æ³¨æ&amp;#132;&amp;#143;ï¼&amp;#154;å®&amp;#137;è£ è¯¥ç¨&amp;#139;åº&amp;#143;å&amp;#144;&amp;#142;ï¼&amp;#140;æ&amp;#151; æ³&amp;#149;å®&amp;#137;è£ Kindle appã&amp;#128;&amp;#130;å&amp;#140; å&amp;#144;&amp;#141;å&amp;#134;²çª&amp;#129;ã&amp;#128;&amp;#130; å&amp;#141;¸è½½æ&amp;#150;¹æ³&amp;#149;ï¼&amp;#154;**adb uninstall com.amazon.kindlefc** ## å&amp;#156;°å&amp;#157;&amp;#128;ï¼&amp;#154; ä¸&amp;#139;è½½å&amp;#156;°å&amp;#157;&amp;#128;ï¼&amp;#154;&lt;http://img.xfans.me/download/kdy-replace-release.apk&gt; ä»£ç &amp;#129;å&amp;#156;°å&amp;#157;&amp;#128;ï¼&amp;#154;&lt;https://github.com/xfans/KdyReplace&gt; 
+      说明： 在未刷机的情况下，口袋阅1的默认桌面如下：
+自己安装的程序无法在桌面上显示，而桌面上的kindle又不经常使用。可以改为，点击Kindle进入自己安装的程序，比如：点击Kindle进入koreader。
+方法： 实质上就是，自己编写一个与Kindle包名相同的程序，启动该程序时，启动你设置的程序。核心代码如下，很简单：
+可以使用已经编译好的程序：
+安装后输入要替换的包名，点击确认即可。然后点击桌面的Kindle图标即可进入设置的app。注意：安装该程序后，无法安装Kindle app。包名冲突。
+卸载方法：adb uninstall com.amazon.kindlefc
+地址： 下载地址：http://img.xfans.me/download/kdy-replace-release.apk
+代码地址：https://github.com/xfans/KdyReplace
     </div>
   </div>
 
@@ -167,9 +176,14 @@ theme: ThemeData( primaryColor: Color.fromRGBO(156, 184, 133, 1.
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      è¯´æï¼ å¨æªå·æºçæ åµä¸ï¼å£è¢é 1çé»è®¤æ¡é¢å¦ä¸ï¼
-æ¹æ³ï¼ å®è´¨ä¸å°±æ¯ï¼èªå·±ç¼åä¸ä¸ªä¸Kindleå åç¸åçç¨åºï¼å¯å¨è¯¥ç¨åºæ¶ï¼å¯å¨ä½ è®¾ç½®çç¨åºãæ ¸å¿ä»£ç å¦ä¸ï¼å¾ç®åï¼
-&lt;pre class=&#34;wp-block-code&#34;&gt;``` val packageName = sp.getString(&#34;pkg&#34;, &#34;&#34;) if (TextUtils.isEmpty(packageName)) { tvTitle.text = &#34;è¯·è¾&amp;#147;å&amp;#133;¥åº&amp;#148;ç&amp;#148;¨å&amp;#140;&amp;#133;å&amp;#144;&amp;#141;,å¦&amp;#130;:org.koreader.launcher&#34; } else { val intent = packageManager.getLaunchIntentForPackage(packageName!!) startActivity(intent) finish() } å&amp;#143;¯ä»¥ä½¿ç&amp;#148;¨å·²ç»&amp;#143;ç¼&amp;#150;è¯&amp;#145;å¥½ç&amp;#154;&amp;#132;ç¨&amp;#139;åº&amp;#143;ï¼&amp;#154; &lt;figure class=&#34;wp-block-image size-large is-resized&#34;&gt;![](http://img.xfans.me/xfans/image/kdy_replace.png)&lt;/figure&gt;å®&amp;#137;è£ å&amp;#144;&amp;#142;è¾&amp;#147;å ¥è¦&amp;#129;æ&amp;#155;¿æ&amp;#141;¢ç&amp;#154;&amp;#132;å&amp;#140; å&amp;#144;&amp;#141;ï¼&amp;#140;ç&amp;#130;¹å&amp;#135;»ç¡®è®¤å&amp;#141;³å&amp;#143;¯ã&amp;#128;&amp;#130;ç&amp;#132;¶å&amp;#144;&amp;#142;ç&amp;#130;¹å&amp;#135;»æ¡&amp;#140;é&amp;#157;¢ç&amp;#154;&amp;#132;Kindleå&amp;#155;¾æ &amp;#135;å&amp;#141;³å&amp;#143;¯è¿&amp;#155;å ¥è®¾ç½®ç&amp;#154;&amp;#132;appã&amp;#128;&amp;#130;æ³¨æ&amp;#132;&amp;#143;ï¼&amp;#154;å®&amp;#137;è£ è¯¥ç¨&amp;#139;åº&amp;#143;å&amp;#144;&amp;#142;ï¼&amp;#140;æ&amp;#151; æ³&amp;#149;å®&amp;#137;è£ Kindle appã&amp;#128;&amp;#130;å&amp;#140; å&amp;#144;&amp;#141;å&amp;#134;²çª&amp;#129;ã&amp;#128;&amp;#130; å&amp;#141;¸è½½æ&amp;#150;¹æ³&amp;#149;ï¼&amp;#154;**adb uninstall com.amazon.kindlefc** ## å&amp;#156;°å&amp;#157;&amp;#128;ï¼&amp;#154; ä¸&amp;#139;è½½å&amp;#156;°å&amp;#157;&amp;#128;ï¼&amp;#154;&lt;http://img.xfans.me/download/kdy-replace-release.apk&gt; ä»£ç &amp;#129;å&amp;#156;°å&amp;#157;&amp;#128;ï¼&amp;#154;&lt;https://github.com/xfans/KdyReplace&gt; 
+      说明： 在未刷机的情况下，口袋阅1的默认桌面如下：
+自己安装的程序无法在桌面上显示，而桌面上的kindle又不经常使用。可以改为，点击Kindle进入自己安装的程序，比如：点击Kindle进入koreader。
+方法： 实质上就是，自己编写一个与Kindle包名相同的程序，启动该程序时，启动你设置的程序。核心代码如下，很简单：
+可以使用已经编译好的程序：
+安装后输入要替换的包名，点击确认即可。然后点击桌面的Kindle图标即可进入设置的app。注意：安装该程序后，无法安装Kindle app。包名冲突。
+卸载方法：adb uninstall com.amazon.kindlefc
+地址： 下载地址：http://img.xfans.me/download/kdy-replace-release.apk
+代码地址：https://github.com/xfans/KdyReplace
     </div>
   </div>
 
@@ -184,7 +198,7 @@ theme: ThemeData( primaryColor: Color.fromRGBO(156, 184, 133, 1.
             <div class="mb3 pa4 mid-gray overflow-hidden">
     
       <div class="f6">
-        January 23, 2020
+        January 22, 2020
       </div>
     
     <h1 class="f3 near-black">
@@ -193,9 +207,10 @@ theme: ThemeData( primaryColor: Color.fromRGBO(156, 184, 133, 1.
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      1.åå»ºRetrofitå¯¹è±¡ &lt;pre class=&#34;wp-block-preformatted&#34;&gt;&lt;strong&gt;val &lt;/strong&gt;retrofit = Retrofit.Builder()&lt;br&gt;&lt;/br&gt; .baseUrl(SimpleService.&lt;em&gt;API_URL&lt;/em&gt;)&lt;br&gt;&lt;/br&gt; .addConverterFactory(GsonConverterFactory.create())&lt;br&gt;&lt;/br&gt; .build() 2.åå»ºServiceæ¥å£ &lt;pre class=&#34;wp-block-preformatted&#34;&gt;&lt;strong&gt;val &lt;/strong&gt;github = retrofit.create(GitHub::&lt;strong&gt;class&lt;/strong&gt;.&lt;em&gt;java&lt;/em&gt;) retrofit.createæ¹æ³ä¸ºServiceåå»ºå¨æä»£çï¼å¯ä»¥è¯´æ¯Retrofitçæ ¸å¿ã
-3.åå»ºè°ç¨APIçCallå¯¹è±¡ &lt;pre class=&#34;wp-block-preformatted&#34;&gt;&lt;strong&gt;val &lt;/strong&gt;call = github.contributors(&lt;strong&gt;&#34;square&#34;&lt;/strong&gt;, &lt;strong&gt;&#34;retrofit&#34;&lt;/strong&gt;) 1.å½è°ç¨Serviceä¸­å®ä¹çæ¹æ³æ¶ï¼ä¼è°ç¨retrofit.createåå»ºçå¨æä»£çï¼è°ç¨Proxy.newProxyInstanceä¸­InvocationHandlerçinvokeæ¹æ³,åå»ºæµç¨å¦ä¸:
-&lt;pre class=&#34;wp-block-preformatted&#34;&gt;&lt;strong&gt;val &lt;/strong&gt;contributors = call.execute().body()!! è¯·æ±ç½ç»çæµç¨å¦ä¸:
+      1.创建Retrofit对象 2.创建Service接口 retrofit.create方法为Service创建动态代理，可以说是Retrofit的核心。
+3.创建调用API的Call对象 1.当调用Service中定义的方法时，会调用retrofit.create创建的动态代理，调用Proxy._newProxyInstance_中InvocationHandler的invoke方法,创建流程如下:
+4.发起网络请求 请求网络的流程如下:
+异步请求和同步类似，这里就不分析了。
     </div>
   </div>
 
@@ -219,7 +234,7 @@ theme: ThemeData( primaryColor: Color.fromRGBO(156, 184, 133, 1.
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      okhttp3è¯·æ±æµç¨å¾å¦ä¸
+      okhttp3请求流程图如下
     </div>
   </div>
 
@@ -236,11 +251,13 @@ theme: ThemeData( primaryColor: Color.fromRGBO(156, 184, 133, 1.
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      èæ¯ Android-async-httpå·²ç»ä¸æ´æ°äºãps:è¿ä¸ºè¿ä¸ªåºæäº¤è¿åè½https://github.com/android-async-http/android-async-http/pull/840
-Android-async-httpæ¯åºäºHttpClientçã
-æ¿æ¢æ¹æ¡ å°é¡¹ç®ä¸­ææçè¯·æ±ä»£ç é½æ¿æ¢å·¥ä½éå·¨å¤§ï¼ä¹å®¹æåºé®é¢ãæä»¥éç¨å°Okhttpå°è£ ä¸ºAndroid-async-httpçæ¹å¼è¿è¡æ¿æ¢ã
-android-async-httpçä½¿ç¨æ¹æ³:
-&lt;pre class=&#34;wp-block-preformatted&#34;&gt;``` AsyncHttpClient client = &lt;strong&gt;new &lt;/strong&gt;AsyncHttpClient(); String url = &lt;strong&gt;&#34;http://xfans.me/api/v1/list&#34;&lt;/strong&gt;; client.get(url, &lt;strong&gt;new &lt;/strong&gt;AsyncHttpResponseHandler() { @Override &lt;strong&gt;public void &lt;/strong&gt;onSuccess(&lt;strong&gt;int &lt;/strong&gt;statusCode, Header[] headers, &lt;strong&gt;byte&lt;/strong&gt;[] responseBody) { } @Override &lt;strong&gt;public void &lt;/strong&gt;onFailure(&lt;strong&gt;int &lt;/strong&gt;statusCode, Header[] headers, &lt;strong&gt;byte&lt;/strong&gt;[] responseBody, Throwable error) { } }); ä»&amp;#142;ä»£ç &amp;#129;å&amp;#143;¯ä»¥ç&amp;#156;&amp;#139;å&amp;#135;º,æ&amp;#131;³è¦&amp;#129;å¿«é&amp;#128;&amp;#159;ç&amp;#154;&amp;#132;æ&amp;#155;¿æ&amp;#141;¢é&amp;#156;&amp;#128;è¦&amp;#129;: 1.ä½¿ç&amp;#148;¨okhttpæ&amp;#157;¥å®&amp;#158;ç&amp;#142;°`AsyncHttpClient` 2.å®&amp;#158;ç&amp;#142;°`AsyncHttpResponseHandler`,`FileAsyncHttpResponseHandler`,`JsonHttpResponseHandler`,`TextHttpResponseHandler`ç­&amp;#137;é¡¹ç&amp;#155;®ä¸­ä½¿ç&amp;#148;¨ç&amp;#154;&amp;#132;Handlerå&amp;#141;³å&amp;#143;¯. 
+      背景 Android-async-http已经不更新了。ps:还为这个库提交过功能https://github.com/android-async-http/android-async-http/pull/840
+Android-async-http是基于HttpClient的。
+替换方案 将项目中所有的请求代码都替换工作量巨大，也容易出问题。所以采用将Okhttp封装为Android-async-http的方式进行替换。
+android-async-http的使用方法:
+从代码可以看出,想要快速的替换需要:
+1.使用okhttp来实现AsyncHttpClient
+2.实现AsyncHttpResponseHandler,FileAsyncHttpResponseHandler,JsonHttpResponseHandler,TextHttpResponseHandler等项目中使用的Handler即可.
     </div>
   </div>
 
@@ -257,17 +274,9 @@ android-async-httpçä½¿ç¨æ¹æ³:
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      èæ¯ ç¨æ·ç»å¸¸å¨å½å¤ä½¿ç¨Appï¼å½å¤çç½ç»ç¯å¢æ´å å¤æï¼ç»å¸¸ä¼åºç°UnknownHostExceptionçå¼å¸¸ï¼æ æ³è§£æDNSã
-è§£å³æ¹æ¡ å½éå°è¯¥å¼å¸¸æ¶å°±éè¦èªå·±å»è§£æDNSãå¸¸ç¨çèªå·±è§£æDNSçæ¹å¼æä¸¤ç§
-1.èªå·±æ¿å°IPåæ¿æ¢ååï¼Appèçæ¹å¼ï¼ æ¯å¦ä½¿ç¨dnsjavaæ¿å°IPåéè¦ï¼
-å¯¹è¯·æ±çååè¿è¡æ¿æ¢ å¯¹Headerä¸­çHostè¿è¡æ¿æ¢ å¯¹Cookieä¸­çdomainè¿è¡æ¿æ¢ Httpsä¸è¯ä¹¦æ ¡éªé®é¢ .â¦â¦ start=&ldquo;1.&quot;&gt; ä½¿ç¨èµ·æ¥æ¯è¾éº»ç¦ï¼é®é¢è¾å¤ã
-2.ä½¿ç¨Okhttpèªå®ä¹DNSåè½ ç®ååæAppä»android-async-httpåæ¢å°OKhttpã(PS:è±äºä¸å¨å¤æ¶é´ï¼æ¹å°åè¡)ï¼å¯ä»¥ç´æ¥ä½¿ç¨Okhttpèªå®ä¹dnsåè½ã
-DNSçè§£ææ¹å¼éæ©äºHTTPDNSï¼HTTPDNSç´æ¥ä½¿ç¨ HTTPåè®®å»æ¥è¯¢DNSï¼é¿å¼äºä¼ ç»UDPæ¹å¼DNSçDNSå«æï¼ä¸åç¡®ç­å¼ç«¯ã
-è¯¦è§ï¼ãé¹ åç½äºãå ¨å±ç²¾ç¡®æµéè°åº¦æ°æè·¯-HttpDNSæå¡è¯¦è§£ 3.Okhttpèªå®ä¹DNS HTTPDNSéæ©äºDNSpodåGoogle Public DNSä¸¤å®¶ã
-å¨å½å¤éç¨Google Public DNS
-å¨å½å éç¨DNSpod
-å®ç°æ¹å¼å¦ä¸ï¼
-&lt;pre class=&#34;line-numbers prism-highlight&#34; data-start=&#34;1&#34;&gt;```java public class OkDns implements Dns { private String mIps; private long mLastDnsTime; private static final long DNS_TTL = 600 * 1000;//è&amp;#135;ªå®&amp;#154;ä¹&amp;#137;DNSç¼&amp;#147;å­&amp;#152;æ&amp;#151;¶é&amp;#151;´ @Override public List&lt;InetAddress&gt; lookup(String hostname) throws UnknownHostException { try { List&lt;InetAddress&gt; list = Dns.
+      背景 用户经常在国外使用App，国外的网络环境更加复杂，经常会出现UnknownHostException的异常，无法解析DNS。
+解决方案 当遇到该异常时就需要自己去解析DNS。常用的自己解析DNS的方式有两种
+1.自己拿到IP后替换域名（App老的方式） 比如使用dnsjava拿到IP后需要：
     </div>
   </div>
 
@@ -291,18 +300,22 @@ DNSçè§£ææ¹å¼éæ©äºHTTPDNSï¼HTTPDNSç´æ�
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      è¯´æ æå¾®ä¿¡ç¾¤æ§è½¯ä»¶,è½¯ä»¶ä½¿ç¨PCæ§å¶ææºç«¯å®ç°å¯¹å¾®ä¿¡çç¾¤æ§,æPCç«¯æ§å¶è½¯ä»¶åandroidç«¯æ§å¶è½¯ä»¶,androidç«¯ä½¿ç¨xposedå®ç°å¯¹å¾®ä¿¡çæ§å¶.
-éåæè·¯ éåçç®æ æ¯è·¨è¿PCç«¯,ä½¿ç¨èªå·±çç³»ç»å®ç°å¯¹androidç«¯çæ§å¶.å æ­¤è¦ç ´è§£çæ¯PCç«¯ä¸androidç«¯çéä¿¡åè®®.
-éåè¿ç¨ 1.çæè½¯ä»¶ é¦å çæè½¯ä»¶çåè½,ä½¿ç¨æ¹æ³,å¸¸è§çæç¤ºç­,æ¹ä¾¿å¨åç»­éåæ¶è½æ´å¥½ççè§£ä»£ç .
-2.åæéåä»£ç  ä½¿ç¨jadxæ¥çéååºçä¼ªjavaä»£ç ,éè¿åæä»£ç æç»æ¾å°pcç«¯ä¸androidç«¯æ¯éè¿socketè¿è¡éä¿¡ç.socketæ¥æè§£æä»£ç å¦ä¸:
-3.ç¼åæµè¯ä»£ç ,éåprotobuff æ ¹æ®éåå¾å°çæ¶æ¯æ ¼å¼å°è¯ç¼åæ§å¶ç«¯,ä¸ºäºæ¹ä¾¿ç´æ¥ä½¿ç¨minaåºå®ç°socket.æ¥æçç¼ç è§£ç å¾ç®å,å¤æçæ¯æ¶æ¯å å®¹protobuffæä»¶çéå.
-protobuffæ¯googleæ¨åºçæ°æ®æ ¼å¼ååè®®,ä¹åæ²¡æç¨è¿pbä½ä½¿ç¨è¿facebookçthrift,åçä¸å¤§ä½ä¸è´.
-æ ¹æ®protoä¸javaç±»åçå¯¹åºå ³ç³»,å¯ä»¥ä½¿ç¨javaçéåæä»¶åæ¨åºprotoæä»¶,ç¶ååä½¿ç¨protoæä»¶å°±å¯ä»¥çæjavaæä»¶.åæ¨æ¯è¾å¤æç¹å°±æ¯æ³¨ærequired/optional/repeatedéå®ç¬¦çä½¿ç¨.
-æµè¯socketéä¿¡ è¦è¿è¡éä¿¡æµè¯,é¦å è¦ç¥éä¼ éçåæ°æåªäº.è·ååæ°æç®åçæ¹æ³å°±æ¯å¨protobuffè§£æçå°æ¹æå°åºlog.
-å ä½¿ç¨baksmali\apktoolåç¼è¯åºsmaliä»£ç ,ç¶åæ¾å°ç¸åºçå°æ¹æå ¥log.ç¶åæ­£å¸¸æä½ç¾¤æ§å·¥å ·æ¿å°ç¸åºçlogå³å¯.å ·ä½æä½æ­¥éª¤å°±ä¸è¯¦ç»åäº.
-åç»­æ ¹æ®logä¸­çä¿¡æ¯,æé åºprotobuffå¯¹è±¡å³å¯ä¸ç¾¤æ§appæ­£å¸¸éä¿¡.
-ç¸å ³é¾æ¥ JADXhttps://github.com/skylot/jadx
-Linuxä¸çéåå·¥å ·éhttps://github.com/APK-Multi-Tool/APK-Multi-Tool-Linux
+      说明 某微信群控软件,软件使用PC控制手机端实现对微信的群控,有PC端控制软件及android端控制软件,android端使用xposed实现对微信的控制.
+逆向思路 逆向的目标是跨过PC端,使用自己的系统实现对android端的控制.因此要破解的是PC端与android端的通信协议.
+逆向过程 1.熟悉软件 首先熟悉软件的功能,使用方法,常见的提示等,方便在后续逆向时能更好的理解代码.
+2.分析逆向代码 使用jadx查看逆向出的伪java代码,通过分析代码最终找到pc端与android端是通过socket进行通信的.socket报文解析代码如下:
+根据代码可以看出报文格式:
+前4个字节为报文长度,最后一个字节为结束标示,中间为消息内容,消息内容是protobuff格式.
+3.编写测试代码,逆向protobuff 根据逆向得到的消息格式尝试编写控制端,为了方便直接使用mina库实现socket.报文的编码解码很简单,复杂的是消息内容protobuff文件的逆向.
+protobuff是google推出的数据格式化协议,之前没有用过pb但使用过facebook的thrift,原理上大体一致.
+根据proto与java类型的对应关系,可以使用java的逆向文件反推出proto文件,然后再使用proto文件就可以生成java文件.反推比较复杂点就是注意required/optional/repeated限定符的使用.
+生成protobuff的java类后就可以编写mina编写socket的编解码类了.Decode方法如下:
+encode方法同理就不再贴了.
+测试socket通信 要进行通信测试,首先要知道传递的参数有哪些.获取参数最简单的方法就是在protobuff解析的地方打印出log.
+先使用baksmali\apktool反编译出smali代码,然后找到相应的地方插入log.然后正常操作群控工具拿到相应的log即可.具体操作步骤就不详细写了.
+后续根据log中的信息,构造出protobuff对象即可与群控app正常通信.
+相关链接 JADXhttps://github.com/skylot/jadx
+Linux下的逆向工具集https://github.com/APK-Multi-Tool/APK-Multi-Tool-Linux
     </div>
   </div>
 
@@ -326,15 +339,21 @@ Linuxä¸çéåå·¥å ·éhttps://github.com/APK-Multi-Tool/
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      å®ç°äºAndroidå½é³ï¼è¯­é³è¾å ¥æ¶çç«çº¿æ³¢çº¹å¨ç»ææåé³ä¹æ­æ¾æ¶çè·³å¨ææ
-ææ å®ç°åç å®ç°äºä¸¤ç§è¿å¨ææï¼
-1.ä»å·¦å°å³ç§»å¨ åè®¾æ±ç¶å¾çé«åº¦æ¯ä¸ä¸ªå¯¹å
+      实现了Android录音，语音输入时的竖线波纹动画效果和音乐播放时的跳动效果
+效果 实现原理 实现了两种运动效果：
+1.从左到右移动 假设柱状图的高度是一个对列
 27,17,38,91,38,24,8,60,38,14,8
 8,27,17,38,91,38,24,8,60,38,14
 14,8,27,17,38,91,38,24,8,60,38
-ä»å·¦å°å³ç§»å¨å®é ä¸å°±æ¯ä¸æ­çå°éåä¸­çæåä¸ä¸ªæå ¥å°éåçç¬¬ä¸ä¸ªã
-ä»£ç ï¼
-&lt;pre class=&#34;line-numbers prism-highlight&#34; data-start=&#34;1&#34;&gt;```kotlin runnable = object : Runnable { override fun run() { val last = bodyWaveList.pollLast() bodyWaveList.addFirst(last) invalidate() valHandler.postDelayed(this, duration);//å¾ªç&amp;#142;¯è°&amp;#131;ç&amp;#148;¨é&amp;#135;&amp;#141;ç»&amp;#152; } } valHandler.post(runnable) ### 2.ä¸&amp;#138;ä¸&amp;#139;è·³å&amp;#138;¨ å&amp;#129;&amp;#135;è®¾æ&amp;#159;±ç&amp;#138;¶å&amp;#155;¾æ&amp;#152;¯ä¸&amp;#128;ä¸ªé&amp;#152;&amp;#159;å&amp;#136;&amp;#151; `27,17,38,91,38,24,8,60,38,14,8` ä¸&amp;#138;ä¸&amp;#139;è·³å&amp;#138;¨å°±æ&amp;#152;¯å°&amp;#134;é&amp;#152;&amp;#159;å&amp;#136;&amp;#151;ç&amp;#154;&amp;#132;é«&amp;#152;åº¦ï¼&amp;#140;ä»&amp;#142;0%-100%å&amp;#143;&amp;#152;å&amp;#140;&amp;#150; ä»£ç &amp;#129;ï¼&amp;#154; 
+从左到右移动实际上就是不断的将队列中的最后一个插入到队列的第一个。
+代码：
+2.上下跳动 假设柱状图是一个队列
+27,17,38,91,38,24,8,60,38,14,8
+上下跳动就是将队列的高度，从0%-100%变化
+代码：
+然后在onDraw绘制时高度*valueAnimatorOffset
+绘制 代码：
+地址 https://github.com/xfans/VoiceWaveView
     </div>
   </div>
 
@@ -351,15 +370,23 @@ Linuxä¸çéåå·¥å ·éhttps://github.com/APK-Multi-Tool/
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      augmented-traffic-control A tool to simulate network conditions,Facebookæä¾çä¸æ¬¾ç½ç»ç¯å¢æ¨¡æå·¥å ·ï¼å¯ä»¥ä½¿ç¨ä»æ¥æµè¯Appå¨åç§ç½ç»ç¯å¢ä¸çé®é¢ã
-å®è£ ç¯å¢è¦æ± Python2.7ãDjango1.10.+
-ä»¥ä¸å¨Manjoraä¸çå®è£ å½ä»¤
-åæ¢Pythonç¯å¢å°Python2.7 å®è£ pip sudo pacman -S python2-pip
-å®è£ Django1.10.+ sudo pip install Django==1.10.8
-å®è£ ATC å®è£ lib sudo pacman -S pip install atc_thrift atcd django-atc-api django-atc-demo-ui django-atc-profile-storage
-Djangoé ç½® django-admin startproject atcui
+      augmented-traffic-control A tool to simulate network conditions,Facebook提供的一款网络环境模拟工具，可以使用他来测试App在各种网络环境下的问题。
+安装环境要求 Python2.7、Django1.10.+
+以下在Manjora下的安装命令
+切换Python环境到Python2.7 安装pip sudo pacman -S python2-pip
+安装Django1.10.+ sudo pip install Django==1.10.8
+安装ATC 安装lib sudo pacman -S pip install atc_thrift atcd django-atc-api django-atc-demo-ui django-atc-profile-storage
+Django配置 django-admin startproject atcui
 cd atcui
-ä¿®æ¹atcui/settings.pyä¸­çINSTALLED_APPS &lt;pre class=&#34;line-numbers prism-highlight&#34; data-start=&#34;1&#34;&gt;```bash INSTALLED_APPS = ( ... # Django ATC API &#39;rest_framework&#39;, &#39;atc_api&#39;, # Django ATC Demo UI &#39;bootstrap_themes&#39;, &#39;django_static_jquery&#39;, &#39;atc_demo_ui&#39;, # Django ATC Profile Storage &#39;atc_profile_storage&#39;, ) #### ä¿®æ&amp;#148;¹atcui/urls.
+修改atcui/settings.py中的INSTALLED_APPS 修改atcui/urls.py中的urlpatterns及引用 更新数据库 python manage.py migrate
+创建虚拟Ap Linux开启虚拟AP
+启动ATC sudo atcd --atcd-wan wlp3s0 --atcd-lan ap0
+注意：wlp3s0是我的无线网卡，ap0是我创建的虚拟ap网卡
+设置错误可能出现：https://github.com/facebook/augmented-traffic-control/issues/239
+启动ATCUI python manage.py runserver 0.0.0.0:8000
+导入默认配置 下载该路径下的文件https://github.com/facebook/augmented-traffic-control/tree/master/utils 运行导入命令 ./restore-profiles.sh localhost:8000
+手机使用ATC 使用Android、iOS 的浏览器访问
+ip:8000 ip为你电脑的ip
     </div>
   </div>
 
@@ -376,7 +403,7 @@ cd atcui
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      åè®® XML-RPC_wpåè®®:https://codex.wordpress.org/XML-RPC_wp å°å:http://xxxx.com/xmlrpc Typecho XML-RPCåè®®:https://github.com/typecho/typecho/blob/master/var/Widget/XmlRpc.php#L2249-L2322 Demo XML-RPC_wpåè®®Demo:https://github.com/xfans/android-xmlrpc1 Typecho XML-RPCè¿åæ°æ®:IXR/Value.php 
+      协议 XML-RPC_wp协议:https://codex.wordpress.org/XML-RPC_wp 地址:http://xxxx.com/xmlrpc Typecho XML-RPC协议:https://github.com/typecho/typecho/blob/master/var/Widget/XmlRpc.php#L2249-L2322 Demo XML-RPC_wp协议Demo:https://github.com/xfans/android-xmlrpc1 Typecho XML-RPC返回数据:IXR/Value.php 
     </div>
   </div>
 
@@ -393,7 +420,8 @@ cd atcui
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      &lt;pre class=&#34;prism-highlight line-numbers&#34; data-start=&#34;1&#34;&gt;```null public class MainActivity extends Activity { @Override protected void onCreate(Bundle savedInstanceState) { super.onCreate(savedInstanceState); ImageView imageView = (ImageView) findViewById(R.id.yourImageView); imageView.setLayerType(View.LAYER_TYPE_SOFTWARE, null); try { SVG svg = SVG.getFromResource(this, R.raw.my_svg_file); Drawable drawable = new PictureDrawable(svg.renderToPicture()); imageView.setImageDrawable(drawable); } catch(SVGParseException e) {} } } å&amp;#156;°å&amp;#157;&amp;#128;:http://bigbadaboom.github.io/androidsvg/use\_with\_ImageView.html Github:https://github.com/BigBadaboom/androidsvg 
+      地址:http://bigbadaboom.github.io/androidsvg/use_with_ImageView.html
+Github:https://github.com/BigBadaboom/androidsvg
     </div>
   </div>
 
@@ -417,15 +445,21 @@ cd atcui
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      å®ç°äºAndroidå½é³ï¼è¯­é³è¾å ¥æ¶çç«çº¿æ³¢çº¹å¨ç»ææåé³ä¹æ­æ¾æ¶çè·³å¨ææ
-ææ å®ç°åç å®ç°äºä¸¤ç§è¿å¨ææï¼
-1.ä»å·¦å°å³ç§»å¨ åè®¾æ±ç¶å¾çé«åº¦æ¯ä¸ä¸ªå¯¹å
+      实现了Android录音，语音输入时的竖线波纹动画效果和音乐播放时的跳动效果
+效果 实现原理 实现了两种运动效果：
+1.从左到右移动 假设柱状图的高度是一个对列
 27,17,38,91,38,24,8,60,38,14,8
 8,27,17,38,91,38,24,8,60,38,14
 14,8,27,17,38,91,38,24,8,60,38
-ä»å·¦å°å³ç§»å¨å®é ä¸å°±æ¯ä¸æ­çå°éåä¸­çæåä¸ä¸ªæå ¥å°éåçç¬¬ä¸ä¸ªã
-ä»£ç ï¼
-&lt;pre class=&#34;line-numbers prism-highlight&#34; data-start=&#34;1&#34;&gt;```kotlin runnable = object : Runnable { override fun run() { val last = bodyWaveList.pollLast() bodyWaveList.addFirst(last) invalidate() valHandler.postDelayed(this, duration);//å¾ªç&amp;#142;¯è°&amp;#131;ç&amp;#148;¨é&amp;#135;&amp;#141;ç»&amp;#152; } } valHandler.post(runnable) ### 2.ä¸&amp;#138;ä¸&amp;#139;è·³å&amp;#138;¨ å&amp;#129;&amp;#135;è®¾æ&amp;#159;±ç&amp;#138;¶å&amp;#155;¾æ&amp;#152;¯ä¸&amp;#128;ä¸ªé&amp;#152;&amp;#159;å&amp;#136;&amp;#151; `27,17,38,91,38,24,8,60,38,14,8` ä¸&amp;#138;ä¸&amp;#139;è·³å&amp;#138;¨å°±æ&amp;#152;¯å°&amp;#134;é&amp;#152;&amp;#159;å&amp;#136;&amp;#151;ç&amp;#154;&amp;#132;é«&amp;#152;åº¦ï¼&amp;#140;ä»&amp;#142;0%-100%å&amp;#143;&amp;#152;å&amp;#140;&amp;#150; ä»£ç &amp;#129;ï¼&amp;#154; 
+从左到右移动实际上就是不断的将队列中的最后一个插入到队列的第一个。
+代码：
+2.上下跳动 假设柱状图是一个队列
+27,17,38,91,38,24,8,60,38,14,8
+上下跳动就是将队列的高度，从0%-100%变化
+代码：
+然后在onDraw绘制时高度*valueAnimatorOffset
+绘制 代码：
+地址 https://github.com/xfans/VoiceWaveView
     </div>
   </div>
 
@@ -449,9 +483,9 @@ cd atcui
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      é®é¢ ä½¿ç¨Manjaroå·¥ä½å¤§çº¦ä¸¤å¹´äºï¼ä¹ æ¯æ§çsudo pacman -Syyuï¼åä¸æ®µæ¶é´æ´æ°å®åï¼å¾å¤å°æ¹çä¸­æå­ä½é½åæäºæ¹æ¡ã
-è§£å³æ¹æ³ å®è£ å­ä½
-&lt;pre class=&#34;line-numbers prism-highlight&#34; data-start=&#34;1&#34;&gt;```shell sudo pacman -S wqy-bitmapfont sudo pacman -S wqy-microhei sudo pacman -S wqy-zenhei é&amp;#135;&amp;#141;å&amp;#144;¯å&amp;#144;&amp;#142;å°±å¥½äº&amp;#134; 
+      问题 使用Manjaro工作大约两年了，习惯性的sudo pacman -Syyu，前一段时间更新完后，很多地方的中文字体都变成了方框。
+解决方法 安装字体
+重启后就好了
     </div>
   </div>
 
@@ -468,16 +502,9 @@ cd atcui
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      è¯´æ æmanjaroæ»å°ææ°çæ¬ådeepin-wine-wechatå¾®ä¿¡æ æ³è¾å ¥ä¸­æ
-è§£å³æ¹æ³ deepin-wine-wechatçgithubä¸ç»åºäºå ¼å®¹åè¡¨
-éçº§æ¹æ³ å®è£ downgrade
-sudo pacman -S downgrade
-æ¥çwineåå²çæ¬
-DOWNGRADE_FROM_ALA=1 downgrade wine
-å®è£ å®æååºç°
-æ·»å&amp;#138; wineå&amp;#136;°IgnorePkg? [y/n]
-è¾å ¥yå°wineæ·»å å°IgnorePkg,é²æ­¢åç»­è¢«æ´æ°.
-é¾æ¥ https://github.com/countstarlight/deepin-wine-wechat-arch#%E5%85%BC%E5%AE%B9%E6%80%A7%E8%AE%B0%E5%BD%95
+      说明 把manjaro滚到最新版本后deepin-wine-wechat微信无法输入中文
+解决方法 deepin-wine-wechat的github上给出了兼容列表
+&lt;th&gt; wine版本 &lt;/th&gt; &lt;th&gt; 兼容性 &lt;/th&gt; &lt;th&gt; 备注 &lt;/th&gt; &lt;th&gt; deepin-wine版本 &lt;/th&gt; &lt;th&gt; 兼容性 &lt;/th&gt; &lt;th&gt; 备注 &lt;/th&gt; &lt;td&gt; 4.18-1 &lt;/td&gt; &lt;td&gt; 部分 &lt;/td&gt; &lt;td&gt; 不能使用中文输入法 &lt;/td&gt; &lt;td&gt; &lt;/td&gt; &lt;td&gt; &lt;/td&gt; &lt;td&gt; &lt;/td&gt; &lt;td&gt; 4.18-1 &lt;/td&gt; &lt;td&gt; 部分 &lt;/td&gt; &lt;td&gt; 不能使用中文输入法 &lt;/td&gt; &lt;td&gt; 2.18_18-2 &lt;/td&gt; &lt;td&gt; ? &lt;/td&gt; &lt;td&gt; &lt;/td&gt; &lt;td&gt; 4.18-1 &lt;/td&gt; &lt;td&gt; 部分 &lt;/td&gt; &lt;td&gt; 不能使用中文输入法 &lt;/td&gt; &lt;td&gt; 2.18_18-2 &lt;/td&gt; &lt;td&gt; 不支持 &lt;/td&gt; &lt;td&gt; 闪退 &lt;/td&gt; &lt;td&gt; 4.
     </div>
   </div>
 
@@ -494,13 +521,13 @@ DOWNGRADE_FROM_ALA=1 downgrade wine
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      å®è£ pacman -S privoxy
-é ç½® ä¿®æ¹/etc/privoxy/config
-æ·»å ï¼
-forward-socks5 / 127.0.0.1:1080 . #ssçä»£ç
+      安装 pacman -S privoxy
+配置 修改/etc/privoxy/config
+添加：
+forward-socks5 / 127.0.0.1:1080 . #ss的代理
 listen-address localhost:8118
-éå¯ systemctl restart privoxy
-PS ç»ç«¯ä¸­ä½¿ç¨ä»£ç export http_proxy=http://127.0.0.1:8118
+重启 systemctl restart privoxy
+PS 终端中使用代理 export http_proxy=http://127.0.0.1:8118
 export https_proxy=http://127.0.0.1:8118
     </div>
   </div>
@@ -518,21 +545,25 @@ export https_proxy=http://127.0.0.1:8118
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      ä»ç» ä¼ç¹ï¼ 1.åºäºArchï¼ä½ä¸ç¨æè ¾
-2.æ»å¨æ´æ°ï¼ä½æ¯Archæ ¢ï¼æ¯Archæ´ç¨³å®
-3.æ¯æAURä»åºï¼è½¯ä»¶éå¸¸å¤ï¼æ¯å¦deepin qqï¼sogouè¾å ¥æ³ç­ï¼ä¸è¡å½ä»¤å°±å¯ä»¥å®è£
-4.Wikiéå¸¸ä¸°å¯
-ç¼ºç¹ï¼ 1.æ»å¨æ´æ°ï¼å®¹ææ»æ
-å®è£ æ­¥éª¤ ä¸è½½ https://mirrors.tuna.tsinghua.edu.cn/manjaro-cd/
-usbå®è£ df -h æ&amp;#159;¥ç&amp;#156;&amp;#139;ä½ ç&amp;#154;&amp;#132;uç&amp;#155;&amp;#152;
-sudo umount /dev/sdb å&amp;#141;¸è½½Uç&amp;#155;&amp;#152;
-dd if=xxx.iso of=/dev/sdb bs=1M å&amp;#136;¶ä½&amp;#156;å&amp;#144;¯å&amp;#138;¨ç&amp;#155;&amp;#152;
-note: /dev/sdbä¸ºuç
-æ·»å å½å æº ç¼è¾ vi /etc/pacman-mirrors.conf
-ä¿®æ¹ OnlyCountry=China
-æ ¹æ®éåº¦æåº pacman-mirrors -g
-æ·»å Archæº ç¼è¾ vi /etc/pacman.conf
-å¨æ«å°¾æ·»å &lt;pre class=&#34;prism-highlight line-numbers&#34; data-start=&#34;1&#34;&gt;```null [archlinuxcn] SigLevel = Optional TrustedOnly Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch ##### å&amp;#144;&amp;#140;æ­¥ `sudo pacman -Syy &amp;&amp; sudo pacman -S archlinuxcn-keyring` ### å®&amp;#137;è£ zsh ##### æ&amp;#137;§è¡&amp;#140; `sudo pacman -S zsh` `sh -c &#34;$(curl -fsSL https://raw.
+      介绍 优点： 1.基于Arch，但不用折腾
+2.滚动更新，但比Arch慢，比Arch更稳定
+3.支持AUR仓库，软件非常多，比如deepin qq，sogou输入法等，一行命令就可以安装
+4.Wiki非常丰富
+缺点： 1.滚动更新，容易滚挂
+安装步骤 下载 https://mirrors.tuna.tsinghua.edu.cn/manjaro-cd/
+usb安装 df -h 查看你的u盘
+sudo umount /dev/sdb 卸载U盘
+dd if=xxx.iso of=/dev/sdb bs=1M 制作启动盘
+note: /dev/sdb为u盘
+添加国内源 编辑 vi /etc/pacman-mirrors.conf
+修改 OnlyCountry=China
+根据速度排序 pacman-mirrors -g
+添加Arch源 编辑 vi /etc/pacman.conf
+在末尾添加 同步 sudo pacman -Syy &amp;&amp; sudo pacman -S archlinuxcn-keyring
+安装zsh 执行 sudo pacman -S zsh
+sh -c &quot;$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&quot;
+chsh -s /bin/zsh
+安装输入法 sudo pacman -S fcitx-im # 全部安装
     </div>
   </div>
 
@@ -556,16 +587,9 @@ note: /dev/sdbä¸ºuç
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      è¯´æ æmanjaroæ»å°ææ°çæ¬ådeepin-wine-wechatå¾®ä¿¡æ æ³è¾å ¥ä¸­æ
-è§£å³æ¹æ³ deepin-wine-wechatçgithubä¸ç»åºäºå ¼å®¹åè¡¨
-éçº§æ¹æ³ å®è£ downgrade
-sudo pacman -S downgrade
-æ¥çwineåå²çæ¬
-DOWNGRADE_FROM_ALA=1 downgrade wine
-å®è£ å®æååºç°
-æ·»å&amp;#138; wineå&amp;#136;°IgnorePkg? [y/n]
-è¾å ¥yå°wineæ·»å å°IgnorePkg,é²æ­¢åç»­è¢«æ´æ°.
-é¾æ¥ https://github.com/countstarlight/deepin-wine-wechat-arch#%E5%85%BC%E5%AE%B9%E6%80%A7%E8%AE%B0%E5%BD%95
+      说明 把manjaro滚到最新版本后deepin-wine-wechat微信无法输入中文
+解决方法 deepin-wine-wechat的github上给出了兼容列表
+&lt;th&gt; wine版本 &lt;/th&gt; &lt;th&gt; 兼容性 &lt;/th&gt; &lt;th&gt; 备注 &lt;/th&gt; &lt;th&gt; deepin-wine版本 &lt;/th&gt; &lt;th&gt; 兼容性 &lt;/th&gt; &lt;th&gt; 备注 &lt;/th&gt; &lt;td&gt; 4.18-1 &lt;/td&gt; &lt;td&gt; 部分 &lt;/td&gt; &lt;td&gt; 不能使用中文输入法 &lt;/td&gt; &lt;td&gt; &lt;/td&gt; &lt;td&gt; &lt;/td&gt; &lt;td&gt; &lt;/td&gt; &lt;td&gt; 4.18-1 &lt;/td&gt; &lt;td&gt; 部分 &lt;/td&gt; &lt;td&gt; 不能使用中文输入法 &lt;/td&gt; &lt;td&gt; 2.18_18-2 &lt;/td&gt; &lt;td&gt; ? &lt;/td&gt; &lt;td&gt; &lt;/td&gt; &lt;td&gt; 4.18-1 &lt;/td&gt; &lt;td&gt; 部分 &lt;/td&gt; &lt;td&gt; 不能使用中文输入法 &lt;/td&gt; &lt;td&gt; 2.18_18-2 &lt;/td&gt; &lt;td&gt; 不支持 &lt;/td&gt; &lt;td&gt; 闪退 &lt;/td&gt; &lt;td&gt; 4.
     </div>
   </div>
 
@@ -589,16 +613,9 @@ DOWNGRADE_FROM_ALA=1 downgrade wine
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      è¯´æ æmanjaroæ»å°ææ°çæ¬ådeepin-wine-wechatå¾®ä¿¡æ æ³è¾å ¥ä¸­æ
-è§£å³æ¹æ³ deepin-wine-wechatçgithubä¸ç»åºäºå ¼å®¹åè¡¨
-éçº§æ¹æ³ å®è£ downgrade
-sudo pacman -S downgrade
-æ¥çwineåå²çæ¬
-DOWNGRADE_FROM_ALA=1 downgrade wine
-å®è£ å®æååºç°
-æ·»å&amp;#138; wineå&amp;#136;°IgnorePkg? [y/n]
-è¾å ¥yå°wineæ·»å å°IgnorePkg,é²æ­¢åç»­è¢«æ´æ°.
-é¾æ¥ https://github.com/countstarlight/deepin-wine-wechat-arch#%E5%85%BC%E5%AE%B9%E6%80%A7%E8%AE%B0%E5%BD%95
+      说明 把manjaro滚到最新版本后deepin-wine-wechat微信无法输入中文
+解决方法 deepin-wine-wechat的github上给出了兼容列表
+&lt;th&gt; wine版本 &lt;/th&gt; &lt;th&gt; 兼容性 &lt;/th&gt; &lt;th&gt; 备注 &lt;/th&gt; &lt;th&gt; deepin-wine版本 &lt;/th&gt; &lt;th&gt; 兼容性 &lt;/th&gt; &lt;th&gt; 备注 &lt;/th&gt; &lt;td&gt; 4.18-1 &lt;/td&gt; &lt;td&gt; 部分 &lt;/td&gt; &lt;td&gt; 不能使用中文输入法 &lt;/td&gt; &lt;td&gt; &lt;/td&gt; &lt;td&gt; &lt;/td&gt; &lt;td&gt; &lt;/td&gt; &lt;td&gt; 4.18-1 &lt;/td&gt; &lt;td&gt; 部分 &lt;/td&gt; &lt;td&gt; 不能使用中文输入法 &lt;/td&gt; &lt;td&gt; 2.18_18-2 &lt;/td&gt; &lt;td&gt; ? &lt;/td&gt; &lt;td&gt; &lt;/td&gt; &lt;td&gt; 4.18-1 &lt;/td&gt; &lt;td&gt; 部分 &lt;/td&gt; &lt;td&gt; 不能使用中文输入法 &lt;/td&gt; &lt;td&gt; 2.18_18-2 &lt;/td&gt; &lt;td&gt; 不支持 &lt;/td&gt; &lt;td&gt; 闪退 &lt;/td&gt; &lt;td&gt; 4.
     </div>
   </div>
 
@@ -622,7 +639,7 @@ DOWNGRADE_FROM_ALA=1 downgrade wine
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      æç §æç®åçååå³å¯:Activityå¤çèªå·±çSaveInstanceState,Fragmentå¤çèªå·±çSaveInstanceState,ä¸è¦è°ç¨Activityä¸Fragmentä¹é´æ°æ®ä¼ éçæ¹æ³.
+      按照最简单的原则即可:Activity处理自己的SaveInstanceState,Fragment处理自己的SaveInstanceState,不要调用Activity与Fragment之间数据传递的方法.
     </div>
   </div>
 
@@ -646,12 +663,12 @@ DOWNGRADE_FROM_ALA=1 downgrade wine
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      æ¹æ³ ffmpeg -v warning -ss 00:00:02 -t 2 -i 5.mp4 -vf scale=300:-1 -gifflags +transdiff -y 5.gif
--ss æªåå¼å§æ¶é´
--t æªåæ¶é¿
-5.mp4 æ¯è§é¢åç§°
-5.gif æ¯è½¬æ¢åçåç§°
-ç¸å ³é¾æ¥ http://blog.pkh.me/p/21-high-quality-gif-with-ffmpeg.html
+      方法 ffmpeg -v warning -ss 00:00:02 -t 2 -i 5.mp4 -vf scale=300:-1 -gifflags +transdiff -y 5.gif
+-ss 截取开始时间
+-t 截取时长
+5.mp4 是视频名称
+5.gif 是转换后的名称
+相关链接 http://blog.pkh.me/p/21-high-quality-gif-with-ffmpeg.html
     </div>
   </div>
 
@@ -675,8 +692,8 @@ DOWNGRADE_FROM_ALA=1 downgrade wine
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      é®é¢ Appä¸­ä¸ä¸ªéççbug,å½ç¨æ·ä½¿ç¨æ¯ä»å®è¿è¡æ¯ä»æ¶ä¼æ¦çåºé.å¹¶ä¸æ²¡æè§å¾.
-åå å¯¹æ¯æ¯ä»å®ççurl,åç°é¨ååæ°ä¸­å¤äº+å·,ç¨åºä¸­å¯¹urlè¿è¡äºURLDecoder.&lt;em&gt;decode&lt;/em&gt;(url),å¯¼è´ç©ºæ ¼åæäº+å·,ä»èå¯¼è´æ¯ä»å®æ¥é.
+      问题 App中一个遗留的bug,当用户使用支付宝进行支付时会概率出错.并且没有规律.
+原因 对比支付宝的的url,发现部分参数中多了+号,程序中对url进行了URLDecoder.&lt;em&gt;decode&lt;/em&gt;(url),导致空格变成了+号,从而导致支付宝报错.
     </div>
   </div>
 
@@ -700,9 +717,18 @@ DOWNGRADE_FROM_ALA=1 downgrade wine
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      èæ¯ ç¨æ·åé¦åä¸ºMate10 æ æ³ä½¿ç¨Appã
-åçº§ targetSdkVersion = 26
-éå°çé®é¢ ç½ç»è¯·æ±å¼å¸¸ TransactionTooLargeException éç¥æ¸ é FileUriExposedException Charlesæ æ³æHttps MODE_WORLD_READABLE no longer supported BadTokenException 7.1 Not allowed to start service getRunningServices deprecated in API level 26 As of O, this method is no longer available to third party applications. For backwards compatibility, it will still return the caller&rsquo;s own services. ps:æ¶é´å¤ªé¿äºæ³èµ·æ¥ååï¼è¯¦æ æç©ºåæ´ç 
+      背景 用户反馈华为Mate10 无法使用App。
+升级 targetSdkVersion = 26
+遇到的问题 网络请求异常
+TransactionTooLargeException
+通知渠道
+FileUriExposedException
+Charles无法抓Https
+MODE_WORLD_READABLE no longer supported
+BadTokenException 7.1
+Not allowed to start service
+getRunningServices deprecated in API level 26 As of O, this method is no longer available to third party applications. For backwards compatibility, it will still return the caller&rsquo;s own services.
+ps:时间太长了想起来再写，详情有空再整理
     </div>
   </div>
 
@@ -726,12 +752,12 @@ DOWNGRADE_FROM_ALA=1 downgrade wine
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      å½ä»¤ Remote git remote set-url origin git@github.com:xfans/VirtualApp.git
+      命令 Remote git remote set-url origin git@github.com:xfans/VirtualApp.git
 git push origin master
 Upstream git remote add upstream git@github.com:asLody/VirtualApp.git
 git fetch upstream
 git merge upstream/master
-å¿«éä¸è½½android frameworksæºç  git clone --branch android10-release git@gitee.com:mirrors/platform_frameworks_base.git --depth 1
+快速下载android frameworks源码 git clone --branch android10-release git@gitee.com:mirrors/platform_frameworks_base.git --depth 1
     </div>
   </div>
 
@@ -755,12 +781,12 @@ git merge upstream/master
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      å½ä»¤ Remote git remote set-url origin git@github.com:xfans/VirtualApp.git
+      命令 Remote git remote set-url origin git@github.com:xfans/VirtualApp.git
 git push origin master
 Upstream git remote add upstream git@github.com:asLody/VirtualApp.git
 git fetch upstream
 git merge upstream/master
-å¿«éä¸è½½android frameworksæºç  git clone --branch android10-release git@gitee.com:mirrors/platform_frameworks_base.git --depth 1
+快速下载android frameworks源码 git clone --branch android10-release git@gitee.com:mirrors/platform_frameworks_base.git --depth 1
     </div>
   </div>
 
@@ -777,17 +803,17 @@ git merge upstream/master
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      èæ¯ ææ¶åéè¦å¨GitHubä¸ä¸è½½åä¸ªç®å½éé¢çæä»¶ï¼èä¸éè¦å»å éæ´ä¸ªé¡¹ç®ï¼å¤ªå¤§çé¡¹ç®å éèµ·æ¥å¤ªæ ¢ã
-è§£å³æ¹æ¡ GitHubæ¯æ¯æSVNè®¿é®çï¼æä»¥å¯ä»¥ä½¿ç¨SVNä¸è½½åä¸ªç®å½ã
-ä¸è½½masteråæ¯ å¤å¶æµè§å¨å°åæ ä¸­çå°åï¼å¦ï¼
+      背景 有时候需要在GitHub上下载单个目录里面的文件，而不需要去克隆整个项目，太大的项目克隆起来太慢。
+解决方案 GitHub是支持SVN访问的，所以可以使用SVN下载单个目录。
+下载master分支 复制浏览器地址栏中的地址，如：
 https://github.com/bumptech/glide/tree/master/integration
-å°treeæ¹ä¸ºtrunkå³å¯ã
+将tree改为trunk即可。
 https://github.com/bumptech/glide/trunk/integration
-ä¸è½½å ¶ä»åæ¯ å¦ï¼
+下载其他分支 如：
 https://github.com/bumptech/glide/tree/3.0/integration
-å°treeæ¹ä¸ºbrancheså³å¯ã
+将tree改为branches即可。
 https://github.com/bumptech/glide/branches/3.0/integration
-ç¶åsvn checkout å³å¯ã
+然后svn checkout 即可。
     </div>
   </div>
 
@@ -811,14 +837,14 @@ https://github.com/bumptech/glide/branches/3.0/integration
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      é®é¢ é¨åå®¢æ·ç«¯apiæ¥éï¼ç¹å«æ¯8.0ç³»ç»ä¸ï¼è®¿é®apiåºç°bad request http request or invalid response,from ulbéè¯¯ã
-è§£å³æ­¥éª¤ 1.æå¡å¨èè° æå¡å¨ç«¯æªåç°é®é¢ï¼åæ°é½å¯¹ãæå¡å¨ä¸ä¹æ²¡æè¿å¥éè¯¯ä¿¡æ¯ãçæµåºè¯¥æ¯æå¡å¨ä¸å±æ¥åºæ¥çéè¯¯ï¼å¦è´è½½åè¡¡ã
-2.ç¨Charlesæå Charlesæå åï¼å°±ä¸ä¼åºç°è¯¥éè¯¯äºãåæ¥åç°Charleså¯¹éè¯¯æ¥æè¿è¡äºå ¼å®¹å¤çï¼åç»æå¡å¨çåºè¯¥å¯¹çã
-3.å»GIthubæ¥ç½ç»åºçissues é¡¹ç®ä¸­ä½¿ç¨çæ¯,Android-async-httpè¿ä¸ªåº,issuesä¸­æ²¡æäººè¯´8.0ä¸­æè¿ä¸ªé®é¢ï¼çæ³åºè¯¥æ¯èªå·±ä»£ç ä¸­çé®é¢ã
-4.å¤§é²¨é±¼Wiresharkæå å¤§é²¨é±¼Wiresharkæå åä¼åºç°è¯¥éè¯¯ï¼æ²¡æçåºæ¥ææå¼å¸¸ã
-æ¯è¾æ­£ç¡®çæ¥æåéè¯¯çæ¥æï¼åç°å¤§å°ä¸ä¸æ ·ã
-æç»åç°ï¼æ¾äºå¥½ä¹ ï¼åæ­£å°±æ¯å¾è°é¾ï¼ï¼éè¯¯çæ¥æHeaderä¸­å¤äºä¸ä¸ªç©ºè¡ã
-å¨å¾Headerä¸­æ·»å åæ°æ¶ï¼æä¸ä¸ªåæ°åºç°äº\n,æ­£å¸¸æ åµä¸å®¢æ·ç«¯åéæ¥æçæ¶ä¼å¿½ç¥\nï¼èæççæ¬æ\næ¾å¨äºæ¥æä¸­ï¼å¯¼è´æ¥ææ ¼å¼åºéã
+      问题 部分客户端api报错，特别是8.0系统上，访问api出现bad request http request or invalid response,from ulb错误。
+解决步骤 1.服务器联调 服务器端未发现问题，参数都对。服务器上也没有这句错误信息。猜测应该是服务器上层报出来的错误，如负载均衡。
+2.用Charles抓包 Charles抓包后，就不会出现该错误了。后来发现Charles对错误报文进行了兼容处理，发给服务器的应该对的。
+3.去GIthub查网络库的issues 项目中使用的是,Android-async-http这个库,issues中没有人说8.0中有这个问题，猜想应该是自己代码中的问题。
+4.大鲨鱼Wireshark抓包 大鲨鱼Wireshark抓包后会出现该错误，没有看出报文有异常。
+比较正确的报文和错误的报文，发现大小不一样。
+最终发现（找了好久，反正就是很艰难），错误的报文Header中多了一个空行。
+原因 在往Header中添加参数时，有一个参数出现了\n,正常情况下客户端发送报文的时会忽略\n，而有的版本把\n放在了报文中，导致报文格式出错。
     </div>
   </div>
 
@@ -842,14 +868,14 @@ https://github.com/bumptech/glide/branches/3.0/integration
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      é®é¢ é¨åå®¢æ·ç«¯apiæ¥éï¼ç¹å«æ¯8.0ç³»ç»ä¸ï¼è®¿é®apiåºç°bad request http request or invalid response,from ulbéè¯¯ã
-è§£å³æ­¥éª¤ 1.æå¡å¨èè° æå¡å¨ç«¯æªåç°é®é¢ï¼åæ°é½å¯¹ãæå¡å¨ä¸ä¹æ²¡æè¿å¥éè¯¯ä¿¡æ¯ãçæµåºè¯¥æ¯æå¡å¨ä¸å±æ¥åºæ¥çéè¯¯ï¼å¦è´è½½åè¡¡ã
-2.ç¨Charlesæå Charlesæå åï¼å°±ä¸ä¼åºç°è¯¥éè¯¯äºãåæ¥åç°Charleså¯¹éè¯¯æ¥æè¿è¡äºå ¼å®¹å¤çï¼åç»æå¡å¨çåºè¯¥å¯¹çã
-3.å»GIthubæ¥ç½ç»åºçissues é¡¹ç®ä¸­ä½¿ç¨çæ¯,Android-async-httpè¿ä¸ªåº,issuesä¸­æ²¡æäººè¯´8.0ä¸­æè¿ä¸ªé®é¢ï¼çæ³åºè¯¥æ¯èªå·±ä»£ç ä¸­çé®é¢ã
-4.å¤§é²¨é±¼Wiresharkæå å¤§é²¨é±¼Wiresharkæå åä¼åºç°è¯¥éè¯¯ï¼æ²¡æçåºæ¥ææå¼å¸¸ã
-æ¯è¾æ­£ç¡®çæ¥æåéè¯¯çæ¥æï¼åç°å¤§å°ä¸ä¸æ ·ã
-æç»åç°ï¼æ¾äºå¥½ä¹ ï¼åæ­£å°±æ¯å¾è°é¾ï¼ï¼éè¯¯çæ¥æHeaderä¸­å¤äºä¸ä¸ªç©ºè¡ã
-å¨å¾Headerä¸­æ·»å åæ°æ¶ï¼æä¸ä¸ªåæ°åºç°äº\n,æ­£å¸¸æ åµä¸å®¢æ·ç«¯åéæ¥æçæ¶ä¼å¿½ç¥\nï¼èæççæ¬æ\næ¾å¨äºæ¥æä¸­ï¼å¯¼è´æ¥ææ ¼å¼åºéã
+      问题 部分客户端api报错，特别是8.0系统上，访问api出现bad request http request or invalid response,from ulb错误。
+解决步骤 1.服务器联调 服务器端未发现问题，参数都对。服务器上也没有这句错误信息。猜测应该是服务器上层报出来的错误，如负载均衡。
+2.用Charles抓包 Charles抓包后，就不会出现该错误了。后来发现Charles对错误报文进行了兼容处理，发给服务器的应该对的。
+3.去GIthub查网络库的issues 项目中使用的是,Android-async-http这个库,issues中没有人说8.0中有这个问题，猜想应该是自己代码中的问题。
+4.大鲨鱼Wireshark抓包 大鲨鱼Wireshark抓包后会出现该错误，没有看出报文有异常。
+比较正确的报文和错误的报文，发现大小不一样。
+最终发现（找了好久，反正就是很艰难），错误的报文Header中多了一个空行。
+原因 在往Header中添加参数时，有一个参数出现了\n,正常情况下客户端发送报文的时会忽略\n，而有的版本把\n放在了报文中，导致报文格式出错。
     </div>
   </div>
 
@@ -873,17 +899,17 @@ https://github.com/bumptech/glide/branches/3.0/integration
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      èæ¯ ææ¶åéè¦å¨GitHubä¸ä¸è½½åä¸ªç®å½éé¢çæä»¶ï¼èä¸éè¦å»å éæ´ä¸ªé¡¹ç®ï¼å¤ªå¤§çé¡¹ç®å éèµ·æ¥å¤ªæ ¢ã
-è§£å³æ¹æ¡ GitHubæ¯æ¯æSVNè®¿é®çï¼æä»¥å¯ä»¥ä½¿ç¨SVNä¸è½½åä¸ªç®å½ã
-ä¸è½½masteråæ¯ å¤å¶æµè§å¨å°åæ ä¸­çå°åï¼å¦ï¼
+      背景 有时候需要在GitHub上下载单个目录里面的文件，而不需要去克隆整个项目，太大的项目克隆起来太慢。
+解决方案 GitHub是支持SVN访问的，所以可以使用SVN下载单个目录。
+下载master分支 复制浏览器地址栏中的地址，如：
 https://github.com/bumptech/glide/tree/master/integration
-å°treeæ¹ä¸ºtrunkå³å¯ã
+将tree改为trunk即可。
 https://github.com/bumptech/glide/trunk/integration
-ä¸è½½å ¶ä»åæ¯ å¦ï¼
+下载其他分支 如：
 https://github.com/bumptech/glide/tree/3.0/integration
-å°treeæ¹ä¸ºbrancheså³å¯ã
+将tree改为branches即可。
 https://github.com/bumptech/glide/branches/3.0/integration
-ç¶åsvn checkout å³å¯ã
+然后svn checkout 即可。
     </div>
   </div>
 
@@ -907,17 +933,9 @@ https://github.com/bumptech/glide/branches/3.0/integration
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      èæ¯ ç¨æ·ç»å¸¸å¨å½å¤ä½¿ç¨Appï¼å½å¤çç½ç»ç¯å¢æ´å å¤æï¼ç»å¸¸ä¼åºç°UnknownHostExceptionçå¼å¸¸ï¼æ æ³è§£æDNSã
-è§£å³æ¹æ¡ å½éå°è¯¥å¼å¸¸æ¶å°±éè¦èªå·±å»è§£æDNSãå¸¸ç¨çèªå·±è§£æDNSçæ¹å¼æä¸¤ç§
-1.èªå·±æ¿å°IPåæ¿æ¢ååï¼Appèçæ¹å¼ï¼ æ¯å¦ä½¿ç¨dnsjavaæ¿å°IPåéè¦ï¼
-å¯¹è¯·æ±çååè¿è¡æ¿æ¢ å¯¹Headerä¸­çHostè¿è¡æ¿æ¢ å¯¹Cookieä¸­çdomainè¿è¡æ¿æ¢ Httpsä¸è¯ä¹¦æ ¡éªé®é¢ .â¦â¦ start=&ldquo;1.&quot;&gt; ä½¿ç¨èµ·æ¥æ¯è¾éº»ç¦ï¼é®é¢è¾å¤ã
-2.ä½¿ç¨Okhttpèªå®ä¹DNSåè½ ç®ååæAppä»android-async-httpåæ¢å°OKhttpã(PS:è±äºä¸å¨å¤æ¶é´ï¼æ¹å°åè¡)ï¼å¯ä»¥ç´æ¥ä½¿ç¨Okhttpèªå®ä¹dnsåè½ã
-DNSçè§£ææ¹å¼éæ©äºHTTPDNSï¼HTTPDNSç´æ¥ä½¿ç¨ HTTPåè®®å»æ¥è¯¢DNSï¼é¿å¼äºä¼ ç»UDPæ¹å¼DNSçDNSå«æï¼ä¸åç¡®ç­å¼ç«¯ã
-è¯¦è§ï¼ãé¹ åç½äºãå ¨å±ç²¾ç¡®æµéè°åº¦æ°æè·¯-HttpDNSæå¡è¯¦è§£ 3.Okhttpèªå®ä¹DNS HTTPDNSéæ©äºDNSpodåGoogle Public DNSä¸¤å®¶ã
-å¨å½å¤éç¨Google Public DNS
-å¨å½å éç¨DNSpod
-å®ç°æ¹å¼å¦ä¸ï¼
-&lt;pre class=&#34;line-numbers prism-highlight&#34; data-start=&#34;1&#34;&gt;```java public class OkDns implements Dns { private String mIps; private long mLastDnsTime; private static final long DNS_TTL = 600 * 1000;//è&amp;#135;ªå®&amp;#154;ä¹&amp;#137;DNSç¼&amp;#147;å­&amp;#152;æ&amp;#151;¶é&amp;#151;´ @Override public List&lt;InetAddress&gt; lookup(String hostname) throws UnknownHostException { try { List&lt;InetAddress&gt; list = Dns.
+      背景 用户经常在国外使用App，国外的网络环境更加复杂，经常会出现UnknownHostException的异常，无法解析DNS。
+解决方案 当遇到该异常时就需要自己去解析DNS。常用的自己解析DNS的方式有两种
+1.自己拿到IP后替换域名（App老的方式） 比如使用dnsjava拿到IP后需要：
     </div>
   </div>
 
@@ -941,15 +959,23 @@ DNSçè§£ææ¹å¼éæ©äºHTTPDNSï¼HTTPDNSç´æ�
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      augmented-traffic-control A tool to simulate network conditions,Facebookæä¾çä¸æ¬¾ç½ç»ç¯å¢æ¨¡æå·¥å ·ï¼å¯ä»¥ä½¿ç¨ä»æ¥æµè¯Appå¨åç§ç½ç»ç¯å¢ä¸çé®é¢ã
-å®è£ ç¯å¢è¦æ± Python2.7ãDjango1.10.+
-ä»¥ä¸å¨Manjoraä¸çå®è£ å½ä»¤
-åæ¢Pythonç¯å¢å°Python2.7 å®è£ pip sudo pacman -S python2-pip
-å®è£ Django1.10.+ sudo pip install Django==1.10.8
-å®è£ ATC å®è£ lib sudo pacman -S pip install atc_thrift atcd django-atc-api django-atc-demo-ui django-atc-profile-storage
-Djangoé ç½® django-admin startproject atcui
+      augmented-traffic-control A tool to simulate network conditions,Facebook提供的一款网络环境模拟工具，可以使用他来测试App在各种网络环境下的问题。
+安装环境要求 Python2.7、Django1.10.+
+以下在Manjora下的安装命令
+切换Python环境到Python2.7 安装pip sudo pacman -S python2-pip
+安装Django1.10.+ sudo pip install Django==1.10.8
+安装ATC 安装lib sudo pacman -S pip install atc_thrift atcd django-atc-api django-atc-demo-ui django-atc-profile-storage
+Django配置 django-admin startproject atcui
 cd atcui
-ä¿®æ¹atcui/settings.pyä¸­çINSTALLED_APPS &lt;pre class=&#34;line-numbers prism-highlight&#34; data-start=&#34;1&#34;&gt;```bash INSTALLED_APPS = ( ... # Django ATC API &#39;rest_framework&#39;, &#39;atc_api&#39;, # Django ATC Demo UI &#39;bootstrap_themes&#39;, &#39;django_static_jquery&#39;, &#39;atc_demo_ui&#39;, # Django ATC Profile Storage &#39;atc_profile_storage&#39;, ) #### ä¿®æ&amp;#148;¹atcui/urls.
+修改atcui/settings.py中的INSTALLED_APPS 修改atcui/urls.py中的urlpatterns及引用 更新数据库 python manage.py migrate
+创建虚拟Ap Linux开启虚拟AP
+启动ATC sudo atcd --atcd-wan wlp3s0 --atcd-lan ap0
+注意：wlp3s0是我的无线网卡，ap0是我创建的虚拟ap网卡
+设置错误可能出现：https://github.com/facebook/augmented-traffic-control/issues/239
+启动ATCUI python manage.py runserver 0.0.0.0:8000
+导入默认配置 下载该路径下的文件https://github.com/facebook/augmented-traffic-control/tree/master/utils 运行导入命令 ./restore-profiles.sh localhost:8000
+手机使用ATC 使用Android、iOS 的浏览器访问
+ip:8000 ip为你电脑的ip
     </div>
   </div>
 
@@ -966,12 +992,12 @@ cd atcui
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      å®è£ create_ap pacman -S create_ap
-å¢å ä¸ä¸ªèæç½ç»æ¥å£å¹¶è®¾ç½®ä¸ä¸ªmacå°å sudo iw dev wlp3s0 interface add wlp3s0_ap type __ap
+      安装create_ap pacman -S create_ap
+增加一个虚拟网络接口并设置一个mac地址 sudo iw dev wlp3s0 interface add wlp3s0_ap type __ap
 sudo ip link set dev wlp3s0_ap address 04:e2:b9:17:18:72
-åå»ºAP sudo create_ap -c 11 wlp3s0_ap wlp3s0 xfans_ap 321321321
-create_apä¸è½½ https://github.com/oblique/create_ap
-åè https://wiki.archlinux.org/index.php/Software_access_point_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)
+创建AP sudo create_ap -c 11 wlp3s0_ap wlp3s0 xfans_ap 321321321
+create_ap下载 https://github.com/oblique/create_ap
+参考 https://wiki.archlinux.org/index.php/Software_access_point_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)
 https://www.zhihu.com/question/24961490
     </div>
   </div>
@@ -989,9 +1015,9 @@ https://www.zhihu.com/question/24961490
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      æ¥æ¾å¯ç¨å æ ¸ pacman -Ss linux-headers
-pacman -S linuxXY linuxXY-headers
-æ³¨æ:XYä¸ºä½ è¦å®è£ ççæ¬å·,å¦:
+      查找可用内核 pacman -Ss linux-headers
+安装 pacman -S linuxXY linuxXY-headers
+注意:XY为你要安装的版本号,如:
 pacman -S linux49 linux49-headers
     </div>
   </div>
@@ -1009,7 +1035,7 @@ pacman -S linux49 linux49-headers
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      &lt;pre class=&#34;prism-highlight line-numbers&#34; data-start=&#34;1&#34;&gt;```null sudo ln -sf /bin/python3.6 /bin/python sudo ln -sf /bin/python2.7 /bin/python 
+       
     </div>
   </div>
 
@@ -1026,7 +1052,7 @@ pacman -S linux49 linux49-headers
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      &lt;pre class=&#34;prism-highlight line-numbers&#34; data-start=&#34;1&#34;&gt;```null sudo update-grub 
+       
     </div>
   </div>
 
@@ -1043,8 +1069,8 @@ pacman -S linux49 linux49-headers
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Manjaroå ³é­ç¬ç«æ¾å¡
-å®è£ bbswitch &lt;pre class=&#34;prism-highlight line-numbers&#34; data-start=&#34;1&#34;&gt;```null pacman -S bbswitch ### å&amp;#156;¨/etc/modules-load.dä¸&amp;#139;æ&amp;#150;°å»ºbbswitch.confï¼&amp;#140;å¹¶ä¿®æ&amp;#148;¹ä¸ºå¦&amp;#130;ä¸&amp;#139;å&amp;#134; å®¹ã&amp;#128;&amp;#130;è¿&amp;#153;æ ·æ¯&amp;#143;æ¬¡å&amp;#144;¯å&amp;#138;¨é&amp;#131;½ä¼&amp;#154;å&amp;#138; è½½bbswitchæ¨¡å&amp;#157;&amp;#151;äº&amp;#134; 
+      Manjaro关闭独立显卡
+安装bbswitch 在/etc/modules-load.d下新建bbswitch.conf，并修改为如下内容。这样每次启动都会加载bbswitch模块了 在/etc/modprobe.d/下新建bbswitch.conf，并修改为如下内容。这是bbswitch加载的参数，我们让其默认关闭 在/etc/modprobe.d/下新建nouveau_blacklist.conf，并修改为如下内容。有时候bbswitch加载了，但是不能关闭显卡，因为有些模块正在占用着，因此要禁掉。 在/usr/lib/systemd/system-shutdown/下新建nvidia_card_enable.sh，并修改为以下内容，记得加运行权限。每次reboot的时候，显卡都是关闭的，不管是重启到windows还是linux，都会找不到设备，必须彻底关机才行。解决该问题的办法就是每次重启都启用显卡 查看状态 原文 http://blog.csdn.net/gt945/article/details/10922263
     </div>
   </div>
 
@@ -1068,15 +1094,23 @@ pacman -S linux49 linux49-headers
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      augmented-traffic-control A tool to simulate network conditions,Facebookæä¾çä¸æ¬¾ç½ç»ç¯å¢æ¨¡æå·¥å ·ï¼å¯ä»¥ä½¿ç¨ä»æ¥æµè¯Appå¨åç§ç½ç»ç¯å¢ä¸çé®é¢ã
-å®è£ ç¯å¢è¦æ± Python2.7ãDjango1.10.+
-ä»¥ä¸å¨Manjoraä¸çå®è£ å½ä»¤
-åæ¢Pythonç¯å¢å°Python2.7 å®è£ pip sudo pacman -S python2-pip
-å®è£ Django1.10.+ sudo pip install Django==1.10.8
-å®è£ ATC å®è£ lib sudo pacman -S pip install atc_thrift atcd django-atc-api django-atc-demo-ui django-atc-profile-storage
-Djangoé ç½® django-admin startproject atcui
+      augmented-traffic-control A tool to simulate network conditions,Facebook提供的一款网络环境模拟工具，可以使用他来测试App在各种网络环境下的问题。
+安装环境要求 Python2.7、Django1.10.+
+以下在Manjora下的安装命令
+切换Python环境到Python2.7 安装pip sudo pacman -S python2-pip
+安装Django1.10.+ sudo pip install Django==1.10.8
+安装ATC 安装lib sudo pacman -S pip install atc_thrift atcd django-atc-api django-atc-demo-ui django-atc-profile-storage
+Django配置 django-admin startproject atcui
 cd atcui
-ä¿®æ¹atcui/settings.pyä¸­çINSTALLED_APPS &lt;pre class=&#34;line-numbers prism-highlight&#34; data-start=&#34;1&#34;&gt;```bash INSTALLED_APPS = ( ... # Django ATC API &#39;rest_framework&#39;, &#39;atc_api&#39;, # Django ATC Demo UI &#39;bootstrap_themes&#39;, &#39;django_static_jquery&#39;, &#39;atc_demo_ui&#39;, # Django ATC Profile Storage &#39;atc_profile_storage&#39;, ) #### ä¿®æ&amp;#148;¹atcui/urls.
+修改atcui/settings.py中的INSTALLED_APPS 修改atcui/urls.py中的urlpatterns及引用 更新数据库 python manage.py migrate
+创建虚拟Ap Linux开启虚拟AP
+启动ATC sudo atcd --atcd-wan wlp3s0 --atcd-lan ap0
+注意：wlp3s0是我的无线网卡，ap0是我创建的虚拟ap网卡
+设置错误可能出现：https://github.com/facebook/augmented-traffic-control/issues/239
+启动ATCUI python manage.py runserver 0.0.0.0:8000
+导入默认配置 下载该路径下的文件https://github.com/facebook/augmented-traffic-control/tree/master/utils 运行导入命令 ./restore-profiles.sh localhost:8000
+手机使用ATC 使用Android、iOS 的浏览器访问
+ip:8000 ip为你电脑的ip
     </div>
   </div>
 
@@ -1100,7 +1134,7 @@ cd atcui
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      æå°æ¹æ³è°ç¨å æ  &lt;pre class=&#34;line-numbers prism-highlight&#34; data-start=&#34;1&#34;&gt;```java public static void showFillInStackTrace() { RuntimeException e = new RuntimeException(); Throwable e1 = e.fillInStackTrace(); Log.e(&#34;debug&#34;,&#34;fillInStackTrace&#34;,e1); } 
+      打印方法调用堆栈 
     </div>
   </div>
 
@@ -1124,11 +1158,30 @@ cd atcui
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      å¤è¾¹æ ¢,å¤ä»½ä¸
-wp.getUsersBlogs Retrieve the blogs of the users.
-Parameters string username string password Return Values array struct boolean isAdmin string url string blogid string blogName string xmlrpc wp.getTags Get list of all tags.
-Parameters int blog_id string username string password Return Values array struct int tag_id string name int count string slug string html_url string rss_url wp.getAuthors Get an array of users for the blog.
-Parameters int blog_id string username string password Return Values array struct int user_id string user_login string display_name string meta_value (Serialized PHP data) &hellip; wp.
+      <p>外边慢,备份下</p>
+<h2 id="wpgetusersblogs">wp.getUsersBlogs</h2>
+<p>Retrieve the blogs of the users.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li>string username</li>
+<li>string password</li>
+</ul>
+<h3 id="return-values">Return Values</h3>
+<ul>
+<li>array
+<ul>
+<li>struct
+<ul>
+<li>boolean isAdmin</li>
+<li>string url</li>
+<li>string blogid</li>
+<li>string blogName</li>
+<li>string xmlrpc</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
     </div>
   </div>
 
@@ -1152,7 +1205,8 @@ Parameters int blog_id string username string password Return Values array struc
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      &lt;pre class=&#34;prism-highlight line-numbers&#34; data-start=&#34;1&#34;&gt;```null public class MainActivity extends Activity { @Override protected void onCreate(Bundle savedInstanceState) { super.onCreate(savedInstanceState); ImageView imageView = (ImageView) findViewById(R.id.yourImageView); imageView.setLayerType(View.LAYER_TYPE_SOFTWARE, null); try { SVG svg = SVG.getFromResource(this, R.raw.my_svg_file); Drawable drawable = new PictureDrawable(svg.renderToPicture()); imageView.setImageDrawable(drawable); } catch(SVGParseException e) {} } } å&amp;#156;°å&amp;#157;&amp;#128;:http://bigbadaboom.github.io/androidsvg/use\_with\_ImageView.html Github:https://github.com/BigBadaboom/androidsvg 
+      地址:http://bigbadaboom.github.io/androidsvg/use_with_ImageView.html
+Github:https://github.com/BigBadaboom/androidsvg
     </div>
   </div>
 

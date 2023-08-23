@@ -6,14 +6,14 @@
     <description>Recent content in debug on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 10 Oct 2017 16:49:52 +0000</lastBuildDate><atom:link href="/tags/debug/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 10 Oct 2017 08:49:52 +0000</lastBuildDate><atom:link href="/tags/debug/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>android打印函数调用堆栈</title>
       <link>/archives/46/</link>
-      <pubDate>Tue, 10 Oct 2017 16:49:52 +0000</pubDate>
+      <pubDate>Tue, 10 Oct 2017 08:49:52 +0000</pubDate>
       
       <guid>/archives/46/</guid>
-      <description>æå°æ¹æ³è°ç¨å æ  &amp;lt;pre class=&amp;#34;line-numbers prism-highlight&amp;#34; data-start=&amp;#34;1&amp;#34;&amp;gt;```java public static void showFillInStackTrace() { RuntimeException e = new RuntimeException(); Throwable e1 = e.fillInStackTrace(); Log.e(&amp;#34;debug&amp;#34;,&amp;#34;fillInStackTrace&amp;#34;,e1); } </description>
+      <description>打印方法调用堆栈 </description>
     </item>
     
   </channel>

@@ -6,15 +6,23 @@
     
     <title>Linux下安装网络环境模拟工具augmented-traffic-control | </title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="augmented-traffic-control A tool to simulate network conditions,Facebookæä¾çä¸æ¬¾ç½ç»ç¯å¢æ¨¡æå·¥å ·ï¼å¯ä»¥ä½¿ç¨ä»æ¥æµè¯Appå¨åç§ç½ç»ç¯å¢ä¸çé®é¢ã
-å®è£ ç¯å¢è¦æ± Python2.7ãDjango1.10.&#43;
-ä»¥ä¸å¨Manjoraä¸çå®è£ å½ä»¤
-åæ¢Pythonç¯å¢å°Python2.7 å®è£ pip sudo pacman -S python2-pip
-å®è£ Django1.10.&#43; sudo pip install Django==1.10.8
-å®è£ ATC å®è£ lib sudo pacman -S pip install atc_thrift atcd django-atc-api django-atc-demo-ui django-atc-profile-storage
-Djangoé ç½® django-admin startproject atcui
+    <meta name="description" content="augmented-traffic-control A tool to simulate network conditions,Facebook提供的一款网络环境模拟工具，可以使用他来测试App在各种网络环境下的问题。
+安装环境要求 Python2.7、Django1.10.&#43;
+以下在Manjora下的安装命令
+切换Python环境到Python2.7 安装pip sudo pacman -S python2-pip
+安装Django1.10.&#43; sudo pip install Django==1.10.8
+安装ATC 安装lib sudo pacman -S pip install atc_thrift atcd django-atc-api django-atc-demo-ui django-atc-profile-storage
+Django配置 django-admin startproject atcui
 cd atcui
-ä¿®æ¹atcui/settings.pyä¸­çINSTALLED_APPS &lt;pre class=&#34;line-numbers prism-highlight&#34; data-start=&#34;1&#34;&gt;```bash INSTALLED_APPS = ( ... # Django ATC API &#39;rest_framework&#39;, &#39;atc_api&#39;, # Django ATC Demo UI &#39;bootstrap_themes&#39;, &#39;django_static_jquery&#39;, &#39;atc_demo_ui&#39;, # Django ATC Profile Storage &#39;atc_profile_storage&#39;, ) #### ä¿®æ&amp;#148;¹atcui/urls.">
+修改atcui/settings.py中的INSTALLED_APPS 修改atcui/urls.py中的urlpatterns及引用 更新数据库 python manage.py migrate
+创建虚拟Ap Linux开启虚拟AP
+启动ATC sudo atcd --atcd-wan wlp3s0 --atcd-lan ap0
+注意：wlp3s0是我的无线网卡，ap0是我创建的虚拟ap网卡
+设置错误可能出现：https://github.com/facebook/augmented-traffic-control/issues/239
+启动ATCUI python manage.py runserver 0.0.0.0:8000
+导入默认配置 下载该路径下的文件https://github.com/facebook/augmented-traffic-control/tree/master/utils 运行导入命令 ./restore-profiles.sh localhost:8000
+手机使用ATC 使用Android、iOS 的浏览器访问
+ip:8000 ip为你电脑的ip">
     <meta name="generator" content="Hugo 0.117.0">
     
     
@@ -38,42 +46,66 @@ cd atcui
     
     
     <meta property="og:title" content="Linux下安装网络环境模拟工具augmented-traffic-control" />
-<meta property="og:description" content="augmented-traffic-control A tool to simulate network conditions,Facebookæä¾çä¸æ¬¾ç½ç»ç¯å¢æ¨¡æå·¥å ·ï¼å¯ä»¥ä½¿ç¨ä»æ¥æµè¯Appå¨åç§ç½ç»ç¯å¢ä¸çé®é¢ã
-å®è£ ç¯å¢è¦æ± Python2.7ãDjango1.10.&#43;
-ä»¥ä¸å¨Manjoraä¸çå®è£ å½ä»¤
-åæ¢Pythonç¯å¢å°Python2.7 å®è£ pip sudo pacman -S python2-pip
-å®è£ Django1.10.&#43; sudo pip install Django==1.10.8
-å®è£ ATC å®è£ lib sudo pacman -S pip install atc_thrift atcd django-atc-api django-atc-demo-ui django-atc-profile-storage
-Djangoé ç½® django-admin startproject atcui
+<meta property="og:description" content="augmented-traffic-control A tool to simulate network conditions,Facebook提供的一款网络环境模拟工具，可以使用他来测试App在各种网络环境下的问题。
+安装环境要求 Python2.7、Django1.10.&#43;
+以下在Manjora下的安装命令
+切换Python环境到Python2.7 安装pip sudo pacman -S python2-pip
+安装Django1.10.&#43; sudo pip install Django==1.10.8
+安装ATC 安装lib sudo pacman -S pip install atc_thrift atcd django-atc-api django-atc-demo-ui django-atc-profile-storage
+Django配置 django-admin startproject atcui
 cd atcui
-ä¿®æ¹atcui/settings.pyä¸­çINSTALLED_APPS &lt;pre class=&#34;line-numbers prism-highlight&#34; data-start=&#34;1&#34;&gt;```bash INSTALLED_APPS = ( ... # Django ATC API &#39;rest_framework&#39;, &#39;atc_api&#39;, # Django ATC Demo UI &#39;bootstrap_themes&#39;, &#39;django_static_jquery&#39;, &#39;atc_demo_ui&#39;, # Django ATC Profile Storage &#39;atc_profile_storage&#39;, ) #### ä¿®æ&amp;#148;¹atcui/urls." />
+修改atcui/settings.py中的INSTALLED_APPS 修改atcui/urls.py中的urlpatterns及引用 更新数据库 python manage.py migrate
+创建虚拟Ap Linux开启虚拟AP
+启动ATC sudo atcd --atcd-wan wlp3s0 --atcd-lan ap0
+注意：wlp3s0是我的无线网卡，ap0是我创建的虚拟ap网卡
+设置错误可能出现：https://github.com/facebook/augmented-traffic-control/issues/239
+启动ATCUI python manage.py runserver 0.0.0.0:8000
+导入默认配置 下载该路径下的文件https://github.com/facebook/augmented-traffic-control/tree/master/utils 运行导入命令 ./restore-profiles.sh localhost:8000
+手机使用ATC 使用Android、iOS 的浏览器访问
+ip:8000 ip为你电脑的ip" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/archives/56/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2017-11-23T20:10:48+00:00" />
-<meta property="article:modified_time" content="2017-11-23T20:10:48+00:00" />
+<meta property="article:published_time" content="2017-11-23T12:10:48+00:00" />
+<meta property="article:modified_time" content="2017-11-23T12:10:48+00:00" />
 <meta itemprop="name" content="Linux下安装网络环境模拟工具augmented-traffic-control">
-<meta itemprop="description" content="augmented-traffic-control A tool to simulate network conditions,Facebookæä¾çä¸æ¬¾ç½ç»ç¯å¢æ¨¡æå·¥å ·ï¼å¯ä»¥ä½¿ç¨ä»æ¥æµè¯Appå¨åç§ç½ç»ç¯å¢ä¸çé®é¢ã
-å®è£ ç¯å¢è¦æ± Python2.7ãDjango1.10.&#43;
-ä»¥ä¸å¨Manjoraä¸çå®è£ å½ä»¤
-åæ¢Pythonç¯å¢å°Python2.7 å®è£ pip sudo pacman -S python2-pip
-å®è£ Django1.10.&#43; sudo pip install Django==1.10.8
-å®è£ ATC å®è£ lib sudo pacman -S pip install atc_thrift atcd django-atc-api django-atc-demo-ui django-atc-profile-storage
-Djangoé ç½® django-admin startproject atcui
+<meta itemprop="description" content="augmented-traffic-control A tool to simulate network conditions,Facebook提供的一款网络环境模拟工具，可以使用他来测试App在各种网络环境下的问题。
+安装环境要求 Python2.7、Django1.10.&#43;
+以下在Manjora下的安装命令
+切换Python环境到Python2.7 安装pip sudo pacman -S python2-pip
+安装Django1.10.&#43; sudo pip install Django==1.10.8
+安装ATC 安装lib sudo pacman -S pip install atc_thrift atcd django-atc-api django-atc-demo-ui django-atc-profile-storage
+Django配置 django-admin startproject atcui
 cd atcui
-ä¿®æ¹atcui/settings.pyä¸­çINSTALLED_APPS &lt;pre class=&#34;line-numbers prism-highlight&#34; data-start=&#34;1&#34;&gt;```bash INSTALLED_APPS = ( ... # Django ATC API &#39;rest_framework&#39;, &#39;atc_api&#39;, # Django ATC Demo UI &#39;bootstrap_themes&#39;, &#39;django_static_jquery&#39;, &#39;atc_demo_ui&#39;, # Django ATC Profile Storage &#39;atc_profile_storage&#39;, ) #### ä¿®æ&amp;#148;¹atcui/urls."><meta itemprop="datePublished" content="2017-11-23T20:10:48+00:00" />
-<meta itemprop="dateModified" content="2017-11-23T20:10:48+00:00" />
-<meta itemprop="wordCount" content="79">
+修改atcui/settings.py中的INSTALLED_APPS 修改atcui/urls.py中的urlpatterns及引用 更新数据库 python manage.py migrate
+创建虚拟Ap Linux开启虚拟AP
+启动ATC sudo atcd --atcd-wan wlp3s0 --atcd-lan ap0
+注意：wlp3s0是我的无线网卡，ap0是我创建的虚拟ap网卡
+设置错误可能出现：https://github.com/facebook/augmented-traffic-control/issues/239
+启动ATCUI python manage.py runserver 0.0.0.0:8000
+导入默认配置 下载该路径下的文件https://github.com/facebook/augmented-traffic-control/tree/master/utils 运行导入命令 ./restore-profiles.sh localhost:8000
+手机使用ATC 使用Android、iOS 的浏览器访问
+ip:8000 ip为你电脑的ip"><meta itemprop="datePublished" content="2017-11-23T12:10:48+00:00" />
+<meta itemprop="dateModified" content="2017-11-23T12:10:48+00:00" />
+<meta itemprop="wordCount" content="76">
 <meta itemprop="keywords" content="android,linux,网络环境," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Linux下安装网络环境模拟工具augmented-traffic-control"/>
-<meta name="twitter:description" content="augmented-traffic-control A tool to simulate network conditions,Facebookæä¾çä¸æ¬¾ç½ç»ç¯å¢æ¨¡æå·¥å ·ï¼å¯ä»¥ä½¿ç¨ä»æ¥æµè¯Appå¨åç§ç½ç»ç¯å¢ä¸çé®é¢ã
-å®è£ ç¯å¢è¦æ± Python2.7ãDjango1.10.&#43;
-ä»¥ä¸å¨Manjoraä¸çå®è£ å½ä»¤
-åæ¢Pythonç¯å¢å°Python2.7 å®è£ pip sudo pacman -S python2-pip
-å®è£ Django1.10.&#43; sudo pip install Django==1.10.8
-å®è£ ATC å®è£ lib sudo pacman -S pip install atc_thrift atcd django-atc-api django-atc-demo-ui django-atc-profile-storage
-Djangoé ç½® django-admin startproject atcui
+<meta name="twitter:description" content="augmented-traffic-control A tool to simulate network conditions,Facebook提供的一款网络环境模拟工具，可以使用他来测试App在各种网络环境下的问题。
+安装环境要求 Python2.7、Django1.10.&#43;
+以下在Manjora下的安装命令
+切换Python环境到Python2.7 安装pip sudo pacman -S python2-pip
+安装Django1.10.&#43; sudo pip install Django==1.10.8
+安装ATC 安装lib sudo pacman -S pip install atc_thrift atcd django-atc-api django-atc-demo-ui django-atc-profile-storage
+Django配置 django-admin startproject atcui
 cd atcui
-ä¿®æ¹atcui/settings.pyä¸­çINSTALLED_APPS &lt;pre class=&#34;line-numbers prism-highlight&#34; data-start=&#34;1&#34;&gt;```bash INSTALLED_APPS = ( ... # Django ATC API &#39;rest_framework&#39;, &#39;atc_api&#39;, # Django ATC Demo UI &#39;bootstrap_themes&#39;, &#39;django_static_jquery&#39;, &#39;atc_demo_ui&#39;, # Django ATC Profile Storage &#39;atc_profile_storage&#39;, ) #### ä¿®æ&amp;#148;¹atcui/urls."/>
+修改atcui/settings.py中的INSTALLED_APPS 修改atcui/urls.py中的urlpatterns及引用 更新数据库 python manage.py migrate
+创建虚拟Ap Linux开启虚拟AP
+启动ATC sudo atcd --atcd-wan wlp3s0 --atcd-lan ap0
+注意：wlp3s0是我的无线网卡，ap0是我创建的虚拟ap网卡
+设置错误可能出现：https://github.com/facebook/augmented-traffic-control/issues/239
+启动ATCUI python manage.py runserver 0.0.0.0:8000
+导入默认配置 下载该路径下的文件https://github.com/facebook/augmented-traffic-control/tree/master/utils 运行导入命令 ./restore-profiles.sh localhost:8000
+手机使用ATC 使用Android、iOS 的浏览器访问
+ip:8000 ip为你电脑的ip"/>
 
 	
   </head>
@@ -144,45 +176,56 @@ cd atcui
       
       
       
-      <time class="f6 mv4 dib tracked" datetime="2017-11-23T20:10:48Z">November 23, 2017</time>
+      <time class="f6 mv4 dib tracked" datetime="2017-11-23T12:10:48Z">November 23, 2017</time>
       
 
       
       
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h2 id="augmented-traffic-control">augmented-traffic-control</h2>
-<p>A tool to simulate network conditions,Facebookæä¾çä¸æ¬¾ç½ç»ç¯å¢æ¨¡æå·¥å ·ï¼å¯ä»¥ä½¿ç¨ä»æ¥æµè¯Appå¨åç§ç½ç»ç¯å¢ä¸çé®é¢ã</p>
-<h2 id="å137è-ç142å131è129æ130">å®è£ ç¯å¢è¦æ±</h2>
-<p>Python2.7ãDjango1.10.+<br>
-ä»¥ä¸å¨Manjoraä¸çå®è£ å½ä»¤</p>
-<h3 id="å136135æ141pythonç142å131å136python27httpxfansmearchives12-å136135æ141pythonç142å131å136python27"><a href="http://xfans.me/archives/12" title="åæ¢Pythonç¯å¢å°Python2.7">åæ¢Pythonç¯å¢å°Python2.7</a></h3>
-<h3 id="å137è-pip">å®è£ pip</h3>
+<p>A tool to simulate network conditions,Facebook提供的一款网络环境模拟工具，可以使用他来测试App在各种网络环境下的问题。</p>
+<h2 id="安装环境要求">安装环境要求</h2>
+<p>Python2.7、Django1.10.+<br>
+以下在Manjora下的安装命令</p>
+<h3 id="切换python环境到python271"><a href="http://xfans.me/archives/12" title="切换Python环境到Python2.7">切换Python环境到Python2.7</a></h3>
+<h3 id="安装pip">安装pip</h3>
 <p><code>sudo pacman -S python2-pip</code></p>
-<h3 id="å137è-django110">å®è£ Django1.10.+</h3>
+<h3 id="安装django110">安装Django1.10.+</h3>
 <p><code>sudo pip install Django==1.10.8</code></p>
-<h2 id="å137è-atc">å®è£ ATC</h2>
-<h3 id="å137è-lib">å®è£ lib</h3>
+<h2 id="安装atc">安装ATC</h2>
+<h3 id="安装lib">安装lib</h3>
 <p><code>sudo pacman -S pip install atc_thrift atcd django-atc-api django-atc-demo-ui django-atc-profile-storage</code></p>
-<h3 id="djangoé-141ç">Djangoé ç½®</h3>
+<h3 id="django配置">Django配置</h3>
 <p><code>django-admin startproject atcui</code></p>
 <p><code>cd atcui</code></p>
-<h4 id="äæ148atcuisettingspyäç154132installed_apps">ä¿®æ¹atcui/settings.pyä¸­çINSTALLED_APPS</h4>
-<pre tabindex="0"><code>&lt;pre class=&#34;line-numbers prism-highlight&#34; data-start=&#34;1&#34;&gt;```bash
-    INSTALLED_APPS = (
-        ...
-        # Django ATC API
-        &#39;rest_framework&#39;,
-        &#39;atc_api&#39;,
-        # Django ATC Demo UI
-        &#39;bootstrap_themes&#39;,
-        &#39;django_static_jquery&#39;,
-        &#39;atc_demo_ui&#39;,
-        # Django ATC Profile Storage
-        &#39;atc_profile_storage&#39;,
-    )
-</code></pre><pre tabindex="0"><code>
-#### ä¿®æ&amp;#148;¹atcui/urls.pyä¸­ç&amp;#154;&amp;#132;urlpatternså&amp;#143;&amp;#138;å¼&amp;#149;ç&amp;#148;¨
-</code></pre><!-- raw HTML omitted -->
+<h4 id="修改atcuisettingspy中的installed_apps">修改atcui/settings.py中的INSTALLED_APPS</h4>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h4 id="修改atcuiurlspy中的urlpatterns及引用">修改atcui/urls.py中的urlpatterns及引用</h4>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h4 id="更新数据库">更新数据库</h4>
+<p><code>python manage.py migrate</code></p>
+<h3 id="创建虚拟ap">创建虚拟Ap</h3>
+<p><a href="http://xfans.me/archives/42" title="Linux开启虚拟AP">Linux开启虚拟AP</a></p>
+<h3 id="启动atc">启动ATC</h3>
+<p><code>sudo atcd --atcd-wan wlp3s0 --atcd-lan ap0</code></p>
+<p>注意：wlp3s0是我的无线网卡，ap0是我创建的虚拟ap网卡</p>
+<p>设置错误可能出现：https://github.com/facebook/augmented-traffic-control/issues/239</p>
+<h3 id="启动atcui">启动ATCUI</h3>
+<p><code>python manage.py runserver 0.0.0.0:8000</code></p>
+<h3 id="导入默认配置">导入默认配置</h3>
+<h4 id="下载该路径下的文件httpsgithubcomfacebookaugmented-traffic-controltreemasterutils">下载该路径下的文件https://github.com/facebook/augmented-traffic-control/tree/master/utils</h4>
+<h4 id="运行导入命令">运行导入命令</h4>
+<p><code>./restore-profiles.sh localhost:8000</code></p>
+<h3 id="手机使用atc">手机使用ATC</h3>
+<p>使用Android、iOS 的浏览器访问</p>
+<p>ip:8000 ip为你电脑的ip</p>
+<p>如图：<br>
+<img src="http://xfans.me/wp-content/uploads/2017/11/Screenshot_20171123-200456-169x300.png" alt=""></p>
+<p>点击Profiles中相应的Select选择不同环境，然后点击上边的Update Shaping更新设置。</p>
+<h3 id="相关链接">相关链接</h3>
+<p><a href="https://github.com/facebook/augmented-traffic-control">https://github.com/facebook/augmented-traffic-control</a></p>
 <ul class="pa0">
   
    <li class="list di">

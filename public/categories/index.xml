@@ -6,11 +6,11 @@
     <description>Recent content in Categories on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 09 Dec 2021 10:29:49 +0000</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 09 Dec 2021 02:29:49 +0000</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Flutter</title>
       <link>/categories/flutter/</link>
-      <pubDate>Thu, 09 Dec 2021 10:29:49 +0000</pubDate>
+      <pubDate>Thu, 09 Dec 2021 02:29:49 +0000</pubDate>
       
       <guid>/categories/flutter/</guid>
       <description></description>
@@ -19,7 +19,7 @@
     <item>
       <title>Android</title>
       <link>/categories/android/</link>
-      <pubDate>Wed, 13 Oct 2021 14:42:25 +0000</pubDate>
+      <pubDate>Wed, 13 Oct 2021 06:42:25 +0000</pubDate>
       
       <guid>/categories/android/</guid>
       <description></description>
@@ -28,7 +28,7 @@
     <item>
       <title>其他</title>
       <link>/categories/%E5%85%B6%E4%BB%96/</link>
-      <pubDate>Tue, 03 Mar 2020 16:45:25 +0000</pubDate>
+      <pubDate>Tue, 03 Mar 2020 08:45:25 +0000</pubDate>
       
       <guid>/categories/%E5%85%B6%E4%BB%96/</guid>
       <description></description>
@@ -37,7 +37,7 @@
     <item>
       <title>Linux</title>
       <link>/categories/linux/</link>
-      <pubDate>Wed, 15 Jan 2020 16:20:00 +0000</pubDate>
+      <pubDate>Wed, 15 Jan 2020 08:20:00 +0000</pubDate>
       
       <guid>/categories/linux/</guid>
       <description></description>
@@ -46,7 +46,7 @@
     <item>
       <title>Web</title>
       <link>/categories/web/</link>
-      <pubDate>Mon, 02 Oct 2017 01:12:43 +0000</pubDate>
+      <pubDate>Sun, 01 Oct 2017 17:12:43 +0000</pubDate>
       
       <guid>/categories/web/</guid>
       <description></description>

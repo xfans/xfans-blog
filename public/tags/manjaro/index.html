@@ -105,9 +105,9 @@
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      é®é¢ ä½¿ç¨Manjaroå·¥ä½å¤§çº¦ä¸¤å¹´äºï¼ä¹ æ¯æ§çsudo pacman -Syyuï¼åä¸æ®µæ¶é´æ´æ°å®åï¼å¾å¤å°æ¹çä¸­æå­ä½é½åæäºæ¹æ¡ã
-è§£å³æ¹æ³ å®è£ å­ä½
-&lt;pre class=&#34;line-numbers prism-highlight&#34; data-start=&#34;1&#34;&gt;```shell sudo pacman -S wqy-bitmapfont sudo pacman -S wqy-microhei sudo pacman -S wqy-zenhei é&amp;#135;&amp;#141;å&amp;#144;¯å&amp;#144;&amp;#142;å°±å¥½äº&amp;#134; 
+      问题 使用Manjaro工作大约两年了，习惯性的sudo pacman -Syyu，前一段时间更新完后，很多地方的中文字体都变成了方框。
+解决方法 安装字体
+重启后就好了
     </div>
   </div>
 
@@ -126,16 +126,9 @@
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      è¯´æ æmanjaroæ»å°ææ°çæ¬ådeepin-wine-wechatå¾®ä¿¡æ æ³è¾å ¥ä¸­æ
-è§£å³æ¹æ³ deepin-wine-wechatçgithubä¸ç»åºäºå ¼å®¹åè¡¨
-éçº§æ¹æ³ å®è£ downgrade
-sudo pacman -S downgrade
-æ¥çwineåå²çæ¬
-DOWNGRADE_FROM_ALA=1 downgrade wine
-å®è£ å®æååºç°
-æ·»å&amp;#138; wineå&amp;#136;°IgnorePkg? [y/n]
-è¾å ¥yå°wineæ·»å å°IgnorePkg,é²æ­¢åç»­è¢«æ´æ°.
-é¾æ¥ https://github.com/countstarlight/deepin-wine-wechat-arch#%E5%85%BC%E5%AE%B9%E6%80%A7%E8%AE%B0%E5%BD%95
+      说明 把manjaro滚到最新版本后deepin-wine-wechat微信无法输入中文
+解决方法 deepin-wine-wechat的github上给出了兼容列表
+&lt;th&gt; wine版本 &lt;/th&gt; &lt;th&gt; 兼容性 &lt;/th&gt; &lt;th&gt; 备注 &lt;/th&gt; &lt;th&gt; deepin-wine版本 &lt;/th&gt; &lt;th&gt; 兼容性 &lt;/th&gt; &lt;th&gt; 备注 &lt;/th&gt; &lt;td&gt; 4.18-1 &lt;/td&gt; &lt;td&gt; 部分 &lt;/td&gt; &lt;td&gt; 不能使用中文输入法 &lt;/td&gt; &lt;td&gt; &lt;/td&gt; &lt;td&gt; &lt;/td&gt; &lt;td&gt; &lt;/td&gt; &lt;td&gt; 4.18-1 &lt;/td&gt; &lt;td&gt; 部分 &lt;/td&gt; &lt;td&gt; 不能使用中文输入法 &lt;/td&gt; &lt;td&gt; 2.18_18-2 &lt;/td&gt; &lt;td&gt; ? &lt;/td&gt; &lt;td&gt; &lt;/td&gt; &lt;td&gt; 4.18-1 &lt;/td&gt; &lt;td&gt; 部分 &lt;/td&gt; &lt;td&gt; 不能使用中文输入法 &lt;/td&gt; &lt;td&gt; 2.18_18-2 &lt;/td&gt; &lt;td&gt; 不支持 &lt;/td&gt; &lt;td&gt; 闪退 &lt;/td&gt; &lt;td&gt; 4.
     </div>
   </div>
 
@@ -154,13 +147,13 @@ DOWNGRADE_FROM_ALA=1 downgrade wine
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      å®è£ pacman -S privoxy
-é ç½® ä¿®æ¹/etc/privoxy/config
-æ·»å ï¼
-forward-socks5 / 127.0.0.1:1080 . #ssçä»£ç
+      安装 pacman -S privoxy
+配置 修改/etc/privoxy/config
+添加：
+forward-socks5 / 127.0.0.1:1080 . #ss的代理
 listen-address localhost:8118
-éå¯ systemctl restart privoxy
-PS ç»ç«¯ä¸­ä½¿ç¨ä»£ç export http_proxy=http://127.0.0.1:8118
+重启 systemctl restart privoxy
+PS 终端中使用代理 export http_proxy=http://127.0.0.1:8118
 export https_proxy=http://127.0.0.1:8118
     </div>
   </div>
@@ -180,21 +173,25 @@ export https_proxy=http://127.0.0.1:8118
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      ä»ç» ä¼ç¹ï¼ 1.åºäºArchï¼ä½ä¸ç¨æè ¾
-2.æ»å¨æ´æ°ï¼ä½æ¯Archæ ¢ï¼æ¯Archæ´ç¨³å®
-3.æ¯æAURä»åºï¼è½¯ä»¶éå¸¸å¤ï¼æ¯å¦deepin qqï¼sogouè¾å ¥æ³ç­ï¼ä¸è¡å½ä»¤å°±å¯ä»¥å®è£
-4.Wikiéå¸¸ä¸°å¯
-ç¼ºç¹ï¼ 1.æ»å¨æ´æ°ï¼å®¹ææ»æ
-å®è£ æ­¥éª¤ ä¸è½½ https://mirrors.tuna.tsinghua.edu.cn/manjaro-cd/
-usbå®è£ df -h æ&amp;#159;¥ç&amp;#156;&amp;#139;ä½ ç&amp;#154;&amp;#132;uç&amp;#155;&amp;#152;
-sudo umount /dev/sdb å&amp;#141;¸è½½Uç&amp;#155;&amp;#152;
-dd if=xxx.iso of=/dev/sdb bs=1M å&amp;#136;¶ä½&amp;#156;å&amp;#144;¯å&amp;#138;¨ç&amp;#155;&amp;#152;
-note: /dev/sdbä¸ºuç
-æ·»å å½å æº ç¼è¾ vi /etc/pacman-mirrors.conf
-ä¿®æ¹ OnlyCountry=China
-æ ¹æ®éåº¦æåº pacman-mirrors -g
-æ·»å Archæº ç¼è¾ vi /etc/pacman.conf
-å¨æ«å°¾æ·»å &lt;pre class=&#34;prism-highlight line-numbers&#34; data-start=&#34;1&#34;&gt;```null [archlinuxcn] SigLevel = Optional TrustedOnly Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch ##### å&amp;#144;&amp;#140;æ­¥ `sudo pacman -Syy &amp;&amp; sudo pacman -S archlinuxcn-keyring` ### å®&amp;#137;è£ zsh ##### æ&amp;#137;§è¡&amp;#140; `sudo pacman -S zsh` `sh -c &#34;$(curl -fsSL https://raw.
+      介绍 优点： 1.基于Arch，但不用折腾
+2.滚动更新，但比Arch慢，比Arch更稳定
+3.支持AUR仓库，软件非常多，比如deepin qq，sogou输入法等，一行命令就可以安装
+4.Wiki非常丰富
+缺点： 1.滚动更新，容易滚挂
+安装步骤 下载 https://mirrors.tuna.tsinghua.edu.cn/manjaro-cd/
+usb安装 df -h 查看你的u盘
+sudo umount /dev/sdb 卸载U盘
+dd if=xxx.iso of=/dev/sdb bs=1M 制作启动盘
+note: /dev/sdb为u盘
+添加国内源 编辑 vi /etc/pacman-mirrors.conf
+修改 OnlyCountry=China
+根据速度排序 pacman-mirrors -g
+添加Arch源 编辑 vi /etc/pacman.conf
+在末尾添加 同步 sudo pacman -Syy &amp;&amp; sudo pacman -S archlinuxcn-keyring
+安装zsh 执行 sudo pacman -S zsh
+sh -c &quot;$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&quot;
+chsh -s /bin/zsh
+安装输入法 sudo pacman -S fcitx-im # 全部安装
     </div>
   </div>
 

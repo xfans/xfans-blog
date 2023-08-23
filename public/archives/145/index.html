@@ -6,9 +6,18 @@
     
     <title>Android7,8的适配 | </title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="èæ¯ ç¨æ·åé¦åä¸ºMate10 æ æ³ä½¿ç¨Appã
-åçº§ targetSdkVersion = 26
-éå°çé®é¢ ç½ç»è¯·æ±å¼å¸¸ TransactionTooLargeException éç¥æ¸ é FileUriExposedException Charlesæ æ³æHttps MODE_WORLD_READABLE no longer supported BadTokenException 7.1 Not allowed to start service getRunningServices deprecated in API level 26 As of O, this method is no longer available to third party applications. For backwards compatibility, it will still return the caller&rsquo;s own services. ps:æ¶é´å¤ªé¿äºæ³èµ·æ¥ååï¼è¯¦æ æç©ºåæ´ç ">
+    <meta name="description" content="背景 用户反馈华为Mate10 无法使用App。
+升级 targetSdkVersion = 26
+遇到的问题 网络请求异常
+TransactionTooLargeException
+通知渠道
+FileUriExposedException
+Charles无法抓Https
+MODE_WORLD_READABLE no longer supported
+BadTokenException 7.1
+Not allowed to start service
+getRunningServices deprecated in API level 26 As of O, this method is no longer available to third party applications. For backwards compatibility, it will still return the caller&rsquo;s own services.
+ps:时间太长了想起来再写，详情有空再整理">
     <meta name="generator" content="Hugo 0.117.0">
     
     
@@ -32,24 +41,51 @@
     
     
     <meta property="og:title" content="Android7,8的适配" />
-<meta property="og:description" content="èæ¯ ç¨æ·åé¦åä¸ºMate10 æ æ³ä½¿ç¨Appã
-åçº§ targetSdkVersion = 26
-éå°çé®é¢ ç½ç»è¯·æ±å¼å¸¸ TransactionTooLargeException éç¥æ¸ é FileUriExposedException Charlesæ æ³æHttps MODE_WORLD_READABLE no longer supported BadTokenException 7.1 Not allowed to start service getRunningServices deprecated in API level 26 As of O, this method is no longer available to third party applications. For backwards compatibility, it will still return the caller&rsquo;s own services. ps:æ¶é´å¤ªé¿äºæ³èµ·æ¥ååï¼è¯¦æ æç©ºåæ´ç " />
+<meta property="og:description" content="背景 用户反馈华为Mate10 无法使用App。
+升级 targetSdkVersion = 26
+遇到的问题 网络请求异常
+TransactionTooLargeException
+通知渠道
+FileUriExposedException
+Charles无法抓Https
+MODE_WORLD_READABLE no longer supported
+BadTokenException 7.1
+Not allowed to start service
+getRunningServices deprecated in API level 26 As of O, this method is no longer available to third party applications. For backwards compatibility, it will still return the caller&rsquo;s own services.
+ps:时间太长了想起来再写，详情有空再整理" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/archives/145/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2018-02-24T11:16:16+00:00" />
-<meta property="article:modified_time" content="2018-02-24T11:16:16+00:00" />
+<meta property="article:published_time" content="2018-02-24T03:16:16+00:00" />
+<meta property="article:modified_time" content="2018-02-24T03:16:16+00:00" />
 <meta itemprop="name" content="Android7,8的适配">
-<meta itemprop="description" content="èæ¯ ç¨æ·åé¦åä¸ºMate10 æ æ³ä½¿ç¨Appã
-åçº§ targetSdkVersion = 26
-éå°çé®é¢ ç½ç»è¯·æ±å¼å¸¸ TransactionTooLargeException éç¥æ¸ é FileUriExposedException Charlesæ æ³æHttps MODE_WORLD_READABLE no longer supported BadTokenException 7.1 Not allowed to start service getRunningServices deprecated in API level 26 As of O, this method is no longer available to third party applications. For backwards compatibility, it will still return the caller&rsquo;s own services. ps:æ¶é´å¤ªé¿äºæ³èµ·æ¥ååï¼è¯¦æ æç©ºåæ´ç "><meta itemprop="datePublished" content="2018-02-24T11:16:16+00:00" />
-<meta itemprop="dateModified" content="2018-02-24T11:16:16+00:00" />
-<meta itemprop="wordCount" content="59">
+<meta itemprop="description" content="背景 用户反馈华为Mate10 无法使用App。
+升级 targetSdkVersion = 26
+遇到的问题 网络请求异常
+TransactionTooLargeException
+通知渠道
+FileUriExposedException
+Charles无法抓Https
+MODE_WORLD_READABLE no longer supported
+BadTokenException 7.1
+Not allowed to start service
+getRunningServices deprecated in API level 26 As of O, this method is no longer available to third party applications. For backwards compatibility, it will still return the caller&rsquo;s own services.
+ps:时间太长了想起来再写，详情有空再整理"><meta itemprop="datePublished" content="2018-02-24T03:16:16+00:00" />
+<meta itemprop="dateModified" content="2018-02-24T03:16:16+00:00" />
+<meta itemprop="wordCount" content="55">
 <meta itemprop="keywords" content="适配," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Android7,8的适配"/>
-<meta name="twitter:description" content="èæ¯ ç¨æ·åé¦åä¸ºMate10 æ æ³ä½¿ç¨Appã
-åçº§ targetSdkVersion = 26
-éå°çé®é¢ ç½ç»è¯·æ±å¼å¸¸ TransactionTooLargeException éç¥æ¸ é FileUriExposedException Charlesæ æ³æHttps MODE_WORLD_READABLE no longer supported BadTokenException 7.1 Not allowed to start service getRunningServices deprecated in API level 26 As of O, this method is no longer available to third party applications. For backwards compatibility, it will still return the caller&rsquo;s own services. ps:æ¶é´å¤ªé¿äºæ³èµ·æ¥ååï¼è¯¦æ æç©ºåæ´ç "/>
+<meta name="twitter:description" content="背景 用户反馈华为Mate10 无法使用App。
+升级 targetSdkVersion = 26
+遇到的问题 网络请求异常
+TransactionTooLargeException
+通知渠道
+FileUriExposedException
+Charles无法抓Https
+MODE_WORLD_READABLE no longer supported
+BadTokenException 7.1
+Not allowed to start service
+getRunningServices deprecated in API level 26 As of O, this method is no longer available to third party applications. For backwards compatibility, it will still return the caller&rsquo;s own services.
+ps:时间太长了想起来再写，详情有空再整理"/>
 
 	
   </head>
@@ -120,28 +156,49 @@
       
       
       
-      <time class="f6 mv4 dib tracked" datetime="2018-02-24T11:16:16Z">February 24, 2018</time>
+      <time class="f6 mv4 dib tracked" datetime="2018-02-24T03:16:16Z">February 24, 2018</time>
       
 
       
       
     </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h2 id="è131140æ153">èæ¯</h2>
-<p>ç¨æ·åé¦åä¸ºMate10 æ æ³ä½¿ç¨Appã</p>
-<h2 id="å141135çº">åçº§</h2>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h2 id="背景">背景</h2>
+<p>用户反馈华为Mate10 无法使用App。</p>
+<h2 id="升级">升级</h2>
 <p>targetSdkVersion = 26</p>
-<h2 id="é129135å136ç154132é151é152">éå°çé®é¢</h2>
+<h2 id="遇到的问题">遇到的问题</h2>
 <ol>
-<li>ç½ç»è¯·æ±å¼å¸¸</li>
-<li>TransactionTooLargeException</li>
-<li>éç¥æ¸ é</li>
-<li>FileUriExposedException</li>
-<li>Charlesæ æ³æHttps</li>
-<li>MODE_WORLD_READABLE no longer supported</li>
-<li>BadTokenException 7.1</li>
-<li>Not allowed to start service</li>
-<li>getRunningServices deprecated in API level 26 As of O, this method is no longer available to third party applications. For backwards compatibility, it will still return the caller&rsquo;s own services.</li>
-<li>ps:æ¶é´å¤ªé¿äºæ³èµ·æ¥ååï¼è¯¦æ æç©ºåæ´ç</li>
+<li>
+<p>网络请求异常</p>
+</li>
+<li>
+<p>TransactionTooLargeException</p>
+</li>
+<li>
+<p>通知渠道</p>
+</li>
+<li>
+<p>FileUriExposedException</p>
+</li>
+<li>
+<p>Charles无法抓Https</p>
+</li>
+<li>
+<p>MODE_WORLD_READABLE no longer supported</p>
+</li>
+<li>
+<p>BadTokenException 7.1</p>
+</li>
+<li>
+<p>Not allowed to start service</p>
+</li>
+<li>
+<p>getRunningServices deprecated in API level 26
+As of O, this method is no longer available to third party applications. For backwards compatibility, it will still return the caller&rsquo;s own services.</p>
+</li>
+<li>
+<p>ps:时间太长了想起来再写，详情有空再整理</p>
+</li>
 </ol>
 <ul class="pa0">
   

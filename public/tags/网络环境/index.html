@@ -105,15 +105,23 @@
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      augmented-traffic-control A tool to simulate network conditions,Facebookæä¾çä¸æ¬¾ç½ç»ç¯å¢æ¨¡æå·¥å ·ï¼å¯ä»¥ä½¿ç¨ä»æ¥æµè¯Appå¨åç§ç½ç»ç¯å¢ä¸çé®é¢ã
-å®è£ ç¯å¢è¦æ± Python2.7ãDjango1.10.+
-ä»¥ä¸å¨Manjoraä¸çå®è£ å½ä»¤
-åæ¢Pythonç¯å¢å°Python2.7 å®è£ pip sudo pacman -S python2-pip
-å®è£ Django1.10.+ sudo pip install Django==1.10.8
-å®è£ ATC å®è£ lib sudo pacman -S pip install atc_thrift atcd django-atc-api django-atc-demo-ui django-atc-profile-storage
-Djangoé ç½® django-admin startproject atcui
+      augmented-traffic-control A tool to simulate network conditions,Facebook提供的一款网络环境模拟工具，可以使用他来测试App在各种网络环境下的问题。
+安装环境要求 Python2.7、Django1.10.+
+以下在Manjora下的安装命令
+切换Python环境到Python2.7 安装pip sudo pacman -S python2-pip
+安装Django1.10.+ sudo pip install Django==1.10.8
+安装ATC 安装lib sudo pacman -S pip install atc_thrift atcd django-atc-api django-atc-demo-ui django-atc-profile-storage
+Django配置 django-admin startproject atcui
 cd atcui
-ä¿®æ¹atcui/settings.pyä¸­çINSTALLED_APPS &lt;pre class=&#34;line-numbers prism-highlight&#34; data-start=&#34;1&#34;&gt;```bash INSTALLED_APPS = ( ... # Django ATC API &#39;rest_framework&#39;, &#39;atc_api&#39;, # Django ATC Demo UI &#39;bootstrap_themes&#39;, &#39;django_static_jquery&#39;, &#39;atc_demo_ui&#39;, # Django ATC Profile Storage &#39;atc_profile_storage&#39;, ) #### ä¿®æ&amp;#148;¹atcui/urls.
+修改atcui/settings.py中的INSTALLED_APPS 修改atcui/urls.py中的urlpatterns及引用 更新数据库 python manage.py migrate
+创建虚拟Ap Linux开启虚拟AP
+启动ATC sudo atcd --atcd-wan wlp3s0 --atcd-lan ap0
+注意：wlp3s0是我的无线网卡，ap0是我创建的虚拟ap网卡
+设置错误可能出现：https://github.com/facebook/augmented-traffic-control/issues/239
+启动ATCUI python manage.py runserver 0.0.0.0:8000
+导入默认配置 下载该路径下的文件https://github.com/facebook/augmented-traffic-control/tree/master/utils 运行导入命令 ./restore-profiles.sh localhost:8000
+手机使用ATC 使用Android、iOS 的浏览器访问
+ip:8000 ip为你电脑的ip
     </div>
   </div>
 

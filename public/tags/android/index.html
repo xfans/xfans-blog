@@ -105,15 +105,21 @@
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      å®ç°äºAndroidå½é³ï¼è¯­é³è¾å ¥æ¶çç«çº¿æ³¢çº¹å¨ç»ææåé³ä¹æ­æ¾æ¶çè·³å¨ææ
-ææ å®ç°åç å®ç°äºä¸¤ç§è¿å¨ææï¼
-1.ä»å·¦å°å³ç§»å¨ åè®¾æ±ç¶å¾çé«åº¦æ¯ä¸ä¸ªå¯¹å
+      实现了Android录音，语音输入时的竖线波纹动画效果和音乐播放时的跳动效果
+效果 实现原理 实现了两种运动效果：
+1.从左到右移动 假设柱状图的高度是一个对列
 27,17,38,91,38,24,8,60,38,14,8
 8,27,17,38,91,38,24,8,60,38,14
 14,8,27,17,38,91,38,24,8,60,38
-ä»å·¦å°å³ç§»å¨å®é ä¸å°±æ¯ä¸æ­çå°éåä¸­çæåä¸ä¸ªæå ¥å°éåçç¬¬ä¸ä¸ªã
-ä»£ç ï¼
-&lt;pre class=&#34;line-numbers prism-highlight&#34; data-start=&#34;1&#34;&gt;```kotlin runnable = object : Runnable { override fun run() { val last = bodyWaveList.pollLast() bodyWaveList.addFirst(last) invalidate() valHandler.postDelayed(this, duration);//å¾ªç&amp;#142;¯è°&amp;#131;ç&amp;#148;¨é&amp;#135;&amp;#141;ç»&amp;#152; } } valHandler.post(runnable) ### 2.ä¸&amp;#138;ä¸&amp;#139;è·³å&amp;#138;¨ å&amp;#129;&amp;#135;è®¾æ&amp;#159;±ç&amp;#138;¶å&amp;#155;¾æ&amp;#152;¯ä¸&amp;#128;ä¸ªé&amp;#152;&amp;#159;å&amp;#136;&amp;#151; `27,17,38,91,38,24,8,60,38,14,8` ä¸&amp;#138;ä¸&amp;#139;è·³å&amp;#138;¨å°±æ&amp;#152;¯å°&amp;#134;é&amp;#152;&amp;#159;å&amp;#136;&amp;#151;ç&amp;#154;&amp;#132;é«&amp;#152;åº¦ï¼&amp;#140;ä»&amp;#142;0%-100%å&amp;#143;&amp;#152;å&amp;#140;&amp;#150; ä»£ç &amp;#129;ï¼&amp;#154; 
+从左到右移动实际上就是不断的将队列中的最后一个插入到队列的第一个。
+代码：
+2.上下跳动 假设柱状图是一个队列
+27,17,38,91,38,24,8,60,38,14,8
+上下跳动就是将队列的高度，从0%-100%变化
+代码：
+然后在onDraw绘制时高度*valueAnimatorOffset
+绘制 代码：
+地址 https://github.com/xfans/VoiceWaveView
     </div>
   </div>
 
@@ -132,15 +138,23 @@
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      augmented-traffic-control A tool to simulate network conditions,Facebookæä¾çä¸æ¬¾ç½ç»ç¯å¢æ¨¡æå·¥å ·ï¼å¯ä»¥ä½¿ç¨ä»æ¥æµè¯Appå¨åç§ç½ç»ç¯å¢ä¸çé®é¢ã
-å®è£ ç¯å¢è¦æ± Python2.7ãDjango1.10.+
-ä»¥ä¸å¨Manjoraä¸çå®è£ å½ä»¤
-åæ¢Pythonç¯å¢å°Python2.7 å®è£ pip sudo pacman -S python2-pip
-å®è£ Django1.10.+ sudo pip install Django==1.10.8
-å®è£ ATC å®è£ lib sudo pacman -S pip install atc_thrift atcd django-atc-api django-atc-demo-ui django-atc-profile-storage
-Djangoé ç½® django-admin startproject atcui
+      augmented-traffic-control A tool to simulate network conditions,Facebook提供的一款网络环境模拟工具，可以使用他来测试App在各种网络环境下的问题。
+安装环境要求 Python2.7、Django1.10.+
+以下在Manjora下的安装命令
+切换Python环境到Python2.7 安装pip sudo pacman -S python2-pip
+安装Django1.10.+ sudo pip install Django==1.10.8
+安装ATC 安装lib sudo pacman -S pip install atc_thrift atcd django-atc-api django-atc-demo-ui django-atc-profile-storage
+Django配置 django-admin startproject atcui
 cd atcui
-ä¿®æ¹atcui/settings.pyä¸­çINSTALLED_APPS &lt;pre class=&#34;line-numbers prism-highlight&#34; data-start=&#34;1&#34;&gt;```bash INSTALLED_APPS = ( ... # Django ATC API &#39;rest_framework&#39;, &#39;atc_api&#39;, # Django ATC Demo UI &#39;bootstrap_themes&#39;, &#39;django_static_jquery&#39;, &#39;atc_demo_ui&#39;, # Django ATC Profile Storage &#39;atc_profile_storage&#39;, ) #### ä¿®æ&amp;#148;¹atcui/urls.
+修改atcui/settings.py中的INSTALLED_APPS 修改atcui/urls.py中的urlpatterns及引用 更新数据库 python manage.py migrate
+创建虚拟Ap Linux开启虚拟AP
+启动ATC sudo atcd --atcd-wan wlp3s0 --atcd-lan ap0
+注意：wlp3s0是我的无线网卡，ap0是我创建的虚拟ap网卡
+设置错误可能出现：https://github.com/facebook/augmented-traffic-control/issues/239
+启动ATCUI python manage.py runserver 0.0.0.0:8000
+导入默认配置 下载该路径下的文件https://github.com/facebook/augmented-traffic-control/tree/master/utils 运行导入命令 ./restore-profiles.sh localhost:8000
+手机使用ATC 使用Android、iOS 的浏览器访问
+ip:8000 ip为你电脑的ip
     </div>
   </div>
 
@@ -159,7 +173,7 @@ cd atcui
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      åè®® XML-RPC_wpåè®®:https://codex.wordpress.org/XML-RPC_wp å°å:http://xxxx.com/xmlrpc Typecho XML-RPCåè®®:https://github.com/typecho/typecho/blob/master/var/Widget/XmlRpc.php#L2249-L2322 Demo XML-RPC_wpåè®®Demo:https://github.com/xfans/android-xmlrpc1 Typecho XML-RPCè¿åæ°æ®:IXR/Value.php 
+      协议 XML-RPC_wp协议:https://codex.wordpress.org/XML-RPC_wp 地址:http://xxxx.com/xmlrpc Typecho XML-RPC协议:https://github.com/typecho/typecho/blob/master/var/Widget/XmlRpc.php#L2249-L2322 Demo XML-RPC_wp协议Demo:https://github.com/xfans/android-xmlrpc1 Typecho XML-RPC返回数据:IXR/Value.php 
     </div>
   </div>
 
@@ -178,7 +192,8 @@ cd atcui
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      &lt;pre class=&#34;prism-highlight line-numbers&#34; data-start=&#34;1&#34;&gt;```null public class MainActivity extends Activity { @Override protected void onCreate(Bundle savedInstanceState) { super.onCreate(savedInstanceState); ImageView imageView = (ImageView) findViewById(R.id.yourImageView); imageView.setLayerType(View.LAYER_TYPE_SOFTWARE, null); try { SVG svg = SVG.getFromResource(this, R.raw.my_svg_file); Drawable drawable = new PictureDrawable(svg.renderToPicture()); imageView.setImageDrawable(drawable); } catch(SVGParseException e) {} } } å&amp;#156;°å&amp;#157;&amp;#128;:http://bigbadaboom.github.io/androidsvg/use\_with\_ImageView.html Github:https://github.com/BigBadaboom/androidsvg 
+      地址:http://bigbadaboom.github.io/androidsvg/use_with_ImageView.html
+Github:https://github.com/BigBadaboom/androidsvg
     </div>
   </div>
 

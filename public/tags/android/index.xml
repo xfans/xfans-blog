@@ -6,57 +6,72 @@
     <description>Recent content in android on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 27 Aug 2019 20:22:09 +0000</lastBuildDate><atom:link href="/tags/android/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 27 Aug 2019 12:22:09 +0000</lastBuildDate><atom:link href="/tags/android/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Android录音、播放音乐，跳动效果动画自定义VIew</title>
       <link>/archives/178/</link>
-      <pubDate>Tue, 27 Aug 2019 20:22:09 +0000</pubDate>
+      <pubDate>Tue, 27 Aug 2019 12:22:09 +0000</pubDate>
       
       <guid>/archives/178/</guid>
-      <description>å®ç°äºAndroidå½é³ï¼è¯­é³è¾å ¥æ¶çç«çº¿æ³¢çº¹å¨ç»ææåé³ä¹æ­æ¾æ¶çè·³å¨ææ
-ææ å®ç°åç å®ç°äºä¸¤ç§è¿å¨ææï¼
-1.ä»å·¦å°å³ç§»å¨ åè®¾æ±ç¶å¾çé«åº¦æ¯ä¸ä¸ªå¯¹å
+      <description>实现了Android录音，语音输入时的竖线波纹动画效果和音乐播放时的跳动效果
+效果 实现原理 实现了两种运动效果：
+1.从左到右移动 假设柱状图的高度是一个对列
 27,17,38,91,38,24,8,60,38,14,8
 8,27,17,38,91,38,24,8,60,38,14
 14,8,27,17,38,91,38,24,8,60,38
-ä»å·¦å°å³ç§»å¨å®é ä¸å°±æ¯ä¸æ­çå°éåä¸­çæåä¸ä¸ªæå ¥å°éåçç¬¬ä¸ä¸ªã
-ä»£ç ï¼
-&amp;lt;pre class=&amp;#34;line-numbers prism-highlight&amp;#34; data-start=&amp;#34;1&amp;#34;&amp;gt;```kotlin runnable = object : Runnable { override fun run() { val last = bodyWaveList.pollLast() bodyWaveList.addFirst(last) invalidate() valHandler.postDelayed(this, duration);//å¾ªç&amp;amp;#142;¯è°&amp;amp;#131;ç&amp;amp;#148;¨é&amp;amp;#135;&amp;amp;#141;ç»&amp;amp;#152; } } valHandler.post(runnable) ### 2.ä¸&amp;amp;#138;ä¸&amp;amp;#139;è·³å&amp;amp;#138;¨ å&amp;amp;#129;&amp;amp;#135;è®¾æ&amp;amp;#159;±ç&amp;amp;#138;¶å&amp;amp;#155;¾æ&amp;amp;#152;¯ä¸&amp;amp;#128;ä¸ªé&amp;amp;#152;&amp;amp;#159;å&amp;amp;#136;&amp;amp;#151; `27,17,38,91,38,24,8,60,38,14,8` ä¸&amp;amp;#138;ä¸&amp;amp;#139;è·³å&amp;amp;#138;¨å°±æ&amp;amp;#152;¯å°&amp;amp;#134;é&amp;amp;#152;&amp;amp;#159;å&amp;amp;#136;&amp;amp;#151;ç&amp;amp;#154;&amp;amp;#132;é«&amp;amp;#152;åº¦ï¼&amp;amp;#140;ä»&amp;amp;#142;0%-100%å&amp;amp;#143;&amp;amp;#152;å&amp;amp;#140;&amp;amp;#150; ä»£ç &amp;amp;#129;ï¼&amp;amp;#154; </description>
+从左到右移动实际上就是不断的将队列中的最后一个插入到队列的第一个。
+代码：
+2.上下跳动 假设柱状图是一个队列
+27,17,38,91,38,24,8,60,38,14,8
+上下跳动就是将队列的高度，从0%-100%变化
+代码：
+然后在onDraw绘制时高度*valueAnimatorOffset
+绘制 代码：
+地址 https://github.com/xfans/VoiceWaveView</description>
     </item>
     
     <item>
       <title>Linux下安装网络环境模拟工具augmented-traffic-control</title>
       <link>/archives/56/</link>
-      <pubDate>Thu, 23 Nov 2017 20:10:48 +0000</pubDate>
+      <pubDate>Thu, 23 Nov 2017 12:10:48 +0000</pubDate>
       
       <guid>/archives/56/</guid>
-      <description>augmented-traffic-control A tool to simulate network conditions,Facebookæä¾çä¸æ¬¾ç½ç»ç¯å¢æ¨¡æå·¥å ·ï¼å¯ä»¥ä½¿ç¨ä»æ¥æµè¯Appå¨åç§ç½ç»ç¯å¢ä¸çé®é¢ã
-å®è£ ç¯å¢è¦æ± Python2.7ãDjango1.10.+
-ä»¥ä¸å¨Manjoraä¸çå®è£ å½ä»¤
-åæ¢Pythonç¯å¢å°Python2.7 å®è£ pip sudo pacman -S python2-pip
-å®è£ Django1.10.+ sudo pip install Django==1.10.8
-å®è£ ATC å®è£ lib sudo pacman -S pip install atc_thrift atcd django-atc-api django-atc-demo-ui django-atc-profile-storage
-Djangoé ç½® django-admin startproject atcui
+      <description>augmented-traffic-control A tool to simulate network conditions,Facebook提供的一款网络环境模拟工具，可以使用他来测试App在各种网络环境下的问题。
+安装环境要求 Python2.7、Django1.10.+
+以下在Manjora下的安装命令
+切换Python环境到Python2.7 安装pip sudo pacman -S python2-pip
+安装Django1.10.+ sudo pip install Django==1.10.8
+安装ATC 安装lib sudo pacman -S pip install atc_thrift atcd django-atc-api django-atc-demo-ui django-atc-profile-storage
+Django配置 django-admin startproject atcui
 cd atcui
-ä¿®æ¹atcui/settings.pyä¸­çINSTALLED_APPS &amp;lt;pre class=&amp;#34;line-numbers prism-highlight&amp;#34; data-start=&amp;#34;1&amp;#34;&amp;gt;```bash INSTALLED_APPS = ( ... # Django ATC API &amp;#39;rest_framework&amp;#39;, &amp;#39;atc_api&amp;#39;, # Django ATC Demo UI &amp;#39;bootstrap_themes&amp;#39;, &amp;#39;django_static_jquery&amp;#39;, &amp;#39;atc_demo_ui&amp;#39;, # Django ATC Profile Storage &amp;#39;atc_profile_storage&amp;#39;, ) #### ä¿®æ&amp;amp;#148;¹atcui/urls.</description>
+修改atcui/settings.py中的INSTALLED_APPS 修改atcui/urls.py中的urlpatterns及引用 更新数据库 python manage.py migrate
+创建虚拟Ap Linux开启虚拟AP
+启动ATC sudo atcd --atcd-wan wlp3s0 --atcd-lan ap0
+注意：wlp3s0是我的无线网卡，ap0是我创建的虚拟ap网卡
+设置错误可能出现：https://github.com/facebook/augmented-traffic-control/issues/239
+启动ATCUI python manage.py runserver 0.0.0.0:8000
+导入默认配置 下载该路径下的文件https://github.com/facebook/augmented-traffic-control/tree/master/utils 运行导入命令 ./restore-profiles.sh localhost:8000
+手机使用ATC 使用Android、iOS 的浏览器访问
+ip:8000 ip为你电脑的ip</description>
     </item>
     
     <item>
       <title>Typecho-Android客户端开发</title>
       <link>/archives/18/</link>
-      <pubDate>Fri, 29 Sep 2017 19:44:41 +0000</pubDate>
+      <pubDate>Fri, 29 Sep 2017 11:44:41 +0000</pubDate>
       
       <guid>/archives/18/</guid>
-      <description>åè®® XML-RPC_wpåè®®:https://codex.wordpress.org/XML-RPC_wp å°å:http://xxxx.com/xmlrpc Typecho XML-RPCåè®®:https://github.com/typecho/typecho/blob/master/var/Widget/XmlRpc.php#L2249-L2322 Demo XML-RPC_wpåè®®Demo:https://github.com/xfans/android-xmlrpc1 Typecho XML-RPCè¿åæ°æ®:IXR/Value.php </description>
+      <description>协议 XML-RPC_wp协议:https://codex.wordpress.org/XML-RPC_wp 地址:http://xxxx.com/xmlrpc Typecho XML-RPC协议:https://github.com/typecho/typecho/blob/master/var/Widget/XmlRpc.php#L2249-L2322 Demo XML-RPC_wp协议Demo:https://github.com/xfans/android-xmlrpc1 Typecho XML-RPC返回数据:IXR/Value.php </description>
     </item>
     
     <item>
       <title>Using AndroidSVG with ImageView</title>
       <link>/archives/8/</link>
-      <pubDate>Fri, 29 Sep 2017 19:35:09 +0000</pubDate>
+      <pubDate>Fri, 29 Sep 2017 11:35:09 +0000</pubDate>
       
       <guid>/archives/8/</guid>
-      <description>&amp;lt;pre class=&amp;#34;prism-highlight line-numbers&amp;#34; data-start=&amp;#34;1&amp;#34;&amp;gt;```null public class MainActivity extends Activity { @Override protected void onCreate(Bundle savedInstanceState) { super.onCreate(savedInstanceState); ImageView imageView = (ImageView) findViewById(R.id.yourImageView); imageView.setLayerType(View.LAYER_TYPE_SOFTWARE, null); try { SVG svg = SVG.getFromResource(this, R.raw.my_svg_file); Drawable drawable = new PictureDrawable(svg.renderToPicture()); imageView.setImageDrawable(drawable); } catch(SVGParseException e) {} } } å&amp;amp;#156;°å&amp;amp;#157;&amp;amp;#128;:http://bigbadaboom.github.io/androidsvg/use\_with\_ImageView.html Github:https://github.com/BigBadaboom/androidsvg </description>
+      <description>地址:http://bigbadaboom.github.io/androidsvg/use_with_ImageView.html
+Github:https://github.com/BigBadaboom/androidsvg</description>
     </item>
     
   </channel>

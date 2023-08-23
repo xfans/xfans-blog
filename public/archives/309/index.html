@@ -6,11 +6,26 @@
     
     <title>Flutter常见问题整理 | </title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="é®é¢ é®é¢1 é®é¢:Flutterä¸­Columnåµå¥Listviewæ¥overflowedéè¯¯.
-è§£å³:ä½¿ç¨Column&#43;Expanded&#43;Listviewå¸å±çé¢.
-é®é¢2 é®é¢:æ°ç»jsonè½¬æ¢æList
-è§£å³:
-&lt;pre class=&#34;wp-block-preformatted&#34;&gt;``` List list = json.decode(response.body); List&lt;User&gt; result = []; list.forEach((item) { result.add(User.fromJson(item)); }); #### é&amp;#151;®é¢&amp;#152;3 é&amp;#151;®é¢&amp;#152;:ç&amp;#149;&amp;#140;é&amp;#157;¢ä¸­è¯·æ±&amp;#130;ç½&amp;#145;ç»&amp;#156;ç&amp;#154;&amp;#132;æ&amp;#151;¶æ&amp;#156;º è§£å&amp;#134;³:ä½¿ç&amp;#148;¨`&lt;a href=&#34;https://api.flutter-io.cn/flutter/widgets/FutureBuilder-class.html&#34;&gt;FutureBuilder&lt;/a&gt;` #### é&amp;#151;®é¢&amp;#152;4 é&amp;#151;®é¢&amp;#152;:material-design iconæ&amp;#156;&amp;#137;å&amp;#147;ªäº&amp;#155; è§£å&amp;#134;³:[https://material.io/resources/icons/?icon=account\_balance&amp;style=baseline](https://material.io/resources/icons/?icon=account_balance&amp;style=baseline) #### é&amp;#151;®é¢&amp;#152;5 é&amp;#151;®é¢&amp;#152;:æ&amp;#138;½å&amp;#135;ºappbar æ&amp;#151;¶can&#39;t be assigned to the parameter type &#39;PreferredSizeWidget&#39; è§£å&amp;#134;³: ">
+    <meta name="description" content="问题 问题1 问题:Flutter中Column嵌套Listview报overflowed错误.
+解决:使用Column&#43;Expanded&#43;Listview布局界面.
+问题2 问题:数组json转换成List
+解决:
+问题3 问题:界面中请求网络的时机
+解决:使用&lt;a href=&quot;https://api.flutter-io.cn/flutter/widgets/FutureBuilder-class.html&quot;&gt;FutureBuilder&lt;/a&gt;
+问题4 问题:material-design icon有哪些
+解决:https://material.io/resources/icons/?icon=account_balance&amp;style=baseline
+问题5 问题:抽出appbar 时can&rsquo;t be assigned to the parameter type &lsquo;PreferredSizeWidget&rsquo;
+解决:
+问题6 问题:flutter加载中文乱码
+解决:
+问题7 问题:flutter 写文件报 OS Error: Read-only file system
+解决:使用path_provider插件获取目录
+问题8 问题:设置android中的match_parent
+解决:width: double.infinity
+问题9 问题:AppBar中的leading设置大小无效
+解决:被ConstrainedBox限制了大小,使用UnconstrainedBox嵌套一层即可
+问题10 问题:使用bottomNavigationBar切换page时重新调用initState
+解决:使用PageView包裹body,子page with AutomaticKeepAliveClientMixin,重写bool get wantKeepAlive =&gt; true">
     <meta name="generator" content="Hugo 0.117.0">
     
     
@@ -34,30 +49,75 @@
     
     
     <meta property="og:title" content="Flutter常见问题整理" />
-<meta property="og:description" content="é®é¢ é®é¢1 é®é¢:Flutterä¸­Columnåµå¥Listviewæ¥overflowedéè¯¯.
-è§£å³:ä½¿ç¨Column&#43;Expanded&#43;Listviewå¸å±çé¢.
-é®é¢2 é®é¢:æ°ç»jsonè½¬æ¢æList
-è§£å³:
-&lt;pre class=&#34;wp-block-preformatted&#34;&gt;``` List list = json.decode(response.body); List&lt;User&gt; result = []; list.forEach((item) { result.add(User.fromJson(item)); }); #### é&amp;#151;®é¢&amp;#152;3 é&amp;#151;®é¢&amp;#152;:ç&amp;#149;&amp;#140;é&amp;#157;¢ä¸­è¯·æ±&amp;#130;ç½&amp;#145;ç»&amp;#156;ç&amp;#154;&amp;#132;æ&amp;#151;¶æ&amp;#156;º è§£å&amp;#134;³:ä½¿ç&amp;#148;¨`&lt;a href=&#34;https://api.flutter-io.cn/flutter/widgets/FutureBuilder-class.html&#34;&gt;FutureBuilder&lt;/a&gt;` #### é&amp;#151;®é¢&amp;#152;4 é&amp;#151;®é¢&amp;#152;:material-design iconæ&amp;#156;&amp;#137;å&amp;#147;ªäº&amp;#155; è§£å&amp;#134;³:[https://material.io/resources/icons/?icon=account\_balance&amp;style=baseline](https://material.io/resources/icons/?icon=account_balance&amp;style=baseline) #### é&amp;#151;®é¢&amp;#152;5 é&amp;#151;®é¢&amp;#152;:æ&amp;#138;½å&amp;#135;ºappbar æ&amp;#151;¶can&#39;t be assigned to the parameter type &#39;PreferredSizeWidget&#39; è§£å&amp;#134;³: " />
+<meta property="og:description" content="问题 问题1 问题:Flutter中Column嵌套Listview报overflowed错误.
+解决:使用Column&#43;Expanded&#43;Listview布局界面.
+问题2 问题:数组json转换成List
+解决:
+问题3 问题:界面中请求网络的时机
+解决:使用&lt;a href=&quot;https://api.flutter-io.cn/flutter/widgets/FutureBuilder-class.html&quot;&gt;FutureBuilder&lt;/a&gt;
+问题4 问题:material-design icon有哪些
+解决:https://material.io/resources/icons/?icon=account_balance&amp;style=baseline
+问题5 问题:抽出appbar 时can&rsquo;t be assigned to the parameter type &lsquo;PreferredSizeWidget&rsquo;
+解决:
+问题6 问题:flutter加载中文乱码
+解决:
+问题7 问题:flutter 写文件报 OS Error: Read-only file system
+解决:使用path_provider插件获取目录
+问题8 问题:设置android中的match_parent
+解决:width: double.infinity
+问题9 问题:AppBar中的leading设置大小无效
+解决:被ConstrainedBox限制了大小,使用UnconstrainedBox嵌套一层即可
+问题10 问题:使用bottomNavigationBar切换page时重新调用initState
+解决:使用PageView包裹body,子page with AutomaticKeepAliveClientMixin,重写bool get wantKeepAlive =&gt; true" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/archives/309/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2020-03-19T14:46:00+00:00" />
-<meta property="article:modified_time" content="2020-03-19T14:46:00+00:00" />
+<meta property="article:published_time" content="2020-03-19T06:46:00+00:00" />
+<meta property="article:modified_time" content="2020-03-19T06:46:00+00:00" />
 <meta itemprop="name" content="Flutter常见问题整理">
-<meta itemprop="description" content="é®é¢ é®é¢1 é®é¢:Flutterä¸­Columnåµå¥Listviewæ¥overflowedéè¯¯.
-è§£å³:ä½¿ç¨Column&#43;Expanded&#43;Listviewå¸å±çé¢.
-é®é¢2 é®é¢:æ°ç»jsonè½¬æ¢æList
-è§£å³:
-&lt;pre class=&#34;wp-block-preformatted&#34;&gt;``` List list = json.decode(response.body); List&lt;User&gt; result = []; list.forEach((item) { result.add(User.fromJson(item)); }); #### é&amp;#151;®é¢&amp;#152;3 é&amp;#151;®é¢&amp;#152;:ç&amp;#149;&amp;#140;é&amp;#157;¢ä¸­è¯·æ±&amp;#130;ç½&amp;#145;ç»&amp;#156;ç&amp;#154;&amp;#132;æ&amp;#151;¶æ&amp;#156;º è§£å&amp;#134;³:ä½¿ç&amp;#148;¨`&lt;a href=&#34;https://api.flutter-io.cn/flutter/widgets/FutureBuilder-class.html&#34;&gt;FutureBuilder&lt;/a&gt;` #### é&amp;#151;®é¢&amp;#152;4 é&amp;#151;®é¢&amp;#152;:material-design iconæ&amp;#156;&amp;#137;å&amp;#147;ªäº&amp;#155; è§£å&amp;#134;³:[https://material.io/resources/icons/?icon=account\_balance&amp;style=baseline](https://material.io/resources/icons/?icon=account_balance&amp;style=baseline) #### é&amp;#151;®é¢&amp;#152;5 é&amp;#151;®é¢&amp;#152;:æ&amp;#138;½å&amp;#135;ºappbar æ&amp;#151;¶can&#39;t be assigned to the parameter type &#39;PreferredSizeWidget&#39; è§£å&amp;#134;³: "><meta itemprop="datePublished" content="2020-03-19T14:46:00+00:00" />
-<meta itemprop="dateModified" content="2020-03-19T14:46:00+00:00" />
-<meta itemprop="wordCount" content="43">
+<meta itemprop="description" content="问题 问题1 问题:Flutter中Column嵌套Listview报overflowed错误.
+解决:使用Column&#43;Expanded&#43;Listview布局界面.
+问题2 问题:数组json转换成List
+解决:
+问题3 问题:界面中请求网络的时机
+解决:使用&lt;a href=&quot;https://api.flutter-io.cn/flutter/widgets/FutureBuilder-class.html&quot;&gt;FutureBuilder&lt;/a&gt;
+问题4 问题:material-design icon有哪些
+解决:https://material.io/resources/icons/?icon=account_balance&amp;style=baseline
+问题5 问题:抽出appbar 时can&rsquo;t be assigned to the parameter type &lsquo;PreferredSizeWidget&rsquo;
+解决:
+问题6 问题:flutter加载中文乱码
+解决:
+问题7 问题:flutter 写文件报 OS Error: Read-only file system
+解决:使用path_provider插件获取目录
+问题8 问题:设置android中的match_parent
+解决:width: double.infinity
+问题9 问题:AppBar中的leading设置大小无效
+解决:被ConstrainedBox限制了大小,使用UnconstrainedBox嵌套一层即可
+问题10 问题:使用bottomNavigationBar切换page时重新调用initState
+解决:使用PageView包裹body,子page with AutomaticKeepAliveClientMixin,重写bool get wantKeepAlive =&gt; true"><meta itemprop="datePublished" content="2020-03-19T06:46:00+00:00" />
+<meta itemprop="dateModified" content="2020-03-19T06:46:00+00:00" />
+<meta itemprop="wordCount" content="54">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Flutter常见问题整理"/>
-<meta name="twitter:description" content="é®é¢ é®é¢1 é®é¢:Flutterä¸­Columnåµå¥Listviewæ¥overflowedéè¯¯.
-è§£å³:ä½¿ç¨Column&#43;Expanded&#43;Listviewå¸å±çé¢.
-é®é¢2 é®é¢:æ°ç»jsonè½¬æ¢æList
-è§£å³:
-&lt;pre class=&#34;wp-block-preformatted&#34;&gt;``` List list = json.decode(response.body); List&lt;User&gt; result = []; list.forEach((item) { result.add(User.fromJson(item)); }); #### é&amp;#151;®é¢&amp;#152;3 é&amp;#151;®é¢&amp;#152;:ç&amp;#149;&amp;#140;é&amp;#157;¢ä¸­è¯·æ±&amp;#130;ç½&amp;#145;ç»&amp;#156;ç&amp;#154;&amp;#132;æ&amp;#151;¶æ&amp;#156;º è§£å&amp;#134;³:ä½¿ç&amp;#148;¨`&lt;a href=&#34;https://api.flutter-io.cn/flutter/widgets/FutureBuilder-class.html&#34;&gt;FutureBuilder&lt;/a&gt;` #### é&amp;#151;®é¢&amp;#152;4 é&amp;#151;®é¢&amp;#152;:material-design iconæ&amp;#156;&amp;#137;å&amp;#147;ªäº&amp;#155; è§£å&amp;#134;³:[https://material.io/resources/icons/?icon=account\_balance&amp;style=baseline](https://material.io/resources/icons/?icon=account_balance&amp;style=baseline) #### é&amp;#151;®é¢&amp;#152;5 é&amp;#151;®é¢&amp;#152;:æ&amp;#138;½å&amp;#135;ºappbar æ&amp;#151;¶can&#39;t be assigned to the parameter type &#39;PreferredSizeWidget&#39; è§£å&amp;#134;³: "/>
+<meta name="twitter:description" content="问题 问题1 问题:Flutter中Column嵌套Listview报overflowed错误.
+解决:使用Column&#43;Expanded&#43;Listview布局界面.
+问题2 问题:数组json转换成List
+解决:
+问题3 问题:界面中请求网络的时机
+解决:使用&lt;a href=&quot;https://api.flutter-io.cn/flutter/widgets/FutureBuilder-class.html&quot;&gt;FutureBuilder&lt;/a&gt;
+问题4 问题:material-design icon有哪些
+解决:https://material.io/resources/icons/?icon=account_balance&amp;style=baseline
+问题5 问题:抽出appbar 时can&rsquo;t be assigned to the parameter type &lsquo;PreferredSizeWidget&rsquo;
+解决:
+问题6 问题:flutter加载中文乱码
+解决:
+问题7 问题:flutter 写文件报 OS Error: Read-only file system
+解决:使用path_provider插件获取目录
+问题8 问题:设置android中的match_parent
+解决:width: double.infinity
+问题9 问题:AppBar中的leading设置大小无效
+解决:被ConstrainedBox限制了大小,使用UnconstrainedBox嵌套一层即可
+问题10 问题:使用bottomNavigationBar切换page时重新调用initState
+解决:使用PageView包裹body,子page with AutomaticKeepAliveClientMixin,重写bool get wantKeepAlive =&gt; true"/>
 
 	
   </head>
@@ -128,44 +188,51 @@
       
       
       
-      <time class="f6 mv4 dib tracked" datetime="2020-03-19T14:46:00Z">March 19, 2020</time>
+      <time class="f6 mv4 dib tracked" datetime="2020-03-19T06:46:00Z">March 19, 2020</time>
       
 
       
       
     </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h2 id="é151é152">é®é¢</h2>
-<h4 id="é151é1521">é®é¢1</h4>
-<p>é®é¢:Flutterä¸­Columnåµå¥Listviewæ¥overflowedéè¯¯.</p>
-<p>è§£å³:ä½¿ç¨Column+Expanded+Listviewå¸å±çé¢.</p>
-<h4 id="é151é1522">é®é¢2</h4>
-<p>é®é¢:æ°ç»jsonè½¬æ¢æList</p>
-<p>è§£å³:</p>
-<pre tabindex="0"><code>&lt;pre class=&#34;wp-block-preformatted&#34;&gt;```
-List list = json.decode(response.body);
-List&lt;User&gt; result = [];
-list.forEach((item) {
-  result.add(User.fromJson(item));
-});
-</code></pre><pre tabindex="0"><code>
-#### é&amp;#151;®é¢&amp;#152;3
-
-é&amp;#151;®é¢&amp;#152;:ç&amp;#149;&amp;#140;é&amp;#157;¢ä¸­è¯·æ±&amp;#130;ç½&amp;#145;ç»&amp;#156;ç&amp;#154;&amp;#132;æ&amp;#151;¶æ&amp;#156;º
-
-è§£å&amp;#134;³:ä½¿ç&amp;#148;¨`&lt;a href=&#34;https://api.flutter-io.cn/flutter/widgets/FutureBuilder-class.html&#34;&gt;FutureBuilder&lt;/a&gt;`
-
-#### é&amp;#151;®é¢&amp;#152;4
-
-é&amp;#151;®é¢&amp;#152;:material-design iconæ&amp;#156;&amp;#137;å&amp;#147;ªäº&amp;#155;
-
-è§£å&amp;#134;³:[https://material.io/resources/icons/?icon=account\_balance&amp;style=baseline](https://material.io/resources/icons/?icon=account_balance&amp;style=baseline)
-
-#### é&amp;#151;®é¢&amp;#152;5
-
-é&amp;#151;®é¢&amp;#152;:æ&amp;#138;½å&amp;#135;ºappbar æ&amp;#151;¶can&#39;t be assigned to the parameter type &#39;PreferredSizeWidget&#39;
-
-è§£å&amp;#134;³:
-</code></pre><!-- raw HTML omitted -->
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h2 id="问题">问题</h2>
+<h4 id="问题1">问题1</h4>
+<p>问题:Flutter中Column嵌套Listview报overflowed错误.</p>
+<p>解决:使用Column+Expanded+Listview布局界面.</p>
+<h4 id="问题2">问题2</h4>
+<p>问题:数组json转换成List</p>
+<p>解决:</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h4 id="问题3">问题3</h4>
+<p>问题:界面中请求网络的时机</p>
+<p>解决:使用<code>&lt;a href=&quot;https://api.flutter-io.cn/flutter/widgets/FutureBuilder-class.html&quot;&gt;FutureBuilder&lt;/a&gt;</code></p>
+<h4 id="问题4">问题4</h4>
+<p>问题:material-design icon有哪些</p>
+<p>解决:<a href="https://material.io/resources/icons/?icon=account_balance&amp;style=baseline">https://material.io/resources/icons/?icon=account_balance&amp;style=baseline</a></p>
+<h4 id="问题5">问题5</h4>
+<p>问题:抽出appbar 时can&rsquo;t be assigned to the parameter type &lsquo;PreferredSizeWidget&rsquo;</p>
+<p>解决:</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h4 id="问题6">问题6</h4>
+<p>问题:flutter加载中文乱码</p>
+<p>解决:</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h4 id="问题7">问题7</h4>
+<p>问题:flutter 写文件报 OS Error: Read-only file system</p>
+<p>解决:使用path_provider插件获取目录</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h4 id="问题8">问题8</h4>
+<p>问题:设置android中的match_parent</p>
+<p>解决:<code>width: double.infinity</code></p>
+<h4 id="问题9">问题9</h4>
+<p>问题:AppBar中的leading设置大小无效</p>
+<p>解决:被ConstrainedBox限制了大小,使用UnconstrainedBox嵌套一层即可</p>
+<h4 id="问题10">问题10</h4>
+<p>问题:使用bottomNavigationBar切换page时重新调用initState</p>
+<p>解决:使用PageView包裹body,子page with AutomaticKeepAliveClientMixin,重写bool get wantKeepAlive =&gt; true</p>
 <ul class="pa0">
   
 </ul>

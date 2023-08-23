@@ -6,24 +6,16 @@
     <description>Recent content in dns on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 10 Jan 2018 20:06:27 +0000</lastBuildDate><atom:link href="/tags/dns/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 10 Jan 2018 12:06:27 +0000</lastBuildDate><atom:link href="/tags/dns/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>在Okhttp中使用HTTPDNS</title>
       <link>/archives/63/</link>
-      <pubDate>Wed, 10 Jan 2018 20:06:27 +0000</pubDate>
+      <pubDate>Wed, 10 Jan 2018 12:06:27 +0000</pubDate>
       
       <guid>/archives/63/</guid>
-      <description>èæ¯ ç¨æ·ç»å¸¸å¨å½å¤ä½¿ç¨Appï¼å½å¤çç½ç»ç¯å¢æ´å å¤æï¼ç»å¸¸ä¼åºç°UnknownHostExceptionçå¼å¸¸ï¼æ æ³è§£æDNSã
-è§£å³æ¹æ¡ å½éå°è¯¥å¼å¸¸æ¶å°±éè¦èªå·±å»è§£æDNSãå¸¸ç¨çèªå·±è§£æDNSçæ¹å¼æä¸¤ç§
-1.èªå·±æ¿å°IPåæ¿æ¢ååï¼Appèçæ¹å¼ï¼ æ¯å¦ä½¿ç¨dnsjavaæ¿å°IPåéè¦ï¼
-å¯¹è¯·æ±çååè¿è¡æ¿æ¢ å¯¹Headerä¸­çHostè¿è¡æ¿æ¢ å¯¹Cookieä¸­çdomainè¿è¡æ¿æ¢ Httpsä¸è¯ä¹¦æ ¡éªé®é¢ .â¦â¦ start=&amp;ldquo;1.&amp;quot;&amp;gt; ä½¿ç¨èµ·æ¥æ¯è¾éº»ç¦ï¼é®é¢è¾å¤ã
-2.ä½¿ç¨Okhttpèªå®ä¹DNSåè½ ç®ååæAppä»android-async-httpåæ¢å°OKhttpã(PS:è±äºä¸å¨å¤æ¶é´ï¼æ¹å°åè¡)ï¼å¯ä»¥ç´æ¥ä½¿ç¨Okhttpèªå®ä¹dnsåè½ã
-DNSçè§£ææ¹å¼éæ©äºHTTPDNSï¼HTTPDNSç´æ¥ä½¿ç¨ HTTPåè®®å»æ¥è¯¢DNSï¼é¿å¼äºä¼ ç»UDPæ¹å¼DNSçDNSå«æï¼ä¸åç¡®ç­å¼ç«¯ã
-è¯¦è§ï¼ãé¹ åç½äºãå ¨å±ç²¾ç¡®æµéè°åº¦æ°æè·¯-HttpDNSæå¡è¯¦è§£ 3.Okhttpèªå®ä¹DNS HTTPDNSéæ©äºDNSpodåGoogle Public DNSä¸¤å®¶ã
-å¨å½å¤éç¨Google Public DNS
-å¨å½å éç¨DNSpod
-å®ç°æ¹å¼å¦ä¸ï¼
-&amp;lt;pre class=&amp;#34;line-numbers prism-highlight&amp;#34; data-start=&amp;#34;1&amp;#34;&amp;gt;```java public class OkDns implements Dns { private String mIps; private long mLastDnsTime; private static final long DNS_TTL = 600 * 1000;//è&amp;amp;#135;ªå®&amp;amp;#154;ä¹&amp;amp;#137;DNSç¼&amp;amp;#147;å­&amp;amp;#152;æ&amp;amp;#151;¶é&amp;amp;#151;´ @Override public List&amp;lt;InetAddress&amp;gt; lookup(String hostname) throws UnknownHostException { try { List&amp;lt;InetAddress&amp;gt; list = Dns.</description>
+      <description>背景 用户经常在国外使用App，国外的网络环境更加复杂，经常会出现UnknownHostException的异常，无法解析DNS。
+解决方案 当遇到该异常时就需要自己去解析DNS。常用的自己解析DNS的方式有两种
+1.自己拿到IP后替换域名（App老的方式） 比如使用dnsjava拿到IP后需要：</description>
     </item>
     
   </channel>

@@ -6,27 +6,46 @@
     <description>Recent content in Web on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 02 Oct 2017 01:12:43 +0000</lastBuildDate><atom:link href="/categories/web/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 01 Oct 2017 17:12:43 +0000</lastBuildDate><atom:link href="/categories/web/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>中文排班指南</title>
       <link>/archives/39/</link>
-      <pubDate>Mon, 02 Oct 2017 01:12:43 +0000</pubDate>
+      <pubDate>Sun, 01 Oct 2017 17:12:43 +0000</pubDate>
       
       <guid>/archives/39/</guid>
-      <description></description>
+      <description> </description>
     </item>
     
     <item>
       <title>WordPress XML-RPC wp接口文档</title>
       <link>/archives/14/</link>
-      <pubDate>Fri, 29 Sep 2017 19:37:02 +0000</pubDate>
+      <pubDate>Fri, 29 Sep 2017 11:37:02 +0000</pubDate>
       
       <guid>/archives/14/</guid>
-      <description>å¤è¾¹æ ¢,å¤ä»½ä¸
-wp.getUsersBlogs Retrieve the blogs of the users.
-Parameters string username string password Return Values array struct boolean isAdmin string url string blogid string blogName string xmlrpc wp.getTags Get list of all tags.
-Parameters int blog_id string username string password Return Values array struct int tag_id string name int count string slug string html_url string rss_url wp.getAuthors Get an array of users for the blog.
-Parameters int blog_id string username string password Return Values array struct int user_id string user_login string display_name string meta_value (Serialized PHP data) &amp;hellip; wp.</description>
+      <description>&lt;p&gt;外边慢,备份下&lt;/p&gt;
+&lt;h2 id=&#34;wpgetusersblogs&#34;&gt;wp.getUsersBlogs&lt;/h2&gt;
+&lt;p&gt;Retrieve the blogs of the users.&lt;/p&gt;
+&lt;h3 id=&#34;parameters&#34;&gt;Parameters&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;string username&lt;/li&gt;
+&lt;li&gt;string password&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;return-values&#34;&gt;Return Values&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;array
+&lt;ul&gt;
+&lt;li&gt;struct
+&lt;ul&gt;
+&lt;li&gt;boolean isAdmin&lt;/li&gt;
+&lt;li&gt;string url&lt;/li&gt;
+&lt;li&gt;string blogid&lt;/li&gt;
+&lt;li&gt;string blogName&lt;/li&gt;
+&lt;li&gt;string xmlrpc&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
   </channel>

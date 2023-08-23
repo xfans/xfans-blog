@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "main.css",
-	"sourceRoot": "/Users/xfans/Downloads/ConvertToHugo/xfans-blog",
+	"sourceRoot": "/Users/xfans/Project/blog/xfans-blog",
 	"sources": [
 		"ananke/css/main.css"
 	],

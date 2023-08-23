@@ -105,13 +105,17 @@
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      è¯´æ Flutter 2.5 çæ¬ä¸­çç ´åæ§æ¹å¨
-é»è®¤çè®¾å¤æå¨åæ»å¨ v2.2 çåå é¤äºåºå¼ç API Package ä»ç»: flutter_lints ThemeData ç accent å±æ§å·²è¢«å¼ç¨ æå¿è¯å«å¨æ¸ ç å° AnimationSheetBuilder.display æ¿æ¢ä¸º collate ä½¿ç¨ HTML ææ§½å¨ Web ä¸­æ¸²æå¹³å°è§å¾ å° LogicalKeySet è¿ç§»è³ SingleActivator é¡¹ç®ä½¿ç¨Flutter2.5ç¼è¯åï¼é¨åé¡µé¢çé¢è²åçäºååã
-éè¦å¯¹ThemeData ç accent å±æ§è¿è¡éé ã
-æ¹å¨ ä¸»é¢ä¿¡æ¯ ThemeData ä¸­ç accentColorãaccentColorBrightnessãaccentIconTheme å accentTextTheme å±æ§ç°å·²è¢«å¼ç¨ã
-Material è®¾è®¡è§è ä¸åä¸º Material ç»ä»¶æå®æä½¿ç¨ãå¼ºè°ãè²ãç»ä»¶çé»è®¤é¢è²æ¥èªæ´ä¸ªä¸»é¢ç é¢è²æ¹æ¡ãç°å¨éå¸¸ä½¿ç¨ ColorScheme ç secondary color ä»£æ¿ accentColorï¼å¹¶ä¸å¨éè¦å¯¹æ¯è²æ¶ä½¿ç¨ onSecondary å±æ§ã
-éé  éé åï¼
-theme: ThemeData( primaryColor: Color.fromRGBO(156, 184, 133, 1.
+      说明 Flutter 2.5 版本中的破坏性改动
+默认的设备拖动和滚动 v2.2 版后删除了废弃的 API Package 介绍: flutter_lints ThemeData 的 accent 属性已被弃用 手势识别器清理 将 AnimationSheetBuilder.display 替换为 collate 使用 HTML 插槽在 Web 中渲染平台视图 将 LogicalKeySet 迁移至 SingleActivator 项目使用Flutter2.5编译后，部分页面的颜色发生了变化。
+需要对ThemeData 的 accent 属性进行适配。
+改动 主题信息 ThemeData 中的 accentColor、accentColorBrightness、accentIconTheme 和 accentTextTheme 属性现已被弃用。
+Material 设计规范 不再为 Material 组件指定或使用「强调」色。组件的默认颜色来自整个主题的 颜色方案。现在通常使用 ColorScheme 的 secondary color 代替 accentColor，并且在需要对比色时使用 onSecondary 属性。
+适配 适配前：
+适配后：
+使用时：
+改为：
+相关链接 https://flutter.cn/docs/release/breaking-changes/theme-data-accent-properties
+https://flutter.cn/posts/whats-new-in-flutter-2-5
     </div>
   </div>
 
@@ -130,9 +134,11 @@ theme: ThemeData( primaryColor: Color.fromRGBO(156, 184, 133, 1.
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      èæ¯ å¨Flutterä¸­éå¸¸ä½¿ç¨cached_network_imageæ§ä»¶æ¾ç¤ºå¾çï¼è¯¥æ§ä»¶ä½¿ç¨httpåºè¯·æ±å¾çï¼httpåºæ æ³ådioä¸æ ·æ¹ä¾¿çæ·»å æ¦æªå¨ç­ã
-å®ç° CachedNetworkImageä½¿ç¨flutter_cache_managerè¿è¡å¾çç¼å­ï¼å¯ä»¥ä½¿ç¨èªå®ä¹cache_manageræ¥æ¿æ¢httpä¸ºdioã å¦ä¸ï¼
-&lt;pre class=&#34;wp-block-preformatted&#34;&gt;class DioCacheManager extends CacheManager { static const &lt;em&gt;key &lt;/em&gt;= &#39;dioCache&#39;; static DioCacheManager &lt;em&gt;_instance&lt;/em&gt;; factory DioCacheManager(Dio dio) { if (&lt;em&gt;_instance &lt;/em&gt;== null) { &lt;em&gt;_instance &lt;/em&gt;= DioCacheManager._(dio); } return &lt;em&gt;_instance&lt;/em&gt;; } DioCacheManager._(Dio dio) : super(Config(&lt;em&gt;key&lt;/em&gt;, fileService: DioHttpFileService(dio))); } &lt;pre class=&#34;wp-block-preformatted&#34;&gt;class DioHttpFileService extends FileService { Dio _dio; DioHttpFileService(this._dio); @override Future&lt;FileServiceResponse&gt; get(String url, {Map&lt;String, String&gt; headers}) async { Options options = Options(headers: headers ?? {}, responseType: ResponseType.
+      背景 在Flutter中通常使用cached_network_image控件显示图片，该控件使用http库请求图片，http库无法像dio一样方便的添加拦截器等。
+实现 CachedNetworkImage使用flutter_cache_manager进行图片缓存，可以使用自定义cache_manager来替换http为dio。 如下：
+使用方法 然后就可以使用dio的拦截等功能了，比如使用拦截器添加并刷新token，添加log等功能。
+地址 https://pub.dev/packages/flutter_cache_manager_dio
+https://github.com/xfans/flutter_cache_manager_dio
     </div>
   </div>
 
@@ -151,12 +157,20 @@ theme: ThemeData( primaryColor: Color.fromRGBO(156, 184, 133, 1.
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      ä½ç¨ InheritedWidgetæ¯ä¸ä¸ªå¨Widgetæ ä¸­ï¼ä»ä¸å¾ä¸ä¼ éä¿¡æ¯çå°é¨ä»¶ã
-ä¸»è¦ä»ä¸¤ä¸ªæ¹é¢çè§£æºç ï¼
-1.å­Widgetå¯ä»¥è·åå°ç¶æ§ä»¶ä¸­çInheritedWidgetï¼ä»èè·åå°InheritedWidgetçä¿¡æ¯ã
-2.å­Widgetè°ç¨dependOnInheritedWidgetOfExactTypeåï¼å½ç¶InheritedWidgetéå»ºåï¼ä¼è°ç¨å­æ§ä»¶éå»ºã
-åç 1.å­æ§ä»¶å¯ä»¥è·åå°ç¶æ§ä»¶ä¸­çInheritedWidget å¨Elementä¸­æä¸ªMapï¼
-&lt;pre class=&#34;wp-block-preformatted&#34;&gt;``` Map&lt;Type, InheritedElement&gt; _inheritedWidgets; å ¶ä¸­ä¿&amp;#157;å­&amp;#152;äº&amp;#134;è¯¥`Widget`ç&amp;#154;&amp;#132;ç&amp;#136;¶è&amp;#138;&amp;#130;ç&amp;#130;¹ä¸­ç&amp;#154;&amp;#132;`InheritedWidget`ã&amp;#128;&amp;#130;ä¼&amp;#154;å&amp;#156;¨`mount`\\`activate` æ&amp;#150;¹æ³&amp;#149;ä¸­èµ&amp;#139;å&amp;#128;¼ï¼&amp;#140;èµ&amp;#139;å&amp;#128;¼ç&amp;#154;&amp;#132;ä»£ç &amp;#129;å¦&amp;#130;ä¸&amp;#139;ï¼&amp;#154; å&amp;#156;¨`Element`ä¸­ 
+      作用 InheritedWidget是一个在Widget树中，从上往下传递信息的小部件。
+主要从两个方面理解源码：
+1.子Widget可以获取到父控件中的InheritedWidget，从而获取到InheritedWidget的信息。
+2.子Widget调用dependOnInheritedWidgetOfExactType后，当父InheritedWidget重建后，会调用子控件重建。
+原理 1.子控件可以获取到父控件中的InheritedWidget 在Element中有个Map：
+其中保存了该Widget的父节点中的InheritedWidget。会在mount`activate`
+方法中赋值，赋值的代码如下：
+在Element中
+在InheritedElement中
+经过上面两个方法，Widget本身就可以通过_inheritedWidgets获取到InheritedElement了
+2.子Widget调用dependOnInheritedWidgetOfExactType后，当父InheritedWidget重建后，会调用子控件重建 在InheritedElement中有个Map：
+当子Widget调用dependOnInheritedWidgetOfExactType方法时，会依次调用dependOnInheritedElement方法，InheritedElement的updateDependencies方法，setDependencies方法。将自己注册到父InheritedElement的_dependents中。
+当InheritedElement重建时会调用updated方法，然后会调用到notifyClients方法，最终调用Widget didChangeDependencies方法并重建子Widget。
+由上边的代码可以看出，只有当子Widget调用了dependOnInheritedWidgetOfExactType才会收到InheritedWidget的重建通知。
     </div>
   </div>
 
@@ -175,11 +189,26 @@ theme: ThemeData( primaryColor: Color.fromRGBO(156, 184, 133, 1.
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      é®é¢ é®é¢1 é®é¢:Flutterä¸­Columnåµå¥Listviewæ¥overflowedéè¯¯.
-è§£å³:ä½¿ç¨Column+Expanded+Listviewå¸å±çé¢.
-é®é¢2 é®é¢:æ°ç»jsonè½¬æ¢æList
-è§£å³:
-&lt;pre class=&#34;wp-block-preformatted&#34;&gt;``` List list = json.decode(response.body); List&lt;User&gt; result = []; list.forEach((item) { result.add(User.fromJson(item)); }); #### é&amp;#151;®é¢&amp;#152;3 é&amp;#151;®é¢&amp;#152;:ç&amp;#149;&amp;#140;é&amp;#157;¢ä¸­è¯·æ±&amp;#130;ç½&amp;#145;ç»&amp;#156;ç&amp;#154;&amp;#132;æ&amp;#151;¶æ&amp;#156;º è§£å&amp;#134;³:ä½¿ç&amp;#148;¨`&lt;a href=&#34;https://api.flutter-io.cn/flutter/widgets/FutureBuilder-class.html&#34;&gt;FutureBuilder&lt;/a&gt;` #### é&amp;#151;®é¢&amp;#152;4 é&amp;#151;®é¢&amp;#152;:material-design iconæ&amp;#156;&amp;#137;å&amp;#147;ªäº&amp;#155; è§£å&amp;#134;³:[https://material.io/resources/icons/?icon=account\_balance&amp;style=baseline](https://material.io/resources/icons/?icon=account_balance&amp;style=baseline) #### é&amp;#151;®é¢&amp;#152;5 é&amp;#151;®é¢&amp;#152;:æ&amp;#138;½å&amp;#135;ºappbar æ&amp;#151;¶can&#39;t be assigned to the parameter type &#39;PreferredSizeWidget&#39; è§£å&amp;#134;³: 
+      问题 问题1 问题:Flutter中Column嵌套Listview报overflowed错误.
+解决:使用Column+Expanded+Listview布局界面.
+问题2 问题:数组json转换成List
+解决:
+问题3 问题:界面中请求网络的时机
+解决:使用&lt;a href=&quot;https://api.flutter-io.cn/flutter/widgets/FutureBuilder-class.html&quot;&gt;FutureBuilder&lt;/a&gt;
+问题4 问题:material-design icon有哪些
+解决:https://material.io/resources/icons/?icon=account_balance&amp;style=baseline
+问题5 问题:抽出appbar 时can&rsquo;t be assigned to the parameter type &lsquo;PreferredSizeWidget&rsquo;
+解决:
+问题6 问题:flutter加载中文乱码
+解决:
+问题7 问题:flutter 写文件报 OS Error: Read-only file system
+解决:使用path_provider插件获取目录
+问题8 问题:设置android中的match_parent
+解决:width: double.infinity
+问题9 问题:AppBar中的leading设置大小无效
+解决:被ConstrainedBox限制了大小,使用UnconstrainedBox嵌套一层即可
+问题10 问题:使用bottomNavigationBar切换page时重新调用initState
+解决:使用PageView包裹body,子page with AutomaticKeepAliveClientMixin,重写bool get wantKeepAlive =&gt; true
     </div>
   </div>
 

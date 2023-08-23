@@ -6,9 +6,10 @@
     
     <title>retrofit2源码及请求流程分析 | </title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="1.åå»ºRetrofitå¯¹è±¡ &lt;pre class=&#34;wp-block-preformatted&#34;&gt;&lt;strong&gt;val &lt;/strong&gt;retrofit = Retrofit.Builder()&lt;br&gt;&lt;/br&gt; .baseUrl(SimpleService.&lt;em&gt;API_URL&lt;/em&gt;)&lt;br&gt;&lt;/br&gt; .addConverterFactory(GsonConverterFactory.create())&lt;br&gt;&lt;/br&gt; .build() 2.åå»ºServiceæ¥å£ &lt;pre class=&#34;wp-block-preformatted&#34;&gt;&lt;strong&gt;val &lt;/strong&gt;github = retrofit.create(GitHub::&lt;strong&gt;class&lt;/strong&gt;.&lt;em&gt;java&lt;/em&gt;) retrofit.createæ¹æ³ä¸ºServiceåå»ºå¨æä»£çï¼å¯ä»¥è¯´æ¯Retrofitçæ ¸å¿ã
-3.åå»ºè°ç¨APIçCallå¯¹è±¡ &lt;pre class=&#34;wp-block-preformatted&#34;&gt;&lt;strong&gt;val &lt;/strong&gt;call = github.contributors(&lt;strong&gt;&#34;square&#34;&lt;/strong&gt;, &lt;strong&gt;&#34;retrofit&#34;&lt;/strong&gt;) 1.å½è°ç¨Serviceä¸­å®ä¹çæ¹æ³æ¶ï¼ä¼è°ç¨retrofit.createåå»ºçå¨æä»£çï¼è°ç¨Proxy.newProxyInstanceä¸­InvocationHandlerçinvokeæ¹æ³,åå»ºæµç¨å¦ä¸:
-&lt;pre class=&#34;wp-block-preformatted&#34;&gt;&lt;strong&gt;val &lt;/strong&gt;contributors = call.execute().body()!! è¯·æ±ç½ç»çæµç¨å¦ä¸:">
+    <meta name="description" content="1.创建Retrofit对象 2.创建Service接口 retrofit.create方法为Service创建动态代理，可以说是Retrofit的核心。
+3.创建调用API的Call对象 1.当调用Service中定义的方法时，会调用retrofit.create创建的动态代理，调用Proxy._newProxyInstance_中InvocationHandler的invoke方法,创建流程如下:
+4.发起网络请求 请求网络的流程如下:
+异步请求和同步类似，这里就不分析了。">
     <meta name="generator" content="Hugo 0.117.0">
     
     
@@ -32,24 +33,27 @@
     
     
     <meta property="og:title" content="retrofit2源码及请求流程分析" />
-<meta property="og:description" content="1.åå»ºRetrofitå¯¹è±¡ &lt;pre class=&#34;wp-block-preformatted&#34;&gt;&lt;strong&gt;val &lt;/strong&gt;retrofit = Retrofit.Builder()&lt;br&gt;&lt;/br&gt; .baseUrl(SimpleService.&lt;em&gt;API_URL&lt;/em&gt;)&lt;br&gt;&lt;/br&gt; .addConverterFactory(GsonConverterFactory.create())&lt;br&gt;&lt;/br&gt; .build() 2.åå»ºServiceæ¥å£ &lt;pre class=&#34;wp-block-preformatted&#34;&gt;&lt;strong&gt;val &lt;/strong&gt;github = retrofit.create(GitHub::&lt;strong&gt;class&lt;/strong&gt;.&lt;em&gt;java&lt;/em&gt;) retrofit.createæ¹æ³ä¸ºServiceåå»ºå¨æä»£çï¼å¯ä»¥è¯´æ¯Retrofitçæ ¸å¿ã
-3.åå»ºè°ç¨APIçCallå¯¹è±¡ &lt;pre class=&#34;wp-block-preformatted&#34;&gt;&lt;strong&gt;val &lt;/strong&gt;call = github.contributors(&lt;strong&gt;&#34;square&#34;&lt;/strong&gt;, &lt;strong&gt;&#34;retrofit&#34;&lt;/strong&gt;) 1.å½è°ç¨Serviceä¸­å®ä¹çæ¹æ³æ¶ï¼ä¼è°ç¨retrofit.createåå»ºçå¨æä»£çï¼è°ç¨Proxy.newProxyInstanceä¸­InvocationHandlerçinvokeæ¹æ³,åå»ºæµç¨å¦ä¸:
-&lt;pre class=&#34;wp-block-preformatted&#34;&gt;&lt;strong&gt;val &lt;/strong&gt;contributors = call.execute().body()!! è¯·æ±ç½ç»çæµç¨å¦ä¸:" />
+<meta property="og:description" content="1.创建Retrofit对象 2.创建Service接口 retrofit.create方法为Service创建动态代理，可以说是Retrofit的核心。
+3.创建调用API的Call对象 1.当调用Service中定义的方法时，会调用retrofit.create创建的动态代理，调用Proxy._newProxyInstance_中InvocationHandler的invoke方法,创建流程如下:
+4.发起网络请求 请求网络的流程如下:
+异步请求和同步类似，这里就不分析了。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/archives/335/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2020-01-23T00:25:00+00:00" />
-<meta property="article:modified_time" content="2020-01-23T00:25:00+00:00" />
+<meta property="article:published_time" content="2020-01-22T16:25:00+00:00" />
+<meta property="article:modified_time" content="2020-01-22T16:25:00+00:00" />
 <meta itemprop="name" content="retrofit2源码及请求流程分析">
-<meta itemprop="description" content="1.åå»ºRetrofitå¯¹è±¡ &lt;pre class=&#34;wp-block-preformatted&#34;&gt;&lt;strong&gt;val &lt;/strong&gt;retrofit = Retrofit.Builder()&lt;br&gt;&lt;/br&gt; .baseUrl(SimpleService.&lt;em&gt;API_URL&lt;/em&gt;)&lt;br&gt;&lt;/br&gt; .addConverterFactory(GsonConverterFactory.create())&lt;br&gt;&lt;/br&gt; .build() 2.åå»ºServiceæ¥å£ &lt;pre class=&#34;wp-block-preformatted&#34;&gt;&lt;strong&gt;val &lt;/strong&gt;github = retrofit.create(GitHub::&lt;strong&gt;class&lt;/strong&gt;.&lt;em&gt;java&lt;/em&gt;) retrofit.createæ¹æ³ä¸ºServiceåå»ºå¨æä»£çï¼å¯ä»¥è¯´æ¯Retrofitçæ ¸å¿ã
-3.åå»ºè°ç¨APIçCallå¯¹è±¡ &lt;pre class=&#34;wp-block-preformatted&#34;&gt;&lt;strong&gt;val &lt;/strong&gt;call = github.contributors(&lt;strong&gt;&#34;square&#34;&lt;/strong&gt;, &lt;strong&gt;&#34;retrofit&#34;&lt;/strong&gt;) 1.å½è°ç¨Serviceä¸­å®ä¹çæ¹æ³æ¶ï¼ä¼è°ç¨retrofit.createåå»ºçå¨æä»£çï¼è°ç¨Proxy.newProxyInstanceä¸­InvocationHandlerçinvokeæ¹æ³,åå»ºæµç¨å¦ä¸:
-&lt;pre class=&#34;wp-block-preformatted&#34;&gt;&lt;strong&gt;val &lt;/strong&gt;contributors = call.execute().body()!! è¯·æ±ç½ç»çæµç¨å¦ä¸:"><meta itemprop="datePublished" content="2020-01-23T00:25:00+00:00" />
-<meta itemprop="dateModified" content="2020-01-23T00:25:00+00:00" />
-<meta itemprop="wordCount" content="31">
+<meta itemprop="description" content="1.创建Retrofit对象 2.创建Service接口 retrofit.create方法为Service创建动态代理，可以说是Retrofit的核心。
+3.创建调用API的Call对象 1.当调用Service中定义的方法时，会调用retrofit.create创建的动态代理，调用Proxy._newProxyInstance_中InvocationHandler的invoke方法,创建流程如下:
+4.发起网络请求 请求网络的流程如下:
+异步请求和同步类似，这里就不分析了。"><meta itemprop="datePublished" content="2020-01-22T16:25:00+00:00" />
+<meta itemprop="dateModified" content="2020-01-22T16:25:00+00:00" />
+<meta itemprop="wordCount" content="8">
 <meta itemprop="keywords" content="retrofit," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="retrofit2源码及请求流程分析"/>
-<meta name="twitter:description" content="1.åå»ºRetrofitå¯¹è±¡ &lt;pre class=&#34;wp-block-preformatted&#34;&gt;&lt;strong&gt;val &lt;/strong&gt;retrofit = Retrofit.Builder()&lt;br&gt;&lt;/br&gt; .baseUrl(SimpleService.&lt;em&gt;API_URL&lt;/em&gt;)&lt;br&gt;&lt;/br&gt; .addConverterFactory(GsonConverterFactory.create())&lt;br&gt;&lt;/br&gt; .build() 2.åå»ºServiceæ¥å£ &lt;pre class=&#34;wp-block-preformatted&#34;&gt;&lt;strong&gt;val &lt;/strong&gt;github = retrofit.create(GitHub::&lt;strong&gt;class&lt;/strong&gt;.&lt;em&gt;java&lt;/em&gt;) retrofit.createæ¹æ³ä¸ºServiceåå»ºå¨æä»£çï¼å¯ä»¥è¯´æ¯Retrofitçæ ¸å¿ã
-3.åå»ºè°ç¨APIçCallå¯¹è±¡ &lt;pre class=&#34;wp-block-preformatted&#34;&gt;&lt;strong&gt;val &lt;/strong&gt;call = github.contributors(&lt;strong&gt;&#34;square&#34;&lt;/strong&gt;, &lt;strong&gt;&#34;retrofit&#34;&lt;/strong&gt;) 1.å½è°ç¨Serviceä¸­å®ä¹çæ¹æ³æ¶ï¼ä¼è°ç¨retrofit.createåå»ºçå¨æä»£çï¼è°ç¨Proxy.newProxyInstanceä¸­InvocationHandlerçinvokeæ¹æ³,åå»ºæµç¨å¦ä¸:
-&lt;pre class=&#34;wp-block-preformatted&#34;&gt;&lt;strong&gt;val &lt;/strong&gt;contributors = call.execute().body()!! è¯·æ±ç½ç»çæµç¨å¦ä¸:"/>
+<meta name="twitter:description" content="1.创建Retrofit对象 2.创建Service接口 retrofit.create方法为Service创建动态代理，可以说是Retrofit的核心。
+3.创建调用API的Call对象 1.当调用Service中定义的方法时，会调用retrofit.create创建的动态代理，调用Proxy._newProxyInstance_中InvocationHandler的invoke方法,创建流程如下:
+4.发起网络请求 请求网络的流程如下:
+异步请求和同步类似，这里就不分析了。"/>
 
 	
   </head>
@@ -120,24 +124,26 @@
       
       
       
-      <time class="f6 mv4 dib tracked" datetime="2020-01-23T00:25:00Z">January 23, 2020</time>
+      <time class="f6 mv4 dib tracked" datetime="2020-01-22T16:25:00Z">January 22, 2020</time>
       
 
       
       
     </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h3 id="1å136155åºretrofitåè">1.åå»ºRetrofitå¯¹è±¡</h3>
-<pre tabindex="0"><code>&lt;pre class=&#34;wp-block-preformatted&#34;&gt;&lt;strong&gt;val &lt;/strong&gt;retrofit = Retrofit.Builder()&lt;br&gt;&lt;/br&gt;    .baseUrl(SimpleService.&lt;em&gt;API_URL&lt;/em&gt;)&lt;br&gt;&lt;/br&gt;    .addConverterFactory(GsonConverterFactory.create())&lt;br&gt;&lt;/br&gt;    .build()
-</code></pre><h3 id="2å136155åºserviceæ142å143">2.åå»ºServiceæ¥å£</h3>
-<pre tabindex="0"><code>&lt;pre class=&#34;wp-block-preformatted&#34;&gt;&lt;strong&gt;val &lt;/strong&gt;github = retrofit.create(GitHub::&lt;strong&gt;class&lt;/strong&gt;.&lt;em&gt;java&lt;/em&gt;)
-</code></pre><p>retrofit.createæ¹æ³ä¸ºServiceåå»ºå¨æä»£çï¼å¯ä»¥è¯´æ¯Retrofitçæ ¸å¿ã</p>
-<h2 id="3å136155åºè131ç148apiç154132callåè">3.åå»ºè°ç¨APIçCallå¯¹è±¡</h2>
-<pre tabindex="0"><code>&lt;pre class=&#34;wp-block-preformatted&#34;&gt;&lt;strong&gt;val &lt;/strong&gt;call = github.contributors(&lt;strong&gt;&#34;square&#34;&lt;/strong&gt;, &lt;strong&gt;&#34;retrofit&#34;&lt;/strong&gt;)
-</code></pre><p>1.å½è°ç¨Serviceä¸­å®ä¹çæ¹æ³æ¶ï¼ä¼è°ç¨retrofit.createåå»ºçå¨æä»£çï¼è°ç¨Proxy.<em>newProxyInstance</em>ä¸­InvocationHandlerçinvokeæ¹æ³,åå»ºæµç¨å¦ä¸:</p>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h3 id="1创建retrofit对象">1.创建Retrofit对象</h3>
 <!-- raw HTML omitted -->
-<pre tabindex="0"><code>&lt;pre class=&#34;wp-block-preformatted&#34;&gt;&lt;strong&gt;val &lt;/strong&gt;contributors = call.execute().body()!!
-</code></pre><p>è¯·æ±ç½ç»çæµç¨å¦ä¸:</p>
+<h3 id="2创建service接口">2.创建Service接口</h3>
 <!-- raw HTML omitted -->
+<p>retrofit.create方法为Service创建动态代理，可以说是Retrofit的核心。</p>
+<h2 id="3创建调用api的call对象">3.创建调用API的Call对象</h2>
+<!-- raw HTML omitted -->
+<p>1.当调用Service中定义的方法时，会调用retrofit.create创建的动态代理，调用Proxy._newProxyInstance_中InvocationHandler的invoke方法,创建流程如下:<!-- raw HTML omitted --></p>
+<p><img src="http://img.xfans.me/xfans/image/retrofitservicemethod.png" alt=""> <!-- raw HTML omitted --></p>
+<h3 id="4发起网络请求">4.发起网络请求</h3>
+<!-- raw HTML omitted -->
+<p>请求网络的流程如下:<!-- raw HTML omitted --></p>
+<p><img src="http://img.xfans.me/xfans/image/retrofitexecute.png" alt=""> <!-- raw HTML omitted --></p>
+<p>异步请求和同步类似，这里就不分析了。</p>
 <ul class="pa0">
   
    <li class="list di">

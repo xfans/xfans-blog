@@ -104,8 +104,8 @@
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      é®é¢ Appä¸­ä¸ä¸ªéççbug,å½ç¨æ·ä½¿ç¨æ¯ä»å®è¿è¡æ¯ä»æ¶ä¼æ¦çåºé.å¹¶ä¸æ²¡æè§å¾.
-åå å¯¹æ¯æ¯ä»å®ççurl,åç°é¨ååæ°ä¸­å¤äº+å·,ç¨åºä¸­å¯¹urlè¿è¡äºURLDecoder.&lt;em&gt;decode&lt;/em&gt;(url),å¯¼è´ç©ºæ ¼åæäº+å·,ä»èå¯¼è´æ¯ä»å®æ¥é.
+      问题 App中一个遗留的bug,当用户使用支付宝进行支付时会概率出错.并且没有规律.
+原因 对比支付宝的的url,发现部分参数中多了+号,程序中对url进行了URLDecoder.&lt;em&gt;decode&lt;/em&gt;(url),导致空格变成了+号,从而导致支付宝报错.
     </div>
   </div>
 
@@ -124,11 +124,13 @@
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      èæ¯ Android-async-httpå·²ç»ä¸æ´æ°äºãps:è¿ä¸ºè¿ä¸ªåºæäº¤è¿åè½https://github.com/android-async-http/android-async-http/pull/840
-Android-async-httpæ¯åºäºHttpClientçã
-æ¿æ¢æ¹æ¡ å°é¡¹ç®ä¸­ææçè¯·æ±ä»£ç é½æ¿æ¢å·¥ä½éå·¨å¤§ï¼ä¹å®¹æåºé®é¢ãæä»¥éç¨å°Okhttpå°è£ ä¸ºAndroid-async-httpçæ¹å¼è¿è¡æ¿æ¢ã
-android-async-httpçä½¿ç¨æ¹æ³:
-&lt;pre class=&#34;wp-block-preformatted&#34;&gt;``` AsyncHttpClient client = &lt;strong&gt;new &lt;/strong&gt;AsyncHttpClient(); String url = &lt;strong&gt;&#34;http://xfans.me/api/v1/list&#34;&lt;/strong&gt;; client.get(url, &lt;strong&gt;new &lt;/strong&gt;AsyncHttpResponseHandler() { @Override &lt;strong&gt;public void &lt;/strong&gt;onSuccess(&lt;strong&gt;int &lt;/strong&gt;statusCode, Header[] headers, &lt;strong&gt;byte&lt;/strong&gt;[] responseBody) { } @Override &lt;strong&gt;public void &lt;/strong&gt;onFailure(&lt;strong&gt;int &lt;/strong&gt;statusCode, Header[] headers, &lt;strong&gt;byte&lt;/strong&gt;[] responseBody, Throwable error) { } }); ä»&amp;#142;ä»£ç &amp;#129;å&amp;#143;¯ä»¥ç&amp;#156;&amp;#139;å&amp;#135;º,æ&amp;#131;³è¦&amp;#129;å¿«é&amp;#128;&amp;#159;ç&amp;#154;&amp;#132;æ&amp;#155;¿æ&amp;#141;¢é&amp;#156;&amp;#128;è¦&amp;#129;: 1.ä½¿ç&amp;#148;¨okhttpæ&amp;#157;¥å®&amp;#158;ç&amp;#142;°`AsyncHttpClient` 2.å®&amp;#158;ç&amp;#142;°`AsyncHttpResponseHandler`,`FileAsyncHttpResponseHandler`,`JsonHttpResponseHandler`,`TextHttpResponseHandler`ç­&amp;#137;é¡¹ç&amp;#155;®ä¸­ä½¿ç&amp;#148;¨ç&amp;#154;&amp;#132;Handlerå&amp;#141;³å&amp;#143;¯. 
+      背景 Android-async-http已经不更新了。ps:还为这个库提交过功能https://github.com/android-async-http/android-async-http/pull/840
+Android-async-http是基于HttpClient的。
+替换方案 将项目中所有的请求代码都替换工作量巨大，也容易出问题。所以采用将Okhttp封装为Android-async-http的方式进行替换。
+android-async-http的使用方法:
+从代码可以看出,想要快速的替换需要:
+1.使用okhttp来实现AsyncHttpClient
+2.实现AsyncHttpResponseHandler,FileAsyncHttpResponseHandler,JsonHttpResponseHandler,TextHttpResponseHandler等项目中使用的Handler即可.
     </div>
   </div>
 
@@ -147,9 +149,18 @@ android-async-httpçä½¿ç¨æ¹æ³:
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      èæ¯ ç¨æ·åé¦åä¸ºMate10 æ æ³ä½¿ç¨Appã
-åçº§ targetSdkVersion = 26
-éå°çé®é¢ ç½ç»è¯·æ±å¼å¸¸ TransactionTooLargeException éç¥æ¸ é FileUriExposedException Charlesæ æ³æHttps MODE_WORLD_READABLE no longer supported BadTokenException 7.1 Not allowed to start service getRunningServices deprecated in API level 26 As of O, this method is no longer available to third party applications. For backwards compatibility, it will still return the caller&rsquo;s own services. ps:æ¶é´å¤ªé¿äºæ³èµ·æ¥ååï¼è¯¦æ æç©ºåæ´ç 
+      背景 用户反馈华为Mate10 无法使用App。
+升级 targetSdkVersion = 26
+遇到的问题 网络请求异常
+TransactionTooLargeException
+通知渠道
+FileUriExposedException
+Charles无法抓Https
+MODE_WORLD_READABLE no longer supported
+BadTokenException 7.1
+Not allowed to start service
+getRunningServices deprecated in API level 26 As of O, this method is no longer available to third party applications. For backwards compatibility, it will still return the caller&rsquo;s own services.
+ps:时间太长了想起来再写，详情有空再整理
     </div>
   </div>
 
@@ -168,12 +179,12 @@ android-async-httpçä½¿ç¨æ¹æ³:
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      å½ä»¤ Remote git remote set-url origin git@github.com:xfans/VirtualApp.git
+      命令 Remote git remote set-url origin git@github.com:xfans/VirtualApp.git
 git push origin master
 Upstream git remote add upstream git@github.com:asLody/VirtualApp.git
 git fetch upstream
 git merge upstream/master
-å¿«éä¸è½½android frameworksæºç  git clone --branch android10-release git@gitee.com:mirrors/platform_frameworks_base.git --depth 1
+快速下载android frameworks源码 git clone --branch android10-release git@gitee.com:mirrors/platform_frameworks_base.git --depth 1
     </div>
   </div>
 
@@ -192,21 +203,25 @@ git merge upstream/master
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      ä»ç» ä¼ç¹ï¼ 1.åºäºArchï¼ä½ä¸ç¨æè ¾
-2.æ»å¨æ´æ°ï¼ä½æ¯Archæ ¢ï¼æ¯Archæ´ç¨³å®
-3.æ¯æAURä»åºï¼è½¯ä»¶éå¸¸å¤ï¼æ¯å¦deepin qqï¼sogouè¾å ¥æ³ç­ï¼ä¸è¡å½ä»¤å°±å¯ä»¥å®è£
-4.Wikiéå¸¸ä¸°å¯
-ç¼ºç¹ï¼ 1.æ»å¨æ´æ°ï¼å®¹ææ»æ
-å®è£ æ­¥éª¤ ä¸è½½ https://mirrors.tuna.tsinghua.edu.cn/manjaro-cd/
-usbå®è£ df -h æ&amp;#159;¥ç&amp;#156;&amp;#139;ä½ ç&amp;#154;&amp;#132;uç&amp;#155;&amp;#152;
-sudo umount /dev/sdb å&amp;#141;¸è½½Uç&amp;#155;&amp;#152;
-dd if=xxx.iso of=/dev/sdb bs=1M å&amp;#136;¶ä½&amp;#156;å&amp;#144;¯å&amp;#138;¨ç&amp;#155;&amp;#152;
-note: /dev/sdbä¸ºuç
-æ·»å å½å æº ç¼è¾ vi /etc/pacman-mirrors.conf
-ä¿®æ¹ OnlyCountry=China
-æ ¹æ®éåº¦æåº pacman-mirrors -g
-æ·»å Archæº ç¼è¾ vi /etc/pacman.conf
-å¨æ«å°¾æ·»å &lt;pre class=&#34;prism-highlight line-numbers&#34; data-start=&#34;1&#34;&gt;```null [archlinuxcn] SigLevel = Optional TrustedOnly Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch ##### å&amp;#144;&amp;#140;æ­¥ `sudo pacman -Syy &amp;&amp; sudo pacman -S archlinuxcn-keyring` ### å®&amp;#137;è£ zsh ##### æ&amp;#137;§è¡&amp;#140; `sudo pacman -S zsh` `sh -c &#34;$(curl -fsSL https://raw.
+      介绍 优点： 1.基于Arch，但不用折腾
+2.滚动更新，但比Arch慢，比Arch更稳定
+3.支持AUR仓库，软件非常多，比如deepin qq，sogou输入法等，一行命令就可以安装
+4.Wiki非常丰富
+缺点： 1.滚动更新，容易滚挂
+安装步骤 下载 https://mirrors.tuna.tsinghua.edu.cn/manjaro-cd/
+usb安装 df -h 查看你的u盘
+sudo umount /dev/sdb 卸载U盘
+dd if=xxx.iso of=/dev/sdb bs=1M 制作启动盘
+note: /dev/sdb为u盘
+添加国内源 编辑 vi /etc/pacman-mirrors.conf
+修改 OnlyCountry=China
+根据速度排序 pacman-mirrors -g
+添加Arch源 编辑 vi /etc/pacman.conf
+在末尾添加 同步 sudo pacman -Syy &amp;&amp; sudo pacman -S archlinuxcn-keyring
+安装zsh 执行 sudo pacman -S zsh
+sh -c &quot;$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&quot;
+chsh -s /bin/zsh
+安装输入法 sudo pacman -S fcitx-im # 全部安装
     </div>
   </div>
 
@@ -225,14 +240,14 @@ note: /dev/sdbä¸ºuç
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      é®é¢ é¨åå®¢æ·ç«¯apiæ¥éï¼ç¹å«æ¯8.0ç³»ç»ä¸ï¼è®¿é®apiåºç°bad request http request or invalid response,from ulbéè¯¯ã
-è§£å³æ­¥éª¤ 1.æå¡å¨èè° æå¡å¨ç«¯æªåç°é®é¢ï¼åæ°é½å¯¹ãæå¡å¨ä¸ä¹æ²¡æè¿å¥éè¯¯ä¿¡æ¯ãçæµåºè¯¥æ¯æå¡å¨ä¸å±æ¥åºæ¥çéè¯¯ï¼å¦è´è½½åè¡¡ã
-2.ç¨Charlesæå Charlesæå åï¼å°±ä¸ä¼åºç°è¯¥éè¯¯äºãåæ¥åç°Charleså¯¹éè¯¯æ¥æè¿è¡äºå ¼å®¹å¤çï¼åç»æå¡å¨çåºè¯¥å¯¹çã
-3.å»GIthubæ¥ç½ç»åºçissues é¡¹ç®ä¸­ä½¿ç¨çæ¯,Android-async-httpè¿ä¸ªåº,issuesä¸­æ²¡æäººè¯´8.0ä¸­æè¿ä¸ªé®é¢ï¼çæ³åºè¯¥æ¯èªå·±ä»£ç ä¸­çé®é¢ã
-4.å¤§é²¨é±¼Wiresharkæå å¤§é²¨é±¼Wiresharkæå åä¼åºç°è¯¥éè¯¯ï¼æ²¡æçåºæ¥ææå¼å¸¸ã
-æ¯è¾æ­£ç¡®çæ¥æåéè¯¯çæ¥æï¼åç°å¤§å°ä¸ä¸æ ·ã
-æç»åç°ï¼æ¾äºå¥½ä¹ ï¼åæ­£å°±æ¯å¾è°é¾ï¼ï¼éè¯¯çæ¥æHeaderä¸­å¤äºä¸ä¸ªç©ºè¡ã
-å¨å¾Headerä¸­æ·»å åæ°æ¶ï¼æä¸ä¸ªåæ°åºç°äº\n,æ­£å¸¸æ åµä¸å®¢æ·ç«¯åéæ¥æçæ¶ä¼å¿½ç¥\nï¼èæççæ¬æ\næ¾å¨äºæ¥æä¸­ï¼å¯¼è´æ¥ææ ¼å¼åºéã
+      问题 部分客户端api报错，特别是8.0系统上，访问api出现bad request http request or invalid response,from ulb错误。
+解决步骤 1.服务器联调 服务器端未发现问题，参数都对。服务器上也没有这句错误信息。猜测应该是服务器上层报出来的错误，如负载均衡。
+2.用Charles抓包 Charles抓包后，就不会出现该错误了。后来发现Charles对错误报文进行了兼容处理，发给服务器的应该对的。
+3.去GIthub查网络库的issues 项目中使用的是,Android-async-http这个库,issues中没有人说8.0中有这个问题，猜想应该是自己代码中的问题。
+4.大鲨鱼Wireshark抓包 大鲨鱼Wireshark抓包后会出现该错误，没有看出报文有异常。
+比较正确的报文和错误的报文，发现大小不一样。
+最终发现（找了好久，反正就是很艰难），错误的报文Header中多了一个空行。
+原因 在往Header中添加参数时，有一个参数出现了\n,正常情况下客户端发送报文的时会忽略\n，而有的版本把\n放在了报文中，导致报文格式出错。
     </div>
   </div>
 
@@ -251,17 +266,17 @@ note: /dev/sdbä¸ºuç
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      èæ¯ ææ¶åéè¦å¨GitHubä¸ä¸è½½åä¸ªç®å½éé¢çæä»¶ï¼èä¸éè¦å»å éæ´ä¸ªé¡¹ç®ï¼å¤ªå¤§çé¡¹ç®å éèµ·æ¥å¤ªæ ¢ã
-è§£å³æ¹æ¡ GitHubæ¯æ¯æSVNè®¿é®çï¼æä»¥å¯ä»¥ä½¿ç¨SVNä¸è½½åä¸ªç®å½ã
-ä¸è½½masteråæ¯ å¤å¶æµè§å¨å°åæ ä¸­çå°åï¼å¦ï¼
+      背景 有时候需要在GitHub上下载单个目录里面的文件，而不需要去克隆整个项目，太大的项目克隆起来太慢。
+解决方案 GitHub是支持SVN访问的，所以可以使用SVN下载单个目录。
+下载master分支 复制浏览器地址栏中的地址，如：
 https://github.com/bumptech/glide/tree/master/integration
-å°treeæ¹ä¸ºtrunkå³å¯ã
+将tree改为trunk即可。
 https://github.com/bumptech/glide/trunk/integration
-ä¸è½½å ¶ä»åæ¯ å¦ï¼
+下载其他分支 如：
 https://github.com/bumptech/glide/tree/3.0/integration
-å°treeæ¹ä¸ºbrancheså³å¯ã
+将tree改为branches即可。
 https://github.com/bumptech/glide/branches/3.0/integration
-ç¶åsvn checkout å³å¯ã
+然后svn checkout 即可。
     </div>
   </div>
 
@@ -280,17 +295,9 @@ https://github.com/bumptech/glide/branches/3.0/integration
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      èæ¯ ç¨æ·ç»å¸¸å¨å½å¤ä½¿ç¨Appï¼å½å¤çç½ç»ç¯å¢æ´å å¤æï¼ç»å¸¸ä¼åºç°UnknownHostExceptionçå¼å¸¸ï¼æ æ³è§£æDNSã
-è§£å³æ¹æ¡ å½éå°è¯¥å¼å¸¸æ¶å°±éè¦èªå·±å»è§£æDNSãå¸¸ç¨çèªå·±è§£æDNSçæ¹å¼æä¸¤ç§
-1.èªå·±æ¿å°IPåæ¿æ¢ååï¼Appèçæ¹å¼ï¼ æ¯å¦ä½¿ç¨dnsjavaæ¿å°IPåéè¦ï¼
-å¯¹è¯·æ±çååè¿è¡æ¿æ¢ å¯¹Headerä¸­çHostè¿è¡æ¿æ¢ å¯¹Cookieä¸­çdomainè¿è¡æ¿æ¢ Httpsä¸è¯ä¹¦æ ¡éªé®é¢ .â¦â¦ start=&ldquo;1.&quot;&gt; ä½¿ç¨èµ·æ¥æ¯è¾éº»ç¦ï¼é®é¢è¾å¤ã
-2.ä½¿ç¨Okhttpèªå®ä¹DNSåè½ ç®ååæAppä»android-async-httpåæ¢å°OKhttpã(PS:è±äºä¸å¨å¤æ¶é´ï¼æ¹å°åè¡)ï¼å¯ä»¥ç´æ¥ä½¿ç¨Okhttpèªå®ä¹dnsåè½ã
-DNSçè§£ææ¹å¼éæ©äºHTTPDNSï¼HTTPDNSç´æ¥ä½¿ç¨ HTTPåè®®å»æ¥è¯¢DNSï¼é¿å¼äºä¼ ç»UDPæ¹å¼DNSçDNSå«æï¼ä¸åç¡®ç­å¼ç«¯ã
-è¯¦è§ï¼ãé¹ åç½äºãå ¨å±ç²¾ç¡®æµéè°åº¦æ°æè·¯-HttpDNSæå¡è¯¦è§£ 3.Okhttpèªå®ä¹DNS HTTPDNSéæ©äºDNSpodåGoogle Public DNSä¸¤å®¶ã
-å¨å½å¤éç¨Google Public DNS
-å¨å½å éç¨DNSpod
-å®ç°æ¹å¼å¦ä¸ï¼
-&lt;pre class=&#34;line-numbers prism-highlight&#34; data-start=&#34;1&#34;&gt;```java public class OkDns implements Dns { private String mIps; private long mLastDnsTime; private static final long DNS_TTL = 600 * 1000;//è&amp;#135;ªå®&amp;#154;ä¹&amp;#137;DNSç¼&amp;#147;å­&amp;#152;æ&amp;#151;¶é&amp;#151;´ @Override public List&lt;InetAddress&gt; lookup(String hostname) throws UnknownHostException { try { List&lt;InetAddress&gt; list = Dns.
+      背景 用户经常在国外使用App，国外的网络环境更加复杂，经常会出现UnknownHostException的异常，无法解析DNS。
+解决方案 当遇到该异常时就需要自己去解析DNS。常用的自己解析DNS的方式有两种
+1.自己拿到IP后替换域名（App老的方式） 比如使用dnsjava拿到IP后需要：
     </div>
   </div>
 
@@ -309,15 +316,23 @@ DNSçè§£ææ¹å¼éæ©äºHTTPDNSï¼HTTPDNSç´æ�
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      augmented-traffic-control A tool to simulate network conditions,Facebookæä¾çä¸æ¬¾ç½ç»ç¯å¢æ¨¡æå·¥å ·ï¼å¯ä»¥ä½¿ç¨ä»æ¥æµè¯Appå¨åç§ç½ç»ç¯å¢ä¸çé®é¢ã
-å®è£ ç¯å¢è¦æ± Python2.7ãDjango1.10.+
-ä»¥ä¸å¨Manjoraä¸çå®è£ å½ä»¤
-åæ¢Pythonç¯å¢å°Python2.7 å®è£ pip sudo pacman -S python2-pip
-å®è£ Django1.10.+ sudo pip install Django==1.10.8
-å®è£ ATC å®è£ lib sudo pacman -S pip install atc_thrift atcd django-atc-api django-atc-demo-ui django-atc-profile-storage
-Djangoé ç½® django-admin startproject atcui
+      augmented-traffic-control A tool to simulate network conditions,Facebook提供的一款网络环境模拟工具，可以使用他来测试App在各种网络环境下的问题。
+安装环境要求 Python2.7、Django1.10.+
+以下在Manjora下的安装命令
+切换Python环境到Python2.7 安装pip sudo pacman -S python2-pip
+安装Django1.10.+ sudo pip install Django==1.10.8
+安装ATC 安装lib sudo pacman -S pip install atc_thrift atcd django-atc-api django-atc-demo-ui django-atc-profile-storage
+Django配置 django-admin startproject atcui
 cd atcui
-ä¿®æ¹atcui/settings.pyä¸­çINSTALLED_APPS &lt;pre class=&#34;line-numbers prism-highlight&#34; data-start=&#34;1&#34;&gt;```bash INSTALLED_APPS = ( ... # Django ATC API &#39;rest_framework&#39;, &#39;atc_api&#39;, # Django ATC Demo UI &#39;bootstrap_themes&#39;, &#39;django_static_jquery&#39;, &#39;atc_demo_ui&#39;, # Django ATC Profile Storage &#39;atc_profile_storage&#39;, ) #### ä¿®æ&amp;#148;¹atcui/urls.
+修改atcui/settings.py中的INSTALLED_APPS 修改atcui/urls.py中的urlpatterns及引用 更新数据库 python manage.py migrate
+创建虚拟Ap Linux开启虚拟AP
+启动ATC sudo atcd --atcd-wan wlp3s0 --atcd-lan ap0
+注意：wlp3s0是我的无线网卡，ap0是我创建的虚拟ap网卡
+设置错误可能出现：https://github.com/facebook/augmented-traffic-control/issues/239
+启动ATCUI python manage.py runserver 0.0.0.0:8000
+导入默认配置 下载该路径下的文件https://github.com/facebook/augmented-traffic-control/tree/master/utils 运行导入命令 ./restore-profiles.sh localhost:8000
+手机使用ATC 使用Android、iOS 的浏览器访问
+ip:8000 ip为你电脑的ip
     </div>
   </div>
 
@@ -336,14 +351,15 @@ cd atcui
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      é®é¢ éé 7.0æ¶åçäºTransactionTooLargeExceptionçå¼å¸¸.
-åå 1.Fragmentå ³é­æ¶ä¼è°ç¨onSaveInstanceState,èå¨onSaveInstanceStateä¸­ä¿å­äºæ¯è¾å¤§çæ°æ®.
-2.è°ç¨fragment.setArguments(bundle)æ¶ï¼å¾bundleä¸­æ¾äºè¿å¤§çæ°æ®ï¼FragmentManagerç®¡çFragmentæ¶saveStateæ¥é.
-è§£å³æ¹æ³ ç±äºä¿å­çæ°æ®è¾å¤,æ æ³ç¡®å®é£ä¸ªæ°æ®æ¯è¾å¤§,æåä½¿ç¨è¿ä¸ªåºtoolargetoolå®ä½å°æ°æ®è¾å¤§çå¯¹è±¡.
-å°toolargetoolå¼å ¥å°é¡¹ç®
-&lt;pre class=&#34;wp-block-preformatted&#34;&gt;&lt;em&gt;compile &#39;com.gu.android:toolargetool:0.1.3@aar&lt;/em&gt; å¨Applicationä¸­åå§
-&lt;pre class=&#34;wp-block-preformatted&#34;&gt;&lt;em&gt;TooLargeTool.startLogging(this)&lt;/em&gt; è¿ä¸ªåºä¼å¨æ¯æ¬¡å ³é­Activity,Fragmentæ¶,æå°åºonSaveInstanceStateçå¯¹è±¡åå¤§å°.å¦å¾
-ç¸å ³é¾æ¥ https://github.com/guardian/toolargetool
+      问题 适配7.0时发生了TransactionTooLargeException的异常.
+原因 1.Fragment关闭时会调用onSaveInstanceState,而在onSaveInstanceState中保存了比较大的数据.
+2.调用fragment.setArguments(bundle)时，往bundle中放了过大的数据，FragmentManager管理Fragment时saveState报错.
+解决方法 由于保存的数据较多,无法确定那个数据比较大,最后使用这个库_toolargetool_定位到数据较大的对象.
+将_toolargetool_引入到项目
+在Application中初始
+这个库会在每次关闭Activity,Fragment时,打印出onSaveInstanceState的对象及大小.如图
+查找log中较大的对象,进行相应的处理即可.比如保存到数据库,缩小对象等
+相关链接 https://github.com/guardian/toolargetool
     </div>
   </div>
 

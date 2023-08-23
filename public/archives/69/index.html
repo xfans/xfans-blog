@@ -6,17 +6,17 @@
     
     <title>使用SVN下载GitHub单个目录内的文件 | </title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="èæ¯ ææ¶åéè¦å¨GitHubä¸ä¸è½½åä¸ªç®å½éé¢çæä»¶ï¼èä¸éè¦å»å éæ´ä¸ªé¡¹ç®ï¼å¤ªå¤§çé¡¹ç®å éèµ·æ¥å¤ªæ ¢ã
-è§£å³æ¹æ¡ GitHubæ¯æ¯æSVNè®¿é®çï¼æä»¥å¯ä»¥ä½¿ç¨SVNä¸è½½åä¸ªç®å½ã
-ä¸è½½masteråæ¯ å¤å¶æµè§å¨å°åæ ä¸­çå°åï¼å¦ï¼
+    <meta name="description" content="背景 有时候需要在GitHub上下载单个目录里面的文件，而不需要去克隆整个项目，太大的项目克隆起来太慢。
+解决方案 GitHub是支持SVN访问的，所以可以使用SVN下载单个目录。
+下载master分支 复制浏览器地址栏中的地址，如：
 https://github.com/bumptech/glide/tree/master/integration
-å°treeæ¹ä¸ºtrunkå³å¯ã
+将tree改为trunk即可。
 https://github.com/bumptech/glide/trunk/integration
-ä¸è½½å ¶ä»åæ¯ å¦ï¼
+下载其他分支 如：
 https://github.com/bumptech/glide/tree/3.0/integration
-å°treeæ¹ä¸ºbrancheså³å¯ã
+将tree改为branches即可。
 https://github.com/bumptech/glide/branches/3.0/integration
-ç¶åsvn checkout å³å¯ã">
+然后svn checkout 即可。">
     <meta name="generator" content="Hugo 0.117.0">
     
     
@@ -40,48 +40,48 @@ https://github.com/bumptech/glide/branches/3.0/integration
     
     
     <meta property="og:title" content="使用SVN下载GitHub单个目录内的文件" />
-<meta property="og:description" content="èæ¯ ææ¶åéè¦å¨GitHubä¸ä¸è½½åä¸ªç®å½éé¢çæä»¶ï¼èä¸éè¦å»å éæ´ä¸ªé¡¹ç®ï¼å¤ªå¤§çé¡¹ç®å éèµ·æ¥å¤ªæ ¢ã
-è§£å³æ¹æ¡ GitHubæ¯æ¯æSVNè®¿é®çï¼æä»¥å¯ä»¥ä½¿ç¨SVNä¸è½½åä¸ªç®å½ã
-ä¸è½½masteråæ¯ å¤å¶æµè§å¨å°åæ ä¸­çå°åï¼å¦ï¼
+<meta property="og:description" content="背景 有时候需要在GitHub上下载单个目录里面的文件，而不需要去克隆整个项目，太大的项目克隆起来太慢。
+解决方案 GitHub是支持SVN访问的，所以可以使用SVN下载单个目录。
+下载master分支 复制浏览器地址栏中的地址，如：
 https://github.com/bumptech/glide/tree/master/integration
-å°treeæ¹ä¸ºtrunkå³å¯ã
+将tree改为trunk即可。
 https://github.com/bumptech/glide/trunk/integration
-ä¸è½½å ¶ä»åæ¯ å¦ï¼
+下载其他分支 如：
 https://github.com/bumptech/glide/tree/3.0/integration
-å°treeæ¹ä¸ºbrancheså³å¯ã
+将tree改为branches即可。
 https://github.com/bumptech/glide/branches/3.0/integration
-ç¶åsvn checkout å³å¯ã" />
+然后svn checkout 即可。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/archives/69/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2018-01-11T19:48:29+00:00" />
-<meta property="article:modified_time" content="2018-01-11T19:48:29+00:00" />
+<meta property="article:published_time" content="2018-01-11T11:48:29+00:00" />
+<meta property="article:modified_time" content="2018-01-11T11:48:29+00:00" />
 <meta itemprop="name" content="使用SVN下载GitHub单个目录内的文件">
-<meta itemprop="description" content="èæ¯ ææ¶åéè¦å¨GitHubä¸ä¸è½½åä¸ªç®å½éé¢çæä»¶ï¼èä¸éè¦å»å éæ´ä¸ªé¡¹ç®ï¼å¤ªå¤§çé¡¹ç®å éèµ·æ¥å¤ªæ ¢ã
-è§£å³æ¹æ¡ GitHubæ¯æ¯æSVNè®¿é®çï¼æä»¥å¯ä»¥ä½¿ç¨SVNä¸è½½åä¸ªç®å½ã
-ä¸è½½masteråæ¯ å¤å¶æµè§å¨å°åæ ä¸­çå°åï¼å¦ï¼
+<meta itemprop="description" content="背景 有时候需要在GitHub上下载单个目录里面的文件，而不需要去克隆整个项目，太大的项目克隆起来太慢。
+解决方案 GitHub是支持SVN访问的，所以可以使用SVN下载单个目录。
+下载master分支 复制浏览器地址栏中的地址，如：
 https://github.com/bumptech/glide/tree/master/integration
-å°treeæ¹ä¸ºtrunkå³å¯ã
+将tree改为trunk即可。
 https://github.com/bumptech/glide/trunk/integration
-ä¸è½½å ¶ä»åæ¯ å¦ï¼
+下载其他分支 如：
 https://github.com/bumptech/glide/tree/3.0/integration
-å°treeæ¹ä¸ºbrancheså³å¯ã
+将tree改为branches即可。
 https://github.com/bumptech/glide/branches/3.0/integration
-ç¶åsvn checkout å³å¯ã"><meta itemprop="datePublished" content="2018-01-11T19:48:29+00:00" />
-<meta itemprop="dateModified" content="2018-01-11T19:48:29+00:00" />
-<meta itemprop="wordCount" content="22">
+然后svn checkout 即可。"><meta itemprop="datePublished" content="2018-01-11T11:48:29+00:00" />
+<meta itemprop="dateModified" content="2018-01-11T11:48:29+00:00" />
+<meta itemprop="wordCount" content="17">
 <meta itemprop="keywords" content="github,svn," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="使用SVN下载GitHub单个目录内的文件"/>
-<meta name="twitter:description" content="èæ¯ ææ¶åéè¦å¨GitHubä¸ä¸è½½åä¸ªç®å½éé¢çæä»¶ï¼èä¸éè¦å»å éæ´ä¸ªé¡¹ç®ï¼å¤ªå¤§çé¡¹ç®å éèµ·æ¥å¤ªæ ¢ã
-è§£å³æ¹æ¡ GitHubæ¯æ¯æSVNè®¿é®çï¼æä»¥å¯ä»¥ä½¿ç¨SVNä¸è½½åä¸ªç®å½ã
-ä¸è½½masteråæ¯ å¤å¶æµè§å¨å°åæ ä¸­çå°åï¼å¦ï¼
+<meta name="twitter:description" content="背景 有时候需要在GitHub上下载单个目录里面的文件，而不需要去克隆整个项目，太大的项目克隆起来太慢。
+解决方案 GitHub是支持SVN访问的，所以可以使用SVN下载单个目录。
+下载master分支 复制浏览器地址栏中的地址，如：
 https://github.com/bumptech/glide/tree/master/integration
-å°treeæ¹ä¸ºtrunkå³å¯ã
+将tree改为trunk即可。
 https://github.com/bumptech/glide/trunk/integration
-ä¸è½½å ¶ä»åæ¯ å¦ï¼
+下载其他分支 如：
 https://github.com/bumptech/glide/tree/3.0/integration
-å°treeæ¹ä¸ºbrancheså³å¯ã
+将tree改为branches即可。
 https://github.com/bumptech/glide/branches/3.0/integration
-ç¶åsvn checkout å³å¯ã"/>
+然后svn checkout 即可。"/>
 
 	
   </head>
@@ -152,27 +152,27 @@ https://github.com/bumptech/glide/branches/3.0/integration
       
       
       
-      <time class="f6 mv4 dib tracked" datetime="2018-01-11T19:48:29Z">January 11, 2018</time>
+      <time class="f6 mv4 dib tracked" datetime="2018-01-11T11:48:29Z">January 11, 2018</time>
       
 
       
       
     </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h2 id="è131140æ153">èæ¯</h2>
-<p>ææ¶åéè¦å¨GitHubä¸ä¸è½½åä¸ªç®å½éé¢çæä»¶ï¼èä¸éè¦å»å éæ´ä¸ªé¡¹ç®ï¼å¤ªå¤§çé¡¹ç®å éèµ·æ¥å¤ªæ ¢ã</p>
-<h2 id="èå134æ150æ136">è§£å³æ¹æ¡</h2>
-<p>GitHubæ¯æ¯æSVNè®¿é®çï¼æä»¥å¯ä»¥ä½¿ç¨SVNä¸è½½åä¸ªç®å½ã</p>
-<h3 id="ä139èmasterå136134æ148">ä¸è½½masteråæ¯</h3>
-<p>å¤å¶æµè§å¨å°åæ ä¸­çå°åï¼å¦ï¼</p>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h2 id="背景">背景</h2>
+<p>有时候需要在GitHub上下载单个目录里面的文件，而不需要去克隆整个项目，太大的项目克隆起来太慢。</p>
+<h2 id="解决方案">解决方案</h2>
+<p>GitHub是支持SVN访问的，所以可以使用SVN下载单个目录。</p>
+<h3 id="下载master分支">下载master分支</h3>
+<p>复制浏览器地址栏中的地址，如：</p>
 <p><code>https://github.com/bumptech/glide/tree/master/integration</code></p>
-<p>å°<code>tree</code>æ¹ä¸º<code>trunk</code>å³å¯ã</p>
+<p>将<code>tree</code>改为<code>trunk</code>即可。</p>
 <p><code>https://github.com/bumptech/glide/trunk/integration</code></p>
-<h3 id="ä139èå-ä150å136134æ148">ä¸è½½å ¶ä»åæ¯</h3>
-<p>å¦ï¼</p>
+<h3 id="下载其他分支">下载其他分支</h3>
+<p>如：</p>
 <p><code>https://github.com/bumptech/glide/tree/3.0/integration</code></p>
-<p>å°<code>tree</code>æ¹ä¸º<code>branches</code>å³å¯ã</p>
+<p>将<code>tree</code>改为<code>branches</code>即可。</p>
 <p><code>https://github.com/bumptech/glide/branches/3.0/integration</code></p>
-<p>ç¶å<code>svn checkout</code> å³å¯ã</p>
+<p>然后<code>svn checkout</code> 即可。</p>
 <ul class="pa0">
   
    <li class="list di">

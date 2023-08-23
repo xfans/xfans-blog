@@ -6,24 +6,24 @@
     <description>Recent content in svn on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 11 Jan 2018 19:48:29 +0000</lastBuildDate><atom:link href="/tags/svn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 11 Jan 2018 11:48:29 +0000</lastBuildDate><atom:link href="/tags/svn/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>使用SVN下载GitHub单个目录内的文件</title>
       <link>/archives/69/</link>
-      <pubDate>Thu, 11 Jan 2018 19:48:29 +0000</pubDate>
+      <pubDate>Thu, 11 Jan 2018 11:48:29 +0000</pubDate>
       
       <guid>/archives/69/</guid>
-      <description>èæ¯ ææ¶åéè¦å¨GitHubä¸ä¸è½½åä¸ªç®å½éé¢çæä»¶ï¼èä¸éè¦å»å éæ´ä¸ªé¡¹ç®ï¼å¤ªå¤§çé¡¹ç®å éèµ·æ¥å¤ªæ ¢ã
-è§£å³æ¹æ¡ GitHubæ¯æ¯æSVNè®¿é®çï¼æä»¥å¯ä»¥ä½¿ç¨SVNä¸è½½åä¸ªç®å½ã
-ä¸è½½masteråæ¯ å¤å¶æµè§å¨å°åæ ä¸­çå°åï¼å¦ï¼
+      <description>背景 有时候需要在GitHub上下载单个目录里面的文件，而不需要去克隆整个项目，太大的项目克隆起来太慢。
+解决方案 GitHub是支持SVN访问的，所以可以使用SVN下载单个目录。
+下载master分支 复制浏览器地址栏中的地址，如：
 https://github.com/bumptech/glide/tree/master/integration
-å°treeæ¹ä¸ºtrunkå³å¯ã
+将tree改为trunk即可。
 https://github.com/bumptech/glide/trunk/integration
-ä¸è½½å ¶ä»åæ¯ å¦ï¼
+下载其他分支 如：
 https://github.com/bumptech/glide/tree/3.0/integration
-å°treeæ¹ä¸ºbrancheså³å¯ã
+将tree改为branches即可。
 https://github.com/bumptech/glide/branches/3.0/integration
-ç¶åsvn checkout å³å¯ã</description>
+然后svn checkout 即可。</description>
     </item>
     
   </channel>

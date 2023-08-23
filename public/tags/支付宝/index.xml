@@ -6,15 +6,15 @@
     <description>Recent content in 支付宝 on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 30 Mar 2018 23:45:08 +0000</lastBuildDate><atom:link href="/tags/%E6%94%AF%E4%BB%98%E5%AE%9D/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 30 Mar 2018 15:45:08 +0000</lastBuildDate><atom:link href="/tags/%E6%94%AF%E4%BB%98%E5%AE%9D/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>修复一个支付宝概率支付失败的问题</title>
       <link>/archives/305/</link>
-      <pubDate>Fri, 30 Mar 2018 23:45:08 +0000</pubDate>
+      <pubDate>Fri, 30 Mar 2018 15:45:08 +0000</pubDate>
       
       <guid>/archives/305/</guid>
-      <description>é®é¢ Appä¸­ä¸ä¸ªéççbug,å½ç¨æ·ä½¿ç¨æ¯ä»å®è¿è¡æ¯ä»æ¶ä¼æ¦çåºé.å¹¶ä¸æ²¡æè§å¾.
-åå å¯¹æ¯æ¯ä»å®ççurl,åç°é¨ååæ°ä¸­å¤äº+å·,ç¨åºä¸­å¯¹urlè¿è¡äºURLDecoder.&amp;lt;em&amp;gt;decode&amp;lt;/em&amp;gt;(url),å¯¼è´ç©ºæ ¼åæäº+å·,ä»èå¯¼è´æ¯ä»å®æ¥é.</description>
+      <description>问题 App中一个遗留的bug,当用户使用支付宝进行支付时会概率出错.并且没有规律.
+原因 对比支付宝的的url,发现部分参数中多了+号,程序中对url进行了URLDecoder.&amp;lt;em&amp;gt;decode&amp;lt;/em&amp;gt;(url),导致空格变成了+号,从而导致支付宝报错.</description>
     </item>
     
   </channel>

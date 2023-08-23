@@ -6,19 +6,19 @@
     <description>Recent content in git on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 28 Jan 2018 23:45:27 +0000</lastBuildDate><atom:link href="/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 28 Jan 2018 15:45:27 +0000</lastBuildDate><atom:link href="/tags/git/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Git一些常用命令</title>
       <link>/archives/141/</link>
-      <pubDate>Sun, 28 Jan 2018 23:45:27 +0000</pubDate>
+      <pubDate>Sun, 28 Jan 2018 15:45:27 +0000</pubDate>
       
       <guid>/archives/141/</guid>
-      <description>å½ä»¤ Remote git remote set-url origin git@github.com:xfans/VirtualApp.git
+      <description>命令 Remote git remote set-url origin git@github.com:xfans/VirtualApp.git
 git push origin master
 Upstream git remote add upstream git@github.com:asLody/VirtualApp.git
 git fetch upstream
 git merge upstream/master
-å¿«éä¸è½½android frameworksæºç  git clone --branch android10-release git@gitee.com:mirrors/platform_frameworks_base.git --depth 1</description>
+快速下载android frameworks源码 git clone --branch android10-release git@gitee.com:mirrors/platform_frameworks_base.git --depth 1</description>
     </item>
     
   </channel>

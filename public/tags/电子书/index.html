@@ -105,9 +105,14 @@
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      è¯´æï¼ å¨æªå·æºçæ åµä¸ï¼å£è¢é 1çé»è®¤æ¡é¢å¦ä¸ï¼
-æ¹æ³ï¼ å®è´¨ä¸å°±æ¯ï¼èªå·±ç¼åä¸ä¸ªä¸Kindleå åç¸åçç¨åºï¼å¯å¨è¯¥ç¨åºæ¶ï¼å¯å¨ä½ è®¾ç½®çç¨åºãæ ¸å¿ä»£ç å¦ä¸ï¼å¾ç®åï¼
-&lt;pre class=&#34;wp-block-code&#34;&gt;``` val packageName = sp.getString(&#34;pkg&#34;, &#34;&#34;) if (TextUtils.isEmpty(packageName)) { tvTitle.text = &#34;è¯·è¾&amp;#147;å&amp;#133;¥åº&amp;#148;ç&amp;#148;¨å&amp;#140;&amp;#133;å&amp;#144;&amp;#141;,å¦&amp;#130;:org.koreader.launcher&#34; } else { val intent = packageManager.getLaunchIntentForPackage(packageName!!) startActivity(intent) finish() } å&amp;#143;¯ä»¥ä½¿ç&amp;#148;¨å·²ç»&amp;#143;ç¼&amp;#150;è¯&amp;#145;å¥½ç&amp;#154;&amp;#132;ç¨&amp;#139;åº&amp;#143;ï¼&amp;#154; &lt;figure class=&#34;wp-block-image size-large is-resized&#34;&gt;![](http://img.xfans.me/xfans/image/kdy_replace.png)&lt;/figure&gt;å®&amp;#137;è£ å&amp;#144;&amp;#142;è¾&amp;#147;å ¥è¦&amp;#129;æ&amp;#155;¿æ&amp;#141;¢ç&amp;#154;&amp;#132;å&amp;#140; å&amp;#144;&amp;#141;ï¼&amp;#140;ç&amp;#130;¹å&amp;#135;»ç¡®è®¤å&amp;#141;³å&amp;#143;¯ã&amp;#128;&amp;#130;ç&amp;#132;¶å&amp;#144;&amp;#142;ç&amp;#130;¹å&amp;#135;»æ¡&amp;#140;é&amp;#157;¢ç&amp;#154;&amp;#132;Kindleå&amp;#155;¾æ &amp;#135;å&amp;#141;³å&amp;#143;¯è¿&amp;#155;å ¥è®¾ç½®ç&amp;#154;&amp;#132;appã&amp;#128;&amp;#130;æ³¨æ&amp;#132;&amp;#143;ï¼&amp;#154;å®&amp;#137;è£ è¯¥ç¨&amp;#139;åº&amp;#143;å&amp;#144;&amp;#142;ï¼&amp;#140;æ&amp;#151; æ³&amp;#149;å®&amp;#137;è£ Kindle appã&amp;#128;&amp;#130;å&amp;#140; å&amp;#144;&amp;#141;å&amp;#134;²çª&amp;#129;ã&amp;#128;&amp;#130; å&amp;#141;¸è½½æ&amp;#150;¹æ³&amp;#149;ï¼&amp;#154;**adb uninstall com.amazon.kindlefc** ## å&amp;#156;°å&amp;#157;&amp;#128;ï¼&amp;#154; ä¸&amp;#139;è½½å&amp;#156;°å&amp;#157;&amp;#128;ï¼&amp;#154;&lt;http://img.xfans.me/download/kdy-replace-release.apk&gt; ä»£ç &amp;#129;å&amp;#156;°å&amp;#157;&amp;#128;ï¼&amp;#154;&lt;https://github.com/xfans/KdyReplace&gt; 
+      说明： 在未刷机的情况下，口袋阅1的默认桌面如下：
+自己安装的程序无法在桌面上显示，而桌面上的kindle又不经常使用。可以改为，点击Kindle进入自己安装的程序，比如：点击Kindle进入koreader。
+方法： 实质上就是，自己编写一个与Kindle包名相同的程序，启动该程序时，启动你设置的程序。核心代码如下，很简单：
+可以使用已经编译好的程序：
+安装后输入要替换的包名，点击确认即可。然后点击桌面的Kindle图标即可进入设置的app。注意：安装该程序后，无法安装Kindle app。包名冲突。
+卸载方法：adb uninstall com.amazon.kindlefc
+地址： 下载地址：http://img.xfans.me/download/kdy-replace-release.apk
+代码地址：https://github.com/xfans/KdyReplace
     </div>
   </div>
 

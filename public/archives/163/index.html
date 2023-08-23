@@ -6,13 +6,13 @@
     
     <title>Manjaro使用privoxy将socks转为http代理 | </title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="å®è£ pacman -S privoxy
-é ç½® ä¿®æ¹/etc/privoxy/config
-æ·»å ï¼
-forward-socks5 / 127.0.0.1:1080 . #ssçä»£ç
+    <meta name="description" content="安装 pacman -S privoxy
+配置 修改/etc/privoxy/config
+添加：
+forward-socks5 / 127.0.0.1:1080 . #ss的代理
 listen-address localhost:8118
-éå¯ systemctl restart privoxy
-PS ç»ç«¯ä¸­ä½¿ç¨ä»£ç export http_proxy=http://127.0.0.1:8118
+重启 systemctl restart privoxy
+PS 终端中使用代理 export http_proxy=http://127.0.0.1:8118
 export https_proxy=http://127.0.0.1:8118">
     <meta name="generator" content="Hugo 0.117.0">
     
@@ -37,38 +37,38 @@ export https_proxy=http://127.0.0.1:8118">
     
     
     <meta property="og:title" content="Manjaro使用privoxy将socks转为http代理" />
-<meta property="og:description" content="å®è£ pacman -S privoxy
-é ç½® ä¿®æ¹/etc/privoxy/config
-æ·»å ï¼
-forward-socks5 / 127.0.0.1:1080 . #ssçä»£ç
+<meta property="og:description" content="安装 pacman -S privoxy
+配置 修改/etc/privoxy/config
+添加：
+forward-socks5 / 127.0.0.1:1080 . #ss的代理
 listen-address localhost:8118
-éå¯ systemctl restart privoxy
-PS ç»ç«¯ä¸­ä½¿ç¨ä»£ç export http_proxy=http://127.0.0.1:8118
+重启 systemctl restart privoxy
+PS 终端中使用代理 export http_proxy=http://127.0.0.1:8118
 export https_proxy=http://127.0.0.1:8118" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/archives/163/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2018-06-08T16:57:27+00:00" />
-<meta property="article:modified_time" content="2018-06-08T16:57:27+00:00" />
+<meta property="article:published_time" content="2018-06-08T08:57:27+00:00" />
+<meta property="article:modified_time" content="2018-06-08T08:57:27+00:00" />
 <meta itemprop="name" content="Manjaro使用privoxy将socks转为http代理">
-<meta itemprop="description" content="å®è£ pacman -S privoxy
-é ç½® ä¿®æ¹/etc/privoxy/config
-æ·»å ï¼
-forward-socks5 / 127.0.0.1:1080 . #ssçä»£ç
+<meta itemprop="description" content="安装 pacman -S privoxy
+配置 修改/etc/privoxy/config
+添加：
+forward-socks5 / 127.0.0.1:1080 . #ss的代理
 listen-address localhost:8118
-éå¯ systemctl restart privoxy
-PS ç»ç«¯ä¸­ä½¿ç¨ä»£ç export http_proxy=http://127.0.0.1:8118
-export https_proxy=http://127.0.0.1:8118"><meta itemprop="datePublished" content="2018-06-08T16:57:27+00:00" />
-<meta itemprop="dateModified" content="2018-06-08T16:57:27+00:00" />
-<meta itemprop="wordCount" content="26">
+重启 systemctl restart privoxy
+PS 终端中使用代理 export http_proxy=http://127.0.0.1:8118
+export https_proxy=http://127.0.0.1:8118"><meta itemprop="datePublished" content="2018-06-08T08:57:27+00:00" />
+<meta itemprop="dateModified" content="2018-06-08T08:57:27+00:00" />
+<meta itemprop="wordCount" content="24">
 <meta itemprop="keywords" content="Manjaro," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Manjaro使用privoxy将socks转为http代理"/>
-<meta name="twitter:description" content="å®è£ pacman -S privoxy
-é ç½® ä¿®æ¹/etc/privoxy/config
-æ·»å ï¼
-forward-socks5 / 127.0.0.1:1080 . #ssçä»£ç
+<meta name="twitter:description" content="安装 pacman -S privoxy
+配置 修改/etc/privoxy/config
+添加：
+forward-socks5 / 127.0.0.1:1080 . #ss的代理
 listen-address localhost:8118
-éå¯ systemctl restart privoxy
-PS ç»ç«¯ä¸­ä½¿ç¨ä»£ç export http_proxy=http://127.0.0.1:8118
+重启 systemctl restart privoxy
+PS 终端中使用代理 export http_proxy=http://127.0.0.1:8118
 export https_proxy=http://127.0.0.1:8118"/>
 
 	
@@ -140,22 +140,22 @@ export https_proxy=http://127.0.0.1:8118"/>
       
       
       
-      <time class="f6 mv4 dib tracked" datetime="2018-06-08T16:57:27Z">June 8, 2018</time>
+      <time class="f6 mv4 dib tracked" datetime="2018-06-08T08:57:27Z">June 8, 2018</time>
       
 
       
       
     </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h2 id="å137è">å®è£</h2>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h2 id="安装">安装</h2>
 <p><code>pacman -S privoxy</code></p>
-<h2 id="é-141ç">é ç½®</h2>
-<p>ä¿®æ¹/etc/privoxy/config</p>
-<p>æ·»å ï¼</p>
-<p><code>forward-socks5   /               127.0.0.1:1080 .</code> #ssçä»£ç</p>
+<h2 id="配置">配置</h2>
+<p>修改/etc/privoxy/config</p>
+<p>添加：</p>
+<p><code>forward-socks5   /               127.0.0.1:1080 .</code> #ss的代理</p>
 <p><code>listen-address localhost:8118</code></p>
-<h2 id="é135141å144">éå¯</h2>
+<h2 id="重启">重启</h2>
 <p><code>systemctl restart privoxy</code></p>
-<h2 id="ps-ç136çääç148äç144134">PS ç»ç«¯ä¸­ä½¿ç¨ä»£ç</h2>
+<h2 id="ps-终端中使用代理">PS 终端中使用代理</h2>
 <p><code>export http_proxy=http://127.0.0.1:8118</code></p>
 <p><code>export https_proxy=http://127.0.0.1:8118</code></p>
 <ul class="pa0">

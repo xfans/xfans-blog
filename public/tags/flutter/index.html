@@ -105,13 +105,17 @@
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      è¯´æ Flutter 2.5 çæ¬ä¸­çç ´åæ§æ¹å¨
-é»è®¤çè®¾å¤æå¨åæ»å¨ v2.2 çåå é¤äºåºå¼ç API Package ä»ç»: flutter_lints ThemeData ç accent å±æ§å·²è¢«å¼ç¨ æå¿è¯å«å¨æ¸ ç å° AnimationSheetBuilder.display æ¿æ¢ä¸º collate ä½¿ç¨ HTML ææ§½å¨ Web ä¸­æ¸²æå¹³å°è§å¾ å° LogicalKeySet è¿ç§»è³ SingleActivator é¡¹ç®ä½¿ç¨Flutter2.5ç¼è¯åï¼é¨åé¡µé¢çé¢è²åçäºååã
-éè¦å¯¹ThemeData ç accent å±æ§è¿è¡éé ã
-æ¹å¨ ä¸»é¢ä¿¡æ¯ ThemeData ä¸­ç accentColorãaccentColorBrightnessãaccentIconTheme å accentTextTheme å±æ§ç°å·²è¢«å¼ç¨ã
-Material è®¾è®¡è§è ä¸åä¸º Material ç»ä»¶æå®æä½¿ç¨ãå¼ºè°ãè²ãç»ä»¶çé»è®¤é¢è²æ¥èªæ´ä¸ªä¸»é¢ç é¢è²æ¹æ¡ãç°å¨éå¸¸ä½¿ç¨ ColorScheme ç secondary color ä»£æ¿ accentColorï¼å¹¶ä¸å¨éè¦å¯¹æ¯è²æ¶ä½¿ç¨ onSecondary å±æ§ã
-éé  éé åï¼
-theme: ThemeData( primaryColor: Color.fromRGBO(156, 184, 133, 1.
+      说明 Flutter 2.5 版本中的破坏性改动
+默认的设备拖动和滚动 v2.2 版后删除了废弃的 API Package 介绍: flutter_lints ThemeData 的 accent 属性已被弃用 手势识别器清理 将 AnimationSheetBuilder.display 替换为 collate 使用 HTML 插槽在 Web 中渲染平台视图 将 LogicalKeySet 迁移至 SingleActivator 项目使用Flutter2.5编译后，部分页面的颜色发生了变化。
+需要对ThemeData 的 accent 属性进行适配。
+改动 主题信息 ThemeData 中的 accentColor、accentColorBrightness、accentIconTheme 和 accentTextTheme 属性现已被弃用。
+Material 设计规范 不再为 Material 组件指定或使用「强调」色。组件的默认颜色来自整个主题的 颜色方案。现在通常使用 ColorScheme 的 secondary color 代替 accentColor，并且在需要对比色时使用 onSecondary 属性。
+适配 适配前：
+适配后：
+使用时：
+改为：
+相关链接 https://flutter.cn/docs/release/breaking-changes/theme-data-accent-properties
+https://flutter.cn/posts/whats-new-in-flutter-2-5
     </div>
   </div>
 

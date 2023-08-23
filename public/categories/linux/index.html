@@ -105,34 +105,41 @@
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      è¯´æ ä½¿ç¨MANJAROåAndroidå¼åå°è¿3å¹´æ¶é´äº,æ´çä¸èªå·±ç¨å°çå·¥å ·,åå°äºåºæ¬æ¿ä»£Windows.
-è½¯ä»¶åç§° arduino Arduinoå¼åå·¥å ·,ç©esp8266ç¨å°ç
-calibre çµå­ä¹¦è½¬æ¢å·¥å ·,mobiè½¬epubç­
-code VSCode,ç¼è¾å¨\IDE
-sqlitebrowser sqliteç®¡çå·¥å ·
-dbeaver mysqlç®¡çå·¥å ·
-filezilla FTPå®¢æ·ç«¯
-goldendict æ¡é¢åè¯ç¿»è¯å·¥å ·
+      说明 使用MANJARO做Android开发将近3年时间了,整理下自己用到的工具,做到了基本替代Windows.
+软件名称 arduino Arduino开发工具,玩esp8266用到的
+calibre 电子书转换工具,mobi转epub等
+code VSCode,编辑器\IDE
+sqlitebrowser sqlite管理工具
+dbeaver mysql管理工具
+filezilla FTP客户端
+goldendict 桌面取词翻译工具
 intellij-idea-community IDEA
-meld æä»¶æ¯è¾å·¥å ·
-virtualbox vboxèææº
-qpdfview pdfé è¯»å¨
+meld 文件比较工具
+virtualbox vbox虚拟机
+qpdfview pdf阅读器
 shadowsocks-qt5
-simplescreenrecorder å½å±å·¥å ·
-guvcview æ¥çæåå¤´å·¥å ·
-telegram-desktop telegramå®¢æ·ç«¯
-uget å¸¦guiçä¸è½½å·¥å ·
-vlc è§é¢æ­æ¾å¨
-wireshark å¤§é²¨é±¼æå
-aria2 ä¸è½½å·¥å ·,é åuget
-baiduunetdisk-bin ç¾åº¦ç½ç
-deepin-wine-wechat wineçæ¬çå¾®ä¿¡
-deepin.com.qq.office wineçæ¬qqtim
-genymotion androidæ¨¡æå¨
-qpdf pdfæä»¶åå¹¶åå²å·¥å ·
-realvnc-vnc-viewer vncå·¥å ·
+simplescreenrecorder 录屏工具
+guvcview 查看摄像头工具
+telegram-desktop telegram客户端
+uget 带gui的下载工具
+vlc 视频播放器
+wireshark 大鲨鱼抓包
+aria2 下载工具,配合uget
+baiduunetdisk-bin 百度网盘
+deepin-wine-wechat wine版本的微信
+deepin.com.qq.office wine版本qqtim
+genymotion android模拟器
+qpdf pdf文件合并分割工具
+realvnc-vnc-viewer vnc工具
 wps-office wps
-gimp å¾çç¼è¾ç¨åº,ç±»ä¼¼Photoshop
+gimp 图片编辑程序,类似Photoshop
+gparted 磁盘分区管理工具
+termlnator 终端终结者 一个终端可以分成多个格子
+sogoupinyin sogou输入法
+ncdu 查看文件夹下所有文件夹占用大小
+privoxy socks代理转http代理
+xnviewmp 支持pdf的图片批量查看工具
+SwitchHosts!-linux-x64 host切换工具
     </div>
   </div>
 
@@ -151,9 +158,9 @@ gimp å¾çç¼è¾ç¨åº,ç±»ä¼¼Photoshop
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      é®é¢ ä½¿ç¨Manjaroå·¥ä½å¤§çº¦ä¸¤å¹´äºï¼ä¹ æ¯æ§çsudo pacman -Syyuï¼åä¸æ®µæ¶é´æ´æ°å®åï¼å¾å¤å°æ¹çä¸­æå­ä½é½åæäºæ¹æ¡ã
-è§£å³æ¹æ³ å®è£ å­ä½
-&lt;pre class=&#34;line-numbers prism-highlight&#34; data-start=&#34;1&#34;&gt;```shell sudo pacman -S wqy-bitmapfont sudo pacman -S wqy-microhei sudo pacman -S wqy-zenhei é&amp;#135;&amp;#141;å&amp;#144;¯å&amp;#144;&amp;#142;å°±å¥½äº&amp;#134; 
+      问题 使用Manjaro工作大约两年了，习惯性的sudo pacman -Syyu，前一段时间更新完后，很多地方的中文字体都变成了方框。
+解决方法 安装字体
+重启后就好了
     </div>
   </div>
 
@@ -172,16 +179,9 @@ gimp å¾çç¼è¾ç¨åº,ç±»ä¼¼Photoshop
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      è¯´æ æmanjaroæ»å°ææ°çæ¬ådeepin-wine-wechatå¾®ä¿¡æ æ³è¾å ¥ä¸­æ
-è§£å³æ¹æ³ deepin-wine-wechatçgithubä¸ç»åºäºå ¼å®¹åè¡¨
-éçº§æ¹æ³ å®è£ downgrade
-sudo pacman -S downgrade
-æ¥çwineåå²çæ¬
-DOWNGRADE_FROM_ALA=1 downgrade wine
-å®è£ å®æååºç°
-æ·»å&amp;#138; wineå&amp;#136;°IgnorePkg? [y/n]
-è¾å ¥yå°wineæ·»å å°IgnorePkg,é²æ­¢åç»­è¢«æ´æ°.
-é¾æ¥ https://github.com/countstarlight/deepin-wine-wechat-arch#%E5%85%BC%E5%AE%B9%E6%80%A7%E8%AE%B0%E5%BD%95
+      说明 把manjaro滚到最新版本后deepin-wine-wechat微信无法输入中文
+解决方法 deepin-wine-wechat的github上给出了兼容列表
+&lt;th&gt; wine版本 &lt;/th&gt; &lt;th&gt; 兼容性 &lt;/th&gt; &lt;th&gt; 备注 &lt;/th&gt; &lt;th&gt; deepin-wine版本 &lt;/th&gt; &lt;th&gt; 兼容性 &lt;/th&gt; &lt;th&gt; 备注 &lt;/th&gt; &lt;td&gt; 4.18-1 &lt;/td&gt; &lt;td&gt; 部分 &lt;/td&gt; &lt;td&gt; 不能使用中文输入法 &lt;/td&gt; &lt;td&gt; &lt;/td&gt; &lt;td&gt; &lt;/td&gt; &lt;td&gt; &lt;/td&gt; &lt;td&gt; 4.18-1 &lt;/td&gt; &lt;td&gt; 部分 &lt;/td&gt; &lt;td&gt; 不能使用中文输入法 &lt;/td&gt; &lt;td&gt; 2.18_18-2 &lt;/td&gt; &lt;td&gt; ? &lt;/td&gt; &lt;td&gt; &lt;/td&gt; &lt;td&gt; 4.18-1 &lt;/td&gt; &lt;td&gt; 部分 &lt;/td&gt; &lt;td&gt; 不能使用中文输入法 &lt;/td&gt; &lt;td&gt; 2.18_18-2 &lt;/td&gt; &lt;td&gt; 不支持 &lt;/td&gt; &lt;td&gt; 闪退 &lt;/td&gt; &lt;td&gt; 4.
     </div>
   </div>
 
@@ -200,12 +200,12 @@ DOWNGRADE_FROM_ALA=1 downgrade wine
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      æ¹æ³ ffmpeg -v warning -ss 00:00:02 -t 2 -i 5.mp4 -vf scale=300:-1 -gifflags +transdiff -y 5.gif
--ss æªåå¼å§æ¶é´
--t æªåæ¶é¿
-5.mp4 æ¯è§é¢åç§°
-5.gif æ¯è½¬æ¢åçåç§°
-ç¸å ³é¾æ¥ http://blog.pkh.me/p/21-high-quality-gif-with-ffmpeg.html
+      方法 ffmpeg -v warning -ss 00:00:02 -t 2 -i 5.mp4 -vf scale=300:-1 -gifflags +transdiff -y 5.gif
+-ss 截取开始时间
+-t 截取时长
+5.mp4 是视频名称
+5.gif 是转换后的名称
+相关链接 http://blog.pkh.me/p/21-high-quality-gif-with-ffmpeg.html
     </div>
   </div>
 
@@ -224,13 +224,13 @@ DOWNGRADE_FROM_ALA=1 downgrade wine
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      å®è£ pacman -S privoxy
-é ç½® ä¿®æ¹/etc/privoxy/config
-æ·»å ï¼
-forward-socks5 / 127.0.0.1:1080 . #ssçä»£ç
+      安装 pacman -S privoxy
+配置 修改/etc/privoxy/config
+添加：
+forward-socks5 / 127.0.0.1:1080 . #ss的代理
 listen-address localhost:8118
-éå¯ systemctl restart privoxy
-PS ç»ç«¯ä¸­ä½¿ç¨ä»£ç export http_proxy=http://127.0.0.1:8118
+重启 systemctl restart privoxy
+PS 终端中使用代理 export http_proxy=http://127.0.0.1:8118
 export https_proxy=http://127.0.0.1:8118
     </div>
   </div>
@@ -250,12 +250,12 @@ export https_proxy=http://127.0.0.1:8118
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      å½ä»¤ Remote git remote set-url origin git@github.com:xfans/VirtualApp.git
+      命令 Remote git remote set-url origin git@github.com:xfans/VirtualApp.git
 git push origin master
 Upstream git remote add upstream git@github.com:asLody/VirtualApp.git
 git fetch upstream
 git merge upstream/master
-å¿«éä¸è½½android frameworksæºç  git clone --branch android10-release git@gitee.com:mirrors/platform_frameworks_base.git --depth 1
+快速下载android frameworks源码 git clone --branch android10-release git@gitee.com:mirrors/platform_frameworks_base.git --depth 1
     </div>
   </div>
 
@@ -274,21 +274,25 @@ git merge upstream/master
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      ä»ç» ä¼ç¹ï¼ 1.åºäºArchï¼ä½ä¸ç¨æè ¾
-2.æ»å¨æ´æ°ï¼ä½æ¯Archæ ¢ï¼æ¯Archæ´ç¨³å®
-3.æ¯æAURä»åºï¼è½¯ä»¶éå¸¸å¤ï¼æ¯å¦deepin qqï¼sogouè¾å ¥æ³ç­ï¼ä¸è¡å½ä»¤å°±å¯ä»¥å®è£
-4.Wikiéå¸¸ä¸°å¯
-ç¼ºç¹ï¼ 1.æ»å¨æ´æ°ï¼å®¹ææ»æ
-å®è£ æ­¥éª¤ ä¸è½½ https://mirrors.tuna.tsinghua.edu.cn/manjaro-cd/
-usbå®è£ df -h æ&amp;#159;¥ç&amp;#156;&amp;#139;ä½ ç&amp;#154;&amp;#132;uç&amp;#155;&amp;#152;
-sudo umount /dev/sdb å&amp;#141;¸è½½Uç&amp;#155;&amp;#152;
-dd if=xxx.iso of=/dev/sdb bs=1M å&amp;#136;¶ä½&amp;#156;å&amp;#144;¯å&amp;#138;¨ç&amp;#155;&amp;#152;
-note: /dev/sdbä¸ºuç
-æ·»å å½å æº ç¼è¾ vi /etc/pacman-mirrors.conf
-ä¿®æ¹ OnlyCountry=China
-æ ¹æ®éåº¦æåº pacman-mirrors -g
-æ·»å Archæº ç¼è¾ vi /etc/pacman.conf
-å¨æ«å°¾æ·»å &lt;pre class=&#34;prism-highlight line-numbers&#34; data-start=&#34;1&#34;&gt;```null [archlinuxcn] SigLevel = Optional TrustedOnly Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch ##### å&amp;#144;&amp;#140;æ­¥ `sudo pacman -Syy &amp;&amp; sudo pacman -S archlinuxcn-keyring` ### å®&amp;#137;è£ zsh ##### æ&amp;#137;§è¡&amp;#140; `sudo pacman -S zsh` `sh -c &#34;$(curl -fsSL https://raw.
+      介绍 优点： 1.基于Arch，但不用折腾
+2.滚动更新，但比Arch慢，比Arch更稳定
+3.支持AUR仓库，软件非常多，比如deepin qq，sogou输入法等，一行命令就可以安装
+4.Wiki非常丰富
+缺点： 1.滚动更新，容易滚挂
+安装步骤 下载 https://mirrors.tuna.tsinghua.edu.cn/manjaro-cd/
+usb安装 df -h 查看你的u盘
+sudo umount /dev/sdb 卸载U盘
+dd if=xxx.iso of=/dev/sdb bs=1M 制作启动盘
+note: /dev/sdb为u盘
+添加国内源 编辑 vi /etc/pacman-mirrors.conf
+修改 OnlyCountry=China
+根据速度排序 pacman-mirrors -g
+添加Arch源 编辑 vi /etc/pacman.conf
+在末尾添加 同步 sudo pacman -Syy &amp;&amp; sudo pacman -S archlinuxcn-keyring
+安装zsh 执行 sudo pacman -S zsh
+sh -c &quot;$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&quot;
+chsh -s /bin/zsh
+安装输入法 sudo pacman -S fcitx-im # 全部安装
     </div>
   </div>
 
@@ -307,15 +311,23 @@ note: /dev/sdbä¸ºuç
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      augmented-traffic-control A tool to simulate network conditions,Facebookæä¾çä¸æ¬¾ç½ç»ç¯å¢æ¨¡æå·¥å ·ï¼å¯ä»¥ä½¿ç¨ä»æ¥æµè¯Appå¨åç§ç½ç»ç¯å¢ä¸çé®é¢ã
-å®è£ ç¯å¢è¦æ± Python2.7ãDjango1.10.+
-ä»¥ä¸å¨Manjoraä¸çå®è£ å½ä»¤
-åæ¢Pythonç¯å¢å°Python2.7 å®è£ pip sudo pacman -S python2-pip
-å®è£ Django1.10.+ sudo pip install Django==1.10.8
-å®è£ ATC å®è£ lib sudo pacman -S pip install atc_thrift atcd django-atc-api django-atc-demo-ui django-atc-profile-storage
-Djangoé ç½® django-admin startproject atcui
+      augmented-traffic-control A tool to simulate network conditions,Facebook提供的一款网络环境模拟工具，可以使用他来测试App在各种网络环境下的问题。
+安装环境要求 Python2.7、Django1.10.+
+以下在Manjora下的安装命令
+切换Python环境到Python2.7 安装pip sudo pacman -S python2-pip
+安装Django1.10.+ sudo pip install Django==1.10.8
+安装ATC 安装lib sudo pacman -S pip install atc_thrift atcd django-atc-api django-atc-demo-ui django-atc-profile-storage
+Django配置 django-admin startproject atcui
 cd atcui
-ä¿®æ¹atcui/settings.pyä¸­çINSTALLED_APPS &lt;pre class=&#34;line-numbers prism-highlight&#34; data-start=&#34;1&#34;&gt;```bash INSTALLED_APPS = ( ... # Django ATC API &#39;rest_framework&#39;, &#39;atc_api&#39;, # Django ATC Demo UI &#39;bootstrap_themes&#39;, &#39;django_static_jquery&#39;, &#39;atc_demo_ui&#39;, # Django ATC Profile Storage &#39;atc_profile_storage&#39;, ) #### ä¿®æ&amp;#148;¹atcui/urls.
+修改atcui/settings.py中的INSTALLED_APPS 修改atcui/urls.py中的urlpatterns及引用 更新数据库 python manage.py migrate
+创建虚拟Ap Linux开启虚拟AP
+启动ATC sudo atcd --atcd-wan wlp3s0 --atcd-lan ap0
+注意：wlp3s0是我的无线网卡，ap0是我创建的虚拟ap网卡
+设置错误可能出现：https://github.com/facebook/augmented-traffic-control/issues/239
+启动ATCUI python manage.py runserver 0.0.0.0:8000
+导入默认配置 下载该路径下的文件https://github.com/facebook/augmented-traffic-control/tree/master/utils 运行导入命令 ./restore-profiles.sh localhost:8000
+手机使用ATC 使用Android、iOS 的浏览器访问
+ip:8000 ip为你电脑的ip
     </div>
   </div>
 
@@ -334,12 +346,12 @@ cd atcui
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      å®è£ create_ap pacman -S create_ap
-å¢å ä¸ä¸ªèæç½ç»æ¥å£å¹¶è®¾ç½®ä¸ä¸ªmacå°å sudo iw dev wlp3s0 interface add wlp3s0_ap type __ap
+      安装create_ap pacman -S create_ap
+增加一个虚拟网络接口并设置一个mac地址 sudo iw dev wlp3s0 interface add wlp3s0_ap type __ap
 sudo ip link set dev wlp3s0_ap address 04:e2:b9:17:18:72
-åå»ºAP sudo create_ap -c 11 wlp3s0_ap wlp3s0 xfans_ap 321321321
-create_apä¸è½½ https://github.com/oblique/create_ap
-åè https://wiki.archlinux.org/index.php/Software_access_point_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)
+创建AP sudo create_ap -c 11 wlp3s0_ap wlp3s0 xfans_ap 321321321
+create_ap下载 https://github.com/oblique/create_ap
+参考 https://wiki.archlinux.org/index.php/Software_access_point_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)
 https://www.zhihu.com/question/24961490
     </div>
   </div>
@@ -359,9 +371,9 @@ https://www.zhihu.com/question/24961490
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      æ¥æ¾å¯ç¨å æ ¸ pacman -Ss linux-headers
-pacman -S linuxXY linuxXY-headers
-æ³¨æ:XYä¸ºä½ è¦å®è£ ççæ¬å·,å¦:
+      查找可用内核 pacman -Ss linux-headers
+安装 pacman -S linuxXY linuxXY-headers
+注意:XY为你要安装的版本号,如:
 pacman -S linux49 linux49-headers
     </div>
   </div>
@@ -381,7 +393,7 @@ pacman -S linux49 linux49-headers
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      &lt;pre class=&#34;prism-highlight line-numbers&#34; data-start=&#34;1&#34;&gt;```null sudo ln -sf /bin/python3.6 /bin/python sudo ln -sf /bin/python2.7 /bin/python 
+       
     </div>
   </div>
 
@@ -400,7 +412,7 @@ pacman -S linux49 linux49-headers
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      &lt;pre class=&#34;prism-highlight line-numbers&#34; data-start=&#34;1&#34;&gt;```null sudo update-grub 
+       
     </div>
   </div>
 
@@ -419,8 +431,8 @@ pacman -S linux49 linux49-headers
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Manjaroå ³é­ç¬ç«æ¾å¡
-å®è£ bbswitch &lt;pre class=&#34;prism-highlight line-numbers&#34; data-start=&#34;1&#34;&gt;```null pacman -S bbswitch ### å&amp;#156;¨/etc/modules-load.dä¸&amp;#139;æ&amp;#150;°å»ºbbswitch.confï¼&amp;#140;å¹¶ä¿®æ&amp;#148;¹ä¸ºå¦&amp;#130;ä¸&amp;#139;å&amp;#134; å®¹ã&amp;#128;&amp;#130;è¿&amp;#153;æ ·æ¯&amp;#143;æ¬¡å&amp;#144;¯å&amp;#138;¨é&amp;#131;½ä¼&amp;#154;å&amp;#138; è½½bbswitchæ¨¡å&amp;#157;&amp;#151;äº&amp;#134; 
+      Manjaro关闭独立显卡
+安装bbswitch 在/etc/modules-load.d下新建bbswitch.conf，并修改为如下内容。这样每次启动都会加载bbswitch模块了 在/etc/modprobe.d/下新建bbswitch.conf，并修改为如下内容。这是bbswitch加载的参数，我们让其默认关闭 在/etc/modprobe.d/下新建nouveau_blacklist.conf，并修改为如下内容。有时候bbswitch加载了，但是不能关闭显卡，因为有些模块正在占用着，因此要禁掉。 在/usr/lib/systemd/system-shutdown/下新建nvidia_card_enable.sh，并修改为以下内容，记得加运行权限。每次reboot的时候，显卡都是关闭的，不管是重启到windows还是linux，都会找不到设备，必须彻底关机才行。解决该问题的办法就是每次重启都启用显卡 查看状态 原文 http://blog.csdn.net/gt945/article/details/10922263
     </div>
   </div>
 

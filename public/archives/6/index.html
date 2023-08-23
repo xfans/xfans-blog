@@ -6,8 +6,8 @@
     
     <title>Manjaro使用bbswitch关闭笔记本的nvidia独立显卡 | </title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="Manjaroå ³é­ç¬ç«æ¾å¡
-å®è£ bbswitch &lt;pre class=&#34;prism-highlight line-numbers&#34; data-start=&#34;1&#34;&gt;```null pacman -S bbswitch ### å&amp;#156;¨/etc/modules-load.dä¸&amp;#139;æ&amp;#150;°å»ºbbswitch.confï¼&amp;#140;å¹¶ä¿®æ&amp;#148;¹ä¸ºå¦&amp;#130;ä¸&amp;#139;å&amp;#134; å®¹ã&amp;#128;&amp;#130;è¿&amp;#153;æ ·æ¯&amp;#143;æ¬¡å&amp;#144;¯å&amp;#138;¨é&amp;#131;½ä¼&amp;#154;å&amp;#138; è½½bbswitchæ¨¡å&amp;#157;&amp;#151;äº&amp;#134; ">
+    <meta name="description" content="Manjaro关闭独立显卡
+安装bbswitch 在/etc/modules-load.d下新建bbswitch.conf，并修改为如下内容。这样每次启动都会加载bbswitch模块了 在/etc/modprobe.d/下新建bbswitch.conf，并修改为如下内容。这是bbswitch加载的参数，我们让其默认关闭 在/etc/modprobe.d/下新建nouveau_blacklist.conf，并修改为如下内容。有时候bbswitch加载了，但是不能关闭显卡，因为有些模块正在占用着，因此要禁掉。 在/usr/lib/systemd/system-shutdown/下新建nvidia_card_enable.sh，并修改为以下内容，记得加运行权限。每次reboot的时候，显卡都是关闭的，不管是重启到windows还是linux，都会找不到设备，必须彻底关机才行。解决该问题的办法就是每次重启都启用显卡 查看状态 原文 http://blog.csdn.net/gt945/article/details/10922263">
     <meta name="generator" content="Hugo 0.117.0">
     
     
@@ -31,21 +31,21 @@
     
     
     <meta property="og:title" content="Manjaro使用bbswitch关闭笔记本的nvidia独立显卡" />
-<meta property="og:description" content="Manjaroå ³é­ç¬ç«æ¾å¡
-å®è£ bbswitch &lt;pre class=&#34;prism-highlight line-numbers&#34; data-start=&#34;1&#34;&gt;```null pacman -S bbswitch ### å&amp;#156;¨/etc/modules-load.dä¸&amp;#139;æ&amp;#150;°å»ºbbswitch.confï¼&amp;#140;å¹¶ä¿®æ&amp;#148;¹ä¸ºå¦&amp;#130;ä¸&amp;#139;å&amp;#134; å®¹ã&amp;#128;&amp;#130;è¿&amp;#153;æ ·æ¯&amp;#143;æ¬¡å&amp;#144;¯å&amp;#138;¨é&amp;#131;½ä¼&amp;#154;å&amp;#138; è½½bbswitchæ¨¡å&amp;#157;&amp;#151;äº&amp;#134; " />
+<meta property="og:description" content="Manjaro关闭独立显卡
+安装bbswitch 在/etc/modules-load.d下新建bbswitch.conf，并修改为如下内容。这样每次启动都会加载bbswitch模块了 在/etc/modprobe.d/下新建bbswitch.conf，并修改为如下内容。这是bbswitch加载的参数，我们让其默认关闭 在/etc/modprobe.d/下新建nouveau_blacklist.conf，并修改为如下内容。有时候bbswitch加载了，但是不能关闭显卡，因为有些模块正在占用着，因此要禁掉。 在/usr/lib/systemd/system-shutdown/下新建nvidia_card_enable.sh，并修改为以下内容，记得加运行权限。每次reboot的时候，显卡都是关闭的，不管是重启到windows还是linux，都会找不到设备，必须彻底关机才行。解决该问题的办法就是每次重启都启用显卡 查看状态 原文 http://blog.csdn.net/gt945/article/details/10922263" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/archives/6/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2017-09-29T19:33:43+00:00" />
-<meta property="article:modified_time" content="2017-09-29T19:33:43+00:00" />
+<meta property="article:published_time" content="2017-09-29T11:33:43+00:00" />
+<meta property="article:modified_time" content="2017-09-29T11:33:43+00:00" />
 <meta itemprop="name" content="Manjaro使用bbswitch关闭笔记本的nvidia独立显卡">
-<meta itemprop="description" content="Manjaroå ³é­ç¬ç«æ¾å¡
-å®è£ bbswitch &lt;pre class=&#34;prism-highlight line-numbers&#34; data-start=&#34;1&#34;&gt;```null pacman -S bbswitch ### å&amp;#156;¨/etc/modules-load.dä¸&amp;#139;æ&amp;#150;°å»ºbbswitch.confï¼&amp;#140;å¹¶ä¿®æ&amp;#148;¹ä¸ºå¦&amp;#130;ä¸&amp;#139;å&amp;#134; å®¹ã&amp;#128;&amp;#130;è¿&amp;#153;æ ·æ¯&amp;#143;æ¬¡å&amp;#144;¯å&amp;#138;¨é&amp;#131;½ä¼&amp;#154;å&amp;#138; è½½bbswitchæ¨¡å&amp;#157;&amp;#151;äº&amp;#134; "><meta itemprop="datePublished" content="2017-09-29T19:33:43+00:00" />
-<meta itemprop="dateModified" content="2017-09-29T19:33:43+00:00" />
-<meta itemprop="wordCount" content="16">
+<meta itemprop="description" content="Manjaro关闭独立显卡
+安装bbswitch 在/etc/modules-load.d下新建bbswitch.conf，并修改为如下内容。这样每次启动都会加载bbswitch模块了 在/etc/modprobe.d/下新建bbswitch.conf，并修改为如下内容。这是bbswitch加载的参数，我们让其默认关闭 在/etc/modprobe.d/下新建nouveau_blacklist.conf，并修改为如下内容。有时候bbswitch加载了，但是不能关闭显卡，因为有些模块正在占用着，因此要禁掉。 在/usr/lib/systemd/system-shutdown/下新建nvidia_card_enable.sh，并修改为以下内容，记得加运行权限。每次reboot的时候，显卡都是关闭的，不管是重启到windows还是linux，都会找不到设备，必须彻底关机才行。解决该问题的办法就是每次重启都启用显卡 查看状态 原文 http://blog.csdn.net/gt945/article/details/10922263"><meta itemprop="datePublished" content="2017-09-29T11:33:43+00:00" />
+<meta itemprop="dateModified" content="2017-09-29T11:33:43+00:00" />
+<meta itemprop="wordCount" content="9">
 <meta itemprop="keywords" content="linux," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Manjaro使用bbswitch关闭笔记本的nvidia独立显卡"/>
-<meta name="twitter:description" content="Manjaroå ³é­ç¬ç«æ¾å¡
-å®è£ bbswitch &lt;pre class=&#34;prism-highlight line-numbers&#34; data-start=&#34;1&#34;&gt;```null pacman -S bbswitch ### å&amp;#156;¨/etc/modules-load.dä¸&amp;#139;æ&amp;#150;°å»ºbbswitch.confï¼&amp;#140;å¹¶ä¿®æ&amp;#148;¹ä¸ºå¦&amp;#130;ä¸&amp;#139;å&amp;#134; å®¹ã&amp;#128;&amp;#130;è¿&amp;#153;æ ·æ¯&amp;#143;æ¬¡å&amp;#144;¯å&amp;#138;¨é&amp;#131;½ä¼&amp;#154;å&amp;#138; è½½bbswitchæ¨¡å&amp;#157;&amp;#151;äº&amp;#134; "/>
+<meta name="twitter:description" content="Manjaro关闭独立显卡
+安装bbswitch 在/etc/modules-load.d下新建bbswitch.conf，并修改为如下内容。这样每次启动都会加载bbswitch模块了 在/etc/modprobe.d/下新建bbswitch.conf，并修改为如下内容。这是bbswitch加载的参数，我们让其默认关闭 在/etc/modprobe.d/下新建nouveau_blacklist.conf，并修改为如下内容。有时候bbswitch加载了，但是不能关闭显卡，因为有些模块正在占用着，因此要禁掉。 在/usr/lib/systemd/system-shutdown/下新建nvidia_card_enable.sh，并修改为以下内容，记得加运行权限。每次reboot的时候，显卡都是关闭的，不管是重启到windows还是linux，都会找不到设备，必须彻底关机才行。解决该问题的办法就是每次重启都启用显卡 查看状态 原文 http://blog.csdn.net/gt945/article/details/10922263"/>
 
 	
   </head>
@@ -116,19 +116,33 @@
       
       
       
-      <time class="f6 mv4 dib tracked" datetime="2017-09-29T19:33:43Z">September 29, 2017</time>
+      <time class="f6 mv4 dib tracked" datetime="2017-09-29T11:33:43Z">September 29, 2017</time>
       
 
       
       
     </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>Manjaroå ³é­ç¬ç«æ¾å¡</p>
-<h3 id="å137è-bbswitch">å®è£ bbswitch</h3>
-<pre tabindex="0"><code>&lt;pre class=&#34;prism-highlight line-numbers&#34; data-start=&#34;1&#34;&gt;```null
-pacman -S bbswitch
-</code></pre><pre tabindex="0"><code>
-### å&amp;#156;¨/etc/modules-load.dä¸&amp;#139;æ&amp;#150;°å»ºbbswitch.confï¼&amp;#140;å¹¶ä¿®æ&amp;#148;¹ä¸ºå¦&amp;#130;ä¸&amp;#139;å&amp;#134; å®¹ã&amp;#128;&amp;#130;è¿&amp;#153;æ ·æ¯&amp;#143;æ¬¡å&amp;#144;¯å&amp;#138;¨é&amp;#131;½ä¼&amp;#154;å&amp;#138; è½½bbswitchæ¨¡å&amp;#157;&amp;#151;äº&amp;#134;
-</code></pre><!-- raw HTML omitted -->
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>Manjaro关闭独立显卡</p>
+<h3 id="安装bbswitch">安装bbswitch</h3>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h3 id="在etcmodules-loadd下新建bbswitchconf并修改为如下内容这样每次启动都会加载bbswitch模块了">在/etc/modules-load.d下新建bbswitch.conf，并修改为如下内容。这样每次启动都会加载bbswitch模块了</h3>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h3 id="在etcmodprobed下新建bbswitchconf并修改为如下内容这是bbswitch加载的参数我们让其默认关闭">在/etc/modprobe.d/下新建bbswitch.conf，并修改为如下内容。这是bbswitch加载的参数，我们让其默认关闭</h3>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h3 id="在etcmodprobed下新建nouveau_blacklistconf并修改为如下内容有时候bbswitch加载了但是不能关闭显卡因为有些模块正在占用着因此要禁掉">在/etc/modprobe.d/下新建nouveau_blacklist.conf，并修改为如下内容。有时候bbswitch加载了，但是不能关闭显卡，因为有些模块正在占用着，因此要禁掉。</h3>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h3 id="在usrlibsystemdsystem-shutdown下新建nvidia_card_enablesh并修改为以下内容记得加运行权限每次reboot的时候显卡都是关闭的不管是重启到windows还是linux都会找不到设备必须彻底关机才行解决该问题的办法就是每次重启都启用显卡">在/usr/lib/systemd/system-shutdown/下新建nvidia_card_enable.sh，并修改为以下内容，记得加运行权限。每次reboot的时候，显卡都是关闭的，不管是重启到windows还是linux，都会找不到设备，必须彻底关机才行。解决该问题的办法就是每次重启都启用显卡</h3>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h3 id="查看状态">查看状态</h3>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h3 id="原文">原文</h3>
+<p><a href="http://blog.csdn.net/gt945/article/details/10922263">http://blog.csdn.net/gt945/article/details/10922263</a></p>
 <ul class="pa0">
   
    <li class="list di">

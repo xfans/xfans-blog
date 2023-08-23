@@ -6,14 +6,15 @@
     
     <title>TransactionTooLargeException 的原因 | </title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="é®é¢ éé 7.0æ¶åçäºTransactionTooLargeExceptionçå¼å¸¸.
-åå 1.Fragmentå ³é­æ¶ä¼è°ç¨onSaveInstanceState,èå¨onSaveInstanceStateä¸­ä¿å­äºæ¯è¾å¤§çæ°æ®.
-2.è°ç¨fragment.setArguments(bundle)æ¶ï¼å¾bundleä¸­æ¾äºè¿å¤§çæ°æ®ï¼FragmentManagerç®¡çFragmentæ¶saveStateæ¥é.
-è§£å³æ¹æ³ ç±äºä¿å­çæ°æ®è¾å¤,æ æ³ç¡®å®é£ä¸ªæ°æ®æ¯è¾å¤§,æåä½¿ç¨è¿ä¸ªåºtoolargetoolå®ä½å°æ°æ®è¾å¤§çå¯¹è±¡.
-å°toolargetoolå¼å ¥å°é¡¹ç®
-&lt;pre class=&#34;wp-block-preformatted&#34;&gt;&lt;em&gt;compile &#39;com.gu.android:toolargetool:0.1.3@aar&lt;/em&gt; å¨Applicationä¸­åå§
-&lt;pre class=&#34;wp-block-preformatted&#34;&gt;&lt;em&gt;TooLargeTool.startLogging(this)&lt;/em&gt; è¿ä¸ªåºä¼å¨æ¯æ¬¡å ³é­Activity,Fragmentæ¶,æå°åºonSaveInstanceStateçå¯¹è±¡åå¤§å°.å¦å¾
-ç¸å ³é¾æ¥ https://github.com/guardian/toolargetool">
+    <meta name="description" content="问题 适配7.0时发生了TransactionTooLargeException的异常.
+原因 1.Fragment关闭时会调用onSaveInstanceState,而在onSaveInstanceState中保存了比较大的数据.
+2.调用fragment.setArguments(bundle)时，往bundle中放了过大的数据，FragmentManager管理Fragment时saveState报错.
+解决方法 由于保存的数据较多,无法确定那个数据比较大,最后使用这个库_toolargetool_定位到数据较大的对象.
+将_toolargetool_引入到项目
+在Application中初始
+这个库会在每次关闭Activity,Fragment时,打印出onSaveInstanceState的对象及大小.如图
+查找log中较大的对象,进行相应的处理即可.比如保存到数据库,缩小对象等
+相关链接 https://github.com/guardian/toolargetool">
     <meta name="generator" content="Hugo 0.117.0">
     
     
@@ -37,39 +38,42 @@
     
     
     <meta property="og:title" content="TransactionTooLargeException 的原因" />
-<meta property="og:description" content="é®é¢ éé 7.0æ¶åçäºTransactionTooLargeExceptionçå¼å¸¸.
-åå 1.Fragmentå ³é­æ¶ä¼è°ç¨onSaveInstanceState,èå¨onSaveInstanceStateä¸­ä¿å­äºæ¯è¾å¤§çæ°æ®.
-2.è°ç¨fragment.setArguments(bundle)æ¶ï¼å¾bundleä¸­æ¾äºè¿å¤§çæ°æ®ï¼FragmentManagerç®¡çFragmentæ¶saveStateæ¥é.
-è§£å³æ¹æ³ ç±äºä¿å­çæ°æ®è¾å¤,æ æ³ç¡®å®é£ä¸ªæ°æ®æ¯è¾å¤§,æåä½¿ç¨è¿ä¸ªåºtoolargetoolå®ä½å°æ°æ®è¾å¤§çå¯¹è±¡.
-å°toolargetoolå¼å ¥å°é¡¹ç®
-&lt;pre class=&#34;wp-block-preformatted&#34;&gt;&lt;em&gt;compile &#39;com.gu.android:toolargetool:0.1.3@aar&lt;/em&gt; å¨Applicationä¸­åå§
-&lt;pre class=&#34;wp-block-preformatted&#34;&gt;&lt;em&gt;TooLargeTool.startLogging(this)&lt;/em&gt; è¿ä¸ªåºä¼å¨æ¯æ¬¡å ³é­Activity,Fragmentæ¶,æå°åºonSaveInstanceStateçå¯¹è±¡åå¤§å°.å¦å¾
-ç¸å ³é¾æ¥ https://github.com/guardian/toolargetool" />
+<meta property="og:description" content="问题 适配7.0时发生了TransactionTooLargeException的异常.
+原因 1.Fragment关闭时会调用onSaveInstanceState,而在onSaveInstanceState中保存了比较大的数据.
+2.调用fragment.setArguments(bundle)时，往bundle中放了过大的数据，FragmentManager管理Fragment时saveState报错.
+解决方法 由于保存的数据较多,无法确定那个数据比较大,最后使用这个库_toolargetool_定位到数据较大的对象.
+将_toolargetool_引入到项目
+在Application中初始
+这个库会在每次关闭Activity,Fragment时,打印出onSaveInstanceState的对象及大小.如图
+查找log中较大的对象,进行相应的处理即可.比如保存到数据库,缩小对象等
+相关链接 https://github.com/guardian/toolargetool" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/archives/53/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2017-11-12T21:43:02+00:00" />
-<meta property="article:modified_time" content="2017-11-12T21:43:02+00:00" />
+<meta property="article:published_time" content="2017-11-12T13:43:02+00:00" />
+<meta property="article:modified_time" content="2017-11-12T13:43:02+00:00" />
 <meta itemprop="name" content="TransactionTooLargeException 的原因">
-<meta itemprop="description" content="é®é¢ éé 7.0æ¶åçäºTransactionTooLargeExceptionçå¼å¸¸.
-åå 1.Fragmentå ³é­æ¶ä¼è°ç¨onSaveInstanceState,èå¨onSaveInstanceStateä¸­ä¿å­äºæ¯è¾å¤§çæ°æ®.
-2.è°ç¨fragment.setArguments(bundle)æ¶ï¼å¾bundleä¸­æ¾äºè¿å¤§çæ°æ®ï¼FragmentManagerç®¡çFragmentæ¶saveStateæ¥é.
-è§£å³æ¹æ³ ç±äºä¿å­çæ°æ®è¾å¤,æ æ³ç¡®å®é£ä¸ªæ°æ®æ¯è¾å¤§,æåä½¿ç¨è¿ä¸ªåºtoolargetoolå®ä½å°æ°æ®è¾å¤§çå¯¹è±¡.
-å°toolargetoolå¼å ¥å°é¡¹ç®
-&lt;pre class=&#34;wp-block-preformatted&#34;&gt;&lt;em&gt;compile &#39;com.gu.android:toolargetool:0.1.3@aar&lt;/em&gt; å¨Applicationä¸­åå§
-&lt;pre class=&#34;wp-block-preformatted&#34;&gt;&lt;em&gt;TooLargeTool.startLogging(this)&lt;/em&gt; è¿ä¸ªåºä¼å¨æ¯æ¬¡å ³é­Activity,Fragmentæ¶,æå°åºonSaveInstanceStateçå¯¹è±¡åå¤§å°.å¦å¾
-ç¸å ³é¾æ¥ https://github.com/guardian/toolargetool"><meta itemprop="datePublished" content="2017-11-12T21:43:02+00:00" />
-<meta itemprop="dateModified" content="2017-11-12T21:43:02+00:00" />
-<meta itemprop="wordCount" content="23">
+<meta itemprop="description" content="问题 适配7.0时发生了TransactionTooLargeException的异常.
+原因 1.Fragment关闭时会调用onSaveInstanceState,而在onSaveInstanceState中保存了比较大的数据.
+2.调用fragment.setArguments(bundle)时，往bundle中放了过大的数据，FragmentManager管理Fragment时saveState报错.
+解决方法 由于保存的数据较多,无法确定那个数据比较大,最后使用这个库_toolargetool_定位到数据较大的对象.
+将_toolargetool_引入到项目
+在Application中初始
+这个库会在每次关闭Activity,Fragment时,打印出onSaveInstanceState的对象及大小.如图
+查找log中较大的对象,进行相应的处理即可.比如保存到数据库,缩小对象等
+相关链接 https://github.com/guardian/toolargetool"><meta itemprop="datePublished" content="2017-11-12T13:43:02+00:00" />
+<meta itemprop="dateModified" content="2017-11-12T13:43:02+00:00" />
+<meta itemprop="wordCount" content="13">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="TransactionTooLargeException 的原因"/>
-<meta name="twitter:description" content="é®é¢ éé 7.0æ¶åçäºTransactionTooLargeExceptionçå¼å¸¸.
-åå 1.Fragmentå ³é­æ¶ä¼è°ç¨onSaveInstanceState,èå¨onSaveInstanceStateä¸­ä¿å­äºæ¯è¾å¤§çæ°æ®.
-2.è°ç¨fragment.setArguments(bundle)æ¶ï¼å¾bundleä¸­æ¾äºè¿å¤§çæ°æ®ï¼FragmentManagerç®¡çFragmentæ¶saveStateæ¥é.
-è§£å³æ¹æ³ ç±äºä¿å­çæ°æ®è¾å¤,æ æ³ç¡®å®é£ä¸ªæ°æ®æ¯è¾å¤§,æåä½¿ç¨è¿ä¸ªåºtoolargetoolå®ä½å°æ°æ®è¾å¤§çå¯¹è±¡.
-å°toolargetoolå¼å ¥å°é¡¹ç®
-&lt;pre class=&#34;wp-block-preformatted&#34;&gt;&lt;em&gt;compile &#39;com.gu.android:toolargetool:0.1.3@aar&lt;/em&gt; å¨Applicationä¸­åå§
-&lt;pre class=&#34;wp-block-preformatted&#34;&gt;&lt;em&gt;TooLargeTool.startLogging(this)&lt;/em&gt; è¿ä¸ªåºä¼å¨æ¯æ¬¡å ³é­Activity,Fragmentæ¶,æå°åºonSaveInstanceStateçå¯¹è±¡åå¤§å°.å¦å¾
-ç¸å ³é¾æ¥ https://github.com/guardian/toolargetool"/>
+<meta name="twitter:description" content="问题 适配7.0时发生了TransactionTooLargeException的异常.
+原因 1.Fragment关闭时会调用onSaveInstanceState,而在onSaveInstanceState中保存了比较大的数据.
+2.调用fragment.setArguments(bundle)时，往bundle中放了过大的数据，FragmentManager管理Fragment时saveState报错.
+解决方法 由于保存的数据较多,无法确定那个数据比较大,最后使用这个库_toolargetool_定位到数据较大的对象.
+将_toolargetool_引入到项目
+在Application中初始
+这个库会在每次关闭Activity,Fragment时,打印出onSaveInstanceState的对象及大小.如图
+查找log中较大的对象,进行相应的处理即可.比如保存到数据库,缩小对象等
+相关链接 https://github.com/guardian/toolargetool"/>
 
 	
   </head>
@@ -140,26 +144,27 @@
       
       
       
-      <time class="f6 mv4 dib tracked" datetime="2017-11-12T21:43:02Z">November 12, 2017</time>
+      <time class="f6 mv4 dib tracked" datetime="2017-11-12T13:43:02Z">November 12, 2017</time>
       
 
       
       
     </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h2 id="é151é152">é®é¢</h2>
-<p>éé 7.0æ¶åçäºTransactionTooLargeExceptionçå¼å¸¸.</p>
-<h2 id="å142159å155">åå</h2>
-<p>1.Fragmentå ³é­æ¶ä¼è°ç¨onSaveInstanceState,èå¨onSaveInstanceStateä¸­ä¿å­äºæ¯è¾å¤§çæ°æ®.</p>
-<p>2.è°ç¨fragment.setArguments(bundle)æ¶ï¼å¾bundleä¸­æ¾äºè¿å¤§çæ°æ®ï¼FragmentManagerç®¡çFragmentæ¶saveStateæ¥é.</p>
-<h2 id="èå134æ150æ149">è§£å³æ¹æ³</h2>
-<p>ç±äºä¿å­çæ°æ®è¾å¤,æ æ³ç¡®å®é£ä¸ªæ°æ®æ¯è¾å¤§,æåä½¿ç¨è¿ä¸ªåº<em>toolargetool</em>å®ä½å°æ°æ®è¾å¤§çå¯¹è±¡.</p>
-<p>å°<em>toolargetool</em>å¼å ¥å°é¡¹ç®</p>
-<pre tabindex="0"><code>&lt;pre class=&#34;wp-block-preformatted&#34;&gt;&lt;em&gt;compile &#39;com.gu.android:toolargetool:0.1.3@aar&lt;/em&gt;
-</code></pre><p>å¨Applicationä¸­åå§</p>
-<pre tabindex="0"><code>&lt;pre class=&#34;wp-block-preformatted&#34;&gt;&lt;em&gt;TooLargeTool.startLogging(this)&lt;/em&gt;
-</code></pre><p>è¿ä¸ªåºä¼å¨æ¯æ¬¡å ³é­Activity,Fragmentæ¶,æå°åºonSaveInstanceStateçå¯¹è±¡åå¤§å°.å¦å¾</p>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h2 id="问题">问题</h2>
+<p>适配7.0时发生了TransactionTooLargeException的异常.</p>
+<h2 id="原因">原因</h2>
+<p>1.Fragment关闭时会调用onSaveInstanceState,而在onSaveInstanceState中保存了比较大的数据.</p>
+<p>2.调用fragment.setArguments(bundle)时，往bundle中放了过大的数据，FragmentManager管理Fragment时saveState报错.</p>
+<h2 id="解决方法">解决方法</h2>
+<p>由于保存的数据较多,无法确定那个数据比较大,最后使用这个库_toolargetool_定位到数据较大的对象.</p>
+<p>将_toolargetool_引入到项目</p>
 <!-- raw HTML omitted -->
-<h2 id="ç155å-é147æ142">ç¸å ³é¾æ¥</h2>
+<p>在Application中初始</p>
+<!-- raw HTML omitted -->
+<p>这个库会在每次关闭Activity,Fragment时,打印出onSaveInstanceState的对象及大小.如图<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted --> <!-- raw HTML omitted --></p>
+<p>查找log中较大的对象,进行相应的处理即可.比如保存到数据库,缩小对象等</p>
+<h2 id="相关链接">相关链接</h2>
 <p><a href="https://github.com/guardian/toolargetool">https://github.com/guardian/toolargetool</a></p>
 <ul class="pa0">
   

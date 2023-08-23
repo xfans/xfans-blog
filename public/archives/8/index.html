@@ -6,7 +6,8 @@
     
     <title>Using AndroidSVG with ImageView | </title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="&lt;pre class=&#34;prism-highlight line-numbers&#34; data-start=&#34;1&#34;&gt;```null public class MainActivity extends Activity { @Override protected void onCreate(Bundle savedInstanceState) { super.onCreate(savedInstanceState); ImageView imageView = (ImageView) findViewById(R.id.yourImageView); imageView.setLayerType(View.LAYER_TYPE_SOFTWARE, null); try { SVG svg = SVG.getFromResource(this, R.raw.my_svg_file); Drawable drawable = new PictureDrawable(svg.renderToPicture()); imageView.setImageDrawable(drawable); } catch(SVGParseException e) {} } } å&amp;#156;°å&amp;#157;&amp;#128;:http://bigbadaboom.github.io/androidsvg/use\_with\_ImageView.html Github:https://github.com/BigBadaboom/androidsvg ">
+    <meta name="description" content="地址:http://bigbadaboom.github.io/androidsvg/use_with_ImageView.html
+Github:https://github.com/BigBadaboom/androidsvg">
     <meta name="generator" content="Hugo 0.117.0">
     
     
@@ -30,18 +31,21 @@
     
     
     <meta property="og:title" content="Using AndroidSVG with ImageView" />
-<meta property="og:description" content="&lt;pre class=&#34;prism-highlight line-numbers&#34; data-start=&#34;1&#34;&gt;```null public class MainActivity extends Activity { @Override protected void onCreate(Bundle savedInstanceState) { super.onCreate(savedInstanceState); ImageView imageView = (ImageView) findViewById(R.id.yourImageView); imageView.setLayerType(View.LAYER_TYPE_SOFTWARE, null); try { SVG svg = SVG.getFromResource(this, R.raw.my_svg_file); Drawable drawable = new PictureDrawable(svg.renderToPicture()); imageView.setImageDrawable(drawable); } catch(SVGParseException e) {} } } å&amp;#156;°å&amp;#157;&amp;#128;:http://bigbadaboom.github.io/androidsvg/use\_with\_ImageView.html Github:https://github.com/BigBadaboom/androidsvg " />
+<meta property="og:description" content="地址:http://bigbadaboom.github.io/androidsvg/use_with_ImageView.html
+Github:https://github.com/BigBadaboom/androidsvg" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/archives/8/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2017-09-29T19:35:09+00:00" />
-<meta property="article:modified_time" content="2017-09-29T19:35:09+00:00" />
+<meta property="article:published_time" content="2017-09-29T11:35:09+00:00" />
+<meta property="article:modified_time" content="2017-09-29T11:35:09+00:00" />
 <meta itemprop="name" content="Using AndroidSVG with ImageView">
-<meta itemprop="description" content="&lt;pre class=&#34;prism-highlight line-numbers&#34; data-start=&#34;1&#34;&gt;```null public class MainActivity extends Activity { @Override protected void onCreate(Bundle savedInstanceState) { super.onCreate(savedInstanceState); ImageView imageView = (ImageView) findViewById(R.id.yourImageView); imageView.setLayerType(View.LAYER_TYPE_SOFTWARE, null); try { SVG svg = SVG.getFromResource(this, R.raw.my_svg_file); Drawable drawable = new PictureDrawable(svg.renderToPicture()); imageView.setImageDrawable(drawable); } catch(SVGParseException e) {} } } å&amp;#156;°å&amp;#157;&amp;#128;:http://bigbadaboom.github.io/androidsvg/use\_with\_ImageView.html Github:https://github.com/BigBadaboom/androidsvg "><meta itemprop="datePublished" content="2017-09-29T19:35:09+00:00" />
-<meta itemprop="dateModified" content="2017-09-29T19:35:09+00:00" />
-<meta itemprop="wordCount" content="45">
+<meta itemprop="description" content="地址:http://bigbadaboom.github.io/androidsvg/use_with_ImageView.html
+Github:https://github.com/BigBadaboom/androidsvg"><meta itemprop="datePublished" content="2017-09-29T11:35:09+00:00" />
+<meta itemprop="dateModified" content="2017-09-29T11:35:09+00:00" />
+<meta itemprop="wordCount" content="2">
 <meta itemprop="keywords" content="android,svg," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Using AndroidSVG with ImageView"/>
-<meta name="twitter:description" content="&lt;pre class=&#34;prism-highlight line-numbers&#34; data-start=&#34;1&#34;&gt;```null public class MainActivity extends Activity { @Override protected void onCreate(Bundle savedInstanceState) { super.onCreate(savedInstanceState); ImageView imageView = (ImageView) findViewById(R.id.yourImageView); imageView.setLayerType(View.LAYER_TYPE_SOFTWARE, null); try { SVG svg = SVG.getFromResource(this, R.raw.my_svg_file); Drawable drawable = new PictureDrawable(svg.renderToPicture()); imageView.setImageDrawable(drawable); } catch(SVGParseException e) {} } } å&amp;#156;°å&amp;#157;&amp;#128;:http://bigbadaboom.github.io/androidsvg/use\_with\_ImageView.html Github:https://github.com/BigBadaboom/androidsvg "/>
+<meta name="twitter:description" content="地址:http://bigbadaboom.github.io/androidsvg/use_with_ImageView.html
+Github:https://github.com/BigBadaboom/androidsvg"/>
 
 	
   </head>
@@ -112,38 +116,17 @@
       
       
       
-      <time class="f6 mv4 dib tracked" datetime="2017-09-29T19:35:09Z">September 29, 2017</time>
+      <time class="f6 mv4 dib tracked" datetime="2017-09-29T11:35:09Z">September 29, 2017</time>
       
 
       
       
     </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><pre tabindex="0"><code>&lt;pre class=&#34;prism-highlight line-numbers&#34; data-start=&#34;1&#34;&gt;```null
-public class MainActivity extends Activity
-{
-
-   @Override
-   protected void onCreate(Bundle savedInstanceState)
-   {
-      super.onCreate(savedInstanceState);
-
-      ImageView  imageView = (ImageView) findViewById(R.id.yourImageView);
-      imageView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
-      try
-      {
-         SVG svg = SVG.getFromResource(this, R.raw.my_svg_file);
-         Drawable drawable = new PictureDrawable(svg.renderToPicture());
-         imageView.setImageDrawable(drawable);
-      }
-      catch(SVGParseException e)
-      {}
-   }
-
-}
-</code></pre><pre tabindex="0"><code>
-å&amp;#156;°å&amp;#157;&amp;#128;:http://bigbadaboom.github.io/androidsvg/use\_with\_ImageView.html  
-Github:https://github.com/BigBadaboom/androidsvg
-</code></pre><ul class="pa0">
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>地址:http://bigbadaboom.github.io/androidsvg/use_with_ImageView.html<br>
+Github:https://github.com/BigBadaboom/androidsvg</p>
+<ul class="pa0">
   
    <li class="list di">
      <a href="/tags/android/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">android</a>

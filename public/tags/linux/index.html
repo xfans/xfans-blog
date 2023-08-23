@@ -105,15 +105,23 @@
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      augmented-traffic-control A tool to simulate network conditions,Facebookæä¾çä¸æ¬¾ç½ç»ç¯å¢æ¨¡æå·¥å ·ï¼å¯ä»¥ä½¿ç¨ä»æ¥æµè¯Appå¨åç§ç½ç»ç¯å¢ä¸çé®é¢ã
-å®è£ ç¯å¢è¦æ± Python2.7ãDjango1.10.+
-ä»¥ä¸å¨Manjoraä¸çå®è£ å½ä»¤
-åæ¢Pythonç¯å¢å°Python2.7 å®è£ pip sudo pacman -S python2-pip
-å®è£ Django1.10.+ sudo pip install Django==1.10.8
-å®è£ ATC å®è£ lib sudo pacman -S pip install atc_thrift atcd django-atc-api django-atc-demo-ui django-atc-profile-storage
-Djangoé ç½® django-admin startproject atcui
+      augmented-traffic-control A tool to simulate network conditions,Facebook提供的一款网络环境模拟工具，可以使用他来测试App在各种网络环境下的问题。
+安装环境要求 Python2.7、Django1.10.+
+以下在Manjora下的安装命令
+切换Python环境到Python2.7 安装pip sudo pacman -S python2-pip
+安装Django1.10.+ sudo pip install Django==1.10.8
+安装ATC 安装lib sudo pacman -S pip install atc_thrift atcd django-atc-api django-atc-demo-ui django-atc-profile-storage
+Django配置 django-admin startproject atcui
 cd atcui
-ä¿®æ¹atcui/settings.pyä¸­çINSTALLED_APPS &lt;pre class=&#34;line-numbers prism-highlight&#34; data-start=&#34;1&#34;&gt;```bash INSTALLED_APPS = ( ... # Django ATC API &#39;rest_framework&#39;, &#39;atc_api&#39;, # Django ATC Demo UI &#39;bootstrap_themes&#39;, &#39;django_static_jquery&#39;, &#39;atc_demo_ui&#39;, # Django ATC Profile Storage &#39;atc_profile_storage&#39;, ) #### ä¿®æ&amp;#148;¹atcui/urls.
+修改atcui/settings.py中的INSTALLED_APPS 修改atcui/urls.py中的urlpatterns及引用 更新数据库 python manage.py migrate
+创建虚拟Ap Linux开启虚拟AP
+启动ATC sudo atcd --atcd-wan wlp3s0 --atcd-lan ap0
+注意：wlp3s0是我的无线网卡，ap0是我创建的虚拟ap网卡
+设置错误可能出现：https://github.com/facebook/augmented-traffic-control/issues/239
+启动ATCUI python manage.py runserver 0.0.0.0:8000
+导入默认配置 下载该路径下的文件https://github.com/facebook/augmented-traffic-control/tree/master/utils 运行导入命令 ./restore-profiles.sh localhost:8000
+手机使用ATC 使用Android、iOS 的浏览器访问
+ip:8000 ip为你电脑的ip
     </div>
   </div>
 
@@ -132,12 +140,12 @@ cd atcui
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      å®è£ create_ap pacman -S create_ap
-å¢å ä¸ä¸ªèæç½ç»æ¥å£å¹¶è®¾ç½®ä¸ä¸ªmacå°å sudo iw dev wlp3s0 interface add wlp3s0_ap type __ap
+      安装create_ap pacman -S create_ap
+增加一个虚拟网络接口并设置一个mac地址 sudo iw dev wlp3s0 interface add wlp3s0_ap type __ap
 sudo ip link set dev wlp3s0_ap address 04:e2:b9:17:18:72
-åå»ºAP sudo create_ap -c 11 wlp3s0_ap wlp3s0 xfans_ap 321321321
-create_apä¸è½½ https://github.com/oblique/create_ap
-åè https://wiki.archlinux.org/index.php/Software_access_point_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)
+创建AP sudo create_ap -c 11 wlp3s0_ap wlp3s0 xfans_ap 321321321
+create_ap下载 https://github.com/oblique/create_ap
+参考 https://wiki.archlinux.org/index.php/Software_access_point_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)
 https://www.zhihu.com/question/24961490
     </div>
   </div>
@@ -157,9 +165,9 @@ https://www.zhihu.com/question/24961490
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      æ¥æ¾å¯ç¨å æ ¸ pacman -Ss linux-headers
-pacman -S linuxXY linuxXY-headers
-æ³¨æ:XYä¸ºä½ è¦å®è£ ççæ¬å·,å¦:
+      查找可用内核 pacman -Ss linux-headers
+安装 pacman -S linuxXY linuxXY-headers
+注意:XY为你要安装的版本号,如:
 pacman -S linux49 linux49-headers
     </div>
   </div>
@@ -179,7 +187,7 @@ pacman -S linux49 linux49-headers
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      &lt;pre class=&#34;prism-highlight line-numbers&#34; data-start=&#34;1&#34;&gt;```null sudo ln -sf /bin/python3.6 /bin/python sudo ln -sf /bin/python2.7 /bin/python 
+       
     </div>
   </div>
 
@@ -198,7 +206,7 @@ pacman -S linux49 linux49-headers
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      &lt;pre class=&#34;prism-highlight line-numbers&#34; data-start=&#34;1&#34;&gt;```null sudo update-grub 
+       
     </div>
   </div>
 
@@ -217,8 +225,8 @@ pacman -S linux49 linux49-headers
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Manjaroå ³é­ç¬ç«æ¾å¡
-å®è£ bbswitch &lt;pre class=&#34;prism-highlight line-numbers&#34; data-start=&#34;1&#34;&gt;```null pacman -S bbswitch ### å&amp;#156;¨/etc/modules-load.dä¸&amp;#139;æ&amp;#150;°å»ºbbswitch.confï¼&amp;#140;å¹¶ä¿®æ&amp;#148;¹ä¸ºå¦&amp;#130;ä¸&amp;#139;å&amp;#134; å®¹ã&amp;#128;&amp;#130;è¿&amp;#153;æ ·æ¯&amp;#143;æ¬¡å&amp;#144;¯å&amp;#138;¨é&amp;#131;½ä¼&amp;#154;å&amp;#138; è½½bbswitchæ¨¡å&amp;#157;&amp;#151;äº&amp;#134; 
+      Manjaro关闭独立显卡
+安装bbswitch 在/etc/modules-load.d下新建bbswitch.conf，并修改为如下内容。这样每次启动都会加载bbswitch模块了 在/etc/modprobe.d/下新建bbswitch.conf，并修改为如下内容。这是bbswitch加载的参数，我们让其默认关闭 在/etc/modprobe.d/下新建nouveau_blacklist.conf，并修改为如下内容。有时候bbswitch加载了，但是不能关闭显卡，因为有些模块正在占用着，因此要禁掉。 在/usr/lib/systemd/system-shutdown/下新建nvidia_card_enable.sh，并修改为以下内容，记得加运行权限。每次reboot的时候，显卡都是关闭的，不管是重启到windows还是linux，都会找不到设备，必须彻底关机才行。解决该问题的办法就是每次重启都启用显卡 查看状态 原文 http://blog.csdn.net/gt945/article/details/10922263
     </div>
   </div>
 
