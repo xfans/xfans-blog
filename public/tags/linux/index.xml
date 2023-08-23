@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>linux on </title>
+    <link>/tags/linux/</link>
+    <description>Recent content in linux on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 23 Nov 2017 20:10:48 +0000</lastBuildDate><atom:link href="/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux下安装网络环境模拟工具augmented-traffic-control</title>
+      <link>/archives/56/</link>
+      <pubDate>Thu, 23 Nov 2017 20:10:48 +0000</pubDate>
+      
+      <guid>/archives/56/</guid>
+      <description>augmented-traffic-control A tool to simulate network conditions,Facebookæä¾çä¸æ¬¾ç½ç»ç¯å¢æ¨¡æå·¥å ·ï¼å¯ä»¥ä½¿ç¨ä»æ¥æµè¯Appå¨åç§ç½ç»ç¯å¢ä¸çé®é¢ã
+å®è£ ç¯å¢è¦æ± Python2.7ãDjango1.10.+
+ä»¥ä¸å¨Manjoraä¸çå®è£ å½ä»¤
+åæ¢Pythonç¯å¢å°Python2.7 å®è£ pip sudo pacman -S python2-pip
+å®è£ Django1.10.+ sudo pip install Django==1.10.8
+å®è£ ATC å®è£ lib sudo pacman -S pip install atc_thrift atcd django-atc-api django-atc-demo-ui django-atc-profile-storage
+Djangoé ç½® django-admin startproject atcui
+cd atcui
+ä¿®æ¹atcui/settings.pyä¸­çINSTALLED_APPS &amp;lt;pre class=&amp;#34;line-numbers prism-highlight&amp;#34; data-start=&amp;#34;1&amp;#34;&amp;gt;```bash INSTALLED_APPS = ( ... # Django ATC API &amp;#39;rest_framework&amp;#39;, &amp;#39;atc_api&amp;#39;, # Django ATC Demo UI &amp;#39;bootstrap_themes&amp;#39;, &amp;#39;django_static_jquery&amp;#39;, &amp;#39;atc_demo_ui&amp;#39;, # Django ATC Profile Storage &amp;#39;atc_profile_storage&amp;#39;, ) #### ä¿®æ&amp;amp;#148;¹atcui/urls.</description>
+    </item>
+    
+    <item>
+      <title>Linux开启虚拟AP</title>
+      <link>/archives/42/</link>
+      <pubDate>Mon, 09 Oct 2017 16:09:27 +0000</pubDate>
+      
+      <guid>/archives/42/</guid>
+      <description>å®è£ create_ap pacman -S create_ap
+å¢å ä¸ä¸ªèæç½ç»æ¥å£å¹¶è®¾ç½®ä¸ä¸ªmacå°å sudo iw dev wlp3s0 interface add wlp3s0_ap type __ap
+sudo ip link set dev wlp3s0_ap address 04:e2:b9:17:18:72
+åå»ºAP sudo create_ap -c 11 wlp3s0_ap wlp3s0 xfans_ap 321321321
+create_apä¸è½½ https://github.com/oblique/create_ap
+åè https://wiki.archlinux.org/index.php/Software_access_point_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)
+https://www.zhihu.com/question/24961490</description>
+    </item>
+    
+    <item>
+      <title>Linux Manjaro安装kernel及Kernel Headers</title>
+      <link>/archives/16/</link>
+      <pubDate>Fri, 29 Sep 2017 19:43:55 +0000</pubDate>
+      
+      <guid>/archives/16/</guid>
+      <description>æ¥æ¾å¯ç¨å æ ¸ pacman -Ss linux-headers
+pacman -S linuxXY linuxXY-headers
+æ³¨æ:XYä¸ºä½ è¦å®è£ ççæ¬å·,å¦:
+pacman -S linux49 linux49-headers</description>
+    </item>
+    
+    <item>
+      <title>设置Python版本</title>
+      <link>/archives/12/</link>
+      <pubDate>Fri, 29 Sep 2017 19:36:21 +0000</pubDate>
+      
+      <guid>/archives/12/</guid>
+      <description>&amp;lt;pre class=&amp;#34;prism-highlight line-numbers&amp;#34; data-start=&amp;#34;1&amp;#34;&amp;gt;```null sudo ln -sf /bin/python3.6 /bin/python sudo ln -sf /bin/python2.7 /bin/python </description>
+    </item>
+    
+    <item>
+      <title>Linux更新grub启动项</title>
+      <link>/archives/10/</link>
+      <pubDate>Fri, 29 Sep 2017 19:35:41 +0000</pubDate>
+      
+      <guid>/archives/10/</guid>
+      <description>&amp;lt;pre class=&amp;#34;prism-highlight line-numbers&amp;#34; data-start=&amp;#34;1&amp;#34;&amp;gt;```null sudo update-grub </description>
+    </item>
+    
+    <item>
+      <title>Manjaro使用bbswitch关闭笔记本的nvidia独立显卡</title>
+      <link>/archives/6/</link>
+      <pubDate>Fri, 29 Sep 2017 19:33:43 +0000</pubDate>
+      
+      <guid>/archives/6/</guid>
+      <description>Manjaroå ³é­ç¬ç«æ¾å¡
+å®è£ bbswitch &amp;lt;pre class=&amp;#34;prism-highlight line-numbers&amp;#34; data-start=&amp;#34;1&amp;#34;&amp;gt;```null pacman -S bbswitch ### å&amp;amp;#156;¨/etc/modules-load.dä¸&amp;amp;#139;æ&amp;amp;#150;°å»ºbbswitch.confï¼&amp;amp;#140;å¹¶ä¿®æ&amp;amp;#148;¹ä¸ºå¦&amp;amp;#130;ä¸&amp;amp;#139;å&amp;amp;#134; å®¹ã&amp;amp;#128;&amp;amp;#130;è¿&amp;amp;#153;æ ·æ¯&amp;amp;#143;æ¬¡å&amp;amp;#144;¯å&amp;amp;#138;¨é&amp;amp;#131;½ä¼&amp;amp;#154;å&amp;amp;#138; è½½bbswitchæ¨¡å&amp;amp;#157;&amp;amp;#151;äº&amp;amp;#134; </description>
+    </item>
+    
+  </channel>
+</rss>

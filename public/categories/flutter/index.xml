@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Flutter on </title>
+    <link>/categories/flutter/</link>
+    <description>Recent content in Flutter on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 09 Dec 2021 10:29:49 +0000</lastBuildDate><atom:link href="/categories/flutter/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Flutter2.5适配ThemeData</title>
+      <link>/archives/392/</link>
+      <pubDate>Thu, 09 Dec 2021 10:29:49 +0000</pubDate>
+      
+      <guid>/archives/392/</guid>
+      <description>è¯´æ Flutter 2.5 çæ¬ä¸­çç ´åæ§æ¹å¨
+é»è®¤çè®¾å¤æå¨åæ»å¨ v2.2 çåå é¤äºåºå¼ç API Package ä»ç»: flutter_lints ThemeData ç accent å±æ§å·²è¢«å¼ç¨ æå¿è¯å«å¨æ¸ ç å° AnimationSheetBuilder.display æ¿æ¢ä¸º collate ä½¿ç¨ HTML ææ§½å¨ Web ä¸­æ¸²æå¹³å°è§å¾ å° LogicalKeySet è¿ç§»è³ SingleActivator é¡¹ç®ä½¿ç¨Flutter2.5ç¼è¯åï¼é¨åé¡µé¢çé¢è²åçäºååã
+éè¦å¯¹ThemeData ç accent å±æ§è¿è¡éé ã
+æ¹å¨ ä¸»é¢ä¿¡æ¯ ThemeData ä¸­ç accentColorãaccentColorBrightnessãaccentIconTheme å accentTextTheme å±æ§ç°å·²è¢«å¼ç¨ã
+Material è®¾è®¡è§è ä¸åä¸º Material ç»ä»¶æå®æä½¿ç¨ãå¼ºè°ãè²ãç»ä»¶çé»è®¤é¢è²æ¥èªæ´ä¸ªä¸»é¢ç é¢è²æ¹æ¡ãç°å¨éå¸¸ä½¿ç¨ ColorScheme ç secondary color ä»£æ¿ accentColorï¼å¹¶ä¸å¨éè¦å¯¹æ¯è²æ¶ä½¿ç¨ onSecondary å±æ§ã
+éé  éé åï¼
+theme: ThemeData( primaryColor: Color.fromRGBO(156, 184, 133, 1.</description>
+    </item>
+    
+    <item>
+      <title>Flutter cached_network_image使用Dio请求图片</title>
+      <link>/archives/365/</link>
+      <pubDate>Fri, 25 Jun 2021 18:19:06 +0000</pubDate>
+      
+      <guid>/archives/365/</guid>
+      <description>èæ¯ å¨Flutterä¸­éå¸¸ä½¿ç¨cached_network_imageæ§ä»¶æ¾ç¤ºå¾çï¼è¯¥æ§ä»¶ä½¿ç¨httpåºè¯·æ±å¾çï¼httpåºæ æ³ådioä¸æ ·æ¹ä¾¿çæ·»å æ¦æªå¨ç­ã
+å®ç° CachedNetworkImageä½¿ç¨flutter_cache_managerè¿è¡å¾çç¼å­ï¼å¯ä»¥ä½¿ç¨èªå®ä¹cache_manageræ¥æ¿æ¢httpä¸ºdioã å¦ä¸ï¼
+&amp;lt;pre class=&amp;#34;wp-block-preformatted&amp;#34;&amp;gt;class DioCacheManager extends CacheManager { static const &amp;lt;em&amp;gt;key &amp;lt;/em&amp;gt;= &amp;#39;dioCache&amp;#39;; static DioCacheManager &amp;lt;em&amp;gt;_instance&amp;lt;/em&amp;gt;; factory DioCacheManager(Dio dio) { if (&amp;lt;em&amp;gt;_instance &amp;lt;/em&amp;gt;== null) { &amp;lt;em&amp;gt;_instance &amp;lt;/em&amp;gt;= DioCacheManager._(dio); } return &amp;lt;em&amp;gt;_instance&amp;lt;/em&amp;gt;; } DioCacheManager._(Dio dio) : super(Config(&amp;lt;em&amp;gt;key&amp;lt;/em&amp;gt;, fileService: DioHttpFileService(dio))); } &amp;lt;pre class=&amp;#34;wp-block-preformatted&amp;#34;&amp;gt;class DioHttpFileService extends FileService { Dio _dio; DioHttpFileService(this._dio); @override Future&amp;lt;FileServiceResponse&amp;gt; get(String url, {Map&amp;lt;String, String&amp;gt; headers}) async { Options options = Options(headers: headers ?? {}, responseType: ResponseType.</description>
+    </item>
+    
+    <item>
+      <title>Flutter InheritedWidget源码解析</title>
+      <link>/archives/352/</link>
+      <pubDate>Wed, 02 Sep 2020 20:05:34 +0000</pubDate>
+      
+      <guid>/archives/352/</guid>
+      <description>ä½ç¨ InheritedWidgetæ¯ä¸ä¸ªå¨Widgetæ ä¸­ï¼ä»ä¸å¾ä¸ä¼ éä¿¡æ¯çå°é¨ä»¶ã
+ä¸»è¦ä»ä¸¤ä¸ªæ¹é¢çè§£æºç ï¼
+1.å­Widgetå¯ä»¥è·åå°ç¶æ§ä»¶ä¸­çInheritedWidgetï¼ä»èè·åå°InheritedWidgetçä¿¡æ¯ã
+2.å­Widgetè°ç¨dependOnInheritedWidgetOfExactTypeåï¼å½ç¶InheritedWidgetéå»ºåï¼ä¼è°ç¨å­æ§ä»¶éå»ºã
+åç 1.å­æ§ä»¶å¯ä»¥è·åå°ç¶æ§ä»¶ä¸­çInheritedWidget å¨Elementä¸­æä¸ªMapï¼
+&amp;lt;pre class=&amp;#34;wp-block-preformatted&amp;#34;&amp;gt;``` Map&amp;lt;Type, InheritedElement&amp;gt; _inheritedWidgets; å ¶ä¸­ä¿&amp;amp;#157;å­&amp;amp;#152;äº&amp;amp;#134;è¯¥`Widget`ç&amp;amp;#154;&amp;amp;#132;ç&amp;amp;#136;¶è&amp;amp;#138;&amp;amp;#130;ç&amp;amp;#130;¹ä¸­ç&amp;amp;#154;&amp;amp;#132;`InheritedWidget`ã&amp;amp;#128;&amp;amp;#130;ä¼&amp;amp;#154;å&amp;amp;#156;¨`mount`\\`activate` æ&amp;amp;#150;¹æ³&amp;amp;#149;ä¸­èµ&amp;amp;#139;å&amp;amp;#128;¼ï¼&amp;amp;#140;èµ&amp;amp;#139;å&amp;amp;#128;¼ç&amp;amp;#154;&amp;amp;#132;ä»£ç &amp;amp;#129;å¦&amp;amp;#130;ä¸&amp;amp;#139;ï¼&amp;amp;#154; å&amp;amp;#156;¨`Element`ä¸­ </description>
+    </item>
+    
+    <item>
+      <title>Flutter常见问题整理</title>
+      <link>/archives/309/</link>
+      <pubDate>Thu, 19 Mar 2020 14:46:00 +0000</pubDate>
+      
+      <guid>/archives/309/</guid>
+      <description>é®é¢ é®é¢1 é®é¢:Flutterä¸­Columnåµå¥Listviewæ¥overflowedéè¯¯.
+è§£å³:ä½¿ç¨Column+Expanded+Listviewå¸å±çé¢.
+é®é¢2 é®é¢:æ°ç»jsonè½¬æ¢æList
+è§£å³:
+&amp;lt;pre class=&amp;#34;wp-block-preformatted&amp;#34;&amp;gt;``` List list = json.decode(response.body); List&amp;lt;User&amp;gt; result = []; list.forEach((item) { result.add(User.fromJson(item)); }); #### é&amp;amp;#151;®é¢&amp;amp;#152;3 é&amp;amp;#151;®é¢&amp;amp;#152;:ç&amp;amp;#149;&amp;amp;#140;é&amp;amp;#157;¢ä¸­è¯·æ±&amp;amp;#130;ç½&amp;amp;#145;ç»&amp;amp;#156;ç&amp;amp;#154;&amp;amp;#132;æ&amp;amp;#151;¶æ&amp;amp;#156;º è§£å&amp;amp;#134;³:ä½¿ç&amp;amp;#148;¨`&amp;lt;a href=&amp;#34;https://api.flutter-io.cn/flutter/widgets/FutureBuilder-class.html&amp;#34;&amp;gt;FutureBuilder&amp;lt;/a&amp;gt;` #### é&amp;amp;#151;®é¢&amp;amp;#152;4 é&amp;amp;#151;®é¢&amp;amp;#152;:material-design iconæ&amp;amp;#156;&amp;amp;#137;å&amp;amp;#147;ªäº&amp;amp;#155; è§£å&amp;amp;#134;³:[https://material.io/resources/icons/?icon=account\_balance&amp;amp;style=baseline](https://material.io/resources/icons/?icon=account_balance&amp;amp;style=baseline) #### é&amp;amp;#151;®é¢&amp;amp;#152;5 é&amp;amp;#151;®é¢&amp;amp;#152;:æ&amp;amp;#138;½å&amp;amp;#135;ºappbar æ&amp;amp;#151;¶can&amp;#39;t be assigned to the parameter type &amp;#39;PreferredSizeWidget&amp;#39; è§£å&amp;amp;#134;³: </description>
+    </item>
+    
+  </channel>
+</rss>

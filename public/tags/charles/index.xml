@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Charles on </title>
+    <link>/tags/charles/</link>
+    <description>Recent content in Charles on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 19 Jan 2018 19:56:59 +0000</lastBuildDate><atom:link href="/tags/charles/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>一个bad request http request or invalid response的错误</title>
+      <link>/archives/80/</link>
+      <pubDate>Fri, 19 Jan 2018 19:56:59 +0000</pubDate>
+      
+      <guid>/archives/80/</guid>
+      <description>é®é¢ é¨åå®¢æ·ç«¯apiæ¥éï¼ç¹å«æ¯8.0ç³»ç»ä¸ï¼è®¿é®apiåºç°bad request http request or invalid response,from ulbéè¯¯ã
+è§£å³æ­¥éª¤ 1.æå¡å¨èè° æå¡å¨ç«¯æªåç°é®é¢ï¼åæ°é½å¯¹ãæå¡å¨ä¸ä¹æ²¡æè¿å¥éè¯¯ä¿¡æ¯ãçæµåºè¯¥æ¯æå¡å¨ä¸å±æ¥åºæ¥çéè¯¯ï¼å¦è´è½½åè¡¡ã
+2.ç¨Charlesæå Charlesæå åï¼å°±ä¸ä¼åºç°è¯¥éè¯¯äºãåæ¥åç°Charleså¯¹éè¯¯æ¥æè¿è¡äºå ¼å®¹å¤çï¼åç»æå¡å¨çåºè¯¥å¯¹çã
+3.å»GIthubæ¥ç½ç»åºçissues é¡¹ç®ä¸­ä½¿ç¨çæ¯,Android-async-httpè¿ä¸ªåº,issuesä¸­æ²¡æäººè¯´8.0ä¸­æè¿ä¸ªé®é¢ï¼çæ³åºè¯¥æ¯èªå·±ä»£ç ä¸­çé®é¢ã
+4.å¤§é²¨é±¼Wiresharkæå å¤§é²¨é±¼Wiresharkæå åä¼åºç°è¯¥éè¯¯ï¼æ²¡æçåºæ¥ææå¼å¸¸ã
+æ¯è¾æ­£ç¡®çæ¥æåéè¯¯çæ¥æï¼åç°å¤§å°ä¸ä¸æ ·ã
+æç»åç°ï¼æ¾äºå¥½ä¹ ï¼åæ­£å°±æ¯å¾è°é¾ï¼ï¼éè¯¯çæ¥æHeaderä¸­å¤äºä¸ä¸ªç©ºè¡ã
+å¨å¾Headerä¸­æ·»å åæ°æ¶ï¼æä¸ä¸ªåæ°åºç°äº\n,æ­£å¸¸æ åµä¸å®¢æ·ç«¯åéæ¥æçæ¶ä¼å¿½ç¥\nï¼èæççæ¬æ\næ¾å¨äºæ¥æä¸­ï¼å¯¼è´æ¥ææ ¼å¼åºéã</description>
+    </item>
+    
+  </channel>
+</rss>

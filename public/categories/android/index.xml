@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Android on </title>
+    <link>/categories/android/</link>
+    <description>Recent content in Android on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 13 Oct 2021 14:42:25 +0000</lastBuildDate><atom:link href="/categories/android/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>View沿着Path移动pathMeasure</title>
+      <link>/archives/388/</link>
+      <pubDate>Wed, 13 Oct 2021 14:42:25 +0000</pubDate>
+      
+      <guid>/archives/388/</guid>
+      <description>Todo </description>
+    </item>
+    
+    <item>
+      <title>launcher 使用windowIsTranslucent引发的bug</title>
+      <link>/archives/382/</link>
+      <pubDate>Tue, 07 Sep 2021 17:01:19 +0000</pubDate>
+      
+      <guid>/archives/382/</guid>
+      <description>è¯´æ ælauncherçthemeæ·»å
+&amp;lt;item name=&amp;quot;android:windowIsTranslucent&amp;quot;&amp;gt;true&amp;lt;/item&amp;gt;
+ä¼å¼èµ·çå½å¨æçå¼å¸¸ï¼å¼åhomeé®æ æç­bugã
+è§£å³æ¹æ³ ä½¿ç¨
+&amp;lt;item name=&amp;quot;android:windowBackground&amp;quot;&amp;gt;@android:color/transparent&amp;lt;/item&amp;gt;
+&amp;lt;item name=&amp;quot;android:windowShowWallpaper&amp;quot;&amp;gt;true&amp;lt;/item&amp;gt;
+ä»£æ¿</description>
+    </item>
+    
+    <item>
+      <title>替换口袋阅上的Kindle/微信阅读应用</title>
+      <link>/archives/346/</link>
+      <pubDate>Wed, 19 Aug 2020 10:58:20 +0000</pubDate>
+      
+      <guid>/archives/346/</guid>
+      <description>è¯´æï¼ å¨æªå·æºçæ åµä¸ï¼å£è¢é 1çé»è®¤æ¡é¢å¦ä¸ï¼
+æ¹æ³ï¼ å®è´¨ä¸å°±æ¯ï¼èªå·±ç¼åä¸ä¸ªä¸Kindleå åç¸åçç¨åºï¼å¯å¨è¯¥ç¨åºæ¶ï¼å¯å¨ä½ è®¾ç½®çç¨åºãæ ¸å¿ä»£ç å¦ä¸ï¼å¾ç®åï¼
+&amp;lt;pre class=&amp;#34;wp-block-code&amp;#34;&amp;gt;``` val packageName = sp.getString(&amp;#34;pkg&amp;#34;, &amp;#34;&amp;#34;) if (TextUtils.isEmpty(packageName)) { tvTitle.text = &amp;#34;è¯·è¾&amp;amp;#147;å&amp;amp;#133;¥åº&amp;amp;#148;ç&amp;amp;#148;¨å&amp;amp;#140;&amp;amp;#133;å&amp;amp;#144;&amp;amp;#141;,å¦&amp;amp;#130;:org.koreader.launcher&amp;#34; } else { val intent = packageManager.getLaunchIntentForPackage(packageName!!) startActivity(intent) finish() } å&amp;amp;#143;¯ä»¥ä½¿ç&amp;amp;#148;¨å·²ç»&amp;amp;#143;ç¼&amp;amp;#150;è¯&amp;amp;#145;å¥½ç&amp;amp;#154;&amp;amp;#132;ç¨&amp;amp;#139;åº&amp;amp;#143;ï¼&amp;amp;#154; &amp;lt;figure class=&amp;#34;wp-block-image size-large is-resized&amp;#34;&amp;gt;![](http://img.xfans.me/xfans/image/kdy_replace.png)&amp;lt;/figure&amp;gt;å®&amp;amp;#137;è£ å&amp;amp;#144;&amp;amp;#142;è¾&amp;amp;#147;å ¥è¦&amp;amp;#129;æ&amp;amp;#155;¿æ&amp;amp;#141;¢ç&amp;amp;#154;&amp;amp;#132;å&amp;amp;#140; å&amp;amp;#144;&amp;amp;#141;ï¼&amp;amp;#140;ç&amp;amp;#130;¹å&amp;amp;#135;»ç¡®è®¤å&amp;amp;#141;³å&amp;amp;#143;¯ã&amp;amp;#128;&amp;amp;#130;ç&amp;amp;#132;¶å&amp;amp;#144;&amp;amp;#142;ç&amp;amp;#130;¹å&amp;amp;#135;»æ¡&amp;amp;#140;é&amp;amp;#157;¢ç&amp;amp;#154;&amp;amp;#132;Kindleå&amp;amp;#155;¾æ &amp;amp;#135;å&amp;amp;#141;³å&amp;amp;#143;¯è¿&amp;amp;#155;å ¥è®¾ç½®ç&amp;amp;#154;&amp;amp;#132;appã&amp;amp;#128;&amp;amp;#130;æ³¨æ&amp;amp;#132;&amp;amp;#143;ï¼&amp;amp;#154;å®&amp;amp;#137;è£ è¯¥ç¨&amp;amp;#139;åº&amp;amp;#143;å&amp;amp;#144;&amp;amp;#142;ï¼&amp;amp;#140;æ&amp;amp;#151; æ³&amp;amp;#149;å®&amp;amp;#137;è£ Kindle appã&amp;amp;#128;&amp;amp;#130;å&amp;amp;#140; å&amp;amp;#144;&amp;amp;#141;å&amp;amp;#134;²çª&amp;amp;#129;ã&amp;amp;#128;&amp;amp;#130; å&amp;amp;#141;¸è½½æ&amp;amp;#150;¹æ³&amp;amp;#149;ï¼&amp;amp;#154;**adb uninstall com.amazon.kindlefc** ## å&amp;amp;#156;°å&amp;amp;#157;&amp;amp;#128;ï¼&amp;amp;#154; ä¸&amp;amp;#139;è½½å&amp;amp;#156;°å&amp;amp;#157;&amp;amp;#128;ï¼&amp;amp;#154;&amp;lt;http://img.xfans.me/download/kdy-replace-release.apk&amp;gt; ä»£ç &amp;amp;#129;å&amp;amp;#156;°å&amp;amp;#157;&amp;amp;#128;ï¼&amp;amp;#154;&amp;lt;https://github.com/xfans/KdyReplace&amp;gt; </description>
+    </item>
+    
+    <item>
+      <title>Flutter实现的gitee客户端(仿github)</title>
+      <link>/archives/307/</link>
+      <pubDate>Wed, 01 Apr 2020 19:36:01 +0000</pubDate>
+      
+      <guid>/archives/307/</guid>
+      <description>è¯´æ æ¨¡ä»¿githubå®¢æ·ç«¯çUI,ä½¿ç¨flutterå®ç°
+å°å:https://gitee.com/xfans/flutter_gitee</description>
+    </item>
+    
+    <item>
+      <title>retrofit2源码及请求流程分析</title>
+      <link>/archives/335/</link>
+      <pubDate>Thu, 23 Jan 2020 00:25:00 +0000</pubDate>
+      
+      <guid>/archives/335/</guid>
+      <description>1.åå»ºRetrofitå¯¹è±¡ &amp;lt;pre class=&amp;#34;wp-block-preformatted&amp;#34;&amp;gt;&amp;lt;strong&amp;gt;val &amp;lt;/strong&amp;gt;retrofit = Retrofit.Builder()&amp;lt;br&amp;gt;&amp;lt;/br&amp;gt; .baseUrl(SimpleService.&amp;lt;em&amp;gt;API_URL&amp;lt;/em&amp;gt;)&amp;lt;br&amp;gt;&amp;lt;/br&amp;gt; .addConverterFactory(GsonConverterFactory.create())&amp;lt;br&amp;gt;&amp;lt;/br&amp;gt; .build() 2.åå»ºServiceæ¥å£ &amp;lt;pre class=&amp;#34;wp-block-preformatted&amp;#34;&amp;gt;&amp;lt;strong&amp;gt;val &amp;lt;/strong&amp;gt;github = retrofit.create(GitHub::&amp;lt;strong&amp;gt;class&amp;lt;/strong&amp;gt;.&amp;lt;em&amp;gt;java&amp;lt;/em&amp;gt;) retrofit.createæ¹æ³ä¸ºServiceåå»ºå¨æä»£çï¼å¯ä»¥è¯´æ¯Retrofitçæ ¸å¿ã
+3.åå»ºè°ç¨APIçCallå¯¹è±¡ &amp;lt;pre class=&amp;#34;wp-block-preformatted&amp;#34;&amp;gt;&amp;lt;strong&amp;gt;val &amp;lt;/strong&amp;gt;call = github.contributors(&amp;lt;strong&amp;gt;&amp;#34;square&amp;#34;&amp;lt;/strong&amp;gt;, &amp;lt;strong&amp;gt;&amp;#34;retrofit&amp;#34;&amp;lt;/strong&amp;gt;) 1.å½è°ç¨Serviceä¸­å®ä¹çæ¹æ³æ¶ï¼ä¼è°ç¨retrofit.createåå»ºçå¨æä»£çï¼è°ç¨Proxy.newProxyInstanceä¸­InvocationHandlerçinvokeæ¹æ³,åå»ºæµç¨å¦ä¸:
+&amp;lt;pre class=&amp;#34;wp-block-preformatted&amp;#34;&amp;gt;&amp;lt;strong&amp;gt;val &amp;lt;/strong&amp;gt;contributors = call.execute().body()!! è¯·æ±ç½ç»çæµç¨å¦ä¸:</description>
+    </item>
+    
+    <item>
+      <title>okhttp3源码及请求流程分析</title>
+      <link>/archives/329/</link>
+      <pubDate>Fri, 17 Jan 2020 12:07:00 +0000</pubDate>
+      
+      <guid>/archives/329/</guid>
+      <description>okhttp3è¯·æ±æµç¨å¾å¦ä¸</description>
+    </item>
+    
+    <item>
+      <title>自定义View实现图片地图,SVG室内地图</title>
+      <link>/archives/221/</link>
+      <pubDate>Fri, 29 Nov 2019 20:22:45 +0000</pubDate>
+      
+      <guid>/archives/221/</guid>
+      <description>ç®æ  å®ç°ä¸ä¸ªå®¤å å°å¾,å°å¾ä½¿ç¨å¾ç,svgæ ¼å¼,è½å¤å®ç°Marker,Polyline,æ¾å¤§,ç¼©å°ç­åè½.
+å®ç°æ¹æ³ &amp;lt;pre class=&amp;#34;wp-block-preformatted&amp;#34;&amp;gt;``` &amp;lt;strong&amp;gt;private fun &amp;lt;/strong&amp;gt;drawMaker(maker: Marker, canvas: Canvas?) { &amp;lt;strong&amp;gt;val &amp;lt;/strong&amp;gt;icon = maker.&amp;lt;strong&amp;gt;icon pointIn&amp;lt;/strong&amp;gt;[0] = maker.&amp;lt;strong&amp;gt;x pointIn&amp;lt;/strong&amp;gt;[1] = maker.&amp;lt;strong&amp;gt;y iconMatrix&amp;lt;/strong&amp;gt;.reset() &amp;lt;strong&amp;gt;imageView&amp;lt;/strong&amp;gt;?.&amp;lt;em&amp;gt;imageMatrix&amp;lt;/em&amp;gt;?.mapPoints(&amp;lt;strong&amp;gt;pointOut&amp;lt;/strong&amp;gt;, &amp;lt;strong&amp;gt;pointIn&amp;lt;/strong&amp;gt;) //å¾&amp;amp;#151;å&amp;amp;#136;°å&amp;amp;#155;¾ç&amp;amp;#137;&amp;amp;#135;å&amp;amp;#143;&amp;amp;#152;æ&amp;amp;#141;¢å&amp;amp;#144;&amp;amp;#142;ç&amp;amp;#155;¸åº&amp;amp;#148;ç&amp;amp;#154;&amp;amp;#132;å&amp;amp;#157;&amp;amp;#144;æ &amp;amp;#135; &amp;lt;strong&amp;gt;iconMatrix&amp;lt;/strong&amp;gt;.postTranslate(&amp;lt;strong&amp;gt;pointOut&amp;lt;/strong&amp;gt;[0], &amp;lt;strong&amp;gt;pointOut&amp;lt;/strong&amp;gt;[1]) &amp;lt;strong&amp;gt;iconRect&amp;lt;/strong&amp;gt;.set(0, 0, icon.&amp;lt;em&amp;gt;intrinsicWidth&amp;lt;/em&amp;gt;, icon.&amp;lt;em&amp;gt;intrinsicHeight&amp;lt;/em&amp;gt;); Gravity.apply(Gravity.&amp;lt;em&amp;gt;BOTTOM &amp;lt;/em&amp;gt;or Gravity.&amp;lt;em&amp;gt;CENTER_HORIZONTAL&amp;lt;/em&amp;gt;, 0, 0, &amp;lt;strong&amp;gt;iconRect&amp;lt;/strong&amp;gt;, &amp;lt;strong&amp;gt;posRect&amp;lt;/strong&amp;gt;); //å&amp;amp;#155;¾æ &amp;amp;#135;å¯¹åº&amp;amp;#148;makerç&amp;amp;#130;¹ç&amp;amp;#154;&amp;amp;#132;ä½&amp;amp;#141;ç½® &amp;lt;strong&amp;gt;iconMatrix&amp;lt;/strong&amp;gt;.postTranslate((-&amp;lt;strong&amp;gt;posRect&amp;lt;/strong&amp;gt;.&amp;lt;strong&amp;gt;left&amp;lt;/strong&amp;gt;).toFloat(), (-&amp;lt;strong&amp;gt;posRect&amp;lt;/strong&amp;gt;.&amp;lt;strong&amp;gt;top&amp;lt;/strong&amp;gt;).toFloat()) canvas?.save(); canvas?.concat(&amp;lt;strong&amp;gt;iconMatrix&amp;lt;/strong&amp;gt;) &amp;lt;strong&amp;gt;var &amp;lt;/strong&amp;gt;width = icon.&amp;lt;em&amp;gt;intrinsicWidth&amp;lt;/em&amp;gt;; &amp;lt;strong&amp;gt;var &amp;lt;/strong&amp;gt;height = icon.&amp;lt;em&amp;gt;intrinsicHeight&amp;lt;/em&amp;gt;; icon.setBounds(0, 0, width, height) icon.draw(canvas!!) canvas.restore(); } ## å&amp;amp;#156;°å&amp;amp;#157;&amp;amp;#128; &amp;lt;https://github.com/xfans/imagemap&amp;gt; </description>
+    </item>
+    
+    <item>
+      <title>某微信群控工具逆向记录</title>
+      <link>/archives/208/</link>
+      <pubDate>Thu, 28 Nov 2019 21:03:10 +0000</pubDate>
+      
+      <guid>/archives/208/</guid>
+      <description>è¯´æ æå¾®ä¿¡ç¾¤æ§è½¯ä»¶,è½¯ä»¶ä½¿ç¨PCæ§å¶ææºç«¯å®ç°å¯¹å¾®ä¿¡çç¾¤æ§,æPCç«¯æ§å¶è½¯ä»¶åandroidç«¯æ§å¶è½¯ä»¶,androidç«¯ä½¿ç¨xposedå®ç°å¯¹å¾®ä¿¡çæ§å¶.
+éåæè·¯ éåçç®æ æ¯è·¨è¿PCç«¯,ä½¿ç¨èªå·±çç³»ç»å®ç°å¯¹androidç«¯çæ§å¶.å æ­¤è¦ç ´è§£çæ¯PCç«¯ä¸androidç«¯çéä¿¡åè®®.
+éåè¿ç¨ 1.çæè½¯ä»¶ é¦å çæè½¯ä»¶çåè½,ä½¿ç¨æ¹æ³,å¸¸è§çæç¤ºç­,æ¹ä¾¿å¨åç»­éåæ¶è½æ´å¥½ççè§£ä»£ç .
+2.åæéåä»£ç  ä½¿ç¨jadxæ¥çéååºçä¼ªjavaä»£ç ,éè¿åæä»£ç æç»æ¾å°pcç«¯ä¸androidç«¯æ¯éè¿socketè¿è¡éä¿¡ç.socketæ¥æè§£æä»£ç å¦ä¸:
+3.ç¼åæµè¯ä»£ç ,éåprotobuff æ ¹æ®éåå¾å°çæ¶æ¯æ ¼å¼å°è¯ç¼åæ§å¶ç«¯,ä¸ºäºæ¹ä¾¿ç´æ¥ä½¿ç¨minaåºå®ç°socket.æ¥æçç¼ç è§£ç å¾ç®å,å¤æçæ¯æ¶æ¯å å®¹protobuffæä»¶çéå.
+protobuffæ¯googleæ¨åºçæ°æ®æ ¼å¼ååè®®,ä¹åæ²¡æç¨è¿pbä½ä½¿ç¨è¿facebookçthrift,åçä¸å¤§ä½ä¸è´.
+æ ¹æ®protoä¸javaç±»åçå¯¹åºå ³ç³»,å¯ä»¥ä½¿ç¨javaçéåæä»¶åæ¨åºprotoæä»¶,ç¶ååä½¿ç¨protoæä»¶å°±å¯ä»¥çæjavaæä»¶.åæ¨æ¯è¾å¤æç¹å°±æ¯æ³¨ærequired/optional/repeatedéå®ç¬¦çä½¿ç¨.
+æµè¯socketéä¿¡ è¦è¿è¡éä¿¡æµè¯,é¦å è¦ç¥éä¼ éçåæ°æåªäº.è·ååæ°æç®åçæ¹æ³å°±æ¯å¨protobuffè§£æçå°æ¹æå°åºlog.
+å ä½¿ç¨baksmali\apktoolåç¼è¯åºsmaliä»£ç ,ç¶åæ¾å°ç¸åºçå°æ¹æå ¥log.ç¶åæ­£å¸¸æä½ç¾¤æ§å·¥å ·æ¿å°ç¸åºçlogå³å¯.å ·ä½æä½æ­¥éª¤å°±ä¸è¯¦ç»åäº.
+åç»­æ ¹æ®logä¸­çä¿¡æ¯,æé åºprotobuffå¯¹è±¡å³å¯ä¸ç¾¤æ§appæ­£å¸¸éä¿¡.
+ç¸å ³é¾æ¥ JADXhttps://github.com/skylot/jadx
+Linuxä¸çéåå·¥å ·éhttps://github.com/APK-Multi-Tool/APK-Multi-Tool-Linux</description>
+    </item>
+    
+    <item>
+      <title>Android录音、播放音乐，跳动效果动画自定义VIew</title>
+      <link>/archives/178/</link>
+      <pubDate>Tue, 27 Aug 2019 20:22:09 +0000</pubDate>
+      
+      <guid>/archives/178/</guid>
+      <description>å®ç°äºAndroidå½é³ï¼è¯­é³è¾å ¥æ¶çç«çº¿æ³¢çº¹å¨ç»ææåé³ä¹æ­æ¾æ¶çè·³å¨ææ
+ææ å®ç°åç å®ç°äºä¸¤ç§è¿å¨ææï¼
+1.ä»å·¦å°å³ç§»å¨ åè®¾æ±ç¶å¾çé«åº¦æ¯ä¸ä¸ªå¯¹å
+27,17,38,91,38,24,8,60,38,14,8
+8,27,17,38,91,38,24,8,60,38,14
+14,8,27,17,38,91,38,24,8,60,38
+ä»å·¦å°å³ç§»å¨å®é ä¸å°±æ¯ä¸æ­çå°éåä¸­çæåä¸ä¸ªæå ¥å°éåçç¬¬ä¸ä¸ªã
+ä»£ç ï¼
+&amp;lt;pre class=&amp;#34;line-numbers prism-highlight&amp;#34; data-start=&amp;#34;1&amp;#34;&amp;gt;```kotlin runnable = object : Runnable { override fun run() { val last = bodyWaveList.pollLast() bodyWaveList.addFirst(last) invalidate() valHandler.postDelayed(this, duration);//å¾ªç&amp;amp;#142;¯è°&amp;amp;#131;ç&amp;amp;#148;¨é&amp;amp;#135;&amp;amp;#141;ç»&amp;amp;#152; } } valHandler.post(runnable) ### 2.ä¸&amp;amp;#138;ä¸&amp;amp;#139;è·³å&amp;amp;#138;¨ å&amp;amp;#129;&amp;amp;#135;è®¾æ&amp;amp;#159;±ç&amp;amp;#138;¶å&amp;amp;#155;¾æ&amp;amp;#152;¯ä¸&amp;amp;#128;ä¸ªé&amp;amp;#152;&amp;amp;#159;å&amp;amp;#136;&amp;amp;#151; `27,17,38,91,38,24,8,60,38,14,8` ä¸&amp;amp;#138;ä¸&amp;amp;#139;è·³å&amp;amp;#138;¨å°±æ&amp;amp;#152;¯å°&amp;amp;#134;é&amp;amp;#152;&amp;amp;#159;å&amp;amp;#136;&amp;amp;#151;ç&amp;amp;#154;&amp;amp;#132;é«&amp;amp;#152;åº¦ï¼&amp;amp;#140;ä»&amp;amp;#142;0%-100%å&amp;amp;#143;&amp;amp;#152;å&amp;amp;#140;&amp;amp;#150; ä»£ç &amp;amp;#129;ï¼&amp;amp;#154; </description>
+    </item>
+    
+    <item>
+      <title>Activity中多个Fragment复杂嵌套页面onSaveInstanceState处理</title>
+      <link>/archives/171/</link>
+      <pubDate>Fri, 09 Nov 2018 18:39:18 +0000</pubDate>
+      
+      <guid>/archives/171/</guid>
+      <description>æç §æç®åçååå³å¯:Activityå¤çèªå·±çSaveInstanceState,Fragmentå¤çèªå·±çSaveInstanceState,ä¸è¦è°ç¨Activityä¸Fragmentä¹é´æ°æ®ä¼ éçæ¹æ³.</description>
+    </item>
+    
+    <item>
+      <title>修复一个支付宝概率支付失败的问题</title>
+      <link>/archives/305/</link>
+      <pubDate>Fri, 30 Mar 2018 23:45:08 +0000</pubDate>
+      
+      <guid>/archives/305/</guid>
+      <description>é®é¢ Appä¸­ä¸ä¸ªéççbug,å½ç¨æ·ä½¿ç¨æ¯ä»å®è¿è¡æ¯ä»æ¶ä¼æ¦çåºé.å¹¶ä¸æ²¡æè§å¾.
+åå å¯¹æ¯æ¯ä»å®ççurl,åç°é¨ååæ°ä¸­å¤äº+å·,ç¨åºä¸­å¯¹urlè¿è¡äºURLDecoder.&amp;lt;em&amp;gt;decode&amp;lt;/em&amp;gt;(url),å¯¼è´ç©ºæ ¼åæäº+å·,ä»èå¯¼è´æ¯ä»å®æ¥é.</description>
+    </item>
+    
+    <item>
+      <title>快速的将Android-async-http升级到OKhttp</title>
+      <link>/archives/148/</link>
+      <pubDate>Sat, 24 Feb 2018 11:30:45 +0000</pubDate>
+      
+      <guid>/archives/148/</guid>
+      <description>èæ¯ Android-async-httpå·²ç»ä¸æ´æ°äºãps:è¿ä¸ºè¿ä¸ªåºæäº¤è¿åè½https://github.com/android-async-http/android-async-http/pull/840
+Android-async-httpæ¯åºäºHttpClientçã
+æ¿æ¢æ¹æ¡ å°é¡¹ç®ä¸­ææçè¯·æ±ä»£ç é½æ¿æ¢å·¥ä½éå·¨å¤§ï¼ä¹å®¹æåºé®é¢ãæä»¥éç¨å°Okhttpå°è£ ä¸ºAndroid-async-httpçæ¹å¼è¿è¡æ¿æ¢ã
+android-async-httpçä½¿ç¨æ¹æ³:
+&amp;lt;pre class=&amp;#34;wp-block-preformatted&amp;#34;&amp;gt;``` AsyncHttpClient client = &amp;lt;strong&amp;gt;new &amp;lt;/strong&amp;gt;AsyncHttpClient(); String url = &amp;lt;strong&amp;gt;&amp;#34;http://xfans.me/api/v1/list&amp;#34;&amp;lt;/strong&amp;gt;; client.get(url, &amp;lt;strong&amp;gt;new &amp;lt;/strong&amp;gt;AsyncHttpResponseHandler() { @Override &amp;lt;strong&amp;gt;public void &amp;lt;/strong&amp;gt;onSuccess(&amp;lt;strong&amp;gt;int &amp;lt;/strong&amp;gt;statusCode, Header[] headers, &amp;lt;strong&amp;gt;byte&amp;lt;/strong&amp;gt;[] responseBody) { } @Override &amp;lt;strong&amp;gt;public void &amp;lt;/strong&amp;gt;onFailure(&amp;lt;strong&amp;gt;int &amp;lt;/strong&amp;gt;statusCode, Header[] headers, &amp;lt;strong&amp;gt;byte&amp;lt;/strong&amp;gt;[] responseBody, Throwable error) { } }); ä»&amp;amp;#142;ä»£ç &amp;amp;#129;å&amp;amp;#143;¯ä»¥ç&amp;amp;#156;&amp;amp;#139;å&amp;amp;#135;º,æ&amp;amp;#131;³è¦&amp;amp;#129;å¿«é&amp;amp;#128;&amp;amp;#159;ç&amp;amp;#154;&amp;amp;#132;æ&amp;amp;#155;¿æ&amp;amp;#141;¢é&amp;amp;#156;&amp;amp;#128;è¦&amp;amp;#129;: 1.ä½¿ç&amp;amp;#148;¨okhttpæ&amp;amp;#157;¥å®&amp;amp;#158;ç&amp;amp;#142;°`AsyncHttpClient` 2.å®&amp;amp;#158;ç&amp;amp;#142;°`AsyncHttpResponseHandler`,`FileAsyncHttpResponseHandler`,`JsonHttpResponseHandler`,`TextHttpResponseHandler`ç­&amp;amp;#137;é¡¹ç&amp;amp;#155;®ä¸­ä½¿ç&amp;amp;#148;¨ç&amp;amp;#154;&amp;amp;#132;Handlerå&amp;amp;#141;³å&amp;amp;#143;¯. </description>
+    </item>
+    
+    <item>
+      <title>Android7,8的适配</title>
+      <link>/archives/145/</link>
+      <pubDate>Sat, 24 Feb 2018 11:16:16 +0000</pubDate>
+      
+      <guid>/archives/145/</guid>
+      <description>èæ¯ ç¨æ·åé¦åä¸ºMate10 æ æ³ä½¿ç¨Appã
+åçº§ targetSdkVersion = 26
+éå°çé®é¢ ç½ç»è¯·æ±å¼å¸¸ TransactionTooLargeException éç¥æ¸ é FileUriExposedException Charlesæ æ³æHttps MODE_WORLD_READABLE no longer supported BadTokenException 7.1 Not allowed to start service getRunningServices deprecated in API level 26 As of O, this method is no longer available to third party applications. For backwards compatibility, it will still return the caller&amp;rsquo;s own services. ps:æ¶é´å¤ªé¿äºæ³èµ·æ¥ååï¼è¯¦æ æç©ºåæ´ç </description>
+    </item>
+    
+    <item>
+      <title>一个bad request http request or invalid response的错误</title>
+      <link>/archives/80/</link>
+      <pubDate>Fri, 19 Jan 2018 19:56:59 +0000</pubDate>
+      
+      <guid>/archives/80/</guid>
+      <description>é®é¢ é¨åå®¢æ·ç«¯apiæ¥éï¼ç¹å«æ¯8.0ç³»ç»ä¸ï¼è®¿é®apiåºç°bad request http request or invalid response,from ulbéè¯¯ã
+è§£å³æ­¥éª¤ 1.æå¡å¨èè° æå¡å¨ç«¯æªåç°é®é¢ï¼åæ°é½å¯¹ãæå¡å¨ä¸ä¹æ²¡æè¿å¥éè¯¯ä¿¡æ¯ãçæµåºè¯¥æ¯æå¡å¨ä¸å±æ¥åºæ¥çéè¯¯ï¼å¦è´è½½åè¡¡ã
+2.ç¨Charlesæå Charlesæå åï¼å°±ä¸ä¼åºç°è¯¥éè¯¯äºãåæ¥åç°Charleså¯¹éè¯¯æ¥æè¿è¡äºå ¼å®¹å¤çï¼åç»æå¡å¨çåºè¯¥å¯¹çã
+3.å»GIthubæ¥ç½ç»åºçissues é¡¹ç®ä¸­ä½¿ç¨çæ¯,Android-async-httpè¿ä¸ªåº,issuesä¸­æ²¡æäººè¯´8.0ä¸­æè¿ä¸ªé®é¢ï¼çæ³åºè¯¥æ¯èªå·±ä»£ç ä¸­çé®é¢ã
+4.å¤§é²¨é±¼Wiresharkæå å¤§é²¨é±¼Wiresharkæå åä¼åºç°è¯¥éè¯¯ï¼æ²¡æçåºæ¥ææå¼å¸¸ã
+æ¯è¾æ­£ç¡®çæ¥æåéè¯¯çæ¥æï¼åç°å¤§å°ä¸ä¸æ ·ã
+æç»åç°ï¼æ¾äºå¥½ä¹ ï¼åæ­£å°±æ¯å¾è°é¾ï¼ï¼éè¯¯çæ¥æHeaderä¸­å¤äºä¸ä¸ªç©ºè¡ã
+å¨å¾Headerä¸­æ·»å åæ°æ¶ï¼æä¸ä¸ªåæ°åºç°äº\n,æ­£å¸¸æ åµä¸å®¢æ·ç«¯åéæ¥æçæ¶ä¼å¿½ç¥\nï¼èæççæ¬æ\næ¾å¨äºæ¥æä¸­ï¼å¯¼è´æ¥ææ ¼å¼åºéã</description>
+    </item>
+    
+    <item>
+      <title>使用SVN下载GitHub单个目录内的文件</title>
+      <link>/archives/69/</link>
+      <pubDate>Thu, 11 Jan 2018 19:48:29 +0000</pubDate>
+      
+      <guid>/archives/69/</guid>
+      <description>èæ¯ ææ¶åéè¦å¨GitHubä¸ä¸è½½åä¸ªç®å½éé¢çæä»¶ï¼èä¸éè¦å»å éæ´ä¸ªé¡¹ç®ï¼å¤ªå¤§çé¡¹ç®å éèµ·æ¥å¤ªæ ¢ã
+è§£å³æ¹æ¡ GitHubæ¯æ¯æSVNè®¿é®çï¼æä»¥å¯ä»¥ä½¿ç¨SVNä¸è½½åä¸ªç®å½ã
+ä¸è½½masteråæ¯ å¤å¶æµè§å¨å°åæ ä¸­çå°åï¼å¦ï¼
+https://github.com/bumptech/glide/tree/master/integration
+å°treeæ¹ä¸ºtrunkå³å¯ã
+https://github.com/bumptech/glide/trunk/integration
+ä¸è½½å ¶ä»åæ¯ å¦ï¼
+https://github.com/bumptech/glide/tree/3.0/integration
+å°treeæ¹ä¸ºbrancheså³å¯ã
+https://github.com/bumptech/glide/branches/3.0/integration
+ç¶åsvn checkout å³å¯ã</description>
+    </item>
+    
+    <item>
+      <title>在Okhttp中使用HTTPDNS</title>
+      <link>/archives/63/</link>
+      <pubDate>Wed, 10 Jan 2018 20:06:27 +0000</pubDate>
+      
+      <guid>/archives/63/</guid>
+      <description>èæ¯ ç¨æ·ç»å¸¸å¨å½å¤ä½¿ç¨Appï¼å½å¤çç½ç»ç¯å¢æ´å å¤æï¼ç»å¸¸ä¼åºç°UnknownHostExceptionçå¼å¸¸ï¼æ æ³è§£æDNSã
+è§£å³æ¹æ¡ å½éå°è¯¥å¼å¸¸æ¶å°±éè¦èªå·±å»è§£æDNSãå¸¸ç¨çèªå·±è§£æDNSçæ¹å¼æä¸¤ç§
+1.èªå·±æ¿å°IPåæ¿æ¢ååï¼Appèçæ¹å¼ï¼ æ¯å¦ä½¿ç¨dnsjavaæ¿å°IPåéè¦ï¼
+å¯¹è¯·æ±çååè¿è¡æ¿æ¢ å¯¹Headerä¸­çHostè¿è¡æ¿æ¢ å¯¹Cookieä¸­çdomainè¿è¡æ¿æ¢ Httpsä¸è¯ä¹¦æ ¡éªé®é¢ .â¦â¦ start=&amp;ldquo;1.&amp;quot;&amp;gt; ä½¿ç¨èµ·æ¥æ¯è¾éº»ç¦ï¼é®é¢è¾å¤ã
+2.ä½¿ç¨Okhttpèªå®ä¹DNSåè½ ç®ååæAppä»android-async-httpåæ¢å°OKhttpã(PS:è±äºä¸å¨å¤æ¶é´ï¼æ¹å°åè¡)ï¼å¯ä»¥ç´æ¥ä½¿ç¨Okhttpèªå®ä¹dnsåè½ã
+DNSçè§£ææ¹å¼éæ©äºHTTPDNSï¼HTTPDNSç´æ¥ä½¿ç¨ HTTPåè®®å»æ¥è¯¢DNSï¼é¿å¼äºä¼ ç»UDPæ¹å¼DNSçDNSå«æï¼ä¸åç¡®ç­å¼ç«¯ã
+è¯¦è§ï¼ãé¹ åç½äºãå ¨å±ç²¾ç¡®æµéè°åº¦æ°æè·¯-HttpDNSæå¡è¯¦è§£ 3.Okhttpèªå®ä¹DNS HTTPDNSéæ©äºDNSpodåGoogle Public DNSä¸¤å®¶ã
+å¨å½å¤éç¨Google Public DNS
+å¨å½å éç¨DNSpod
+å®ç°æ¹å¼å¦ä¸ï¼
+&amp;lt;pre class=&amp;#34;line-numbers prism-highlight&amp;#34; data-start=&amp;#34;1&amp;#34;&amp;gt;```java public class OkDns implements Dns { private String mIps; private long mLastDnsTime; private static final long DNS_TTL = 600 * 1000;//è&amp;amp;#135;ªå®&amp;amp;#154;ä¹&amp;amp;#137;DNSç¼&amp;amp;#147;å­&amp;amp;#152;æ&amp;amp;#151;¶é&amp;amp;#151;´ @Override public List&amp;lt;InetAddress&amp;gt; lookup(String hostname) throws UnknownHostException { try { List&amp;lt;InetAddress&amp;gt; list = Dns.</description>
+    </item>
+    
+    <item>
+      <title>TransactionTooLargeException 的原因</title>
+      <link>/archives/53/</link>
+      <pubDate>Sun, 12 Nov 2017 21:43:02 +0000</pubDate>
+      
+      <guid>/archives/53/</guid>
+      <description>é®é¢ éé 7.0æ¶åçäºTransactionTooLargeExceptionçå¼å¸¸.
+åå 1.Fragmentå ³é­æ¶ä¼è°ç¨onSaveInstanceState,èå¨onSaveInstanceStateä¸­ä¿å­äºæ¯è¾å¤§çæ°æ®.
+2.è°ç¨fragment.setArguments(bundle)æ¶ï¼å¾bundleä¸­æ¾äºè¿å¤§çæ°æ®ï¼FragmentManagerç®¡çFragmentæ¶saveStateæ¥é.
+è§£å³æ¹æ³ ç±äºä¿å­çæ°æ®è¾å¤,æ æ³ç¡®å®é£ä¸ªæ°æ®æ¯è¾å¤§,æåä½¿ç¨è¿ä¸ªåºtoolargetoolå®ä½å°æ°æ®è¾å¤§çå¯¹è±¡.
+å°toolargetoolå¼å ¥å°é¡¹ç®
+&amp;lt;pre class=&amp;#34;wp-block-preformatted&amp;#34;&amp;gt;&amp;lt;em&amp;gt;compile &amp;#39;com.gu.android:toolargetool:0.1.3@aar&amp;lt;/em&amp;gt; å¨Applicationä¸­åå§
+&amp;lt;pre class=&amp;#34;wp-block-preformatted&amp;#34;&amp;gt;&amp;lt;em&amp;gt;TooLargeTool.startLogging(this)&amp;lt;/em&amp;gt; è¿ä¸ªåºä¼å¨æ¯æ¬¡å ³é­Activity,Fragmentæ¶,æå°åºonSaveInstanceStateçå¯¹è±¡åå¤§å°.å¦å¾
+ç¸å ³é¾æ¥ https://github.com/guardian/toolargetool</description>
+    </item>
+    
+    <item>
+      <title>android打印函数调用堆栈</title>
+      <link>/archives/46/</link>
+      <pubDate>Tue, 10 Oct 2017 16:49:52 +0000</pubDate>
+      
+      <guid>/archives/46/</guid>
+      <description>æå°æ¹æ³è°ç¨å æ  &amp;lt;pre class=&amp;#34;line-numbers prism-highlight&amp;#34; data-start=&amp;#34;1&amp;#34;&amp;gt;```java public static void showFillInStackTrace() { RuntimeException e = new RuntimeException(); Throwable e1 = e.fillInStackTrace(); Log.e(&amp;#34;debug&amp;#34;,&amp;#34;fillInStackTrace&amp;#34;,e1); } </description>
+    </item>
+    
+    <item>
+      <title>Typecho-Android客户端开发</title>
+      <link>/archives/18/</link>
+      <pubDate>Fri, 29 Sep 2017 19:44:41 +0000</pubDate>
+      
+      <guid>/archives/18/</guid>
+      <description>åè®® XML-RPC_wpåè®®:https://codex.wordpress.org/XML-RPC_wp å°å:http://xxxx.com/xmlrpc Typecho XML-RPCåè®®:https://github.com/typecho/typecho/blob/master/var/Widget/XmlRpc.php#L2249-L2322 Demo XML-RPC_wpåè®®Demo:https://github.com/xfans/android-xmlrpc1 Typecho XML-RPCè¿åæ°æ®:IXR/Value.php </description>
+    </item>
+    
+    <item>
+      <title>Using AndroidSVG with ImageView</title>
+      <link>/archives/8/</link>
+      <pubDate>Fri, 29 Sep 2017 19:35:09 +0000</pubDate>
+      
+      <guid>/archives/8/</guid>
+      <description>&amp;lt;pre class=&amp;#34;prism-highlight line-numbers&amp;#34; data-start=&amp;#34;1&amp;#34;&amp;gt;```null public class MainActivity extends Activity { @Override protected void onCreate(Bundle savedInstanceState) { super.onCreate(savedInstanceState); ImageView imageView = (ImageView) findViewById(R.id.yourImageView); imageView.setLayerType(View.LAYER_TYPE_SOFTWARE, null); try { SVG svg = SVG.getFromResource(this, R.raw.my_svg_file); Drawable drawable = new PictureDrawable(svg.renderToPicture()); imageView.setImageDrawable(drawable); } catch(SVGParseException e) {} } } å&amp;amp;#156;°å&amp;amp;#157;&amp;amp;#128;:http://bigbadaboom.github.io/androidsvg/use\_with\_ImageView.html Github:https://github.com/BigBadaboom/androidsvg </description>
+    </item>
+    
+  </channel>
+</rss>

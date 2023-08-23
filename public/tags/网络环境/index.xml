@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>网络环境 on </title>
+    <link>/tags/%E7%BD%91%E7%BB%9C%E7%8E%AF%E5%A2%83/</link>
+    <description>Recent content in 网络环境 on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 23 Nov 2017 20:10:48 +0000</lastBuildDate><atom:link href="/tags/%E7%BD%91%E7%BB%9C%E7%8E%AF%E5%A2%83/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux下安装网络环境模拟工具augmented-traffic-control</title>
+      <link>/archives/56/</link>
+      <pubDate>Thu, 23 Nov 2017 20:10:48 +0000</pubDate>
+      
+      <guid>/archives/56/</guid>
+      <description>augmented-traffic-control A tool to simulate network conditions,Facebookæä¾çä¸æ¬¾ç½ç»ç¯å¢æ¨¡æå·¥å ·ï¼å¯ä»¥ä½¿ç¨ä»æ¥æµè¯Appå¨åç§ç½ç»ç¯å¢ä¸çé®é¢ã
+å®è£ ç¯å¢è¦æ± Python2.7ãDjango1.10.+
+ä»¥ä¸å¨Manjoraä¸çå®è£ å½ä»¤
+åæ¢Pythonç¯å¢å°Python2.7 å®è£ pip sudo pacman -S python2-pip
+å®è£ Django1.10.+ sudo pip install Django==1.10.8
+å®è£ ATC å®è£ lib sudo pacman -S pip install atc_thrift atcd django-atc-api django-atc-demo-ui django-atc-profile-storage
+Djangoé ç½® django-admin startproject atcui
+cd atcui
+ä¿®æ¹atcui/settings.pyä¸­çINSTALLED_APPS &amp;lt;pre class=&amp;#34;line-numbers prism-highlight&amp;#34; data-start=&amp;#34;1&amp;#34;&amp;gt;```bash INSTALLED_APPS = ( ... # Django ATC API &amp;#39;rest_framework&amp;#39;, &amp;#39;atc_api&amp;#39;, # Django ATC Demo UI &amp;#39;bootstrap_themes&amp;#39;, &amp;#39;django_static_jquery&amp;#39;, &amp;#39;atc_demo_ui&amp;#39;, # Django ATC Profile Storage &amp;#39;atc_profile_storage&amp;#39;, ) #### ä¿®æ&amp;amp;#148;¹atcui/urls.</description>
+    </item>
+    
+  </channel>
+</rss>

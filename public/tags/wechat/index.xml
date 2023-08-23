@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>wechat on </title>
+    <link>/tags/wechat/</link>
+    <description>Recent content in wechat on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 13 Aug 2019 11:29:00 +0000</lastBuildDate><atom:link href="/tags/wechat/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Manjaro使用deepin-wine-wechat微信无法输入中文</title>
+      <link>/archives/264/</link>
+      <pubDate>Tue, 13 Aug 2019 11:29:00 +0000</pubDate>
+      
+      <guid>/archives/264/</guid>
+      <description>è¯´æ æmanjaroæ»å°ææ°çæ¬ådeepin-wine-wechatå¾®ä¿¡æ æ³è¾å ¥ä¸­æ
+è§£å³æ¹æ³ deepin-wine-wechatçgithubä¸ç»åºäºå ¼å®¹åè¡¨
+éçº§æ¹æ³ å®è£ downgrade
+sudo pacman -S downgrade
+æ¥çwineåå²çæ¬
+DOWNGRADE_FROM_ALA=1 downgrade wine
+å®è£ å®æååºç°
+æ·»å&amp;amp;#138; wineå&amp;amp;#136;°IgnorePkg? [y/n]
+è¾å ¥yå°wineæ·»å å°IgnorePkg,é²æ­¢åç»­è¢«æ´æ°.
+é¾æ¥ https://github.com/countstarlight/deepin-wine-wechat-arch#%E5%85%BC%E5%AE%B9%E6%80%A7%E8%AE%B0%E5%BD%95</description>
+    </item>
+    
+  </channel>
+</rss>

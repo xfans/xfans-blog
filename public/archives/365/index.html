@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Flutter cached_network_image使用Dio请求图片 | </title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="èæ¯ å¨Flutterä¸­éå¸¸ä½¿ç¨cached_network_imageæ§ä»¶æ¾ç¤ºå¾çï¼è¯¥æ§ä»¶ä½¿ç¨httpåºè¯·æ±å¾çï¼httpåºæ æ³ådioä¸æ ·æ¹ä¾¿çæ·»å æ¦æªå¨ç­ã
+å®ç° CachedNetworkImageä½¿ç¨flutter_cache_managerè¿è¡å¾çç¼å­ï¼å¯ä»¥ä½¿ç¨èªå®ä¹cache_manageræ¥æ¿æ¢httpä¸ºdioã å¦ä¸ï¼
+&lt;pre class=&#34;wp-block-preformatted&#34;&gt;class DioCacheManager extends CacheManager { static const &lt;em&gt;key &lt;/em&gt;= &#39;dioCache&#39;; static DioCacheManager &lt;em&gt;_instance&lt;/em&gt;; factory DioCacheManager(Dio dio) { if (&lt;em&gt;_instance &lt;/em&gt;== null) { &lt;em&gt;_instance &lt;/em&gt;= DioCacheManager._(dio); } return &lt;em&gt;_instance&lt;/em&gt;; } DioCacheManager._(Dio dio) : super(Config(&lt;em&gt;key&lt;/em&gt;, fileService: DioHttpFileService(dio))); } &lt;pre class=&#34;wp-block-preformatted&#34;&gt;class DioHttpFileService extends FileService { Dio _dio; DioHttpFileService(this._dio); @override Future&lt;FileServiceResponse&gt; get(String url, {Map&lt;String, String&gt; headers}) async { Options options = Options(headers: headers ?? {}, responseType: ResponseType.">
+    <meta name="generator" content="Hugo 0.117.0">
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+    
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Flutter cached_network_image使用Dio请求图片" />
+<meta property="og:description" content="èæ¯ å¨Flutterä¸­éå¸¸ä½¿ç¨cached_network_imageæ§ä»¶æ¾ç¤ºå¾çï¼è¯¥æ§ä»¶ä½¿ç¨httpåºè¯·æ±å¾çï¼httpåºæ æ³ådioä¸æ ·æ¹ä¾¿çæ·»å æ¦æªå¨ç­ã
+å®ç° CachedNetworkImageä½¿ç¨flutter_cache_managerè¿è¡å¾çç¼å­ï¼å¯ä»¥ä½¿ç¨èªå®ä¹cache_manageræ¥æ¿æ¢httpä¸ºdioã å¦ä¸ï¼
+&lt;pre class=&#34;wp-block-preformatted&#34;&gt;class DioCacheManager extends CacheManager { static const &lt;em&gt;key &lt;/em&gt;= &#39;dioCache&#39;; static DioCacheManager &lt;em&gt;_instance&lt;/em&gt;; factory DioCacheManager(Dio dio) { if (&lt;em&gt;_instance &lt;/em&gt;== null) { &lt;em&gt;_instance &lt;/em&gt;= DioCacheManager._(dio); } return &lt;em&gt;_instance&lt;/em&gt;; } DioCacheManager._(Dio dio) : super(Config(&lt;em&gt;key&lt;/em&gt;, fileService: DioHttpFileService(dio))); } &lt;pre class=&#34;wp-block-preformatted&#34;&gt;class DioHttpFileService extends FileService { Dio _dio; DioHttpFileService(this._dio); @override Future&lt;FileServiceResponse&gt; get(String url, {Map&lt;String, String&gt; headers}) async { Options options = Options(headers: headers ?? {}, responseType: ResponseType." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/archives/365/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-06-25T18:19:06+00:00" />
+<meta property="article:modified_time" content="2021-06-25T18:19:06+00:00" />
+<meta itemprop="name" content="Flutter cached_network_image使用Dio请求图片">
+<meta itemprop="description" content="èæ¯ å¨Flutterä¸­éå¸¸ä½¿ç¨cached_network_imageæ§ä»¶æ¾ç¤ºå¾çï¼è¯¥æ§ä»¶ä½¿ç¨httpåºè¯·æ±å¾çï¼httpåºæ æ³ådioä¸æ ·æ¹ä¾¿çæ·»å æ¦æªå¨ç­ã
+å®ç° CachedNetworkImageä½¿ç¨flutter_cache_managerè¿è¡å¾çç¼å­ï¼å¯ä»¥ä½¿ç¨èªå®ä¹cache_manageræ¥æ¿æ¢httpä¸ºdioã å¦ä¸ï¼
+&lt;pre class=&#34;wp-block-preformatted&#34;&gt;class DioCacheManager extends CacheManager { static const &lt;em&gt;key &lt;/em&gt;= &#39;dioCache&#39;; static DioCacheManager &lt;em&gt;_instance&lt;/em&gt;; factory DioCacheManager(Dio dio) { if (&lt;em&gt;_instance &lt;/em&gt;== null) { &lt;em&gt;_instance &lt;/em&gt;= DioCacheManager._(dio); } return &lt;em&gt;_instance&lt;/em&gt;; } DioCacheManager._(Dio dio) : super(Config(&lt;em&gt;key&lt;/em&gt;, fileService: DioHttpFileService(dio))); } &lt;pre class=&#34;wp-block-preformatted&#34;&gt;class DioHttpFileService extends FileService { Dio _dio; DioHttpFileService(this._dio); @override Future&lt;FileServiceResponse&gt; get(String url, {Map&lt;String, String&gt; headers}) async { Options options = Options(headers: headers ?? {}, responseType: ResponseType."><meta itemprop="datePublished" content="2021-06-25T18:19:06+00:00" />
+<meta itemprop="dateModified" content="2021-06-25T18:19:06+00:00" />
+<meta itemprop="wordCount" content="285">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Flutter cached_network_image使用Dio请求图片"/>
+<meta name="twitter:description" content="èæ¯ å¨Flutterä¸­éå¸¸ä½¿ç¨cached_network_imageæ§ä»¶æ¾ç¤ºå¾çï¼è¯¥æ§ä»¶ä½¿ç¨httpåºè¯·æ±å¾çï¼httpåºæ æ³ådioä¸æ ·æ¹ä¾¿çæ·»å æ¦æªå¨ç­ã
+å®ç° CachedNetworkImageä½¿ç¨flutter_cache_managerè¿è¡å¾çç¼å­ï¼å¯ä»¥ä½¿ç¨èªå®ä¹cache_manageræ¥æ¿æ¢httpä¸ºdioã å¦ä¸ï¼
+&lt;pre class=&#34;wp-block-preformatted&#34;&gt;class DioCacheManager extends CacheManager { static const &lt;em&gt;key &lt;/em&gt;= &#39;dioCache&#39;; static DioCacheManager &lt;em&gt;_instance&lt;/em&gt;; factory DioCacheManager(Dio dio) { if (&lt;em&gt;_instance &lt;/em&gt;== null) { &lt;em&gt;_instance &lt;/em&gt;= DioCacheManager._(dio); } return &lt;em&gt;_instance&lt;/em&gt;; } DioCacheManager._(Dio dio) : super(Config(&lt;em&gt;key&lt;/em&gt;, fileService: DioHttpFileService(dio))); } &lt;pre class=&#34;wp-block-preformatted&#34;&gt;class DioHttpFileService extends FileService { Dio _dio; DioHttpFileService(this._dio); @override Future&lt;FileServiceResponse&gt; get(String url, {Map&lt;String, String&gt; headers}) async { Options options = Options(headers: headers ?? {}, responseType: ResponseType."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Flutter cached_network_image使用Dio请求图片</h1>
+      
+      <p class="tracked">
+        By <strong>xfans</strong>
+      </p>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2021-06-25T18:19:06Z">June 25, 2021</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h2 id="è131140æ153">èæ¯</h2>
+<p>å¨Flutterä¸­éå¸¸ä½¿ç¨cached_network_imageæ§ä»¶æ¾ç¤ºå¾çï¼è¯¥æ§ä»¶ä½¿ç¨httpåºè¯·æ±å¾çï¼httpåºæ æ³ådioä¸æ ·æ¹ä¾¿çæ·»å æ¦æªå¨ç­ã</p>
+<h2 id="å158ç142">å®ç°</h2>
+<p>CachedNetworkImageä½¿ç¨flutter_cache_managerè¿è¡å¾çç¼å­ï¼å¯ä»¥ä½¿ç¨èªå®ä¹cache_manageræ¥æ¿æ¢httpä¸ºdioã å¦ä¸ï¼</p>
+<pre tabindex="0"><code>&lt;pre class=&#34;wp-block-preformatted&#34;&gt;class DioCacheManager extends CacheManager {
+  static const &lt;em&gt;key &lt;/em&gt;= &#39;dioCache&#39;;
+
+  static DioCacheManager &lt;em&gt;_instance&lt;/em&gt;;
+
+  factory DioCacheManager(Dio dio) {
+    if (&lt;em&gt;_instance &lt;/em&gt;== null) {
+      &lt;em&gt;_instance &lt;/em&gt;= DioCacheManager._(dio);
+    }
+    return &lt;em&gt;_instance&lt;/em&gt;;
+  }
+
+  DioCacheManager._(Dio dio)
+      : super(Config(&lt;em&gt;key&lt;/em&gt;, fileService: DioHttpFileService(dio)));
+}
+</code></pre><pre tabindex="0"><code>&lt;pre class=&#34;wp-block-preformatted&#34;&gt;class DioHttpFileService extends FileService {
+  Dio _dio;
+
+  DioHttpFileService(this._dio);
+
+  @override
+  Future&lt;FileServiceResponse&gt; get(String url,
+      {Map&lt;String, String&gt; headers}) async {
+    Options options =
+        Options(headers: headers ?? {}, responseType: ResponseType.stream);
+
+    Response&lt;ResponseBody&gt; httpResponse =
+        await _dio.get&lt;ResponseBody&gt;(url, options: options);
+
+    return DioGetResponse(httpResponse);
+  }
+}
+
+class DioGetResponse implements FileServiceResponse {
+  final DateTime _receivedTime = DateTime.now();
+  Response&lt;ResponseBody&gt; _response;
+
+  DioGetResponse(this._response);
+
+  @override
+  Stream&lt;List&lt;int&gt;&gt; get content =&gt; _response.data.stream;
+
+  @override
+  int get contentLength =&gt; _getContentLength();
+
+  @override
+  String get eTag =&gt; _response.headers[&#39;etag&#39;]?.first ?? &#39;-1&#39;;
+
+  @override
+  String get fileExtension {
+    var fileExtension = &#39;&#39;;
+    final contentTypeHeader =
+        _response.headers[Headers.&lt;em&gt;contentTypeHeader&lt;/em&gt;]?.first;
+    if (contentTypeHeader != null) {
+      final contentType = ContentType.&lt;em&gt;parse&lt;/em&gt;(contentTypeHeader);
+      fileExtension = mimeTypes[contentType.mimeType];
+    }
+    return fileExtension;
+  }
+
+  @override
+  int get statusCode =&gt; _response.statusCode;
+
+  @override
+  DateTime get validTill {
+    // Without a cache-control header we keep the file for a week
+    var ageDuration = const Duration(days: 7);
+    final controlHeader = _response.headers[&#39;cache-control&#39;]?.first;
+    if (controlHeader != null) {
+      final controlSettings = controlHeader.split(&#39;,&#39;);
+      for (final setting in controlSettings) {
+        final sanitizedSetting = setting.trim().toLowerCase();
+        if (sanitizedSetting == &#39;no-cache&#39;) {
+          ageDuration = const Duration();
+        }
+        if (sanitizedSetting.startsWith(&#39;max-age=&#39;)) {
+          var validSeconds = int.&lt;em&gt;tryParse&lt;/em&gt;(sanitizedSetting.split(&#39;=&#39;)[1]) ?? 0;
+          if (validSeconds &gt; 0) {
+            ageDuration = Duration(seconds: validSeconds);
+          }
+        }
+      }
+    }
+
+    return _receivedTime.add(ageDuration);
+  }
+
+  int _getContentLength() {
+    try {
+      return int.&lt;em&gt;parse&lt;/em&gt;(
+          _response.headers[Headers.&lt;em&gt;contentLengthHeader&lt;/em&gt;]?.first ?? &#39;-1&#39;);
+    } catch (e) {
+      return -1;
+    }
+  }
+}
+</code></pre><h2 id="äç148æ150æ149">ä½¿ç¨æ¹æ³</h2>
+<pre tabindex="0"><code>&lt;pre class=&#34;wp-block-preformatted&#34;&gt;dependencies:
+  flutter_cache_manager_dio: ^2.0.0
+</code></pre><pre tabindex="0"><code>&lt;pre class=&#34;wp-block-preformatted&#34;&gt;CachedNetworkImage(
+    cacheManager: DioCacheManager(dio),
+    imageUrl: url,
+    placeholder: (context, url) =&gt; CircularProgressIndicator(),
+    errorWidget: (context, url, error) =&gt; Container(
+    child: Text(
+        &#39;error&#39;,
+        ),
+    ),
+);
+</code></pre><p>ç¶åå°±å¯ä»¥ä½¿ç¨dioçæ¦æªç­åè½äºï¼æ¯å¦ä½¿ç¨æ¦æªå¨æ·»å å¹¶å·æ°tokenï¼æ·»å logç­åè½ã</p>
+<h2 id="å156å157128">å°å</h2>
+<p><a href="https://pub.dev/packages/flutter_cache_manager_dio">https://pub.dev/packages/flutter_cache_manager_dio</a></p>
+<p><a href="https://github.com/xfans/flutter_cache_manager_dio">https://github.com/xfans/flutter_cache_manager_dio</a></p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="/" >
+    &copy; 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

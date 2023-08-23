@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Manjaro使用privoxy将socks转为http代理 | </title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="å®è£ pacman -S privoxy
+é ç½® ä¿®æ¹/etc/privoxy/config
+æ·»å ï¼
+forward-socks5 / 127.0.0.1:1080 . #ssçä»£ç
+listen-address localhost:8118
+éå¯ systemctl restart privoxy
+PS ç»ç«¯ä¸­ä½¿ç¨ä»£ç export http_proxy=http://127.0.0.1:8118
+export https_proxy=http://127.0.0.1:8118">
+    <meta name="generator" content="Hugo 0.117.0">
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+    
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Manjaro使用privoxy将socks转为http代理" />
+<meta property="og:description" content="å®è£ pacman -S privoxy
+é ç½® ä¿®æ¹/etc/privoxy/config
+æ·»å ï¼
+forward-socks5 / 127.0.0.1:1080 . #ssçä»£ç
+listen-address localhost:8118
+éå¯ systemctl restart privoxy
+PS ç»ç«¯ä¸­ä½¿ç¨ä»£ç export http_proxy=http://127.0.0.1:8118
+export https_proxy=http://127.0.0.1:8118" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/archives/163/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2018-06-08T16:57:27+00:00" />
+<meta property="article:modified_time" content="2018-06-08T16:57:27+00:00" />
+<meta itemprop="name" content="Manjaro使用privoxy将socks转为http代理">
+<meta itemprop="description" content="å®è£ pacman -S privoxy
+é ç½® ä¿®æ¹/etc/privoxy/config
+æ·»å ï¼
+forward-socks5 / 127.0.0.1:1080 . #ssçä»£ç
+listen-address localhost:8118
+éå¯ systemctl restart privoxy
+PS ç»ç«¯ä¸­ä½¿ç¨ä»£ç export http_proxy=http://127.0.0.1:8118
+export https_proxy=http://127.0.0.1:8118"><meta itemprop="datePublished" content="2018-06-08T16:57:27+00:00" />
+<meta itemprop="dateModified" content="2018-06-08T16:57:27+00:00" />
+<meta itemprop="wordCount" content="26">
+<meta itemprop="keywords" content="Manjaro," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Manjaro使用privoxy将socks转为http代理"/>
+<meta name="twitter:description" content="å®è£ pacman -S privoxy
+é ç½® ä¿®æ¹/etc/privoxy/config
+æ·»å ï¼
+forward-socks5 / 127.0.0.1:1080 . #ssçä»£ç
+listen-address localhost:8118
+éå¯ systemctl restart privoxy
+PS ç»ç«¯ä¸­ä½¿ç¨ä»£ç export http_proxy=http://127.0.0.1:8118
+export https_proxy=http://127.0.0.1:8118"/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Manjaro使用privoxy将socks转为http代理</h1>
+      
+      <p class="tracked">
+        By <strong>xfans</strong>
+      </p>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2018-06-08T16:57:27Z">June 8, 2018</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h2 id="å137è">å®è£</h2>
+<p><code>pacman -S privoxy</code></p>
+<h2 id="é-141ç">é ç½®</h2>
+<p>ä¿®æ¹/etc/privoxy/config</p>
+<p>æ·»å ï¼</p>
+<p><code>forward-socks5   /               127.0.0.1:1080 .</code> #ssçä»£ç</p>
+<p><code>listen-address localhost:8118</code></p>
+<h2 id="é135141å144">éå¯</h2>
+<p><code>systemctl restart privoxy</code></p>
+<h2 id="ps-ç136çääç148äç144134">PS ç»ç«¯ä¸­ä½¿ç¨ä»£ç</h2>
+<p><code>export http_proxy=http://127.0.0.1:8118</code></p>
+<p><code>export https_proxy=http://127.0.0.1:8118</code></p>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/manjaro/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Manjaro</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/archives/91/">Manjaro Linux安装步骤</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="/" >
+    &copy; 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

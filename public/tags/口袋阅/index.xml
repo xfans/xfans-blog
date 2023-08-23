@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>口袋阅 on </title>
+    <link>/tags/%E5%8F%A3%E8%A2%8B%E9%98%85/</link>
+    <description>Recent content in 口袋阅 on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 19 Aug 2020 10:58:20 +0000</lastBuildDate><atom:link href="/tags/%E5%8F%A3%E8%A2%8B%E9%98%85/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>替换口袋阅上的Kindle/微信阅读应用</title>
+      <link>/archives/346/</link>
+      <pubDate>Wed, 19 Aug 2020 10:58:20 +0000</pubDate>
+      
+      <guid>/archives/346/</guid>
+      <description>è¯´æï¼ å¨æªå·æºçæ åµä¸ï¼å£è¢é 1çé»è®¤æ¡é¢å¦ä¸ï¼
+æ¹æ³ï¼ å®è´¨ä¸å°±æ¯ï¼èªå·±ç¼åä¸ä¸ªä¸Kindleå åç¸åçç¨åºï¼å¯å¨è¯¥ç¨åºæ¶ï¼å¯å¨ä½ è®¾ç½®çç¨åºãæ ¸å¿ä»£ç å¦ä¸ï¼å¾ç®åï¼
+&amp;lt;pre class=&amp;#34;wp-block-code&amp;#34;&amp;gt;``` val packageName = sp.getString(&amp;#34;pkg&amp;#34;, &amp;#34;&amp;#34;) if (TextUtils.isEmpty(packageName)) { tvTitle.text = &amp;#34;è¯·è¾&amp;amp;#147;å&amp;amp;#133;¥åº&amp;amp;#148;ç&amp;amp;#148;¨å&amp;amp;#140;&amp;amp;#133;å&amp;amp;#144;&amp;amp;#141;,å¦&amp;amp;#130;:org.koreader.launcher&amp;#34; } else { val intent = packageManager.getLaunchIntentForPackage(packageName!!) startActivity(intent) finish() } å&amp;amp;#143;¯ä»¥ä½¿ç&amp;amp;#148;¨å·²ç»&amp;amp;#143;ç¼&amp;amp;#150;è¯&amp;amp;#145;å¥½ç&amp;amp;#154;&amp;amp;#132;ç¨&amp;amp;#139;åº&amp;amp;#143;ï¼&amp;amp;#154; &amp;lt;figure class=&amp;#34;wp-block-image size-large is-resized&amp;#34;&amp;gt;![](http://img.xfans.me/xfans/image/kdy_replace.png)&amp;lt;/figure&amp;gt;å®&amp;amp;#137;è£ å&amp;amp;#144;&amp;amp;#142;è¾&amp;amp;#147;å ¥è¦&amp;amp;#129;æ&amp;amp;#155;¿æ&amp;amp;#141;¢ç&amp;amp;#154;&amp;amp;#132;å&amp;amp;#140; å&amp;amp;#144;&amp;amp;#141;ï¼&amp;amp;#140;ç&amp;amp;#130;¹å&amp;amp;#135;»ç¡®è®¤å&amp;amp;#141;³å&amp;amp;#143;¯ã&amp;amp;#128;&amp;amp;#130;ç&amp;amp;#132;¶å&amp;amp;#144;&amp;amp;#142;ç&amp;amp;#130;¹å&amp;amp;#135;»æ¡&amp;amp;#140;é&amp;amp;#157;¢ç&amp;amp;#154;&amp;amp;#132;Kindleå&amp;amp;#155;¾æ &amp;amp;#135;å&amp;amp;#141;³å&amp;amp;#143;¯è¿&amp;amp;#155;å ¥è®¾ç½®ç&amp;amp;#154;&amp;amp;#132;appã&amp;amp;#128;&amp;amp;#130;æ³¨æ&amp;amp;#132;&amp;amp;#143;ï¼&amp;amp;#154;å®&amp;amp;#137;è£ è¯¥ç¨&amp;amp;#139;åº&amp;amp;#143;å&amp;amp;#144;&amp;amp;#142;ï¼&amp;amp;#140;æ&amp;amp;#151; æ³&amp;amp;#149;å®&amp;amp;#137;è£ Kindle appã&amp;amp;#128;&amp;amp;#130;å&amp;amp;#140; å&amp;amp;#144;&amp;amp;#141;å&amp;amp;#134;²çª&amp;amp;#129;ã&amp;amp;#128;&amp;amp;#130; å&amp;amp;#141;¸è½½æ&amp;amp;#150;¹æ³&amp;amp;#149;ï¼&amp;amp;#154;**adb uninstall com.amazon.kindlefc** ## å&amp;amp;#156;°å&amp;amp;#157;&amp;amp;#128;ï¼&amp;amp;#154; ä¸&amp;amp;#139;è½½å&amp;amp;#156;°å&amp;amp;#157;&amp;amp;#128;ï¼&amp;amp;#154;&amp;lt;http://img.xfans.me/download/kdy-replace-release.apk&amp;gt; ä»£ç &amp;amp;#129;å&amp;amp;#156;°å&amp;amp;#157;&amp;amp;#128;ï¼&amp;amp;#154;&amp;lt;https://github.com/xfans/KdyReplace&amp;gt; </description>
+    </item>
+    
+  </channel>
+</rss>

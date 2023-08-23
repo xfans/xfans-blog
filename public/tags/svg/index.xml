@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>svg on </title>
+    <link>/tags/svg/</link>
+    <description>Recent content in svg on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 29 Sep 2017 19:35:09 +0000</lastBuildDate><atom:link href="/tags/svg/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Using AndroidSVG with ImageView</title>
+      <link>/archives/8/</link>
+      <pubDate>Fri, 29 Sep 2017 19:35:09 +0000</pubDate>
+      
+      <guid>/archives/8/</guid>
+      <description>&amp;lt;pre class=&amp;#34;prism-highlight line-numbers&amp;#34; data-start=&amp;#34;1&amp;#34;&amp;gt;```null public class MainActivity extends Activity { @Override protected void onCreate(Bundle savedInstanceState) { super.onCreate(savedInstanceState); ImageView imageView = (ImageView) findViewById(R.id.yourImageView); imageView.setLayerType(View.LAYER_TYPE_SOFTWARE, null); try { SVG svg = SVG.getFromResource(this, R.raw.my_svg_file); Drawable drawable = new PictureDrawable(svg.renderToPicture()); imageView.setImageDrawable(drawable); } catch(SVGParseException e) {} } } å&amp;amp;#156;°å&amp;amp;#157;&amp;amp;#128;:http://bigbadaboom.github.io/androidsvg/use\_with\_ImageView.html Github:https://github.com/BigBadaboom/androidsvg </description>
+    </item>
+    
+  </channel>
+</rss>

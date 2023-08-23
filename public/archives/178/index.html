@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Android录音、播放音乐，跳动效果动画自定义VIew | </title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="å®ç°äºAndroidå½é³ï¼è¯­é³è¾å ¥æ¶çç«çº¿æ³¢çº¹å¨ç»ææåé³ä¹æ­æ¾æ¶çè·³å¨ææ
+ææ å®ç°åç å®ç°äºä¸¤ç§è¿å¨ææï¼
+1.ä»å·¦å°å³ç§»å¨ åè®¾æ±ç¶å¾çé«åº¦æ¯ä¸ä¸ªå¯¹å
+27,17,38,91,38,24,8,60,38,14,8
+8,27,17,38,91,38,24,8,60,38,14
+14,8,27,17,38,91,38,24,8,60,38
+ä»å·¦å°å³ç§»å¨å®é ä¸å°±æ¯ä¸æ­çå°éåä¸­çæåä¸ä¸ªæå ¥å°éåçç¬¬ä¸ä¸ªã
+ä»£ç ï¼
+&lt;pre class=&#34;line-numbers prism-highlight&#34; data-start=&#34;1&#34;&gt;```kotlin runnable = object : Runnable { override fun run() { val last = bodyWaveList.pollLast() bodyWaveList.addFirst(last) invalidate() valHandler.postDelayed(this, duration);//å¾ªç&amp;#142;¯è°&amp;#131;ç&amp;#148;¨é&amp;#135;&amp;#141;ç»&amp;#152; } } valHandler.post(runnable) ### 2.ä¸&amp;#138;ä¸&amp;#139;è·³å&amp;#138;¨ å&amp;#129;&amp;#135;è®¾æ&amp;#159;±ç&amp;#138;¶å&amp;#155;¾æ&amp;#152;¯ä¸&amp;#128;ä¸ªé&amp;#152;&amp;#159;å&amp;#136;&amp;#151; `27,17,38,91,38,24,8,60,38,14,8` ä¸&amp;#138;ä¸&amp;#139;è·³å&amp;#138;¨å°±æ&amp;#152;¯å°&amp;#134;é&amp;#152;&amp;#159;å&amp;#136;&amp;#151;ç&amp;#154;&amp;#132;é«&amp;#152;åº¦ï¼&amp;#140;ä»&amp;#142;0%-100%å&amp;#143;&amp;#152;å&amp;#140;&amp;#150; ä»£ç &amp;#129;ï¼&amp;#154; ">
+    <meta name="generator" content="Hugo 0.117.0">
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+    
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Android录音、播放音乐，跳动效果动画自定义VIew" />
+<meta property="og:description" content="å®ç°äºAndroidå½é³ï¼è¯­é³è¾å ¥æ¶çç«çº¿æ³¢çº¹å¨ç»ææåé³ä¹æ­æ¾æ¶çè·³å¨ææ
+ææ å®ç°åç å®ç°äºä¸¤ç§è¿å¨ææï¼
+1.ä»å·¦å°å³ç§»å¨ åè®¾æ±ç¶å¾çé«åº¦æ¯ä¸ä¸ªå¯¹å
+27,17,38,91,38,24,8,60,38,14,8
+8,27,17,38,91,38,24,8,60,38,14
+14,8,27,17,38,91,38,24,8,60,38
+ä»å·¦å°å³ç§»å¨å®é ä¸å°±æ¯ä¸æ­çå°éåä¸­çæåä¸ä¸ªæå ¥å°éåçç¬¬ä¸ä¸ªã
+ä»£ç ï¼
+&lt;pre class=&#34;line-numbers prism-highlight&#34; data-start=&#34;1&#34;&gt;```kotlin runnable = object : Runnable { override fun run() { val last = bodyWaveList.pollLast() bodyWaveList.addFirst(last) invalidate() valHandler.postDelayed(this, duration);//å¾ªç&amp;#142;¯è°&amp;#131;ç&amp;#148;¨é&amp;#135;&amp;#141;ç»&amp;#152; } } valHandler.post(runnable) ### 2.ä¸&amp;#138;ä¸&amp;#139;è·³å&amp;#138;¨ å&amp;#129;&amp;#135;è®¾æ&amp;#159;±ç&amp;#138;¶å&amp;#155;¾æ&amp;#152;¯ä¸&amp;#128;ä¸ªé&amp;#152;&amp;#159;å&amp;#136;&amp;#151; `27,17,38,91,38,24,8,60,38,14,8` ä¸&amp;#138;ä¸&amp;#139;è·³å&amp;#138;¨å°±æ&amp;#152;¯å°&amp;#134;é&amp;#152;&amp;#159;å&amp;#136;&amp;#151;ç&amp;#154;&amp;#132;é«&amp;#152;åº¦ï¼&amp;#140;ä»&amp;#142;0%-100%å&amp;#143;&amp;#152;å&amp;#140;&amp;#150; ä»£ç &amp;#129;ï¼&amp;#154; " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/archives/178/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2019-08-27T20:22:09+00:00" />
+<meta property="article:modified_time" content="2019-08-27T20:22:09+00:00" />
+<meta itemprop="name" content="Android录音、播放音乐，跳动效果动画自定义VIew">
+<meta itemprop="description" content="å®ç°äºAndroidå½é³ï¼è¯­é³è¾å ¥æ¶çç«çº¿æ³¢çº¹å¨ç»ææåé³ä¹æ­æ¾æ¶çè·³å¨ææ
+ææ å®ç°åç å®ç°äºä¸¤ç§è¿å¨ææï¼
+1.ä»å·¦å°å³ç§»å¨ åè®¾æ±ç¶å¾çé«åº¦æ¯ä¸ä¸ªå¯¹å
+27,17,38,91,38,24,8,60,38,14,8
+8,27,17,38,91,38,24,8,60,38,14
+14,8,27,17,38,91,38,24,8,60,38
+ä»å·¦å°å³ç§»å¨å®é ä¸å°±æ¯ä¸æ­çå°éåä¸­çæåä¸ä¸ªæå ¥å°éåçç¬¬ä¸ä¸ªã
+ä»£ç ï¼
+&lt;pre class=&#34;line-numbers prism-highlight&#34; data-start=&#34;1&#34;&gt;```kotlin runnable = object : Runnable { override fun run() { val last = bodyWaveList.pollLast() bodyWaveList.addFirst(last) invalidate() valHandler.postDelayed(this, duration);//å¾ªç&amp;#142;¯è°&amp;#131;ç&amp;#148;¨é&amp;#135;&amp;#141;ç»&amp;#152; } } valHandler.post(runnable) ### 2.ä¸&amp;#138;ä¸&amp;#139;è·³å&amp;#138;¨ å&amp;#129;&amp;#135;è®¾æ&amp;#159;±ç&amp;#138;¶å&amp;#155;¾æ&amp;#152;¯ä¸&amp;#128;ä¸ªé&amp;#152;&amp;#159;å&amp;#136;&amp;#151; `27,17,38,91,38,24,8,60,38,14,8` ä¸&amp;#138;ä¸&amp;#139;è·³å&amp;#138;¨å°±æ&amp;#152;¯å°&amp;#134;é&amp;#152;&amp;#159;å&amp;#136;&amp;#151;ç&amp;#154;&amp;#132;é«&amp;#152;åº¦ï¼&amp;#140;ä»&amp;#142;0%-100%å&amp;#143;&amp;#152;å&amp;#140;&amp;#150; ä»£ç &amp;#129;ï¼&amp;#154; "><meta itemprop="datePublished" content="2019-08-27T20:22:09+00:00" />
+<meta itemprop="dateModified" content="2019-08-27T20:22:09+00:00" />
+<meta itemprop="wordCount" content="47">
+<meta itemprop="keywords" content="android,自定义View," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Android录音、播放音乐，跳动效果动画自定义VIew"/>
+<meta name="twitter:description" content="å®ç°äºAndroidå½é³ï¼è¯­é³è¾å ¥æ¶çç«çº¿æ³¢çº¹å¨ç»ææåé³ä¹æ­æ¾æ¶çè·³å¨ææ
+ææ å®ç°åç å®ç°äºä¸¤ç§è¿å¨ææï¼
+1.ä»å·¦å°å³ç§»å¨ åè®¾æ±ç¶å¾çé«åº¦æ¯ä¸ä¸ªå¯¹å
+27,17,38,91,38,24,8,60,38,14,8
+8,27,17,38,91,38,24,8,60,38,14
+14,8,27,17,38,91,38,24,8,60,38
+ä»å·¦å°å³ç§»å¨å®é ä¸å°±æ¯ä¸æ­çå°éåä¸­çæåä¸ä¸ªæå ¥å°éåçç¬¬ä¸ä¸ªã
+ä»£ç ï¼
+&lt;pre class=&#34;line-numbers prism-highlight&#34; data-start=&#34;1&#34;&gt;```kotlin runnable = object : Runnable { override fun run() { val last = bodyWaveList.pollLast() bodyWaveList.addFirst(last) invalidate() valHandler.postDelayed(this, duration);//å¾ªç&amp;#142;¯è°&amp;#131;ç&amp;#148;¨é&amp;#135;&amp;#141;ç»&amp;#152; } } valHandler.post(runnable) ### 2.ä¸&amp;#138;ä¸&amp;#139;è·³å&amp;#138;¨ å&amp;#129;&amp;#135;è®¾æ&amp;#159;±ç&amp;#138;¶å&amp;#155;¾æ&amp;#152;¯ä¸&amp;#128;ä¸ªé&amp;#152;&amp;#159;å&amp;#136;&amp;#151; `27,17,38,91,38,24,8,60,38,14,8` ä¸&amp;#138;ä¸&amp;#139;è·³å&amp;#138;¨å°±æ&amp;#152;¯å°&amp;#134;é&amp;#152;&amp;#159;å&amp;#136;&amp;#151;ç&amp;#154;&amp;#132;é«&amp;#152;åº¦ï¼&amp;#140;ä»&amp;#142;0%-100%å&amp;#143;&amp;#152;å&amp;#140;&amp;#150; ä»£ç &amp;#129;ï¼&amp;#154; "/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Android录音、播放音乐，跳动效果动画自定义VIew</h1>
+      
+      <p class="tracked">
+        By <strong>xfans</strong>
+      </p>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2019-08-27T20:22:09Z">August 27, 2019</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>å®ç°äºAndroidå½é³ï¼è¯­é³è¾å ¥æ¶çç«çº¿æ³¢çº¹å¨ç»ææåé³ä¹æ­æ¾æ¶çè·³å¨ææ</p>
+<h2 id="æ149136æ158156">ææ</h2>
+<p><img src="https://xfans.me/wp-content/uploads/2019/08/2.gif" alt=""><img src="https://xfans.me/wp-content/uploads/2019/08/1.gif" alt=""></p>
+<h2 id="å158ç142å142159ç144134">å®ç°åç</h2>
+<p>å®ç°äºä¸¤ç§è¿å¨ææï¼</p>
+<h3 id="1ä142åå136å143çå138">1.ä»å·¦å°å³ç§»å¨</h3>
+<p>åè®¾æ±ç¶å¾çé«åº¦æ¯ä¸ä¸ªå¯¹å</p>
+<p><code>27,17,38,91,38,24,8,60,38,14,8</code></p>
+<p><code>8,27,17,38,91,38,24,8,60,38,14</code></p>
+<p><code>14,8,27,17,38,91,38,24,8,60,38</code></p>
+<p><strong>ä»å·¦å°å³ç§»å¨å®é ä¸å°±æ¯ä¸æ­çå°éåä¸­çæåä¸ä¸ªæå ¥å°éåçç¬¬ä¸ä¸ªã</strong></p>
+<p>ä»£ç ï¼</p>
+<pre tabindex="0"><code>&lt;pre class=&#34;line-numbers prism-highlight&#34; data-start=&#34;1&#34;&gt;```kotlin
+runnable = object : Runnable {
+    override fun run() {
+        val last = bodyWaveList.pollLast()
+        bodyWaveList.addFirst(last)
+        invalidate()
+        valHandler.postDelayed(this, duration);//å¾ªç&amp;#142;¯è°&amp;#131;ç&amp;#148;¨é&amp;#135;&amp;#141;ç»&amp;#152;
+    }
+}
+valHandler.post(runnable)
+</code></pre><pre tabindex="0"><code>
+### 2.ä¸&amp;#138;ä¸&amp;#139;è·³å&amp;#138;¨
+
+å&amp;#129;&amp;#135;è®¾æ&amp;#159;±ç&amp;#138;¶å&amp;#155;¾æ&amp;#152;¯ä¸&amp;#128;ä¸ªé&amp;#152;&amp;#159;å&amp;#136;&amp;#151;
+
+`27,17,38,91,38,24,8,60,38,14,8`
+
+ä¸&amp;#138;ä¸&amp;#139;è·³å&amp;#138;¨å°±æ&amp;#152;¯å°&amp;#134;é&amp;#152;&amp;#159;å&amp;#136;&amp;#151;ç&amp;#154;&amp;#132;é«&amp;#152;åº¦ï¼&amp;#140;ä»&amp;#142;0%-100%å&amp;#143;&amp;#152;å&amp;#140;&amp;#150;
+
+ä»£ç &amp;#129;ï¼&amp;#154;
+</code></pre><!-- raw HTML omitted -->
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/android/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">android</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/%E8%87%AA%E5%AE%9A%E4%B9%89view/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">自定义View</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/archives/56/">Linux下安装网络环境模拟工具augmented-traffic-control</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/archives/18/">Typecho-Android客户端开发</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/archives/8/">Using AndroidSVG with ImageView</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="/" >
+    &copy; 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

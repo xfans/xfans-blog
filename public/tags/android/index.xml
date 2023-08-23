@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>android on </title>
+    <link>/tags/android/</link>
+    <description>Recent content in android on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 27 Aug 2019 20:22:09 +0000</lastBuildDate><atom:link href="/tags/android/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Android录音、播放音乐，跳动效果动画自定义VIew</title>
+      <link>/archives/178/</link>
+      <pubDate>Tue, 27 Aug 2019 20:22:09 +0000</pubDate>
+      
+      <guid>/archives/178/</guid>
+      <description>å®ç°äºAndroidå½é³ï¼è¯­é³è¾å ¥æ¶çç«çº¿æ³¢çº¹å¨ç»ææåé³ä¹æ­æ¾æ¶çè·³å¨ææ
+ææ å®ç°åç å®ç°äºä¸¤ç§è¿å¨ææï¼
+1.ä»å·¦å°å³ç§»å¨ åè®¾æ±ç¶å¾çé«åº¦æ¯ä¸ä¸ªå¯¹å
+27,17,38,91,38,24,8,60,38,14,8
+8,27,17,38,91,38,24,8,60,38,14
+14,8,27,17,38,91,38,24,8,60,38
+ä»å·¦å°å³ç§»å¨å®é ä¸å°±æ¯ä¸æ­çå°éåä¸­çæåä¸ä¸ªæå ¥å°éåçç¬¬ä¸ä¸ªã
+ä»£ç ï¼
+&amp;lt;pre class=&amp;#34;line-numbers prism-highlight&amp;#34; data-start=&amp;#34;1&amp;#34;&amp;gt;```kotlin runnable = object : Runnable { override fun run() { val last = bodyWaveList.pollLast() bodyWaveList.addFirst(last) invalidate() valHandler.postDelayed(this, duration);//å¾ªç&amp;amp;#142;¯è°&amp;amp;#131;ç&amp;amp;#148;¨é&amp;amp;#135;&amp;amp;#141;ç»&amp;amp;#152; } } valHandler.post(runnable) ### 2.ä¸&amp;amp;#138;ä¸&amp;amp;#139;è·³å&amp;amp;#138;¨ å&amp;amp;#129;&amp;amp;#135;è®¾æ&amp;amp;#159;±ç&amp;amp;#138;¶å&amp;amp;#155;¾æ&amp;amp;#152;¯ä¸&amp;amp;#128;ä¸ªé&amp;amp;#152;&amp;amp;#159;å&amp;amp;#136;&amp;amp;#151; `27,17,38,91,38,24,8,60,38,14,8` ä¸&amp;amp;#138;ä¸&amp;amp;#139;è·³å&amp;amp;#138;¨å°±æ&amp;amp;#152;¯å°&amp;amp;#134;é&amp;amp;#152;&amp;amp;#159;å&amp;amp;#136;&amp;amp;#151;ç&amp;amp;#154;&amp;amp;#132;é«&amp;amp;#152;åº¦ï¼&amp;amp;#140;ä»&amp;amp;#142;0%-100%å&amp;amp;#143;&amp;amp;#152;å&amp;amp;#140;&amp;amp;#150; ä»£ç &amp;amp;#129;ï¼&amp;amp;#154; </description>
+    </item>
+    
+    <item>
+      <title>Linux下安装网络环境模拟工具augmented-traffic-control</title>
+      <link>/archives/56/</link>
+      <pubDate>Thu, 23 Nov 2017 20:10:48 +0000</pubDate>
+      
+      <guid>/archives/56/</guid>
+      <description>augmented-traffic-control A tool to simulate network conditions,Facebookæä¾çä¸æ¬¾ç½ç»ç¯å¢æ¨¡æå·¥å ·ï¼å¯ä»¥ä½¿ç¨ä»æ¥æµè¯Appå¨åç§ç½ç»ç¯å¢ä¸çé®é¢ã
+å®è£ ç¯å¢è¦æ± Python2.7ãDjango1.10.+
+ä»¥ä¸å¨Manjoraä¸çå®è£ å½ä»¤
+åæ¢Pythonç¯å¢å°Python2.7 å®è£ pip sudo pacman -S python2-pip
+å®è£ Django1.10.+ sudo pip install Django==1.10.8
+å®è£ ATC å®è£ lib sudo pacman -S pip install atc_thrift atcd django-atc-api django-atc-demo-ui django-atc-profile-storage
+Djangoé ç½® django-admin startproject atcui
+cd atcui
+ä¿®æ¹atcui/settings.pyä¸­çINSTALLED_APPS &amp;lt;pre class=&amp;#34;line-numbers prism-highlight&amp;#34; data-start=&amp;#34;1&amp;#34;&amp;gt;```bash INSTALLED_APPS = ( ... # Django ATC API &amp;#39;rest_framework&amp;#39;, &amp;#39;atc_api&amp;#39;, # Django ATC Demo UI &amp;#39;bootstrap_themes&amp;#39;, &amp;#39;django_static_jquery&amp;#39;, &amp;#39;atc_demo_ui&amp;#39;, # Django ATC Profile Storage &amp;#39;atc_profile_storage&amp;#39;, ) #### ä¿®æ&amp;amp;#148;¹atcui/urls.</description>
+    </item>
+    
+    <item>
+      <title>Typecho-Android客户端开发</title>
+      <link>/archives/18/</link>
+      <pubDate>Fri, 29 Sep 2017 19:44:41 +0000</pubDate>
+      
+      <guid>/archives/18/</guid>
+      <description>åè®® XML-RPC_wpåè®®:https://codex.wordpress.org/XML-RPC_wp å°å:http://xxxx.com/xmlrpc Typecho XML-RPCåè®®:https://github.com/typecho/typecho/blob/master/var/Widget/XmlRpc.php#L2249-L2322 Demo XML-RPC_wpåè®®Demo:https://github.com/xfans/android-xmlrpc1 Typecho XML-RPCè¿åæ°æ®:IXR/Value.php </description>
+    </item>
+    
+    <item>
+      <title>Using AndroidSVG with ImageView</title>
+      <link>/archives/8/</link>
+      <pubDate>Fri, 29 Sep 2017 19:35:09 +0000</pubDate>
+      
+      <guid>/archives/8/</guid>
+      <description>&amp;lt;pre class=&amp;#34;prism-highlight line-numbers&amp;#34; data-start=&amp;#34;1&amp;#34;&amp;gt;```null public class MainActivity extends Activity { @Override protected void onCreate(Bundle savedInstanceState) { super.onCreate(savedInstanceState); ImageView imageView = (ImageView) findViewById(R.id.yourImageView); imageView.setLayerType(View.LAYER_TYPE_SOFTWARE, null); try { SVG svg = SVG.getFromResource(this, R.raw.my_svg_file); Drawable drawable = new PictureDrawable(svg.renderToPicture()); imageView.setImageDrawable(drawable); } catch(SVGParseException e) {} } } å&amp;amp;#156;°å&amp;amp;#157;&amp;amp;#128;:http://bigbadaboom.github.io/androidsvg/use\_with\_ImageView.html Github:https://github.com/BigBadaboom/androidsvg </description>
+    </item>
+    
+  </channel>
+</rss>

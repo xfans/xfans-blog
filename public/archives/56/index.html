@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Linux下安装网络环境模拟工具augmented-traffic-control | </title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="augmented-traffic-control A tool to simulate network conditions,Facebookæä¾çä¸æ¬¾ç½ç»ç¯å¢æ¨¡æå·¥å ·ï¼å¯ä»¥ä½¿ç¨ä»æ¥æµè¯Appå¨åç§ç½ç»ç¯å¢ä¸çé®é¢ã
+å®è£ ç¯å¢è¦æ± Python2.7ãDjango1.10.&#43;
+ä»¥ä¸å¨Manjoraä¸çå®è£ å½ä»¤
+åæ¢Pythonç¯å¢å°Python2.7 å®è£ pip sudo pacman -S python2-pip
+å®è£ Django1.10.&#43; sudo pip install Django==1.10.8
+å®è£ ATC å®è£ lib sudo pacman -S pip install atc_thrift atcd django-atc-api django-atc-demo-ui django-atc-profile-storage
+Djangoé ç½® django-admin startproject atcui
+cd atcui
+ä¿®æ¹atcui/settings.pyä¸­çINSTALLED_APPS &lt;pre class=&#34;line-numbers prism-highlight&#34; data-start=&#34;1&#34;&gt;```bash INSTALLED_APPS = ( ... # Django ATC API &#39;rest_framework&#39;, &#39;atc_api&#39;, # Django ATC Demo UI &#39;bootstrap_themes&#39;, &#39;django_static_jquery&#39;, &#39;atc_demo_ui&#39;, # Django ATC Profile Storage &#39;atc_profile_storage&#39;, ) #### ä¿®æ&amp;#148;¹atcui/urls.">
+    <meta name="generator" content="Hugo 0.117.0">
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+    
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Linux下安装网络环境模拟工具augmented-traffic-control" />
+<meta property="og:description" content="augmented-traffic-control A tool to simulate network conditions,Facebookæä¾çä¸æ¬¾ç½ç»ç¯å¢æ¨¡æå·¥å ·ï¼å¯ä»¥ä½¿ç¨ä»æ¥æµè¯Appå¨åç§ç½ç»ç¯å¢ä¸çé®é¢ã
+å®è£ ç¯å¢è¦æ± Python2.7ãDjango1.10.&#43;
+ä»¥ä¸å¨Manjoraä¸çå®è£ å½ä»¤
+åæ¢Pythonç¯å¢å°Python2.7 å®è£ pip sudo pacman -S python2-pip
+å®è£ Django1.10.&#43; sudo pip install Django==1.10.8
+å®è£ ATC å®è£ lib sudo pacman -S pip install atc_thrift atcd django-atc-api django-atc-demo-ui django-atc-profile-storage
+Djangoé ç½® django-admin startproject atcui
+cd atcui
+ä¿®æ¹atcui/settings.pyä¸­çINSTALLED_APPS &lt;pre class=&#34;line-numbers prism-highlight&#34; data-start=&#34;1&#34;&gt;```bash INSTALLED_APPS = ( ... # Django ATC API &#39;rest_framework&#39;, &#39;atc_api&#39;, # Django ATC Demo UI &#39;bootstrap_themes&#39;, &#39;django_static_jquery&#39;, &#39;atc_demo_ui&#39;, # Django ATC Profile Storage &#39;atc_profile_storage&#39;, ) #### ä¿®æ&amp;#148;¹atcui/urls." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/archives/56/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2017-11-23T20:10:48+00:00" />
+<meta property="article:modified_time" content="2017-11-23T20:10:48+00:00" />
+<meta itemprop="name" content="Linux下安装网络环境模拟工具augmented-traffic-control">
+<meta itemprop="description" content="augmented-traffic-control A tool to simulate network conditions,Facebookæä¾çä¸æ¬¾ç½ç»ç¯å¢æ¨¡æå·¥å ·ï¼å¯ä»¥ä½¿ç¨ä»æ¥æµè¯Appå¨åç§ç½ç»ç¯å¢ä¸çé®é¢ã
+å®è£ ç¯å¢è¦æ± Python2.7ãDjango1.10.&#43;
+ä»¥ä¸å¨Manjoraä¸çå®è£ å½ä»¤
+åæ¢Pythonç¯å¢å°Python2.7 å®è£ pip sudo pacman -S python2-pip
+å®è£ Django1.10.&#43; sudo pip install Django==1.10.8
+å®è£ ATC å®è£ lib sudo pacman -S pip install atc_thrift atcd django-atc-api django-atc-demo-ui django-atc-profile-storage
+Djangoé ç½® django-admin startproject atcui
+cd atcui
+ä¿®æ¹atcui/settings.pyä¸­çINSTALLED_APPS &lt;pre class=&#34;line-numbers prism-highlight&#34; data-start=&#34;1&#34;&gt;```bash INSTALLED_APPS = ( ... # Django ATC API &#39;rest_framework&#39;, &#39;atc_api&#39;, # Django ATC Demo UI &#39;bootstrap_themes&#39;, &#39;django_static_jquery&#39;, &#39;atc_demo_ui&#39;, # Django ATC Profile Storage &#39;atc_profile_storage&#39;, ) #### ä¿®æ&amp;#148;¹atcui/urls."><meta itemprop="datePublished" content="2017-11-23T20:10:48+00:00" />
+<meta itemprop="dateModified" content="2017-11-23T20:10:48+00:00" />
+<meta itemprop="wordCount" content="79">
+<meta itemprop="keywords" content="android,linux,网络环境," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Linux下安装网络环境模拟工具augmented-traffic-control"/>
+<meta name="twitter:description" content="augmented-traffic-control A tool to simulate network conditions,Facebookæä¾çä¸æ¬¾ç½ç»ç¯å¢æ¨¡æå·¥å ·ï¼å¯ä»¥ä½¿ç¨ä»æ¥æµè¯Appå¨åç§ç½ç»ç¯å¢ä¸çé®é¢ã
+å®è£ ç¯å¢è¦æ± Python2.7ãDjango1.10.&#43;
+ä»¥ä¸å¨Manjoraä¸çå®è£ å½ä»¤
+åæ¢Pythonç¯å¢å°Python2.7 å®è£ pip sudo pacman -S python2-pip
+å®è£ Django1.10.&#43; sudo pip install Django==1.10.8
+å®è£ ATC å®è£ lib sudo pacman -S pip install atc_thrift atcd django-atc-api django-atc-demo-ui django-atc-profile-storage
+Djangoé ç½® django-admin startproject atcui
+cd atcui
+ä¿®æ¹atcui/settings.pyä¸­çINSTALLED_APPS &lt;pre class=&#34;line-numbers prism-highlight&#34; data-start=&#34;1&#34;&gt;```bash INSTALLED_APPS = ( ... # Django ATC API &#39;rest_framework&#39;, &#39;atc_api&#39;, # Django ATC Demo UI &#39;bootstrap_themes&#39;, &#39;django_static_jquery&#39;, &#39;atc_demo_ui&#39;, # Django ATC Profile Storage &#39;atc_profile_storage&#39;, ) #### ä¿®æ&amp;#148;¹atcui/urls."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Linux下安装网络环境模拟工具augmented-traffic-control</h1>
+      
+      <p class="tracked">
+        By <strong>xfans</strong>
+      </p>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2017-11-23T20:10:48Z">November 23, 2017</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h2 id="augmented-traffic-control">augmented-traffic-control</h2>
+<p>A tool to simulate network conditions,Facebookæä¾çä¸æ¬¾ç½ç»ç¯å¢æ¨¡æå·¥å ·ï¼å¯ä»¥ä½¿ç¨ä»æ¥æµè¯Appå¨åç§ç½ç»ç¯å¢ä¸çé®é¢ã</p>
+<h2 id="å137è-ç142å131è129æ130">å®è£ ç¯å¢è¦æ±</h2>
+<p>Python2.7ãDjango1.10.+<br>
+ä»¥ä¸å¨Manjoraä¸çå®è£ å½ä»¤</p>
+<h3 id="å136135æ141pythonç142å131å136python27httpxfansmearchives12-å136135æ141pythonç142å131å136python27"><a href="http://xfans.me/archives/12" title="åæ¢Pythonç¯å¢å°Python2.7">åæ¢Pythonç¯å¢å°Python2.7</a></h3>
+<h3 id="å137è-pip">å®è£ pip</h3>
+<p><code>sudo pacman -S python2-pip</code></p>
+<h3 id="å137è-django110">å®è£ Django1.10.+</h3>
+<p><code>sudo pip install Django==1.10.8</code></p>
+<h2 id="å137è-atc">å®è£ ATC</h2>
+<h3 id="å137è-lib">å®è£ lib</h3>
+<p><code>sudo pacman -S pip install atc_thrift atcd django-atc-api django-atc-demo-ui django-atc-profile-storage</code></p>
+<h3 id="djangoé-141ç">Djangoé ç½®</h3>
+<p><code>django-admin startproject atcui</code></p>
+<p><code>cd atcui</code></p>
+<h4 id="äæ148atcuisettingspyäç154132installed_apps">ä¿®æ¹atcui/settings.pyä¸­çINSTALLED_APPS</h4>
+<pre tabindex="0"><code>&lt;pre class=&#34;line-numbers prism-highlight&#34; data-start=&#34;1&#34;&gt;```bash
+    INSTALLED_APPS = (
+        ...
+        # Django ATC API
+        &#39;rest_framework&#39;,
+        &#39;atc_api&#39;,
+        # Django ATC Demo UI
+        &#39;bootstrap_themes&#39;,
+        &#39;django_static_jquery&#39;,
+        &#39;atc_demo_ui&#39;,
+        # Django ATC Profile Storage
+        &#39;atc_profile_storage&#39;,
+    )
+</code></pre><pre tabindex="0"><code>
+#### ä¿®æ&amp;#148;¹atcui/urls.pyä¸­ç&amp;#154;&amp;#132;urlpatternså&amp;#143;&amp;#138;å¼&amp;#149;ç&amp;#148;¨
+</code></pre><!-- raw HTML omitted -->
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/android/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">android</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/linux/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">linux</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/%E7%BD%91%E7%BB%9C%E7%8E%AF%E5%A2%83/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">网络环境</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/archives/42/">Linux开启虚拟AP</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/archives/18/">Typecho-Android客户端开发</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/archives/16/">Linux Manjaro安装kernel及Kernel Headers</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/archives/12/">设置Python版本</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/archives/10/">Linux更新grub启动项</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/archives/8/">Using AndroidSVG with ImageView</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/archives/6/">Manjaro使用bbswitch关闭笔记本的nvidia独立显卡</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="/" >
+    &copy; 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

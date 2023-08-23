@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>svn on </title>
+    <link>/tags/svn/</link>
+    <description>Recent content in svn on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 11 Jan 2018 19:48:29 +0000</lastBuildDate><atom:link href="/tags/svn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用SVN下载GitHub单个目录内的文件</title>
+      <link>/archives/69/</link>
+      <pubDate>Thu, 11 Jan 2018 19:48:29 +0000</pubDate>
+      
+      <guid>/archives/69/</guid>
+      <description>èæ¯ ææ¶åéè¦å¨GitHubä¸ä¸è½½åä¸ªç®å½éé¢çæä»¶ï¼èä¸éè¦å»å éæ´ä¸ªé¡¹ç®ï¼å¤ªå¤§çé¡¹ç®å éèµ·æ¥å¤ªæ ¢ã
+è§£å³æ¹æ¡ GitHubæ¯æ¯æSVNè®¿é®çï¼æä»¥å¯ä»¥ä½¿ç¨SVNä¸è½½åä¸ªç®å½ã
+ä¸è½½masteråæ¯ å¤å¶æµè§å¨å°åæ ä¸­çå°åï¼å¦ï¼
+https://github.com/bumptech/glide/tree/master/integration
+å°treeæ¹ä¸ºtrunkå³å¯ã
+https://github.com/bumptech/glide/trunk/integration
+ä¸è½½å ¶ä»åæ¯ å¦ï¼
+https://github.com/bumptech/glide/tree/3.0/integration
+å°treeæ¹ä¸ºbrancheså³å¯ã
+https://github.com/bumptech/glide/branches/3.0/integration
+ç¶åsvn checkout å³å¯ã</description>
+    </item>
+    
+  </channel>
+</rss>

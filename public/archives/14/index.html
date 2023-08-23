@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>WordPress XML-RPC wp接口文档 | </title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="å¤è¾¹æ ¢,å¤ä»½ä¸
+wp.getUsersBlogs Retrieve the blogs of the users.
+Parameters string username string password Return Values array struct boolean isAdmin string url string blogid string blogName string xmlrpc wp.getTags Get list of all tags.
+Parameters int blog_id string username string password Return Values array struct int tag_id string name int count string slug string html_url string rss_url wp.getAuthors Get an array of users for the blog.
+Parameters int blog_id string username string password Return Values array struct int user_id string user_login string display_name string meta_value (Serialized PHP data) &hellip; wp.">
+    <meta name="generator" content="Hugo 0.117.0">
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+    
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="WordPress XML-RPC wp接口文档" />
+<meta property="og:description" content="å¤è¾¹æ ¢,å¤ä»½ä¸
+wp.getUsersBlogs Retrieve the blogs of the users.
+Parameters string username string password Return Values array struct boolean isAdmin string url string blogid string blogName string xmlrpc wp.getTags Get list of all tags.
+Parameters int blog_id string username string password Return Values array struct int tag_id string name int count string slug string html_url string rss_url wp.getAuthors Get an array of users for the blog.
+Parameters int blog_id string username string password Return Values array struct int user_id string user_login string display_name string meta_value (Serialized PHP data) &hellip; wp." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/archives/14/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2017-09-29T19:37:02+00:00" />
+<meta property="article:modified_time" content="2017-09-29T19:37:02+00:00" />
+<meta itemprop="name" content="WordPress XML-RPC wp接口文档">
+<meta itemprop="description" content="å¤è¾¹æ ¢,å¤ä»½ä¸
+wp.getUsersBlogs Retrieve the blogs of the users.
+Parameters string username string password Return Values array struct boolean isAdmin string url string blogid string blogName string xmlrpc wp.getTags Get list of all tags.
+Parameters int blog_id string username string password Return Values array struct int tag_id string name int count string slug string html_url string rss_url wp.getAuthors Get an array of users for the blog.
+Parameters int blog_id string username string password Return Values array struct int user_id string user_login string display_name string meta_value (Serialized PHP data) &hellip; wp."><meta itemprop="datePublished" content="2017-09-29T19:37:02+00:00" />
+<meta itemprop="dateModified" content="2017-09-29T19:37:02+00:00" />
+<meta itemprop="wordCount" content="1213">
+<meta itemprop="keywords" content="web," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="WordPress XML-RPC wp接口文档"/>
+<meta name="twitter:description" content="å¤è¾¹æ ¢,å¤ä»½ä¸
+wp.getUsersBlogs Retrieve the blogs of the users.
+Parameters string username string password Return Values array struct boolean isAdmin string url string blogid string blogName string xmlrpc wp.getTags Get list of all tags.
+Parameters int blog_id string username string password Return Values array struct int tag_id string name int count string slug string html_url string rss_url wp.getAuthors Get an array of users for the blog.
+Parameters int blog_id string username string password Return Values array struct int user_id string user_login string display_name string meta_value (Serialized PHP data) &hellip; wp."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">WordPress XML-RPC wp接口文档</h1>
+      
+      <p class="tracked">
+        By <strong>xfans</strong>
+      </p>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2017-09-29T19:37:02Z">September 29, 2017</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>å¤è¾¹æ ¢,å¤ä»½ä¸</p>
+<h2 id="wpgetusersblogs">wp.getUsersBlogs</h2>
+<p>Retrieve the blogs of the users.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li>string username</li>
+<li>string password</li>
+</ul>
+<h3 id="return-values">Return Values</h3>
+<ul>
+<li>array
+<ul>
+<li>struct
+<ul>
+<li>boolean isAdmin</li>
+<li>string url</li>
+<li>string blogid</li>
+<li>string blogName</li>
+<li>string xmlrpc</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="wpgettags">wp.getTags</h2>
+<p>Get list of all tags.</p>
+<h3 id="parameters-1">Parameters</h3>
+<ul>
+<li>int blog_id</li>
+<li>string username</li>
+<li>string password</li>
+</ul>
+<h3 id="return-values-1">Return Values</h3>
+<ul>
+<li>array
+<ul>
+<li>struct
+<ul>
+<li>int tag_id</li>
+<li>string name</li>
+<li>int count</li>
+<li>string slug</li>
+<li>string html_url</li>
+<li>string rss_url</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="wpgetauthors">wp.getAuthors</h2>
+<p>Get an array of users for the blog.</p>
+<h3 id="parameters-2">Parameters</h3>
+<ul>
+<li>int blog_id</li>
+<li>string username</li>
+<li>string password</li>
+</ul>
+<h3 id="return-values-2">Return Values</h3>
+<ul>
+<li>array
+<ul>
+<li>struct
+<ul>
+<li>int user_id</li>
+<li>string user_login</li>
+<li>string display_name</li>
+<li>string meta_value (Serialized PHP data)</li>
+</ul>
+</li>
+<li>&hellip;</li>
+</ul>
+</li>
+</ul>
+<h2 id="wpgetoptions">wp.getOptions</h2>
+<p>Retrieve blog options. If passing in a struct, search for options listed within it.</p>
+<p>This call return also settings available in the Media Settings area of wp-admin. For example: If a user has specified properties for Image Sizes such as Thumbnail Size, Medium Size, and Large Size, this call would return those properties.</p>
+<h3 id="parameters-3">Parameters</h3>
+<ul>
+<li>int blog_id</li>
+<li>string username</li>
+<li>string password</li>
+<li>struct
+<ul>
+<li>string option</li>
+</ul>
+</li>
+</ul>
+<h3 id="return-values-3">Return Values</h3>
+<ul>
+<li>array
+<ul>
+<li>struct
+<ul>
+<li>string desc</li>
+<li>string readonly</li>
+<li>string option</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="wpsetoptions">wp.setOptions</h2>
+<p>Update blog options. Returns array of structs showing updated values.</p>
+<h3 id="parameters-4">Parameters</h3>
+<ul>
+<li>int blog_id</li>
+<li>string username</li>
+<li>string password</li>
+<li>struct
+<ul>
+<li>string option_name</li>
+<li>string option_value</li>
+</ul>
+</li>
+</ul>
+<h3 id="return-values-4">Return Values</h3>
+<ul>
+<li>array
+<ul>
+<li>struct
+<ul>
+<li>string option</li>
+<li>string value</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="wpgetpoststatuslist">wp.getPostStatusList</h2>
+<p>Retrieve post statuses.</p>
+<h3 id="parameters-5">Parameters</h3>
+<ul>
+<li>int blog_id</li>
+<li>string username</li>
+<li>string password</li>
+</ul>
+<h3 id="return-values-5">Return Values</h3>
+<ul>
+<li>struct
+<ul>
+<li>const string &lsquo;draft&rsquo;</li>
+<li>const string &lsquo;pending&rsquo;</li>
+<li>const string &lsquo;private&rsquo;</li>
+<li>const string &lsquo;publish&rsquo;</li>
+</ul>
+</li>
+</ul>
+<h2 id="wpgetpostformats">wp.getPostFormats</h2>
+<p>Retrieves a list of post formats used by the site. A filter parameter could be provided that would allow the caller to filter the result. At this moment the only supported filter is &lsquo;show-supported&rsquo; that enable the caller to retrieve post formats supported by the active theme.</p>
+<h3 id="parameters-6">Parameters</h3>
+<ul>
+<li>int blog_id</li>
+<li>string username</li>
+<li>string password</li>
+<li>Struct
+<ul>
+<li>const string &lsquo;show-supported&rsquo;</li>
+</ul>
+</li>
+</ul>
+<h3 id="return-values-6">Return Values</h3>
+<p>When no filter is specified</p>
+<ul>
+<li>struct</li>
+</ul>
+<p>e.g. [standard] =&gt; Default [aside] =&gt; Aside [chat] =&gt; Chat =&gt; Gallery [link] =&gt; Link [image] =&gt; Image [quote] =&gt; Quote [status] =&gt; Status =&gt; Video</p>
+<p>When a filter is specified</p>
+<ul>
+<li>struct &lsquo;all&rsquo;
+<ul>
+<li>struct</li>
+</ul>
+</li>
+<li>struct &lsquo;supported&rsquo;
+<ul>
+<li>struct</li>
+</ul>
+</li>
+</ul>
+<h2 id="wpgetcomments">wp.getComments</h2>
+<p>Gets a set of comments for a given post.</p>
+<h3 id="parameters-7">Parameters</h3>
+<ul>
+<li>int blog_id</li>
+<li>string username</li>
+<li>string password</li>
+<li>struct
+<ul>
+<li>post_id</li>
+<li>status (defaults to approve)</li>
+<li>offset</li>
+<li>number</li>
+</ul>
+</li>
+</ul>
+<h3 id="return-values-7">Return Values</h3>
+<p>Returns an array of the comment structure (see wp.getComment)</p>
+<ul>
+<li>struct
+<ul>
+<li>datetime dateCreated (ISO.8601, always GMT)</li>
+<li>string user_id</li>
+<li>string comment_id</li>
+<li>string parent</li>
+<li>string status</li>
+<li>string content</li>
+<li>string link</li>
+<li>string post_id</li>
+<li>string post_title</li>
+<li>string author</li>
+<li>string author_url</li>
+<li>string author_email</li>
+<li>string author_ip</li>
+</ul>
+</li>
+</ul>
+<h2 id="wpgetcommentcount">wp.getCommentCount</h2>
+<p>Retrieve comment count for a specific post.</p>
+<h3 id="parameters-8">Parameters</h3>
+<ul>
+<li>int blog_id</li>
+<li>string username</li>
+<li>string password</li>
+<li>string post_id</li>
+</ul>
+<h3 id="return-values-8">Return Values</h3>
+<ul>
+<li>array
+<ul>
+<li>struct
+<ul>
+<li>int approved</li>
+<li>int awaiting_moderation</li>
+<li>int spam</li>
+<li>int total_comments</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="wpgetcomment">wp.getComment</h2>
+<p>Gets a comment, given it&rsquo;s comment ID. Note that this isn&rsquo;t in 2.6.1, but is in the HEAD (so should be in anything newer than 2.6.1)</p>
+<h3 id="parameters-9">Parameters</h3>
+<ul>
+<li>int blog_id</li>
+<li>string username</li>
+<li>string password</li>
+<li>int comment_id</li>
+</ul>
+<h3 id="return-values-9">Return Values</h3>
+<ul>
+<li>struct
+<ul>
+<li>datetime dateCreated (ISO.8601, always GMT)</li>
+<li>string user_id</li>
+<li>string comment_id</li>
+<li>string parent</li>
+<li>string status</li>
+<li>string content</li>
+<li>string link</li>
+<li>string post_id</li>
+<li>string post_title</li>
+<li>string author</li>
+<li>string author_url</li>
+<li>string author_email</li>
+<li>string author_ip</li>
+</ul>
+</li>
+</ul>
+<h2 id="wpdeletecomment">wp.deleteComment</h2>
+<p>Remove comment.</p>
+<h3 id="parameters-10">Parameters</h3>
+<ul>
+<li>int blog_id</li>
+<li>string username</li>
+<li>string password</li>
+<li>int comment_id</li>
+</ul>
+<h3 id="return-values-10">Return Values</h3>
+<ul>
+<li>boolean status</li>
+</ul>
+<h2 id="wpeditcomment">wp.editComment</h2>
+<p>Edit comment.</p>
+<h3 id="parameters-11">Parameters</h3>
+<ul>
+<li>int blog_id</li>
+<li>string username</li>
+<li>string password</li>
+<li>int comment_id</li>
+<li>struct comment
+<ul>
+<li>string status</li>
+<li>date date_created_gmt</li>
+<li>string content</li>
+<li>string author</li>
+<li>string author_url</li>
+<li>string author_email</li>
+</ul>
+</li>
+</ul>
+<h3 id="return-values-11">Return Values</h3>
+<ul>
+<li>boolean status</li>
+</ul>
+<h2 id="wpnewcomment">wp.newComment</h2>
+<p>Create new comment.</p>
+<p>If you want to send anonymous comments, leave the second and third parameter blank and install <a href="http://www.thepicklingjar.com/code/anonymous-xmlrpc-comments/">a filter to xmlrpc_allow_anonymous_comments to return true</a>.</p>
+<p>See this WordPress forum <a href="http://wordpress.org/support/topic/304306?replies=1#post-1188046">post</a> for more details.</p>
+<h3 id="parameters-12">Parameters</h3>
+<ul>
+<li>int blog_id</li>
+<li>string username</li>
+<li>string password</li>
+<li>int post_id</li>
+<li>struct comment
+<ul>
+<li>int comment_parent</li>
+<li>string content</li>
+<li>string author</li>
+<li>string author_url</li>
+<li>string author_email</li>
+</ul>
+</li>
+</ul>
+<h3 id="return-values-12">Return Values</h3>
+<ul>
+<li>int comment_id</li>
+</ul>
+<h2 id="wpgetcommentstatuslist">wp.getCommentStatusList</h2>
+<p>Retrieve all of the comment status.</p>
+<h3 id="parameters-13">Parameters</h3>
+<ul>
+<li>int blog_id</li>
+<li>string username</li>
+<li>string password</li>
+</ul>
+<h3 id="return-values-13">Return Values</h3>
+<ul>
+<li>struct
+<ul>
+<li>string hold</li>
+<li>string approve</li>
+<li>string spam</li>
+</ul>
+</li>
+</ul>
+<h2 id="wpgetpagestatuslist">wp.getPageStatusList</h2>
+<p>Retrieve all of the WordPress supported page statuses.</p>
+<h3 id="parameters-14">Parameters</h3>
+<ul>
+<li>int blog_id</li>
+<li>string username</li>
+<li>string password</li>
+</ul>
+<h3 id="return-values-14">Return Values</h3>
+<ul>
+<li>struct
+<ul>
+<li>const string &lsquo;draft&rsquo;</li>
+<li>const string &lsquo;private&rsquo;</li>
+<li>const string &lsquo;publish&rsquo;</li>
+</ul>
+</li>
+</ul>
+<h2 id="wpgetpagetemplates">wp.getPageTemplates</h2>
+<p>Retrieve page templates.</p>
+<h3 id="parameters-15">Parameters</h3>
+<ul>
+<li>int blog_id</li>
+<li>string username</li>
+<li>string password</li>
+</ul>
+<h3 id="return-values-15">Return Values</h3>
+<ul>
+<li>array
+<ul>
+<li>struct
+<ul>
+<li>string name</li>
+<li>string description</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="wpgetpage">wp.getPage</h2>
+<p>Get the page identified by the page id.</p>
+<h3 id="parameters-16">Parameters</h3>
+<ul>
+<li>int blog_id</li>
+<li>int page_id</li>
+<li>string username</li>
+<li>string password</li>
+</ul>
+<h3 id="return-values-16">Return Values</h3>
+<ul>
+<li>struct
+<ul>
+<li>datetime dateCreated (ISO.8601)</li>
+<li>string userid</li>
+<li>int page_id</li>
+<li>string page_status</li>
+<li>string description</li>
+<li>string title</li>
+<li>string link</li>
+<li>string permaLink</li>
+<li>array categories
+<ul>
+<li>string Category Name</li>
+<li>&hellip;</li>
+</ul>
+</li>
+<li>string excerpt</li>
+<li>string text_more</li>
+<li>int mt_allow_comments</li>
+<li>int mt_allow_pings</li>
+<li>string wp_slug</li>
+<li>string wp_password</li>
+<li>string wp_author</li>
+<li>int wp_page_parent_id</li>
+<li>string wp_page_parent_title</li>
+<li>int wp_page_order</li>
+<li>string wp_author_id</li>
+<li>string wp_author_display_name</li>
+<li>datetime date_created_gmt</li>
+<li>array custom_fields
+<ul>
+<li>struct
+- string id
+- string key
+- string value</li>
+<li>&hellip;</li>
+</ul>
+</li>
+<li>string wp_page_template</li>
+</ul>
+</li>
+</ul>
+<h2 id="wpgetpages">wp.getPages</h2>
+<p>Get an array of all the pages on a blog.</p>
+<h3 id="parameters-17">Parameters</h3>
+<ul>
+<li>int blog_id</li>
+<li>string username</li>
+<li>string password</li>
+<li>int max_pages (optional, default=10)</li>
+</ul>
+<h3 id="return-values-17">Return Values</h3>
+<ul>
+<li>array
+<ul>
+<li>struct Same as <a href="/XML-RPC_wp#Return_Values" title="XML-RPC wp">wp.getPage</a></li>
+<li>&hellip;</li>
+</ul>
+</li>
+</ul>
+<h2 id="wpgetpagelist">wp.getPageList</h2>
+<p>Get an array of all the pages on a blog. Just the minimum details, lighter than <a href="/XML-RPC_wp#wp.getPages" title="XML-RPC wp">wp.getPages</a>.</p>
+<h3 id="parameters-18">Parameters</h3>
+<ul>
+<li>int blog_id</li>
+<li>string username</li>
+<li>string password</li>
+</ul>
+<h3 id="return-values-18">Return Values</h3>
+<ul>
+<li>array
+<ul>
+<li>struct
+<ul>
+<li>int page_id</li>
+<li>string page_title</li>
+<li>int page_parent_id</li>
+<li>datetime dateCreated</li>
+</ul>
+</li>
+<li>&hellip;</li>
+</ul>
+</li>
+</ul>
+<h2 id="wpnewpage">wp.newPage</h2>
+<p>Create a new page. Similar to metaWeblog.newPost.</p>
+<h3 id="parameters-19">Parameters</h3>
+<ul>
+<li>int blog_id</li>
+<li>string username</li>
+<li>string password</li>
+<li>struct content
+<ul>
+<li>string wp_slug</li>
+<li>string wp_password</li>
+<li>int wp_page_parent_id</li>
+<li>int wp_page_order</li>
+<li>string wp_author_id</li>
+<li>string title</li>
+<li>string description (content of post)</li>
+<li>string mt_excerpt</li>
+<li>string mt_text_more</li>
+<li>int mt_allow_comments (0 = closed, 1 = open)</li>
+<li>int mt_allow_pings (0 = closed, 1 = open)</li>
+<li>datetime dateCreated</li>
+<li>array custom_fields
+<ul>
+<li>struct</li>
+<li>Same struct data as custom_fields in <a href="/XML-RPC_wp#Return_Values" title="XML-RPC wp">wp.getPage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>bool publish</li>
+</ul>
+<h3 id="return-values-19">Return Values</h3>
+<ul>
+<li>int page_id</li>
+</ul>
+<h2 id="wpdeletepage">wp.deletePage</h2>
+<p>Removes a page from the blog.</p>
+<h3 id="parameters-20">Parameters</h3>
+<ul>
+<li>int blog_id</li>
+<li>string username</li>
+<li>string password</li>
+<li>int page_id</li>
+</ul>
+<h3 id="return-values-20">Return Values</h3>
+<ul>
+<li>bool true</li>
+</ul>
+<h2 id="wpeditpage">wp.editPage</h2>
+<p>Make changes to a blog page.</p>
+<h3 id="parameters-21">Parameters</h3>
+<ul>
+<li>int blog_id</li>
+<li>int page_id</li>
+<li>string username</li>
+<li>string password</li>
+<li>struct content
+<ul>
+<li>Same struct data as <a href="/XML-RPC_wp#Parameters_3" title="XML-RPC wp">newPage</a></li>
+</ul>
+</li>
+<li>bool publish</li>
+</ul>
+<h3 id="return-values-21">Return Values</h3>
+<ul>
+<li>bool true</li>
+</ul>
+<h2 id="wpgetcategories">wp.getCategories</h2>
+<p>Get an array of available categories on a blog.</p>
+<h3 id="parameters-22">Parameters</h3>
+<ul>
+<li>int blog_id</li>
+<li>string username</li>
+<li>string password</li>
+</ul>
+<h3 id="return-values-22">Return Values</h3>
+<ul>
+<li>array
+<ul>
+<li>struct
+<ul>
+<li>int categoryId</li>
+<li>int parentId</li>
+<li>string description</li>
+<li>string categoryName</li>
+<li>string htmlUrl</li>
+<li>string rssUrl</li>
+</ul>
+</li>
+<li>&hellip;</li>
+</ul>
+</li>
+</ul>
+<h2 id="wpnewcategory">wp.newCategory</h2>
+<p>Create a new category.</p>
+<h3 id="parameters-23">Parameters</h3>
+<ul>
+<li>int blog_id</li>
+<li>string username</li>
+<li>string password</li>
+<li>struct
+<ul>
+<li>string name</li>
+<li>string slug</li>
+<li>int parent_id</li>
+<li>string description</li>
+</ul>
+</li>
+</ul>
+<h3 id="return-values-23">Return Values</h3>
+<ul>
+<li>int category_id</li>
+</ul>
+<h2 id="wpdeletecategory">wp.deleteCategory</h2>
+<p>Delete a category.</p>
+<h3 id="parameters-24">Parameters</h3>
+<ul>
+<li>int blog_id</li>
+<li>string username</li>
+<li>string password</li>
+<li>int category_id</li>
+</ul>
+<h3 id="return-values-24">Return Values</h3>
+<ul>
+<li>boolean</li>
+</ul>
+<p>True on success, false on failure.</p>
+<h2 id="wpsuggestcategories">wp.suggestCategories</h2>
+<p>Get an array of categories that start with a given string.</p>
+<h3 id="parameters-25">Parameters</h3>
+<ul>
+<li>int blog_id</li>
+<li>string username</li>
+<li>string password</li>
+<li>string category</li>
+<li>int max_results</li>
+</ul>
+<h3 id="return-values-25">Return Values</h3>
+<ul>
+<li>array
+<ul>
+<li>struct
+<ul>
+<li>int category_id</li>
+<li>string category_name</li>
+</ul>
+</li>
+<li>&hellip;</li>
+</ul>
+</li>
+</ul>
+<h2 id="wpuploadfile">wp.uploadFile</h2>
+<p>Upload a file.</p>
+<h3 id="parameters-26">Parameters</h3>
+<ul>
+<li>int blog_id</li>
+<li>string username</li>
+<li>string password</li>
+<li>struct data
+<ul>
+<li>string name</li>
+<li>string type</li>
+<li>base64 bits</li>
+<li>bool overwrite</li>
+</ul>
+</li>
+</ul>
+<h3 id="return-values-26">Return Values</h3>
+<ul>
+<li>struct
+<ul>
+<li>string id (Added in WordPress 3.4)</li>
+<li>string file</li>
+<li>string url</li>
+<li>string type</li>
+</ul>
+</li>
+</ul>
+<h2 id="wpgetmedialibrary">wp.getMediaLibrary</h2>
+<p>This call get a list of items in the user&rsquo;s Media Library with IDs, titles, descriptions, remote links, and any other relevant metadata. A filter parameter could be provided that would allow the caller to filter based on content type, file size, or other properties.</p>
+<h3 id="parameters-27">Parameters</h3>
+<ul>
+<li>int blog_id</li>
+<li>string username</li>
+<li>string password</li>
+<li>struct filter (optional)
+<ul>
+<li>int number</li>
+<li>int offset</li>
+<li>int parent_id</li>
+<li>string mime_type (e.g., &lsquo;image/jpeg&rsquo;, &lsquo;application/pdf&rsquo;)</li>
+</ul>
+</li>
+</ul>
+<h3 id="return-values-27">Return Values</h3>
+<ul>
+<li>array
+<ul>
+<li>struct Same as wp.getMediaItem</li>
+</ul>
+</li>
+</ul>
+<h2 id="wpgetmediaitem">wp.getMediaItem</h2>
+<p>This call would get a specific item in the user&rsquo;s Media Library by providing an ID. The call would return the item&rsquo;s ID, title, description, remote link, and any other available metadata.</p>
+<h3 id="parameters-28">Parameters</h3>
+<ul>
+<li>int blog_id</li>
+<li>string username</li>
+<li>string password</li>
+<li>int attachment_id</li>
+</ul>
+<h3 id="return-values-28">Return Values</h3>
+<ul>
+<li>struct
+<ul>
+<li>date_created_gmt</li>
+<li>parent</li>
+<li>link</li>
+<li>thumbnail</li>
+<li>title</li>
+<li>caption</li>
+<li>description</li>
+<li>metadata</li>
+</ul>
+</li>
+</ul>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/web/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">web</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="/" >
+    &copy; 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>
