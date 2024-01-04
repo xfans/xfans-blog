@@ -16,13 +16,13 @@ Flutter 实现的拼图游戏 Real Puzzle
 
 ## 截图
 
-![image](http://img.xfans.me/xfans/image/20231010175640.jpg)
-
+![image](https://apixfans.oss-cn-zhangjiakou.aliyuncs.com/image/real-puzzle01.png)
+![image](https://apixfans.oss-cn-zhangjiakou.aliyuncs.com/image/real-puzzle04.png)
 
 ##实现原理
 
 TOTO
 
 ## 地址
-使用Flutter编译的网页版地址:
-http://api.xfans.me/flutter/#/
+源码地址:
+https://github.com/xfans/flutter_jigsaw_puzzle
