@@ -1,5 +1,5 @@
 ---
-title: "Flutter实现拼图游戏"
+title: "Flutter实现拼图游戏 jigsaw puzzle game"
 description: ""
 date: "2023-10-10T17:50:12+08:00"
 thumbnail: ""
@@ -24,7 +24,7 @@ Flutter 实现的拼图游戏 Real Puzzle
 TOTO
 
 ## 地址
-演示地址:
+演示地址
 https://jigsaw.xfans.me/
 源码地址:
 https://github.com/xfans/flutter_jigsaw_puzzle
