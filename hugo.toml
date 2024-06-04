@@ -25,3 +25,13 @@ theme = 'mainroad'
   #image = "img/placeholder.png" # Logo image. Path relative to "static"
   title = "Xfans" # Logo title, otherwise will use site title
   subtitle = "Xfans blog" # Logo subtitle
+
+[Params.thumbnail]
+  visibility = ["list", "post"] # Control thumbnail visibility
+
+[Params.sidebar]
+  home = "right" # Configure layout for home page
+  list = "left"  # Configure layout for list pages
+  single = false # Configure layout for single pages
+  # Enable widgets in given order
+  widgets = ["search", "recent", "categories"]
