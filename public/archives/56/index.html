@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    
-    <title>Linux下安装网络环境模拟工具augmented-traffic-control | </title>
-    <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="augmented-traffic-control A tool to simulate network conditions,Facebook提供的一款网络环境模拟工具，可以使用他来测试App在各种网络环境下的问题。
+<html class="no-js" lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Linux下安装网络环境模拟工具augmented-traffic-control - </title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+		<meta property="og:url" content="//localhost:1313/archives/56/">
+  <meta property="og:title" content="Linux下安装网络环境模拟工具augmented-traffic-control">
+  <meta property="og:description" content="augmented-traffic-control A tool to simulate network conditions,Facebook提供的一款网络环境模拟工具，可以使用他来测试App在各种网络环境下的问题。
 安装环境要求 Python2.7、Django1.10.&#43;
 以下在Manjora下的安装命令
 切换Python环境到Python2.7 安装pip sudo pacman -S python2-pip
@@ -23,30 +26,18 @@ cd atcui
 导入默认配置 下载该路径下的文件https://github.com/facebook/augmented-traffic-control/tree/master/utils 运行导入命令 ./restore-profiles.sh localhost:8000
 手机使用ATC 使用Android、iOS 的浏览器访问
 ip:8000 ip为你电脑的ip">
-    <meta name="generator" content="Hugo 0.117.0">
-    
-    
-    
-    
-      <meta name="robots" content="noindex, nofollow">
-    
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2017-11-23T12:10:48+00:00">
+    <meta property="article:modified_time" content="2017-11-23T12:10:48+00:00">
+    <meta property="article:tag" content="Android">
+    <meta property="article:tag" content="Linux">
+    <meta property="article:tag" content="网络环境">
 
-    
-<link rel="stylesheet" href="/ananke/css/main.min.css" >
-
-
-
-    
-    
-    
-      
-
-    
-
-    
-    
-    <meta property="og:title" content="Linux下安装网络环境模拟工具augmented-traffic-control" />
-<meta property="og:description" content="augmented-traffic-control A tool to simulate network conditions,Facebook提供的一款网络环境模拟工具，可以使用他来测试App在各种网络环境下的问题。
+		
+  <meta itemprop="name" content="Linux下安装网络环境模拟工具augmented-traffic-control">
+  <meta itemprop="description" content="augmented-traffic-control A tool to simulate network conditions,Facebook提供的一款网络环境模拟工具，可以使用他来测试App在各种网络环境下的问题。
 安装环境要求 Python2.7、Django1.10.&#43;
 以下在Manjora下的安装命令
 切换Python环境到Python2.7 安装pip sudo pacman -S python2-pip
@@ -62,127 +53,65 @@ cd atcui
 启动ATCUI python manage.py runserver 0.0.0.0:8000
 导入默认配置 下载该路径下的文件https://github.com/facebook/augmented-traffic-control/tree/master/utils 运行导入命令 ./restore-profiles.sh localhost:8000
 手机使用ATC 使用Android、iOS 的浏览器访问
-ip:8000 ip为你电脑的ip" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="/archives/56/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2017-11-23T12:10:48+00:00" />
-<meta property="article:modified_time" content="2017-11-23T12:10:48+00:00" />
-<meta itemprop="name" content="Linux下安装网络环境模拟工具augmented-traffic-control">
-<meta itemprop="description" content="augmented-traffic-control A tool to simulate network conditions,Facebook提供的一款网络环境模拟工具，可以使用他来测试App在各种网络环境下的问题。
-安装环境要求 Python2.7、Django1.10.&#43;
-以下在Manjora下的安装命令
-切换Python环境到Python2.7 安装pip sudo pacman -S python2-pip
-安装Django1.10.&#43; sudo pip install Django==1.10.8
-安装ATC 安装lib sudo pacman -S pip install atc_thrift atcd django-atc-api django-atc-demo-ui django-atc-profile-storage
-Django配置 django-admin startproject atcui
-cd atcui
-修改atcui/settings.py中的INSTALLED_APPS 修改atcui/urls.py中的urlpatterns及引用 更新数据库 python manage.py migrate
-创建虚拟Ap Linux开启虚拟AP
-启动ATC sudo atcd --atcd-wan wlp3s0 --atcd-lan ap0
-注意：wlp3s0是我的无线网卡，ap0是我创建的虚拟ap网卡
-设置错误可能出现：https://github.com/facebook/augmented-traffic-control/issues/239
-启动ATCUI python manage.py runserver 0.0.0.0:8000
-导入默认配置 下载该路径下的文件https://github.com/facebook/augmented-traffic-control/tree/master/utils 运行导入命令 ./restore-profiles.sh localhost:8000
-手机使用ATC 使用Android、iOS 的浏览器访问
-ip:8000 ip为你电脑的ip"><meta itemprop="datePublished" content="2017-11-23T12:10:48+00:00" />
-<meta itemprop="dateModified" content="2017-11-23T12:10:48+00:00" />
-<meta itemprop="wordCount" content="76">
-<meta itemprop="keywords" content="android,linux,网络环境," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Linux下安装网络环境模拟工具augmented-traffic-control"/>
-<meta name="twitter:description" content="augmented-traffic-control A tool to simulate network conditions,Facebook提供的一款网络环境模拟工具，可以使用他来测试App在各种网络环境下的问题。
-安装环境要求 Python2.7、Django1.10.&#43;
-以下在Manjora下的安装命令
-切换Python环境到Python2.7 安装pip sudo pacman -S python2-pip
-安装Django1.10.&#43; sudo pip install Django==1.10.8
-安装ATC 安装lib sudo pacman -S pip install atc_thrift atcd django-atc-api django-atc-demo-ui django-atc-profile-storage
-Django配置 django-admin startproject atcui
-cd atcui
-修改atcui/settings.py中的INSTALLED_APPS 修改atcui/urls.py中的urlpatterns及引用 更新数据库 python manage.py migrate
-创建虚拟Ap Linux开启虚拟AP
-启动ATC sudo atcd --atcd-wan wlp3s0 --atcd-lan ap0
-注意：wlp3s0是我的无线网卡，ap0是我创建的虚拟ap网卡
-设置错误可能出现：https://github.com/facebook/augmented-traffic-control/issues/239
-启动ATCUI python manage.py runserver 0.0.0.0:8000
-导入默认配置 下载该路径下的文件https://github.com/facebook/augmented-traffic-control/tree/master/utils 运行导入命令 ./restore-profiles.sh localhost:8000
-手机使用ATC 使用Android、iOS 的浏览器访问
-ip:8000 ip为你电脑的ip"/>
+ip:8000 ip为你电脑的ip">
+  <meta itemprop="datePublished" content="2017-11-23T12:10:48+00:00">
+  <meta itemprop="dateModified" content="2017-11-23T12:10:48+00:00">
+  <meta itemprop="wordCount" content="76">
+  <meta itemprop="keywords" content="Android,Linux,网络环境">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 
-	
-  </head>
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/custom.css">
 
-  <body class="ma0 avenir bg-near-white">
+	<link rel="shortcut icon" href="/favicon.ico">
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6775869677320164"
+     crossorigin="anonymous"></script>
 
-    
-   
-  
-
-  <header>
-    <div class="bg-black">
-      <nav class="pv3 ph3 ph4-ns" role="navigation">
-  <div class="flex-l justify-between items-center center">
-    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
-      
-        
-      
-    </a>
-    <div class="flex-l items-center">
-      
-
-      
-      
-<div class="ananke-socials">
-  
-</div>
-
-    </div>
-  </div>
-</nav>
-
-    </div>
-  </header>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-06FZDMBD56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-06FZDMBD56');
+</script>
 
 
-
-    <main class="pb7" role="main">
-      
-  
-  <article class="flex-l flex-wrap justify-between mw8 center ph3">
-    <header class="mt4 w-100">
-      <aside class="instapaper_ignoref b helvetica tracked">
-          
-        POSTS
-      </aside>
-      
-
-
-
-
-
-
-
-
-
-
-  <div id="sharing" class="mt3 ananke-socials">
-    
-  </div>
-
-
-      <h1 class="f1 athelas mt3 mb1">Linux下安装网络环境模拟工具augmented-traffic-control</h1>
-      
-      <p class="tracked">
-        By <strong>xfans</strong>
-      </p>
-      
-      
-      
-      <time class="f6 mv4 dib tracked" datetime="2017-11-23T12:10:48Z">November 23, 2017</time>
-      
-
-      
-      
-    </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h2 id="augmented-traffic-control">augmented-traffic-control</h2>
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="Xfans" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">Xfans</div>
+					<div class="logo__tagline">Xfans blog</div>
+				</div>
+		</a>
+	</div>
+		<div class="divider"></div>
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Linux下安装网络环境模拟工具augmented-traffic-control</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2017-11-23T12:10:48Z">2017-11-23</time>
+	<time class="meta__text" datetime="2017-11-23T12:10:48Z">(Last Modified: 2017-11-23)</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/linux/" rel="category">Linux</a>
+	</span>
+</div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<h2 id="augmented-traffic-control">augmented-traffic-control</h2>
 <p>A tool to simulate network conditions,Facebook提供的一款网络环境模拟工具，可以使用他来测试App在各种网络环境下的问题。</p>
 <h2 id="安装环境要求">安装环境要求</h2>
 <p>Python2.7、Django1.10.+<br>
@@ -226,84 +155,70 @@ ip:8000 ip为你电脑的ip"/>
 <p>点击Profiles中相应的Select选择不同环境，然后点击上边的Update Shaping更新设置。</p>
 <h3 id="相关链接">相关链接</h3>
 <p><a href="https://github.com/facebook/augmented-traffic-control">https://github.com/facebook/augmented-traffic-control</a></p>
-<ul class="pa0">
-  
-   <li class="list di">
-     <a href="/tags/android/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">android</a>
-   </li>
-  
-   <li class="list di">
-     <a href="/tags/linux/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">linux</a>
-   </li>
-  
-   <li class="list di">
-     <a href="/tags/%E7%BD%91%E7%BB%9C%E7%8E%AF%E5%A2%83/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">网络环境</a>
-   </li>
-  
-</ul>
-<div class="mt6 instapaper_ignoref">
-      
-      
-      </div>
-    </div>
 
-    <aside class="w-30-l mt6-l">
-
-
-
-
-  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
-    <p class="f5 b mb3">Related</p>
-    <ul class="pa0 list">
-	   
-	     <li  class="mb2">
-          <a href="/archives/42/">Linux开启虚拟AP</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/archives/18/">Typecho-Android客户端开发</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/archives/16/">Linux Manjaro安装kernel及Kernel Headers</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/archives/12/">设置Python版本</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/archives/10/">Linux更新grub启动项</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/archives/8/">Using AndroidSVG with ImageView</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/archives/6/">Manjaro使用bbswitch关闭笔记本的nvidia独立显卡</a>
-        </li>
-	    
-    </ul>
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/android/" rel="tag">android</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/linux/" rel="tag">linux</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/%E7%BD%91%E7%BB%9C%E7%8E%AF%E5%A2%83/" rel="tag">网络环境</a>
+		</li>
+	</ul>
 </div>
+		</footer>
+	</article>
+</main>
 
-</aside>
 
-  </article>
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/archives/53/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">TransactionTooLargeException 的原因</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/archives/63/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">在Okhttp中使用HTTPDNS</p>
+		</a>
+	</div>
+</nav>
 
-    </main>
-    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
-  <div class="flex justify-between">
-  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="/" >
-    &copy; 
-  </a>
-    <div>
-<div class="ananke-socials">
-  
-</div>
-</div>
-  </div>
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2024 Xfans 鲁ICP备17044099号-1.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "https://hm.baidu.com/hm.js?f1cbbf299f9c90f308e8dc562ed839ee";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+		</script>
+		
 </footer>
-
-  </body>
+	</div>
+<script async defer src="/js/menu.js"></script>
+<script src="/js/ads.js"></script><script src="/js/analytics.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
+</body>
 </html>

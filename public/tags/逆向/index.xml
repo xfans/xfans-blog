@@ -2,34 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>逆向 on </title>
-    <link>/tags/%E9%80%86%E5%90%91/</link>
+    <link>//localhost:1313/tags/%E9%80%86%E5%90%91/</link>
     <description>Recent content in 逆向 on </description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 28 Nov 2019 13:03:10 +0000</lastBuildDate><atom:link href="/tags/%E9%80%86%E5%90%91/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 28 Nov 2019 13:03:10 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/%E9%80%86%E5%90%91/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>某微信群控工具逆向记录</title>
-      <link>/archives/208/</link>
+      <link>//localhost:1313/archives/208/</link>
       <pubDate>Thu, 28 Nov 2019 13:03:10 +0000</pubDate>
-      
-      <guid>/archives/208/</guid>
-      <description>说明 某微信群控软件,软件使用PC控制手机端实现对微信的群控,有PC端控制软件及android端控制软件,android端使用xposed实现对微信的控制.
-逆向思路 逆向的目标是跨过PC端,使用自己的系统实现对android端的控制.因此要破解的是PC端与android端的通信协议.
-逆向过程 1.熟悉软件 首先熟悉软件的功能,使用方法,常见的提示等,方便在后续逆向时能更好的理解代码.
-2.分析逆向代码 使用jadx查看逆向出的伪java代码,通过分析代码最终找到pc端与android端是通过socket进行通信的.socket报文解析代码如下:
-根据代码可以看出报文格式:
-前4个字节为报文长度,最后一个字节为结束标示,中间为消息内容,消息内容是protobuff格式.
-3.编写测试代码,逆向protobuff 根据逆向得到的消息格式尝试编写控制端,为了方便直接使用mina库实现socket.报文的编码解码很简单,复杂的是消息内容protobuff文件的逆向.
-protobuff是google推出的数据格式化协议,之前没有用过pb但使用过facebook的thrift,原理上大体一致.
-根据proto与java类型的对应关系,可以使用java的逆向文件反推出proto文件,然后再使用proto文件就可以生成java文件.反推比较复杂点就是注意required/optional/repeated限定符的使用.
-生成protobuff的java类后就可以编写mina编写socket的编解码类了.Decode方法如下:
-encode方法同理就不再贴了.
-测试socket通信 要进行通信测试,首先要知道传递的参数有哪些.获取参数最简单的方法就是在protobuff解析的地方打印出log.
-先使用baksmali\apktool反编译出smali代码,然后找到相应的地方插入log.然后正常操作群控工具拿到相应的log即可.具体操作步骤就不详细写了.
-后续根据log中的信息,构造出protobuff对象即可与群控app正常通信.
-相关链接 JADXhttps://github.com/skylot/jadx
-Linux下的逆向工具集https://github.com/APK-Multi-Tool/APK-Multi-Tool-Linux</description>
+      <guid>//localhost:1313/archives/208/</guid>
+      <description>说明 某微信群控软件,软件使用PC控制手机端实现对微信的群控,有PC端控制软件及android端控制软件,android端使用xposed实现对微信的控制.&#xA;逆向思路 逆向的目标是跨过PC端,使用自己的系统实现对android端的控制.因此要破解的是PC端与android端的通信协议.&#xA;逆向过程 1.熟悉软件 首先熟悉软件的功能,使用方法,常见的提示等,方便在后续逆向时能更好的理解代码.&#xA;2.分析逆向代码 使用jadx查看逆向出的伪java代码,通过分析代码最终找到pc端与android端是通过socket进行通信的.socket报文解析代码如下:&#xA;根据代码可以看出报文格式:&#xA;前4个字节为报文长度,最后一个字节为结束标示,中间为消息内容,消息内容是protobuff格式.&#xA;3.编写测试代码,逆向protobuff 根据逆向得到的消息格式尝试编写控制端,为了方便直接使用mina库实现socket.报文的编码解码很简单,复杂的是消息内容protobuff文件的逆向.&#xA;protobuff是google推出的数据格式化协议,之前没有用过pb但使用过facebook的thrift,原理上大体一致.&#xA;根据proto与java类型的对应关系,可以使用java的逆向文件反推出proto文件,然后再使用proto文件就可以生成java文件.反推比较复杂点就是注意required/optional/repeated限定符的使用.&#xA;生成protobuff的java类后就可以编写mina编写socket的编解码类了.Decode方法如下:&#xA;encode方法同理就不再贴了.&#xA;测试socket通信 要进行通信测试,首先要知道传递的参数有哪些.获取参数最简单的方法就是在protobuff解析的地方打印出log.&#xA;先使用baksmali\apktool反编译出smali代码,然后找到相应的地方插入log.然后正常操作群控工具拿到相应的log即可.具体操作步骤就不详细写了.&#xA;后续根据log中的信息,构造出protobuff对象即可与群控app正常通信.&#xA;相关链接 JADXhttps://github.com/skylot/jadx&#xA;Linux下的逆向工具集https://github.com/APK-Multi-Tool/APK-Multi-Tool-Linux</description>
     </item>
-    
   </channel>
 </rss>

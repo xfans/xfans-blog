@@ -2,92 +2,46 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Flutter on </title>
-    <link>/categories/flutter/</link>
+    <link>//localhost:1313/categories/flutter/</link>
     <description>Recent content in Flutter on </description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 09 Dec 2021 02:29:49 +0000</lastBuildDate><atom:link href="/categories/flutter/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 10 Oct 2023 17:50:12 +0800</lastBuildDate>
+    <atom:link href="//localhost:1313/categories/flutter/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Flutter Page curl effect like epub reader</title>
+      <link>//localhost:1313/post/flutter-page-curl-effect-like-epub-reader/</link>
+      <pubDate>Tue, 10 Oct 2023 17:50:12 +0800</pubDate>
+      <guid>//localhost:1313/post/flutter-page-curl-effect-like-epub-reader/</guid>
+      <description>Overview Flutter Page curl effect like epub reader&#xA;如果要在阅读器的翻书效果，一般都是在一个容器上边覆盖一个实现翻页动画的view，当监听到左右滑动的手势的时候显示出来实现翻页动画的view，翻页动画结束后改变底层容器的内容，来实现翻页。&#xA;Preview &amp;quot;&amp;gt;&#xA;How To 1.首先要写一个翻页的动画或者找一个已经实现了的算法。 为了方便实现，找到了一个Flutter实现的效果：https://github.com/Rahiche/riveo_page_curl。这个库是基于Flutter的shader实现的，性能更好。实现可以参考这个库的ProjectCard类。&#xA;核心代码如下： &amp;lt;pre&amp;gt;&amp;lt;code class=&amp;quot;language-dart&amp;quot;&amp;gt; ShaderBuilder( (context, shader, _) { return AnimatedSampler( (image, size, canvas) async { // print(&amp;ldquo;AnimatedSampler&amp;rdquo;); if (backImage != null) { ShaderHelper.drawShaderRectBack(backImage!, size, canvas); } if (curlImage != null) { ShaderHelper.configureShader( shader, size, curlImage!, _animation.value); ShaderHelper.drawShaderRect(shader, size, canvas); } }, enabled: true, child: Container( width: double.infinity, height: double.infinity, ), ); }, assetKey: shaderAssetKey, ) TOTO</description>
+    </item>
     <item>
       <title>Flutter2.5适配ThemeData</title>
-      <link>/archives/392/</link>
+      <link>//localhost:1313/archives/392/</link>
       <pubDate>Thu, 09 Dec 2021 02:29:49 +0000</pubDate>
-      
-      <guid>/archives/392/</guid>
-      <description>说明 Flutter 2.5 版本中的破坏性改动
-默认的设备拖动和滚动 v2.2 版后删除了废弃的 API Package 介绍: flutter_lints ThemeData 的 accent 属性已被弃用 手势识别器清理 将 AnimationSheetBuilder.display 替换为 collate 使用 HTML 插槽在 Web 中渲染平台视图 将 LogicalKeySet 迁移至 SingleActivator 项目使用Flutter2.5编译后，部分页面的颜色发生了变化。
-需要对ThemeData 的 accent 属性进行适配。
-改动 主题信息 ThemeData 中的 accentColor、accentColorBrightness、accentIconTheme 和 accentTextTheme 属性现已被弃用。
-Material 设计规范 不再为 Material 组件指定或使用「强调」色。组件的默认颜色来自整个主题的 颜色方案。现在通常使用 ColorScheme 的 secondary color 代替 accentColor，并且在需要对比色时使用 onSecondary 属性。
-适配 适配前：
-适配后：
-使用时：
-改为：
-相关链接 https://flutter.cn/docs/release/breaking-changes/theme-data-accent-properties
-https://flutter.cn/posts/whats-new-in-flutter-2-5</description>
+      <guid>//localhost:1313/archives/392/</guid>
+      <description>说明 Flutter 2.5 版本中的破坏性改动&#xA;默认的设备拖动和滚动 v2.2 版后删除了废弃的 API Package 介绍: flutter_lints ThemeData 的 accent 属性已被弃用 手势识别器清理 将 AnimationSheetBuilder.display 替换为 collate 使用 HTML 插槽在 Web 中渲染平台视图 将 LogicalKeySet 迁移至 SingleActivator 项目使用Flutter2.5编译后，部分页面的颜色发生了变化。&#xA;需要对ThemeData 的 accent 属性进行适配。&#xA;改动 主题信息 ThemeData 中的 accentColor、accentColorBrightness、accentIconTheme 和 accentTextTheme 属性现已被弃用。&#xA;Material 设计规范 不再为 Material 组件指定或使用「强调」色。组件的默认颜色来自整个主题的 颜色方案。现在通常使用 ColorScheme 的 secondary color 代替 accentColor，并且在需要对比色时使用 onSecondary 属性。&#xA;适配 适配前：&#xA;适配后：&#xA;使用时：&#xA;改为：&#xA;相关链接 https://flutter.cn/docs/release/breaking-changes/theme-data-accent-properties&#xA;https://flutter.cn/posts/whats-new-in-flutter-2-5</description>
     </item>
-    
     <item>
       <title>Flutter cached_network_image使用Dio请求图片</title>
-      <link>/archives/365/</link>
+      <link>//localhost:1313/archives/365/</link>
       <pubDate>Fri, 25 Jun 2021 10:19:06 +0000</pubDate>
-      
-      <guid>/archives/365/</guid>
-      <description>背景 在Flutter中通常使用cached_network_image控件显示图片，该控件使用http库请求图片，http库无法像dio一样方便的添加拦截器等。
-实现 CachedNetworkImage使用flutter_cache_manager进行图片缓存，可以使用自定义cache_manager来替换http为dio。 如下：
-使用方法 然后就可以使用dio的拦截等功能了，比如使用拦截器添加并刷新token，添加log等功能。
-地址 https://pub.dev/packages/flutter_cache_manager_dio
-https://github.com/xfans/flutter_cache_manager_dio</description>
+      <guid>//localhost:1313/archives/365/</guid>
+      <description>背景 在Flutter中通常使用cached_network_image控件显示图片，该控件使用http库请求图片，http库无法像dio一样方便的添加拦截器等。&#xA;实现 CachedNetworkImage使用flutter_cache_manager进行图片缓存，可以使用自定义cache_manager来替换http为dio。 如下：&#xA;使用方法 然后就可以使用dio的拦截等功能了，比如使用拦截器添加并刷新token，添加log等功能。&#xA;地址 https://pub.dev/packages/flutter_cache_manager_dio&#xA;https://github.com/xfans/flutter_cache_manager_dio</description>
     </item>
-    
     <item>
       <title>Flutter InheritedWidget源码解析</title>
-      <link>/archives/352/</link>
+      <link>//localhost:1313/archives/352/</link>
       <pubDate>Wed, 02 Sep 2020 12:05:34 +0000</pubDate>
-      
-      <guid>/archives/352/</guid>
-      <description>作用 InheritedWidget是一个在Widget树中，从上往下传递信息的小部件。
-主要从两个方面理解源码：
-1.子Widget可以获取到父控件中的InheritedWidget，从而获取到InheritedWidget的信息。
-2.子Widget调用dependOnInheritedWidgetOfExactType后，当父InheritedWidget重建后，会调用子控件重建。
-原理 1.子控件可以获取到父控件中的InheritedWidget 在Element中有个Map：
-其中保存了该Widget的父节点中的InheritedWidget。会在mount`activate`
-方法中赋值，赋值的代码如下：
-在Element中
-在InheritedElement中
-经过上面两个方法，Widget本身就可以通过_inheritedWidgets获取到InheritedElement了
-2.子Widget调用dependOnInheritedWidgetOfExactType后，当父InheritedWidget重建后，会调用子控件重建 在InheritedElement中有个Map：
-当子Widget调用dependOnInheritedWidgetOfExactType方法时，会依次调用dependOnInheritedElement方法，InheritedElement的updateDependencies方法，setDependencies方法。将自己注册到父InheritedElement的_dependents中。
-当InheritedElement重建时会调用updated方法，然后会调用到notifyClients方法，最终调用Widget didChangeDependencies方法并重建子Widget。
-由上边的代码可以看出，只有当子Widget调用了dependOnInheritedWidgetOfExactType才会收到InheritedWidget的重建通知。</description>
+      <guid>//localhost:1313/archives/352/</guid>
+      <description>作用 InheritedWidget是一个在Widget树中，从上往下传递信息的小部件。&#xA;主要从两个方面理解源码：&#xA;1.子Widget可以获取到父控件中的InheritedWidget，从而获取到InheritedWidget的信息。&#xA;2.子Widget调用dependOnInheritedWidgetOfExactType后，当父InheritedWidget重建后，会调用子控件重建。&#xA;原理 1.子控件可以获取到父控件中的InheritedWidget 在Element中有个Map：&#xA;其中保存了该Widget的父节点中的InheritedWidget。会在mount`activate`&#xA;方法中赋值，赋值的代码如下：&#xA;在Element中&#xA;在InheritedElement中&#xA;经过上面两个方法，Widget本身就可以通过_inheritedWidgets获取到InheritedElement了&#xA;2.子Widget调用dependOnInheritedWidgetOfExactType后，当父InheritedWidget重建后，会调用子控件重建 在InheritedElement中有个Map：&#xA;当子Widget调用dependOnInheritedWidgetOfExactType方法时，会依次调用dependOnInheritedElement方法，InheritedElement的updateDependencies方法，setDependencies方法。将自己注册到父InheritedElement的_dependents中。&#xA;当InheritedElement重建时会调用updated方法，然后会调用到notifyClients方法，最终调用Widget didChangeDependencies方法并重建子Widget。&#xA;由上边的代码可以看出，只有当子Widget调用了dependOnInheritedWidgetOfExactType才会收到InheritedWidget的重建通知。</description>
     </item>
-    
     <item>
       <title>Flutter常见问题整理</title>
-      <link>/archives/309/</link>
+      <link>//localhost:1313/archives/309/</link>
       <pubDate>Thu, 19 Mar 2020 06:46:00 +0000</pubDate>
-      
-      <guid>/archives/309/</guid>
-      <description>问题 问题1 问题:Flutter中Column嵌套Listview报overflowed错误.
-解决:使用Column+Expanded+Listview布局界面.
-问题2 问题:数组json转换成List
-解决:
-问题3 问题:界面中请求网络的时机
-解决:使用&amp;lt;a href=&amp;quot;https://api.flutter-io.cn/flutter/widgets/FutureBuilder-class.html&amp;quot;&amp;gt;FutureBuilder&amp;lt;/a&amp;gt;
-问题4 问题:material-design icon有哪些
-解决:https://material.io/resources/icons/?icon=account_balance&amp;amp;style=baseline
-问题5 问题:抽出appbar 时can&amp;rsquo;t be assigned to the parameter type &amp;lsquo;PreferredSizeWidget&amp;rsquo;
-解决:
-问题6 问题:flutter加载中文乱码
-解决:
-问题7 问题:flutter 写文件报 OS Error: Read-only file system
-解决:使用path_provider插件获取目录
-问题8 问题:设置android中的match_parent
-解决:width: double.infinity
-问题9 问题:AppBar中的leading设置大小无效
-解决:被ConstrainedBox限制了大小,使用UnconstrainedBox嵌套一层即可
-问题10 问题:使用bottomNavigationBar切换page时重新调用initState
-解决:使用PageView包裹body,子page with AutomaticKeepAliveClientMixin,重写bool get wantKeepAlive =&amp;gt; true</description>
+      <guid>//localhost:1313/archives/309/</guid>
+      <description>问题 问题1 问题:Flutter中Column嵌套Listview报overflowed错误.&#xA;解决:使用Column+Expanded+Listview布局界面.&#xA;问题2 问题:数组json转换成List&#xA;解决:&#xA;问题3 问题:界面中请求网络的时机&#xA;解决:使用&amp;lt;a href=&amp;quot;https://api.flutter-io.cn/flutter/widgets/FutureBuilder-class.html&amp;quot;&amp;gt;FutureBuilder&amp;lt;/a&amp;gt;&#xA;问题4 问题:material-design icon有哪些&#xA;解决:https://material.io/resources/icons/?icon=account_balance&amp;amp;style=baseline&#xA;问题5 问题:抽出appbar 时can&amp;rsquo;t be assigned to the parameter type &amp;lsquo;PreferredSizeWidget&amp;rsquo;&#xA;解决:&#xA;问题6 问题:flutter加载中文乱码&#xA;解决:&#xA;问题7 问题:flutter 写文件报 OS Error: Read-only file system&#xA;解决:使用path_provider插件获取目录&#xA;问题8 问题:设置android中的match_parent&#xA;解决:width: double.infinity&#xA;问题9 问题:AppBar中的leading设置大小无效&#xA;解决:被ConstrainedBox限制了大小,使用UnconstrainedBox嵌套一层即可&#xA;问题10 问题:使用bottomNavigationBar切换page时重新调用initState&#xA;解决:使用PageView包裹body,子page with AutomaticKeepAliveClientMixin,重写bool get wantKeepAlive =&amp;gt; true</description>
     </item>
-    
   </channel>
 </rss>

@@ -2,75 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Manjaro on </title>
-    <link>/tags/manjaro/</link>
+    <link>//localhost:1313/tags/manjaro/</link>
     <description>Recent content in Manjaro on </description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 27 Aug 2019 08:14:43 +0000</lastBuildDate><atom:link href="/tags/manjaro/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 27 Aug 2019 08:14:43 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/manjaro/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Manjaro更新后，中文显示方框</title>
-      <link>/archives/174/</link>
+      <link>//localhost:1313/archives/174/</link>
       <pubDate>Tue, 27 Aug 2019 08:14:43 +0000</pubDate>
-      
-      <guid>/archives/174/</guid>
-      <description>问题 使用Manjaro工作大约两年了，习惯性的sudo pacman -Syyu，前一段时间更新完后，很多地方的中文字体都变成了方框。
-解决方法 安装字体
-重启后就好了</description>
+      <guid>//localhost:1313/archives/174/</guid>
+      <description>问题 使用Manjaro工作大约两年了，习惯性的sudo pacman -Syyu，前一段时间更新完后，很多地方的中文字体都变成了方框。&#xA;解决方法 安装字体&#xA;重启后就好了</description>
     </item>
-    
     <item>
       <title>Manjaro使用deepin-wine-wechat微信无法输入中文</title>
-      <link>/archives/264/</link>
+      <link>//localhost:1313/archives/264/</link>
       <pubDate>Tue, 13 Aug 2019 03:29:00 +0000</pubDate>
-      
-      <guid>/archives/264/</guid>
-      <description>说明 把manjaro滚到最新版本后deepin-wine-wechat微信无法输入中文
-解决方法 deepin-wine-wechat的github上给出了兼容列表
-&amp;lt;th&amp;gt; wine版本 &amp;lt;/th&amp;gt; &amp;lt;th&amp;gt; 兼容性 &amp;lt;/th&amp;gt; &amp;lt;th&amp;gt; 备注 &amp;lt;/th&amp;gt; &amp;lt;th&amp;gt; deepin-wine版本 &amp;lt;/th&amp;gt; &amp;lt;th&amp;gt; 兼容性 &amp;lt;/th&amp;gt; &amp;lt;th&amp;gt; 备注 &amp;lt;/th&amp;gt; &amp;lt;td&amp;gt; 4.18-1 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 部分 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 不能使用中文输入法 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 4.18-1 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 部分 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 不能使用中文输入法 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 2.18_18-2 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; ? &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 4.18-1 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 部分 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 不能使用中文输入法 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 2.18_18-2 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 不支持 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 闪退 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 4.</description>
+      <guid>//localhost:1313/archives/264/</guid>
+      <description>说明 把manjaro滚到最新版本后deepin-wine-wechat微信无法输入中文&#xA;解决方法 deepin-wine-wechat的github上给出了兼容列表&#xA;&amp;lt;th&amp;gt; wine版本 &amp;lt;/th&amp;gt; &amp;lt;th&amp;gt; 兼容性 &amp;lt;/th&amp;gt; &amp;lt;th&amp;gt; 备注 &amp;lt;/th&amp;gt; &amp;lt;th&amp;gt; deepin-wine版本 &amp;lt;/th&amp;gt; &amp;lt;th&amp;gt; 兼容性 &amp;lt;/th&amp;gt; &amp;lt;th&amp;gt; 备注 &amp;lt;/th&amp;gt; &amp;lt;td&amp;gt; 4.18-1 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 部分 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 不能使用中文输入法 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 4.18-1 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 部分 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 不能使用中文输入法 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 2.18_18-2 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; ? &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 4.18-1 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 部分 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 不能使用中文输入法 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 2.18_18-2 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 不支持 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 闪退 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 4.</description>
     </item>
-    
     <item>
       <title>Manjaro使用privoxy将socks转为http代理</title>
-      <link>/archives/163/</link>
+      <link>//localhost:1313/archives/163/</link>
       <pubDate>Fri, 08 Jun 2018 08:57:27 +0000</pubDate>
-      
-      <guid>/archives/163/</guid>
-      <description>安装 pacman -S privoxy
-配置 修改/etc/privoxy/config
-添加：
-forward-socks5 / 127.0.0.1:1080 . #ss的代理
-listen-address localhost:8118
-重启 systemctl restart privoxy
-PS 终端中使用代理 export http_proxy=http://127.0.0.1:8118
-export https_proxy=http://127.0.0.1:8118</description>
+      <guid>//localhost:1313/archives/163/</guid>
+      <description>安装 pacman -S privoxy&#xA;配置 修改/etc/privoxy/config&#xA;添加：&#xA;forward-socks5 / 127.0.0.1:1080 . #ss的代理&#xA;listen-address localhost:8118&#xA;重启 systemctl restart privoxy&#xA;PS 终端中使用代理 export http_proxy=http://127.0.0.1:8118&#xA;export https_proxy=http://127.0.0.1:8118</description>
     </item>
-    
     <item>
       <title>Manjaro Linux安装步骤</title>
-      <link>/archives/91/</link>
+      <link>//localhost:1313/archives/91/</link>
       <pubDate>Fri, 26 Jan 2018 12:11:37 +0000</pubDate>
-      
-      <guid>/archives/91/</guid>
-      <description>介绍 优点： 1.基于Arch，但不用折腾
-2.滚动更新，但比Arch慢，比Arch更稳定
-3.支持AUR仓库，软件非常多，比如deepin qq，sogou输入法等，一行命令就可以安装
-4.Wiki非常丰富
-缺点： 1.滚动更新，容易滚挂
-安装步骤 下载 https://mirrors.tuna.tsinghua.edu.cn/manjaro-cd/
-usb安装 df -h 查看你的u盘
-sudo umount /dev/sdb 卸载U盘
-dd if=xxx.iso of=/dev/sdb bs=1M 制作启动盘
-note: /dev/sdb为u盘
-添加国内源 编辑 vi /etc/pacman-mirrors.conf
-修改 OnlyCountry=China
-根据速度排序 pacman-mirrors -g
-添加Arch源 编辑 vi /etc/pacman.conf
-在末尾添加 同步 sudo pacman -Syy &amp;amp;&amp;amp; sudo pacman -S archlinuxcn-keyring
-安装zsh 执行 sudo pacman -S zsh
-sh -c &amp;quot;$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&amp;quot;
-chsh -s /bin/zsh
-安装输入法 sudo pacman -S fcitx-im # 全部安装</description>
+      <guid>//localhost:1313/archives/91/</guid>
+      <description>介绍 优点： 1.基于Arch，但不用折腾&#xA;2.滚动更新，但比Arch慢，比Arch更稳定&#xA;3.支持AUR仓库，软件非常多，比如deepin qq，sogou输入法等，一行命令就可以安装&#xA;4.Wiki非常丰富&#xA;缺点： 1.滚动更新，容易滚挂&#xA;安装步骤 下载 https://mirrors.tuna.tsinghua.edu.cn/manjaro-cd/&#xA;usb安装 df -h 查看你的u盘&#xA;sudo umount /dev/sdb 卸载U盘&#xA;dd if=xxx.iso of=/dev/sdb bs=1M 制作启动盘&#xA;note: /dev/sdb为u盘&#xA;添加国内源 编辑 vi /etc/pacman-mirrors.conf&#xA;修改 OnlyCountry=China&#xA;根据速度排序 pacman-mirrors -g&#xA;添加Arch源 编辑 vi /etc/pacman.conf&#xA;在末尾添加 同步 sudo pacman -Syy &amp;amp;&amp;amp; sudo pacman -S archlinuxcn-keyring&#xA;安装zsh 执行 sudo pacman -S zsh&#xA;sh -c &amp;quot;$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&amp;quot;&#xA;chsh -s /bin/zsh&#xA;安装输入法 sudo pacman -S fcitx-im # 全部安装</description>
     </item>
-    
   </channel>
 </rss>

@@ -2,20 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>支付宝 on </title>
-    <link>/tags/%E6%94%AF%E4%BB%98%E5%AE%9D/</link>
+    <link>//localhost:1313/tags/%E6%94%AF%E4%BB%98%E5%AE%9D/</link>
     <description>Recent content in 支付宝 on </description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 30 Mar 2018 15:45:08 +0000</lastBuildDate><atom:link href="/tags/%E6%94%AF%E4%BB%98%E5%AE%9D/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 30 Mar 2018 15:45:08 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/%E6%94%AF%E4%BB%98%E5%AE%9D/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>修复一个支付宝概率支付失败的问题</title>
-      <link>/archives/305/</link>
+      <link>//localhost:1313/archives/305/</link>
       <pubDate>Fri, 30 Mar 2018 15:45:08 +0000</pubDate>
-      
-      <guid>/archives/305/</guid>
-      <description>问题 App中一个遗留的bug,当用户使用支付宝进行支付时会概率出错.并且没有规律.
-原因 对比支付宝的的url,发现部分参数中多了+号,程序中对url进行了URLDecoder.&amp;lt;em&amp;gt;decode&amp;lt;/em&amp;gt;(url),导致空格变成了+号,从而导致支付宝报错.</description>
+      <guid>//localhost:1313/archives/305/</guid>
+      <description>问题 App中一个遗留的bug,当用户使用支付宝进行支付时会概率出错.并且没有规律.&#xA;原因 对比支付宝的的url,发现部分参数中多了+号,程序中对url进行了URLDecoder.&amp;lt;em&amp;gt;decode&amp;lt;/em&amp;gt;(url),导致空格变成了+号,从而导致支付宝报错.</description>
     </item>
-    
   </channel>
 </rss>

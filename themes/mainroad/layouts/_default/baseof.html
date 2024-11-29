@@ -40,7 +40,7 @@
 		{{- if hasPrefix .Site.GoogleAnalytics "G-" }}
 		{{ template "_internal/google_analytics.html" . }}
 		{{- else }}
-		{{ template "_internal/google_analytics_async.html" . }}
+		{{ template "_internal/google_analytics.html" . }}
 		{{- end }}
 	{{- end }}
 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6775869677320164"

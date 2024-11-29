@@ -2,33 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>自定义View on </title>
-    <link>/tags/%E8%87%AA%E5%AE%9A%E4%B9%89view/</link>
+    <link>//localhost:1313/tags/%E8%87%AA%E5%AE%9A%E4%B9%89view/</link>
     <description>Recent content in 自定义View on </description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 27 Aug 2019 12:22:09 +0000</lastBuildDate><atom:link href="/tags/%E8%87%AA%E5%AE%9A%E4%B9%89view/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 27 Aug 2019 12:22:09 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/%E8%87%AA%E5%AE%9A%E4%B9%89view/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Android录音、播放音乐，跳动效果动画自定义VIew</title>
-      <link>/archives/178/</link>
+      <link>//localhost:1313/archives/178/</link>
       <pubDate>Tue, 27 Aug 2019 12:22:09 +0000</pubDate>
-      
-      <guid>/archives/178/</guid>
-      <description>实现了Android录音，语音输入时的竖线波纹动画效果和音乐播放时的跳动效果
-效果 实现原理 实现了两种运动效果：
-1.从左到右移动 假设柱状图的高度是一个对列
-27,17,38,91,38,24,8,60,38,14,8
-8,27,17,38,91,38,24,8,60,38,14
-14,8,27,17,38,91,38,24,8,60,38
-从左到右移动实际上就是不断的将队列中的最后一个插入到队列的第一个。
-代码：
-2.上下跳动 假设柱状图是一个队列
-27,17,38,91,38,24,8,60,38,14,8
-上下跳动就是将队列的高度，从0%-100%变化
-代码：
-然后在onDraw绘制时高度*valueAnimatorOffset
-绘制 代码：
-地址 https://github.com/xfans/VoiceWaveView</description>
+      <guid>//localhost:1313/archives/178/</guid>
+      <description>实现了Android录音，语音输入时的竖线波纹动画效果和音乐播放时的跳动效果&#xA;效果 实现原理 实现了两种运动效果：&#xA;1.从左到右移动 假设柱状图的高度是一个对列&#xA;27,17,38,91,38,24,8,60,38,14,8&#xA;8,27,17,38,91,38,24,8,60,38,14&#xA;14,8,27,17,38,91,38,24,8,60,38&#xA;从左到右移动实际上就是不断的将队列中的最后一个插入到队列的第一个。&#xA;代码：&#xA;2.上下跳动 假设柱状图是一个队列&#xA;27,17,38,91,38,24,8,60,38,14,8&#xA;上下跳动就是将队列的高度，从0%-100%变化&#xA;代码：&#xA;然后在onDraw绘制时高度*valueAnimatorOffset&#xA;绘制 代码：&#xA;地址 https://github.com/xfans/VoiceWaveView</description>
     </item>
-    
   </channel>
 </rss>

@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>wechat on </title>
-    <link>/tags/wechat/</link>
-    <description>Recent content in wechat on </description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Wechat on </title>
+    <link>//localhost:1313/tags/wechat/</link>
+    <description>Recent content in Wechat on </description>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 13 Aug 2019 03:29:00 +0000</lastBuildDate><atom:link href="/tags/wechat/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Aug 2019 03:29:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/wechat/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Manjaro使用deepin-wine-wechat微信无法输入中文</title>
-      <link>/archives/264/</link>
+      <link>//localhost:1313/archives/264/</link>
       <pubDate>Tue, 13 Aug 2019 03:29:00 +0000</pubDate>
-      
-      <guid>/archives/264/</guid>
-      <description>说明 把manjaro滚到最新版本后deepin-wine-wechat微信无法输入中文
-解决方法 deepin-wine-wechat的github上给出了兼容列表
-&amp;lt;th&amp;gt; wine版本 &amp;lt;/th&amp;gt; &amp;lt;th&amp;gt; 兼容性 &amp;lt;/th&amp;gt; &amp;lt;th&amp;gt; 备注 &amp;lt;/th&amp;gt; &amp;lt;th&amp;gt; deepin-wine版本 &amp;lt;/th&amp;gt; &amp;lt;th&amp;gt; 兼容性 &amp;lt;/th&amp;gt; &amp;lt;th&amp;gt; 备注 &amp;lt;/th&amp;gt; &amp;lt;td&amp;gt; 4.18-1 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 部分 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 不能使用中文输入法 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 4.18-1 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 部分 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 不能使用中文输入法 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 2.18_18-2 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; ? &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 4.18-1 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 部分 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 不能使用中文输入法 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 2.18_18-2 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 不支持 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 闪退 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 4.</description>
+      <guid>//localhost:1313/archives/264/</guid>
+      <description>说明 把manjaro滚到最新版本后deepin-wine-wechat微信无法输入中文&#xA;解决方法 deepin-wine-wechat的github上给出了兼容列表&#xA;&amp;lt;th&amp;gt; wine版本 &amp;lt;/th&amp;gt; &amp;lt;th&amp;gt; 兼容性 &amp;lt;/th&amp;gt; &amp;lt;th&amp;gt; 备注 &amp;lt;/th&amp;gt; &amp;lt;th&amp;gt; deepin-wine版本 &amp;lt;/th&amp;gt; &amp;lt;th&amp;gt; 兼容性 &amp;lt;/th&amp;gt; &amp;lt;th&amp;gt; 备注 &amp;lt;/th&amp;gt; &amp;lt;td&amp;gt; 4.18-1 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 部分 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 不能使用中文输入法 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 4.18-1 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 部分 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 不能使用中文输入法 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 2.18_18-2 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; ? &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 4.18-1 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 部分 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 不能使用中文输入法 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 2.18_18-2 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 不支持 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 闪退 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 4.</description>
     </item>
-    
   </channel>
 </rss>

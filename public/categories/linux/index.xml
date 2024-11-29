@@ -2,226 +2,102 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linux on </title>
-    <link>/categories/linux/</link>
+    <link>//localhost:1313/categories/linux/</link>
     <description>Recent content in Linux on </description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 15 Jan 2020 08:20:00 +0000</lastBuildDate><atom:link href="/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 15 Jan 2020 08:20:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/categories/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Manjaro(Linux)下常用软件整理</title>
-      <link>/archives/283/</link>
+      <link>//localhost:1313/archives/283/</link>
       <pubDate>Wed, 15 Jan 2020 08:20:00 +0000</pubDate>
-      
-      <guid>/archives/283/</guid>
-      <description>说明 使用MANJARO做Android开发将近3年时间了,整理下自己用到的工具,做到了基本替代Windows.
-软件名称 arduino Arduino开发工具,玩esp8266用到的
-calibre 电子书转换工具,mobi转epub等
-code VSCode,编辑器\IDE
-sqlitebrowser sqlite管理工具
-dbeaver mysql管理工具
-filezilla FTP客户端
-goldendict 桌面取词翻译工具
-intellij-idea-community IDEA
-meld 文件比较工具
-virtualbox vbox虚拟机
-qpdfview pdf阅读器
-shadowsocks-qt5
-simplescreenrecorder 录屏工具
-guvcview 查看摄像头工具
-telegram-desktop telegram客户端
-uget 带gui的下载工具
-vlc 视频播放器
-wireshark 大鲨鱼抓包
-aria2 下载工具,配合uget
-baiduunetdisk-bin 百度网盘
-deepin-wine-wechat wine版本的微信
-deepin.com.qq.office wine版本qqtim
-genymotion android模拟器
-qpdf pdf文件合并分割工具
-realvnc-vnc-viewer vnc工具
-wps-office wps
-gimp 图片编辑程序,类似Photoshop
-gparted 磁盘分区管理工具
-termlnator 终端终结者 一个终端可以分成多个格子
-sogoupinyin sogou输入法
-ncdu 查看文件夹下所有文件夹占用大小
-privoxy socks代理转http代理
-xnviewmp 支持pdf的图片批量查看工具
-SwitchHosts!-linux-x64 host切换工具</description>
+      <guid>//localhost:1313/archives/283/</guid>
+      <description>说明 使用MANJARO做Android开发将近3年时间了,整理下自己用到的工具,做到了基本替代Windows.&#xA;软件名称 arduino Arduino开发工具,玩esp8266用到的&#xA;calibre 电子书转换工具,mobi转epub等&#xA;code VSCode,编辑器\IDE&#xA;sqlitebrowser sqlite管理工具&#xA;dbeaver mysql管理工具&#xA;filezilla FTP客户端&#xA;goldendict 桌面取词翻译工具&#xA;intellij-idea-community IDEA&#xA;meld 文件比较工具&#xA;virtualbox vbox虚拟机&#xA;qpdfview pdf阅读器&#xA;shadowsocks-qt5&#xA;simplescreenrecorder 录屏工具&#xA;guvcview 查看摄像头工具&#xA;telegram-desktop telegram客户端&#xA;uget 带gui的下载工具&#xA;vlc 视频播放器&#xA;wireshark 大鲨鱼抓包&#xA;aria2 下载工具,配合uget&#xA;baiduunetdisk-bin 百度网盘&#xA;deepin-wine-wechat wine版本的微信&#xA;deepin.com.qq.office wine版本qqtim&#xA;genymotion android模拟器&#xA;qpdf pdf文件合并分割工具&#xA;realvnc-vnc-viewer vnc工具&#xA;wps-office wps&#xA;gimp 图片编辑程序,类似Photoshop&#xA;gparted 磁盘分区管理工具&#xA;termlnator 终端终结者 一个终端可以分成多个格子&#xA;sogoupinyin sogou输入法&#xA;ncdu 查看文件夹下所有文件夹占用大小&#xA;privoxy socks代理转http代理&#xA;xnviewmp 支持pdf的图片批量查看工具&#xA;SwitchHosts!-linux-x64 host切换工具</description>
     </item>
-    
     <item>
       <title>Manjaro更新后，中文显示方框</title>
-      <link>/archives/174/</link>
+      <link>//localhost:1313/archives/174/</link>
       <pubDate>Tue, 27 Aug 2019 08:14:43 +0000</pubDate>
-      
-      <guid>/archives/174/</guid>
-      <description>问题 使用Manjaro工作大约两年了，习惯性的sudo pacman -Syyu，前一段时间更新完后，很多地方的中文字体都变成了方框。
-解决方法 安装字体
-重启后就好了</description>
+      <guid>//localhost:1313/archives/174/</guid>
+      <description>问题 使用Manjaro工作大约两年了，习惯性的sudo pacman -Syyu，前一段时间更新完后，很多地方的中文字体都变成了方框。&#xA;解决方法 安装字体&#xA;重启后就好了</description>
     </item>
-    
     <item>
       <title>Manjaro使用deepin-wine-wechat微信无法输入中文</title>
-      <link>/archives/264/</link>
+      <link>//localhost:1313/archives/264/</link>
       <pubDate>Tue, 13 Aug 2019 03:29:00 +0000</pubDate>
-      
-      <guid>/archives/264/</guid>
-      <description>说明 把manjaro滚到最新版本后deepin-wine-wechat微信无法输入中文
-解决方法 deepin-wine-wechat的github上给出了兼容列表
-&amp;lt;th&amp;gt; wine版本 &amp;lt;/th&amp;gt; &amp;lt;th&amp;gt; 兼容性 &amp;lt;/th&amp;gt; &amp;lt;th&amp;gt; 备注 &amp;lt;/th&amp;gt; &amp;lt;th&amp;gt; deepin-wine版本 &amp;lt;/th&amp;gt; &amp;lt;th&amp;gt; 兼容性 &amp;lt;/th&amp;gt; &amp;lt;th&amp;gt; 备注 &amp;lt;/th&amp;gt; &amp;lt;td&amp;gt; 4.18-1 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 部分 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 不能使用中文输入法 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 4.18-1 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 部分 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 不能使用中文输入法 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 2.18_18-2 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; ? &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 4.18-1 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 部分 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 不能使用中文输入法 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 2.18_18-2 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 不支持 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 闪退 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 4.</description>
+      <guid>//localhost:1313/archives/264/</guid>
+      <description>说明 把manjaro滚到最新版本后deepin-wine-wechat微信无法输入中文&#xA;解决方法 deepin-wine-wechat的github上给出了兼容列表&#xA;&amp;lt;th&amp;gt; wine版本 &amp;lt;/th&amp;gt; &amp;lt;th&amp;gt; 兼容性 &amp;lt;/th&amp;gt; &amp;lt;th&amp;gt; 备注 &amp;lt;/th&amp;gt; &amp;lt;th&amp;gt; deepin-wine版本 &amp;lt;/th&amp;gt; &amp;lt;th&amp;gt; 兼容性 &amp;lt;/th&amp;gt; &amp;lt;th&amp;gt; 备注 &amp;lt;/th&amp;gt; &amp;lt;td&amp;gt; 4.18-1 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 部分 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 不能使用中文输入法 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 4.18-1 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 部分 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 不能使用中文输入法 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 2.18_18-2 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; ? &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 4.18-1 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 部分 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 不能使用中文输入法 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 2.18_18-2 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 不支持 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 闪退 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 4.</description>
     </item>
-    
     <item>
       <title>使用ffmpeg将MP4高质量的转换成GIF</title>
-      <link>/archives/278/</link>
+      <link>//localhost:1313/archives/278/</link>
       <pubDate>Sat, 14 Jul 2018 09:20:00 +0000</pubDate>
-      
-      <guid>/archives/278/</guid>
-      <description>方法 ffmpeg -v warning -ss 00:00:02 -t 2 -i 5.mp4 -vf scale=300:-1 -gifflags +transdiff -y 5.gif
--ss 截取开始时间
--t 截取时长
-5.mp4 是视频名称
-5.gif 是转换后的名称
-相关链接 http://blog.pkh.me/p/21-high-quality-gif-with-ffmpeg.html</description>
+      <guid>//localhost:1313/archives/278/</guid>
+      <description>方法 ffmpeg -v warning -ss 00:00:02 -t 2 -i 5.mp4 -vf scale=300:-1 -gifflags +transdiff -y 5.gif&#xA;-ss 截取开始时间&#xA;-t 截取时长&#xA;5.mp4 是视频名称&#xA;5.gif 是转换后的名称&#xA;相关链接 http://blog.pkh.me/p/21-high-quality-gif-with-ffmpeg.html</description>
     </item>
-    
     <item>
       <title>Manjaro使用privoxy将socks转为http代理</title>
-      <link>/archives/163/</link>
+      <link>//localhost:1313/archives/163/</link>
       <pubDate>Fri, 08 Jun 2018 08:57:27 +0000</pubDate>
-      
-      <guid>/archives/163/</guid>
-      <description>安装 pacman -S privoxy
-配置 修改/etc/privoxy/config
-添加：
-forward-socks5 / 127.0.0.1:1080 . #ss的代理
-listen-address localhost:8118
-重启 systemctl restart privoxy
-PS 终端中使用代理 export http_proxy=http://127.0.0.1:8118
-export https_proxy=http://127.0.0.1:8118</description>
+      <guid>//localhost:1313/archives/163/</guid>
+      <description>安装 pacman -S privoxy&#xA;配置 修改/etc/privoxy/config&#xA;添加：&#xA;forward-socks5 / 127.0.0.1:1080 . #ss的代理&#xA;listen-address localhost:8118&#xA;重启 systemctl restart privoxy&#xA;PS 终端中使用代理 export http_proxy=http://127.0.0.1:8118&#xA;export https_proxy=http://127.0.0.1:8118</description>
     </item>
-    
     <item>
       <title>Git一些常用命令</title>
-      <link>/archives/141/</link>
+      <link>//localhost:1313/archives/141/</link>
       <pubDate>Sun, 28 Jan 2018 15:45:27 +0000</pubDate>
-      
-      <guid>/archives/141/</guid>
-      <description>命令 Remote git remote set-url origin git@github.com:xfans/VirtualApp.git
-git push origin master
-Upstream git remote add upstream git@github.com:asLody/VirtualApp.git
-git fetch upstream
-git merge upstream/master
-快速下载android frameworks源码 git clone --branch android10-release git@gitee.com:mirrors/platform_frameworks_base.git --depth 1</description>
+      <guid>//localhost:1313/archives/141/</guid>
+      <description>命令 Remote git remote set-url origin git@github.com:xfans/VirtualApp.git&#xA;git push origin master&#xA;Upstream git remote add upstream git@github.com:asLody/VirtualApp.git&#xA;git fetch upstream&#xA;git merge upstream/master&#xA;快速下载android frameworks源码 git clone --branch android10-release git@gitee.com:mirrors/platform_frameworks_base.git --depth 1</description>
     </item>
-    
     <item>
       <title>Manjaro Linux安装步骤</title>
-      <link>/archives/91/</link>
+      <link>//localhost:1313/archives/91/</link>
       <pubDate>Fri, 26 Jan 2018 12:11:37 +0000</pubDate>
-      
-      <guid>/archives/91/</guid>
-      <description>介绍 优点： 1.基于Arch，但不用折腾
-2.滚动更新，但比Arch慢，比Arch更稳定
-3.支持AUR仓库，软件非常多，比如deepin qq，sogou输入法等，一行命令就可以安装
-4.Wiki非常丰富
-缺点： 1.滚动更新，容易滚挂
-安装步骤 下载 https://mirrors.tuna.tsinghua.edu.cn/manjaro-cd/
-usb安装 df -h 查看你的u盘
-sudo umount /dev/sdb 卸载U盘
-dd if=xxx.iso of=/dev/sdb bs=1M 制作启动盘
-note: /dev/sdb为u盘
-添加国内源 编辑 vi /etc/pacman-mirrors.conf
-修改 OnlyCountry=China
-根据速度排序 pacman-mirrors -g
-添加Arch源 编辑 vi /etc/pacman.conf
-在末尾添加 同步 sudo pacman -Syy &amp;amp;&amp;amp; sudo pacman -S archlinuxcn-keyring
-安装zsh 执行 sudo pacman -S zsh
-sh -c &amp;quot;$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&amp;quot;
-chsh -s /bin/zsh
-安装输入法 sudo pacman -S fcitx-im # 全部安装</description>
+      <guid>//localhost:1313/archives/91/</guid>
+      <description>介绍 优点： 1.基于Arch，但不用折腾&#xA;2.滚动更新，但比Arch慢，比Arch更稳定&#xA;3.支持AUR仓库，软件非常多，比如deepin qq，sogou输入法等，一行命令就可以安装&#xA;4.Wiki非常丰富&#xA;缺点： 1.滚动更新，容易滚挂&#xA;安装步骤 下载 https://mirrors.tuna.tsinghua.edu.cn/manjaro-cd/&#xA;usb安装 df -h 查看你的u盘&#xA;sudo umount /dev/sdb 卸载U盘&#xA;dd if=xxx.iso of=/dev/sdb bs=1M 制作启动盘&#xA;note: /dev/sdb为u盘&#xA;添加国内源 编辑 vi /etc/pacman-mirrors.conf&#xA;修改 OnlyCountry=China&#xA;根据速度排序 pacman-mirrors -g&#xA;添加Arch源 编辑 vi /etc/pacman.conf&#xA;在末尾添加 同步 sudo pacman -Syy &amp;amp;&amp;amp; sudo pacman -S archlinuxcn-keyring&#xA;安装zsh 执行 sudo pacman -S zsh&#xA;sh -c &amp;quot;$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&amp;quot;&#xA;chsh -s /bin/zsh&#xA;安装输入法 sudo pacman -S fcitx-im # 全部安装</description>
     </item>
-    
     <item>
       <title>Linux下安装网络环境模拟工具augmented-traffic-control</title>
-      <link>/archives/56/</link>
+      <link>//localhost:1313/archives/56/</link>
       <pubDate>Thu, 23 Nov 2017 12:10:48 +0000</pubDate>
-      
-      <guid>/archives/56/</guid>
-      <description>augmented-traffic-control A tool to simulate network conditions,Facebook提供的一款网络环境模拟工具，可以使用他来测试App在各种网络环境下的问题。
-安装环境要求 Python2.7、Django1.10.+
-以下在Manjora下的安装命令
-切换Python环境到Python2.7 安装pip sudo pacman -S python2-pip
-安装Django1.10.+ sudo pip install Django==1.10.8
-安装ATC 安装lib sudo pacman -S pip install atc_thrift atcd django-atc-api django-atc-demo-ui django-atc-profile-storage
-Django配置 django-admin startproject atcui
-cd atcui
-修改atcui/settings.py中的INSTALLED_APPS 修改atcui/urls.py中的urlpatterns及引用 更新数据库 python manage.py migrate
-创建虚拟Ap Linux开启虚拟AP
-启动ATC sudo atcd --atcd-wan wlp3s0 --atcd-lan ap0
-注意：wlp3s0是我的无线网卡，ap0是我创建的虚拟ap网卡
-设置错误可能出现：https://github.com/facebook/augmented-traffic-control/issues/239
-启动ATCUI python manage.py runserver 0.0.0.0:8000
-导入默认配置 下载该路径下的文件https://github.com/facebook/augmented-traffic-control/tree/master/utils 运行导入命令 ./restore-profiles.sh localhost:8000
-手机使用ATC 使用Android、iOS 的浏览器访问
-ip:8000 ip为你电脑的ip</description>
+      <guid>//localhost:1313/archives/56/</guid>
+      <description>augmented-traffic-control A tool to simulate network conditions,Facebook提供的一款网络环境模拟工具，可以使用他来测试App在各种网络环境下的问题。&#xA;安装环境要求 Python2.7、Django1.10.+&#xA;以下在Manjora下的安装命令&#xA;切换Python环境到Python2.7 安装pip sudo pacman -S python2-pip&#xA;安装Django1.10.+ sudo pip install Django==1.10.8&#xA;安装ATC 安装lib sudo pacman -S pip install atc_thrift atcd django-atc-api django-atc-demo-ui django-atc-profile-storage&#xA;Django配置 django-admin startproject atcui&#xA;cd atcui&#xA;修改atcui/settings.py中的INSTALLED_APPS 修改atcui/urls.py中的urlpatterns及引用 更新数据库 python manage.py migrate&#xA;创建虚拟Ap Linux开启虚拟AP&#xA;启动ATC sudo atcd --atcd-wan wlp3s0 --atcd-lan ap0&#xA;注意：wlp3s0是我的无线网卡，ap0是我创建的虚拟ap网卡&#xA;设置错误可能出现：https://github.com/facebook/augmented-traffic-control/issues/239&#xA;启动ATCUI python manage.py runserver 0.0.0.0:8000&#xA;导入默认配置 下载该路径下的文件https://github.com/facebook/augmented-traffic-control/tree/master/utils 运行导入命令 ./restore-profiles.sh localhost:8000&#xA;手机使用ATC 使用Android、iOS 的浏览器访问&#xA;ip:8000 ip为你电脑的ip</description>
     </item>
-    
     <item>
       <title>Linux开启虚拟AP</title>
-      <link>/archives/42/</link>
+      <link>//localhost:1313/archives/42/</link>
       <pubDate>Mon, 09 Oct 2017 08:09:27 +0000</pubDate>
-      
-      <guid>/archives/42/</guid>
-      <description>安装create_ap pacman -S create_ap
-增加一个虚拟网络接口并设置一个mac地址 sudo iw dev wlp3s0 interface add wlp3s0_ap type __ap
-sudo ip link set dev wlp3s0_ap address 04:e2:b9:17:18:72
-创建AP sudo create_ap -c 11 wlp3s0_ap wlp3s0 xfans_ap 321321321
-create_ap下载 https://github.com/oblique/create_ap
-参考 https://wiki.archlinux.org/index.php/Software_access_point_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)
-https://www.zhihu.com/question/24961490</description>
+      <guid>//localhost:1313/archives/42/</guid>
+      <description>安装create_ap pacman -S create_ap&#xA;增加一个虚拟网络接口并设置一个mac地址 sudo iw dev wlp3s0 interface add wlp3s0_ap type __ap&#xA;sudo ip link set dev wlp3s0_ap address 04:e2:b9:17:18:72&#xA;创建AP sudo create_ap -c 11 wlp3s0_ap wlp3s0 xfans_ap 321321321&#xA;create_ap下载 https://github.com/oblique/create_ap&#xA;参考 https://wiki.archlinux.org/index.php/Software_access_point_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)&#xA;https://www.zhihu.com/question/24961490</description>
     </item>
-    
     <item>
       <title>Linux Manjaro安装kernel及Kernel Headers</title>
-      <link>/archives/16/</link>
+      <link>//localhost:1313/archives/16/</link>
       <pubDate>Fri, 29 Sep 2017 11:43:55 +0000</pubDate>
-      
-      <guid>/archives/16/</guid>
-      <description>查找可用内核 pacman -Ss linux-headers
-安装 pacman -S linuxXY linuxXY-headers
-注意:XY为你要安装的版本号,如:
-pacman -S linux49 linux49-headers</description>
+      <guid>//localhost:1313/archives/16/</guid>
+      <description>查找可用内核 pacman -Ss linux-headers&#xA;安装 pacman -S linuxXY linuxXY-headers&#xA;注意:XY为你要安装的版本号,如:&#xA;pacman -S linux49 linux49-headers</description>
     </item>
-    
     <item>
       <title>设置Python版本</title>
-      <link>/archives/12/</link>
+      <link>//localhost:1313/archives/12/</link>
       <pubDate>Fri, 29 Sep 2017 11:36:21 +0000</pubDate>
-      
-      <guid>/archives/12/</guid>
+      <guid>//localhost:1313/archives/12/</guid>
       <description> </description>
     </item>
-    
     <item>
       <title>Linux更新grub启动项</title>
-      <link>/archives/10/</link>
+      <link>//localhost:1313/archives/10/</link>
       <pubDate>Fri, 29 Sep 2017 11:35:41 +0000</pubDate>
-      
-      <guid>/archives/10/</guid>
+      <guid>//localhost:1313/archives/10/</guid>
       <description> </description>
     </item>
-    
     <item>
       <title>Manjaro使用bbswitch关闭笔记本的nvidia独立显卡</title>
-      <link>/archives/6/</link>
+      <link>//localhost:1313/archives/6/</link>
       <pubDate>Fri, 29 Sep 2017 11:33:43 +0000</pubDate>
-      
-      <guid>/archives/6/</guid>
-      <description>Manjaro关闭独立显卡
-安装bbswitch 在/etc/modules-load.d下新建bbswitch.conf，并修改为如下内容。这样每次启动都会加载bbswitch模块了 在/etc/modprobe.d/下新建bbswitch.conf，并修改为如下内容。这是bbswitch加载的参数，我们让其默认关闭 在/etc/modprobe.d/下新建nouveau_blacklist.conf，并修改为如下内容。有时候bbswitch加载了，但是不能关闭显卡，因为有些模块正在占用着，因此要禁掉。 在/usr/lib/systemd/system-shutdown/下新建nvidia_card_enable.sh，并修改为以下内容，记得加运行权限。每次reboot的时候，显卡都是关闭的，不管是重启到windows还是linux，都会找不到设备，必须彻底关机才行。解决该问题的办法就是每次重启都启用显卡 查看状态 原文 http://blog.csdn.net/gt945/article/details/10922263</description>
+      <guid>//localhost:1313/archives/6/</guid>
+      <description>Manjaro关闭独立显卡&#xA;安装bbswitch 在/etc/modules-load.d下新建bbswitch.conf，并修改为如下内容。这样每次启动都会加载bbswitch模块了 在/etc/modprobe.d/下新建bbswitch.conf，并修改为如下内容。这是bbswitch加载的参数，我们让其默认关闭 在/etc/modprobe.d/下新建nouveau_blacklist.conf，并修改为如下内容。有时候bbswitch加载了，但是不能关闭显卡，因为有些模块正在占用着，因此要禁掉。 在/usr/lib/systemd/system-shutdown/下新建nvidia_card_enable.sh，并修改为以下内容，记得加运行权限。每次reboot的时候，显卡都是关闭的，不管是重启到windows还是linux，都会找不到设备，必须彻底关机才行。解决该问题的办法就是每次重启都启用显卡 查看状态 原文 http://blog.csdn.net/gt945/article/details/10922263</description>
     </item>
-    
   </channel>
 </rss>

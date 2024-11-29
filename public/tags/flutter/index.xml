@@ -1,30 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>flutter on </title>
-    <link>/tags/flutter/</link>
-    <description>Recent content in flutter on </description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Flutter on </title>
+    <link>//localhost:1313/tags/flutter/</link>
+    <description>Recent content in Flutter on </description>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 09 Dec 2021 02:29:49 +0000</lastBuildDate><atom:link href="/tags/flutter/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 09 Dec 2021 02:29:49 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/flutter/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Flutter2.5适配ThemeData</title>
-      <link>/archives/392/</link>
+      <link>//localhost:1313/archives/392/</link>
       <pubDate>Thu, 09 Dec 2021 02:29:49 +0000</pubDate>
-      
-      <guid>/archives/392/</guid>
-      <description>说明 Flutter 2.5 版本中的破坏性改动
-默认的设备拖动和滚动 v2.2 版后删除了废弃的 API Package 介绍: flutter_lints ThemeData 的 accent 属性已被弃用 手势识别器清理 将 AnimationSheetBuilder.display 替换为 collate 使用 HTML 插槽在 Web 中渲染平台视图 将 LogicalKeySet 迁移至 SingleActivator 项目使用Flutter2.5编译后，部分页面的颜色发生了变化。
-需要对ThemeData 的 accent 属性进行适配。
-改动 主题信息 ThemeData 中的 accentColor、accentColorBrightness、accentIconTheme 和 accentTextTheme 属性现已被弃用。
-Material 设计规范 不再为 Material 组件指定或使用「强调」色。组件的默认颜色来自整个主题的 颜色方案。现在通常使用 ColorScheme 的 secondary color 代替 accentColor，并且在需要对比色时使用 onSecondary 属性。
-适配 适配前：
-适配后：
-使用时：
-改为：
-相关链接 https://flutter.cn/docs/release/breaking-changes/theme-data-accent-properties
-https://flutter.cn/posts/whats-new-in-flutter-2-5</description>
+      <guid>//localhost:1313/archives/392/</guid>
+      <description>说明 Flutter 2.5 版本中的破坏性改动&#xA;默认的设备拖动和滚动 v2.2 版后删除了废弃的 API Package 介绍: flutter_lints ThemeData 的 accent 属性已被弃用 手势识别器清理 将 AnimationSheetBuilder.display 替换为 collate 使用 HTML 插槽在 Web 中渲染平台视图 将 LogicalKeySet 迁移至 SingleActivator 项目使用Flutter2.5编译后，部分页面的颜色发生了变化。&#xA;需要对ThemeData 的 accent 属性进行适配。&#xA;改动 主题信息 ThemeData 中的 accentColor、accentColorBrightness、accentIconTheme 和 accentTextTheme 属性现已被弃用。&#xA;Material 设计规范 不再为 Material 组件指定或使用「强调」色。组件的默认颜色来自整个主题的 颜色方案。现在通常使用 ColorScheme 的 secondary color 代替 accentColor，并且在需要对比色时使用 onSecondary 属性。&#xA;适配 适配前：&#xA;适配后：&#xA;使用时：&#xA;改为：&#xA;相关链接 https://flutter.cn/docs/release/breaking-changes/theme-data-accent-properties&#xA;https://flutter.cn/posts/whats-new-in-flutter-2-5</description>
     </item>
-    
   </channel>
 </rss>

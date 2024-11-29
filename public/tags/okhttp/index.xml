@@ -1,46 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>okhttp on </title>
-    <link>/tags/okhttp/</link>
-    <description>Recent content in okhttp on </description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Okhttp on </title>
+    <link>//localhost:1313/tags/okhttp/</link>
+    <description>Recent content in Okhttp on </description>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 17 Jan 2020 04:07:00 +0000</lastBuildDate><atom:link href="/tags/okhttp/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 17 Jan 2020 04:07:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/okhttp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>okhttp3源码及请求流程分析</title>
-      <link>/archives/329/</link>
+      <link>//localhost:1313/archives/329/</link>
       <pubDate>Fri, 17 Jan 2020 04:07:00 +0000</pubDate>
-      
-      <guid>/archives/329/</guid>
+      <guid>//localhost:1313/archives/329/</guid>
       <description>okhttp3请求流程图如下</description>
     </item>
-    
     <item>
       <title>快速的将Android-async-http升级到OKhttp</title>
-      <link>/archives/148/</link>
+      <link>//localhost:1313/archives/148/</link>
       <pubDate>Sat, 24 Feb 2018 03:30:45 +0000</pubDate>
-      
-      <guid>/archives/148/</guid>
-      <description>背景 Android-async-http已经不更新了。ps:还为这个库提交过功能https://github.com/android-async-http/android-async-http/pull/840
-Android-async-http是基于HttpClient的。
-替换方案 将项目中所有的请求代码都替换工作量巨大，也容易出问题。所以采用将Okhttp封装为Android-async-http的方式进行替换。
-android-async-http的使用方法:
-从代码可以看出,想要快速的替换需要:
-1.使用okhttp来实现AsyncHttpClient
-2.实现AsyncHttpResponseHandler,FileAsyncHttpResponseHandler,JsonHttpResponseHandler,TextHttpResponseHandler等项目中使用的Handler即可.</description>
+      <guid>//localhost:1313/archives/148/</guid>
+      <description>背景 Android-async-http已经不更新了。ps:还为这个库提交过功能https://github.com/android-async-http/android-async-http/pull/840&#xA;Android-async-http是基于HttpClient的。&#xA;替换方案 将项目中所有的请求代码都替换工作量巨大，也容易出问题。所以采用将Okhttp封装为Android-async-http的方式进行替换。&#xA;android-async-http的使用方法:&#xA;从代码可以看出,想要快速的替换需要:&#xA;1.使用okhttp来实现AsyncHttpClient&#xA;2.实现AsyncHttpResponseHandler,FileAsyncHttpResponseHandler,JsonHttpResponseHandler,TextHttpResponseHandler等项目中使用的Handler即可.</description>
     </item>
-    
     <item>
       <title>在Okhttp中使用HTTPDNS</title>
-      <link>/archives/63/</link>
+      <link>//localhost:1313/archives/63/</link>
       <pubDate>Wed, 10 Jan 2018 12:06:27 +0000</pubDate>
-      
-      <guid>/archives/63/</guid>
-      <description>背景 用户经常在国外使用App，国外的网络环境更加复杂，经常会出现UnknownHostException的异常，无法解析DNS。
-解决方案 当遇到该异常时就需要自己去解析DNS。常用的自己解析DNS的方式有两种
-1.自己拿到IP后替换域名（App老的方式） 比如使用dnsjava拿到IP后需要：</description>
+      <guid>//localhost:1313/archives/63/</guid>
+      <description>背景 用户经常在国外使用App，国外的网络环境更加复杂，经常会出现UnknownHostException的异常，无法解析DNS。&#xA;解决方案 当遇到该异常时就需要自己去解析DNS。常用的自己解析DNS的方式有两种&#xA;1.自己拿到IP后替换域名（App老的方式） 比如使用dnsjava拿到IP后需要：</description>
     </item>
-    
   </channel>
 </rss>

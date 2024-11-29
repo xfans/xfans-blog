@@ -2,30 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>适配 on </title>
-    <link>/tags/%E9%80%82%E9%85%8D/</link>
+    <link>//localhost:1313/tags/%E9%80%82%E9%85%8D/</link>
     <description>Recent content in 适配 on </description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 24 Feb 2018 03:16:16 +0000</lastBuildDate><atom:link href="/tags/%E9%80%82%E9%85%8D/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Feb 2018 03:16:16 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/%E9%80%82%E9%85%8D/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Android7,8的适配</title>
-      <link>/archives/145/</link>
+      <link>//localhost:1313/archives/145/</link>
       <pubDate>Sat, 24 Feb 2018 03:16:16 +0000</pubDate>
-      
-      <guid>/archives/145/</guid>
-      <description>背景 用户反馈华为Mate10 无法使用App。
-升级 targetSdkVersion = 26
-遇到的问题 网络请求异常
-TransactionTooLargeException
-通知渠道
-FileUriExposedException
-Charles无法抓Https
-MODE_WORLD_READABLE no longer supported
-BadTokenException 7.1
-Not allowed to start service
-getRunningServices deprecated in API level 26 As of O, this method is no longer available to third party applications. For backwards compatibility, it will still return the caller&amp;rsquo;s own services.
-ps:时间太长了想起来再写，详情有空再整理</description>
+      <guid>//localhost:1313/archives/145/</guid>
+      <description>背景 用户反馈华为Mate10 无法使用App。&#xA;升级 targetSdkVersion = 26&#xA;遇到的问题 网络请求异常&#xA;TransactionTooLargeException&#xA;通知渠道&#xA;FileUriExposedException&#xA;Charles无法抓Https&#xA;MODE_WORLD_READABLE no longer supported&#xA;BadTokenException 7.1&#xA;Not allowed to start service&#xA;getRunningServices deprecated in API level 26 As of O, this method is no longer available to third party applications. For backwards compatibility, it will still return the caller&amp;rsquo;s own services.&#xA;ps:时间太长了想起来再写，详情有空再整理</description>
     </item>
-    
   </channel>
 </rss>

@@ -1,25 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>git on </title>
-    <link>/tags/git/</link>
-    <description>Recent content in git on </description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Git on </title>
+    <link>//localhost:1313/tags/git/</link>
+    <description>Recent content in Git on </description>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 28 Jan 2018 15:45:27 +0000</lastBuildDate><atom:link href="/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 28 Jan 2018 15:45:27 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/git/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Git一些常用命令</title>
-      <link>/archives/141/</link>
+      <link>//localhost:1313/archives/141/</link>
       <pubDate>Sun, 28 Jan 2018 15:45:27 +0000</pubDate>
-      
-      <guid>/archives/141/</guid>
-      <description>命令 Remote git remote set-url origin git@github.com:xfans/VirtualApp.git
-git push origin master
-Upstream git remote add upstream git@github.com:asLody/VirtualApp.git
-git fetch upstream
-git merge upstream/master
-快速下载android frameworks源码 git clone --branch android10-release git@gitee.com:mirrors/platform_frameworks_base.git --depth 1</description>
+      <guid>//localhost:1313/archives/141/</guid>
+      <description>命令 Remote git remote set-url origin git@github.com:xfans/VirtualApp.git&#xA;git push origin master&#xA;Upstream git remote add upstream git@github.com:asLody/VirtualApp.git&#xA;git fetch upstream&#xA;git merge upstream/master&#xA;快速下载android frameworks源码 git clone --branch android10-release git@gitee.com:mirrors/platform_frameworks_base.git --depth 1</description>
     </item>
-    
   </channel>
 </rss>

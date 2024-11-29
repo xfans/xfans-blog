@@ -2,26 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Wireshark on </title>
-    <link>/tags/wireshark/</link>
+    <link>//localhost:1313/tags/wireshark/</link>
     <description>Recent content in Wireshark on </description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 19 Jan 2018 11:56:59 +0000</lastBuildDate><atom:link href="/tags/wireshark/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 19 Jan 2018 11:56:59 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/wireshark/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>一个bad request http request or invalid response的错误</title>
-      <link>/archives/80/</link>
+      <link>//localhost:1313/archives/80/</link>
       <pubDate>Fri, 19 Jan 2018 11:56:59 +0000</pubDate>
-      
-      <guid>/archives/80/</guid>
-      <description>问题 部分客户端api报错，特别是8.0系统上，访问api出现bad request http request or invalid response,from ulb错误。
-解决步骤 1.服务器联调 服务器端未发现问题，参数都对。服务器上也没有这句错误信息。猜测应该是服务器上层报出来的错误，如负载均衡。
-2.用Charles抓包 Charles抓包后，就不会出现该错误了。后来发现Charles对错误报文进行了兼容处理，发给服务器的应该对的。
-3.去GIthub查网络库的issues 项目中使用的是,Android-async-http这个库,issues中没有人说8.0中有这个问题，猜想应该是自己代码中的问题。
-4.大鲨鱼Wireshark抓包 大鲨鱼Wireshark抓包后会出现该错误，没有看出报文有异常。
-比较正确的报文和错误的报文，发现大小不一样。
-最终发现（找了好久，反正就是很艰难），错误的报文Header中多了一个空行。
-原因 在往Header中添加参数时，有一个参数出现了\n,正常情况下客户端发送报文的时会忽略\n，而有的版本把\n放在了报文中，导致报文格式出错。</description>
+      <guid>//localhost:1313/archives/80/</guid>
+      <description>问题 部分客户端api报错，特别是8.0系统上，访问api出现bad request http request or invalid response,from ulb错误。&#xA;解决步骤 1.服务器联调 服务器端未发现问题，参数都对。服务器上也没有这句错误信息。猜测应该是服务器上层报出来的错误，如负载均衡。&#xA;2.用Charles抓包 Charles抓包后，就不会出现该错误了。后来发现Charles对错误报文进行了兼容处理，发给服务器的应该对的。&#xA;3.去GIthub查网络库的issues 项目中使用的是,Android-async-http这个库,issues中没有人说8.0中有这个问题，猜想应该是自己代码中的问题。&#xA;4.大鲨鱼Wireshark抓包 大鲨鱼Wireshark抓包后会出现该错误，没有看出报文有异常。&#xA;比较正确的报文和错误的报文，发现大小不一样。&#xA;最终发现（找了好久，反正就是很艰难），错误的报文Header中多了一个空行。&#xA;原因 在往Header中添加参数时，有一个参数出现了\n,正常情况下客户端发送报文的时会忽略\n，而有的版本把\n放在了报文中，导致报文格式出错。</description>
     </item>
-    
   </channel>
 </rss>

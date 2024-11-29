@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>debug on </title>
-    <link>/tags/debug/</link>
-    <description>Recent content in debug on </description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Debug on </title>
+    <link>//localhost:1313/tags/debug/</link>
+    <description>Recent content in Debug on </description>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 10 Oct 2017 08:49:52 +0000</lastBuildDate><atom:link href="/tags/debug/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 10 Oct 2017 08:49:52 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/debug/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>android打印函数调用堆栈</title>
-      <link>/archives/46/</link>
+      <link>//localhost:1313/archives/46/</link>
       <pubDate>Tue, 10 Oct 2017 08:49:52 +0000</pubDate>
-      
-      <guid>/archives/46/</guid>
+      <guid>//localhost:1313/archives/46/</guid>
       <description>打印方法调用堆栈 </description>
     </item>
-    
   </channel>
 </rss>

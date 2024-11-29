@@ -1,23 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>retrofit on </title>
-    <link>/tags/retrofit/</link>
-    <description>Recent content in retrofit on </description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Retrofit on </title>
+    <link>//localhost:1313/tags/retrofit/</link>
+    <description>Recent content in Retrofit on </description>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 22 Jan 2020 16:25:00 +0000</lastBuildDate><atom:link href="/tags/retrofit/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 22 Jan 2020 16:25:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/retrofit/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>retrofit2源码及请求流程分析</title>
-      <link>/archives/335/</link>
+      <link>//localhost:1313/archives/335/</link>
       <pubDate>Wed, 22 Jan 2020 16:25:00 +0000</pubDate>
-      
-      <guid>/archives/335/</guid>
-      <description>1.创建Retrofit对象 2.创建Service接口 retrofit.create方法为Service创建动态代理，可以说是Retrofit的核心。
-3.创建调用API的Call对象 1.当调用Service中定义的方法时，会调用retrofit.create创建的动态代理，调用Proxy._newProxyInstance_中InvocationHandler的invoke方法,创建流程如下:
-4.发起网络请求 请求网络的流程如下:
-异步请求和同步类似，这里就不分析了。</description>
+      <guid>//localhost:1313/archives/335/</guid>
+      <description>1.创建Retrofit对象 2.创建Service接口 retrofit.create方法为Service创建动态代理，可以说是Retrofit的核心。&#xA;3.创建调用API的Call对象 1.当调用Service中定义的方法时，会调用retrofit.create创建的动态代理，调用Proxy._newProxyInstance_中InvocationHandler的invoke方法,创建流程如下:&#xA;4.发起网络请求 请求网络的流程如下:&#xA;异步请求和同步类似，这里就不分析了。</description>
     </item>
-    
   </channel>
 </rss>

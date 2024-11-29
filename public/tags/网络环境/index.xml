@@ -2,35 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>网络环境 on </title>
-    <link>/tags/%E7%BD%91%E7%BB%9C%E7%8E%AF%E5%A2%83/</link>
+    <link>//localhost:1313/tags/%E7%BD%91%E7%BB%9C%E7%8E%AF%E5%A2%83/</link>
     <description>Recent content in 网络环境 on </description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 23 Nov 2017 12:10:48 +0000</lastBuildDate><atom:link href="/tags/%E7%BD%91%E7%BB%9C%E7%8E%AF%E5%A2%83/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 23 Nov 2017 12:10:48 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/%E7%BD%91%E7%BB%9C%E7%8E%AF%E5%A2%83/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linux下安装网络环境模拟工具augmented-traffic-control</title>
-      <link>/archives/56/</link>
+      <link>//localhost:1313/archives/56/</link>
       <pubDate>Thu, 23 Nov 2017 12:10:48 +0000</pubDate>
-      
-      <guid>/archives/56/</guid>
-      <description>augmented-traffic-control A tool to simulate network conditions,Facebook提供的一款网络环境模拟工具，可以使用他来测试App在各种网络环境下的问题。
-安装环境要求 Python2.7、Django1.10.+
-以下在Manjora下的安装命令
-切换Python环境到Python2.7 安装pip sudo pacman -S python2-pip
-安装Django1.10.+ sudo pip install Django==1.10.8
-安装ATC 安装lib sudo pacman -S pip install atc_thrift atcd django-atc-api django-atc-demo-ui django-atc-profile-storage
-Django配置 django-admin startproject atcui
-cd atcui
-修改atcui/settings.py中的INSTALLED_APPS 修改atcui/urls.py中的urlpatterns及引用 更新数据库 python manage.py migrate
-创建虚拟Ap Linux开启虚拟AP
-启动ATC sudo atcd --atcd-wan wlp3s0 --atcd-lan ap0
-注意：wlp3s0是我的无线网卡，ap0是我创建的虚拟ap网卡
-设置错误可能出现：https://github.com/facebook/augmented-traffic-control/issues/239
-启动ATCUI python manage.py runserver 0.0.0.0:8000
-导入默认配置 下载该路径下的文件https://github.com/facebook/augmented-traffic-control/tree/master/utils 运行导入命令 ./restore-profiles.sh localhost:8000
-手机使用ATC 使用Android、iOS 的浏览器访问
-ip:8000 ip为你电脑的ip</description>
+      <guid>//localhost:1313/archives/56/</guid>
+      <description>augmented-traffic-control A tool to simulate network conditions,Facebook提供的一款网络环境模拟工具，可以使用他来测试App在各种网络环境下的问题。&#xA;安装环境要求 Python2.7、Django1.10.+&#xA;以下在Manjora下的安装命令&#xA;切换Python环境到Python2.7 安装pip sudo pacman -S python2-pip&#xA;安装Django1.10.+ sudo pip install Django==1.10.8&#xA;安装ATC 安装lib sudo pacman -S pip install atc_thrift atcd django-atc-api django-atc-demo-ui django-atc-profile-storage&#xA;Django配置 django-admin startproject atcui&#xA;cd atcui&#xA;修改atcui/settings.py中的INSTALLED_APPS 修改atcui/urls.py中的urlpatterns及引用 更新数据库 python manage.py migrate&#xA;创建虚拟Ap Linux开启虚拟AP&#xA;启动ATC sudo atcd --atcd-wan wlp3s0 --atcd-lan ap0&#xA;注意：wlp3s0是我的无线网卡，ap0是我创建的虚拟ap网卡&#xA;设置错误可能出现：https://github.com/facebook/augmented-traffic-control/issues/239&#xA;启动ATCUI python manage.py runserver 0.0.0.0:8000&#xA;导入默认配置 下载该路径下的文件https://github.com/facebook/augmented-traffic-control/tree/master/utils 运行导入命令 ./restore-profiles.sh localhost:8000&#xA;手机使用ATC 使用Android、iOS 的浏览器访问&#xA;ip:8000 ip为你电脑的ip</description>
     </item>
-    
   </channel>
 </rss>

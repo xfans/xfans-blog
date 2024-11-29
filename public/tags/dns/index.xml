@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>dns on </title>
-    <link>/tags/dns/</link>
-    <description>Recent content in dns on </description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Dns on </title>
+    <link>//localhost:1313/tags/dns/</link>
+    <description>Recent content in Dns on </description>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 10 Jan 2018 12:06:27 +0000</lastBuildDate><atom:link href="/tags/dns/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 10 Jan 2018 12:06:27 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/dns/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>在Okhttp中使用HTTPDNS</title>
-      <link>/archives/63/</link>
+      <link>//localhost:1313/archives/63/</link>
       <pubDate>Wed, 10 Jan 2018 12:06:27 +0000</pubDate>
-      
-      <guid>/archives/63/</guid>
-      <description>背景 用户经常在国外使用App，国外的网络环境更加复杂，经常会出现UnknownHostException的异常，无法解析DNS。
-解决方案 当遇到该异常时就需要自己去解析DNS。常用的自己解析DNS的方式有两种
-1.自己拿到IP后替换域名（App老的方式） 比如使用dnsjava拿到IP后需要：</description>
+      <guid>//localhost:1313/archives/63/</guid>
+      <description>背景 用户经常在国外使用App，国外的网络环境更加复杂，经常会出现UnknownHostException的异常，无法解析DNS。&#xA;解决方案 当遇到该异常时就需要自己去解析DNS。常用的自己解析DNS的方式有两种&#xA;1.自己拿到IP后替换域名（App老的方式） 比如使用dnsjava拿到IP后需要：</description>
     </item>
-    
   </channel>
 </rss>

@@ -2,26 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>电子书 on </title>
-    <link>/tags/%E7%94%B5%E5%AD%90%E4%B9%A6/</link>
+    <link>//localhost:1313/tags/%E7%94%B5%E5%AD%90%E4%B9%A6/</link>
     <description>Recent content in 电子书 on </description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 19 Aug 2020 02:58:20 +0000</lastBuildDate><atom:link href="/tags/%E7%94%B5%E5%AD%90%E4%B9%A6/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 19 Aug 2020 02:58:20 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/%E7%94%B5%E5%AD%90%E4%B9%A6/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>替换口袋阅上的Kindle/微信阅读应用</title>
-      <link>/archives/346/</link>
+      <link>//localhost:1313/archives/346/</link>
       <pubDate>Wed, 19 Aug 2020 02:58:20 +0000</pubDate>
-      
-      <guid>/archives/346/</guid>
-      <description>说明： 在未刷机的情况下，口袋阅1的默认桌面如下：
-自己安装的程序无法在桌面上显示，而桌面上的kindle又不经常使用。可以改为，点击Kindle进入自己安装的程序，比如：点击Kindle进入koreader。
-方法： 实质上就是，自己编写一个与Kindle包名相同的程序，启动该程序时，启动你设置的程序。核心代码如下，很简单：
-可以使用已经编译好的程序：
-安装后输入要替换的包名，点击确认即可。然后点击桌面的Kindle图标即可进入设置的app。注意：安装该程序后，无法安装Kindle app。包名冲突。
-卸载方法：adb uninstall com.amazon.kindlefc
-地址： 下载地址：http://img.xfans.me/download/kdy-replace-release.apk
-代码地址：https://github.com/xfans/KdyReplace</description>
+      <guid>//localhost:1313/archives/346/</guid>
+      <description>说明： 在未刷机的情况下，口袋阅1的默认桌面如下：&#xA;自己安装的程序无法在桌面上显示，而桌面上的kindle又不经常使用。可以改为，点击Kindle进入自己安装的程序，比如：点击Kindle进入koreader。&#xA;方法： 实质上就是，自己编写一个与Kindle包名相同的程序，启动该程序时，启动你设置的程序。核心代码如下，很简单：&#xA;可以使用已经编译好的程序：&#xA;安装后输入要替换的包名，点击确认即可。然后点击桌面的Kindle图标即可进入设置的app。注意：安装该程序后，无法安装Kindle app。包名冲突。&#xA;卸载方法：adb uninstall com.amazon.kindlefc&#xA;地址： 下载地址：https://xfans.me/apps&#xA;代码地址：https://github.com/xfans/KdyReplace</description>
     </item>
-    
   </channel>
 </rss>

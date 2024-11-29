@@ -1,44 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>github on </title>
-    <link>/tags/github/</link>
-    <description>Recent content in github on </description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Github on </title>
+    <link>//localhost:1313/tags/github/</link>
+    <description>Recent content in Github on </description>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 28 Jan 2018 15:45:27 +0000</lastBuildDate><atom:link href="/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 28 Jan 2018 15:45:27 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/github/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Git一些常用命令</title>
-      <link>/archives/141/</link>
+      <link>//localhost:1313/archives/141/</link>
       <pubDate>Sun, 28 Jan 2018 15:45:27 +0000</pubDate>
-      
-      <guid>/archives/141/</guid>
-      <description>命令 Remote git remote set-url origin git@github.com:xfans/VirtualApp.git
-git push origin master
-Upstream git remote add upstream git@github.com:asLody/VirtualApp.git
-git fetch upstream
-git merge upstream/master
-快速下载android frameworks源码 git clone --branch android10-release git@gitee.com:mirrors/platform_frameworks_base.git --depth 1</description>
+      <guid>//localhost:1313/archives/141/</guid>
+      <description>命令 Remote git remote set-url origin git@github.com:xfans/VirtualApp.git&#xA;git push origin master&#xA;Upstream git remote add upstream git@github.com:asLody/VirtualApp.git&#xA;git fetch upstream&#xA;git merge upstream/master&#xA;快速下载android frameworks源码 git clone --branch android10-release git@gitee.com:mirrors/platform_frameworks_base.git --depth 1</description>
     </item>
-    
     <item>
       <title>使用SVN下载GitHub单个目录内的文件</title>
-      <link>/archives/69/</link>
+      <link>//localhost:1313/archives/69/</link>
       <pubDate>Thu, 11 Jan 2018 11:48:29 +0000</pubDate>
-      
-      <guid>/archives/69/</guid>
-      <description>背景 有时候需要在GitHub上下载单个目录里面的文件，而不需要去克隆整个项目，太大的项目克隆起来太慢。
-解决方案 GitHub是支持SVN访问的，所以可以使用SVN下载单个目录。
-下载master分支 复制浏览器地址栏中的地址，如：
-https://github.com/bumptech/glide/tree/master/integration
-将tree改为trunk即可。
-https://github.com/bumptech/glide/trunk/integration
-下载其他分支 如：
-https://github.com/bumptech/glide/tree/3.0/integration
-将tree改为branches即可。
-https://github.com/bumptech/glide/branches/3.0/integration
-然后svn checkout 即可。</description>
+      <guid>//localhost:1313/archives/69/</guid>
+      <description>背景 有时候需要在GitHub上下载单个目录里面的文件，而不需要去克隆整个项目，太大的项目克隆起来太慢。&#xA;解决方案 GitHub是支持SVN访问的，所以可以使用SVN下载单个目录。&#xA;下载master分支 复制浏览器地址栏中的地址，如：&#xA;https://github.com/bumptech/glide/tree/master/integration&#xA;将tree改为trunk即可。&#xA;https://github.com/bumptech/glide/trunk/integration&#xA;下载其他分支 如：&#xA;https://github.com/bumptech/glide/tree/3.0/integration&#xA;将tree改为branches即可。&#xA;https://github.com/bumptech/glide/branches/3.0/integration&#xA;然后svn checkout 即可。</description>
     </item>
-    
   </channel>
 </rss>
