@@ -9,7 +9,7 @@
 	<meta name="description" content="">
 		<meta property="og:url" content="//localhost:1313/post/flutter-page-curl-effect-like-epub-reader/">
   <meta property="og:title" content="Flutter Page curl effect like epub reader">
-  <meta property="og:description" content="如果要在Flutter中实现阅读器的翻书效果，一般都是在一个容器上边覆盖一个实现翻页动画的view，当监听到左右滑动的手势的时候显示出来实现翻页动画的view，翻页动画结束后改变底层容器的内容，来实现翻页。">
+  <meta property="og:description" content="If you want to implement a page-turning effect for a reader in Flutter, you typically overlay a view that performs the page-turn animation on a container. When a left or right swipe gesture is detected, the view with the page-turn animation is displayed. After the page-turn animation ends, the content of the underlying container is changed to achieve the page-turn effect.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
@@ -18,10 +18,10 @@
 
 		
   <meta itemprop="name" content="Flutter Page curl effect like epub reader">
-  <meta itemprop="description" content="如果要在Flutter中实现阅读器的翻书效果，一般都是在一个容器上边覆盖一个实现翻页动画的view，当监听到左右滑动的手势的时候显示出来实现翻页动画的view，翻页动画结束后改变底层容器的内容，来实现翻页。">
+  <meta itemprop="description" content="If you want to implement a page-turning effect for a reader in Flutter, you typically overlay a view that performs the page-turn animation on a container. When a left or right swipe gesture is detected, the view with the page-turn animation is displayed. After the page-turn animation ends, the content of the underlying container is changed to achieve the page-turn effect.">
   <meta itemprop="datePublished" content="2023-10-10T17:50:12+08:00">
   <meta itemprop="dateModified" content="2023-10-10T17:50:12+08:00">
-  <meta itemprop="wordCount" content="68">
+  <meta itemprop="wordCount" content="207">
   <meta itemprop="keywords" content="Flutter">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -77,15 +77,13 @@
 		<div class="content post__content clearfix">
 			<h2 id="overview">Overview</h2>
 <p>Flutter Page curl effect like epub reader</p>
-<p>如果要在Flutter中实现阅读器的翻书效果，一般都是在一个容器上边覆盖一个实现翻页动画的view，当监听到左右滑动的手势的时候显示出来实现翻页动画的view，翻页动画结束后改变底层容器的内容，来实现翻页。</p>
+<p>If you want to implement a page-turning effect for a reader in Flutter, you typically overlay a view that performs the page-turn animation on a container. When a left or right swipe gesture is detected, the view with the page-turn animation is displayed. After the page-turn animation ends, the content of the underlying container is changed to achieve the page-turn effect.</p>
 <h2 id="preview">Preview</h2>
 <div class="video-wrapper">
   <video controls src="https://apixfans.oss-cn-zhangjiakou.aliyuncs.com/2024/11/29/flutter_page_curl_1.mp4">
 </div>
 <h2 id="how-to">How To</h2>
-<p>1.首先要写一个翻页的动画或者找一个已经实现了的算法。
-为了方便实现，找到了一个Flutter实现的效果：https://github.com/Rahiche/riveo_page_curl。这个库是基于Flutter的shader实现的，性能更好。实现可以参考这个库的ProjectCard类。
-核心代码如下：</p>
+<p>1.First, you need to write a page-turn animation or find an existing algorithm that implements it. To facilitate implementation, I found a Flutter effect: <a href="https://github.com/Rahiche/riveo_page_curl">https://github.com/Rahiche/riveo_page_curl</a>. This library is based on Flutter&rsquo;s shader implementation, which offers better performance. You can refer to the ProjectCard class in this library for implementation. The core code is as follows:</p>
 <pre><code>ShaderBuilder(
   (context, shader, _) {
     return AnimatedSampler(
@@ -110,7 +108,7 @@
   assetKey: shaderAssetKey,
 )
 </code></pre>
-<p>其中drawShaderRectBack是画翻页时候的图片，curlImage是画翻页翻页当前页的图片</p>
+<p>backImage is used to draw the background image for the page turn, while curlImage is used to draw the image of the current page during the page turn.</p>
 
 		</div>
 		<footer class="post__footer">
