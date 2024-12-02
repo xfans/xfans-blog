@@ -6,14 +6,14 @@
     <description>Recent content in Flutter on </description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 10 Oct 2023 17:50:12 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 10 Oct 2024 17:50:12 +0800</lastBuildDate>
     <atom:link href="//localhost:1313/categories/flutter/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Flutter Page curl effect like epub reader</title>
       <link>//localhost:1313/post/flutter-page-curl-effect-like-epub-reader/</link>
-      <pubDate>Tue, 10 Oct 2023 17:50:12 +0800</pubDate>
+      <pubDate>Thu, 10 Oct 2024 17:50:12 +0800</pubDate>
       <guid>//localhost:1313/post/flutter-page-curl-effect-like-epub-reader/</guid>
-      <description>Overview Flutter Page curl effect like epub reader&#xA;如果要在阅读器的翻书效果，一般都是在一个容器上边覆盖一个实现翻页动画的view，当监听到左右滑动的手势的时候显示出来实现翻页动画的view，翻页动画结束后改变底层容器的内容，来实现翻页。&#xA;Preview &amp;quot;&amp;gt;&#xA;How To 1.首先要写一个翻页的动画或者找一个已经实现了的算法。 为了方便实现，找到了一个Flutter实现的效果：https://github.com/Rahiche/riveo_page_curl。这个库是基于Flutter的shader实现的，性能更好。实现可以参考这个库的ProjectCard类。&#xA;核心代码如下： &amp;lt;pre&amp;gt;&amp;lt;code class=&amp;quot;language-dart&amp;quot;&amp;gt; ShaderBuilder( (context, shader, _) { return AnimatedSampler( (image, size, canvas) async { // print(&amp;ldquo;AnimatedSampler&amp;rdquo;); if (backImage != null) { ShaderHelper.drawShaderRectBack(backImage!, size, canvas); } if (curlImage != null) { ShaderHelper.configureShader( shader, size, curlImage!, _animation.value); ShaderHelper.drawShaderRect(shader, size, canvas); } }, enabled: true, child: Container( width: double.infinity, height: double.infinity, ), ); }, assetKey: shaderAssetKey, ) TOTO</description>
+      <description>If you want to implement a page-turning effect for a reader in Flutter, you typically overlay a view that performs the page-turn animation on a container. When a left or right swipe gesture is detected, the view with the page-turn animation is displayed. After the page-turn animation ends, the content of the underlying container is changed to achieve the page-turn effect.</description>
     </item>
     <item>
       <title>Flutter2.5适配ThemeData</title>

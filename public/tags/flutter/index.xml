@@ -6,8 +6,15 @@
     <description>Recent content in Flutter on </description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 09 Dec 2021 02:29:49 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 10 Oct 2024 17:50:12 +0800</lastBuildDate>
     <atom:link href="//localhost:1313/tags/flutter/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Flutter Page curl effect like epub reader</title>
+      <link>//localhost:1313/post/flutter-page-curl-effect-like-epub-reader/</link>
+      <pubDate>Thu, 10 Oct 2024 17:50:12 +0800</pubDate>
+      <guid>//localhost:1313/post/flutter-page-curl-effect-like-epub-reader/</guid>
+      <description>If you want to implement a page-turning effect for a reader in Flutter, you typically overlay a view that performs the page-turn animation on a container. When a left or right swipe gesture is detected, the view with the page-turn animation is displayed. After the page-turn animation ends, the content of the underlying container is changed to achieve the page-turn effect.</description>
+    </item>
     <item>
       <title>Flutter2.5适配ThemeData</title>
       <link>//localhost:1313/archives/392/</link>
