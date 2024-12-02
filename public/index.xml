@@ -6,21 +6,21 @@
     <description>Recent content on </description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 12 Jun 2024 14:36:02 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 10 Oct 2024 17:50:12 +0800</lastBuildDate>
     <atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Flutter Page curl effect like epub reader</title>
+      <link>//localhost:1313/post/flutter-page-curl-effect-like-epub-reader/</link>
+      <pubDate>Thu, 10 Oct 2024 17:50:12 +0800</pubDate>
+      <guid>//localhost:1313/post/flutter-page-curl-effect-like-epub-reader/</guid>
+      <description>If you want to implement a page-turning effect for a reader in Flutter, you typically overlay a view that performs the page-turn animation on a container. When a left or right swipe gesture is detected, the view with the page-turn animation is displayed. After the page-turn animation ends, the content of the underlying container is changed to achieve the page-turn effect.</description>
+    </item>
     <item>
       <title>Apps Download</title>
       <link>//localhost:1313/apps/</link>
       <pubDate>Wed, 12 Jun 2024 14:36:02 +0800</pubDate>
       <guid>//localhost:1313/apps/</guid>
       <description>Puzzle jigsaw Game Web:https://jigsaw.xfans.me/&#xA;口袋阅Kindle替换 APK:https://www.lanzouw.com/io6Tm21mz1qd 密码:2aqr</description>
-    </item>
-    <item>
-      <title>Flutter Page curl effect like epub reader</title>
-      <link>//localhost:1313/post/flutter-page-curl-effect-like-epub-reader/</link>
-      <pubDate>Tue, 10 Oct 2023 17:50:12 +0800</pubDate>
-      <guid>//localhost:1313/post/flutter-page-curl-effect-like-epub-reader/</guid>
-      <description>If you want to implement a page-turning effect for a reader in Flutter, you typically overlay a view that performs the page-turn animation on a container. When a left or right swipe gesture is detected, the view with the page-turn animation is displayed. After the page-turn animation ends, the content of the underlying container is changed to achieve the page-turn effect.</description>
     </item>
     <item>
       <title>Flutter实现拼图游戏 jigsaw puzzle game</title>
