@@ -15,13 +15,14 @@
     <meta property="article:section" content="post">
     <meta property="article:published_time" content="2023-10-10T17:50:12+08:00">
     <meta property="article:modified_time" content="2023-10-10T17:50:12+08:00">
+    <meta property="article:tag" content="Flutter">
 
 		
   <meta itemprop="name" content="Flutter Page curl effect like epub reader">
   <meta itemprop="description" content="If you want to implement a page-turning effect for a reader in Flutter, you typically overlay a view that performs the page-turn animation on a container. When a left or right swipe gesture is detected, the view with the page-turn animation is displayed. After the page-turn animation ends, the content of the underlying container is changed to achieve the page-turn effect.">
   <meta itemprop="datePublished" content="2023-10-10T17:50:12+08:00">
   <meta itemprop="dateModified" content="2023-10-10T17:50:12+08:00">
-  <meta itemprop="wordCount" content="207">
+  <meta itemprop="wordCount" content="409">
   <meta itemprop="keywords" content="Flutter">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -83,7 +84,7 @@
   <video controls src="https://apixfans.oss-cn-zhangjiakou.aliyuncs.com/2024/11/29/flutter_page_curl_1.mp4">
 </div>
 <h2 id="how-to">How To</h2>
-<p>1.First, you need to write a page-turn animation or find an existing algorithm that implements it. To facilitate implementation, I found a Flutter effect: <a href="https://github.com/Rahiche/riveo_page_curl">https://github.com/Rahiche/riveo_page_curl</a>. This library is based on Flutter&rsquo;s shader implementation, which offers better performance. You can refer to the ProjectCard class in this library for implementation. The core code is as follows:</p>
+<p>1.First, you need to write a page-turn animation or find an existing algorithm that implements it.  I found a Flutter effect: <a href="https://github.com/Rahiche/riveo_page_curl">https://github.com/Rahiche/riveo_page_curl</a>. This library is based on Flutter&rsquo;s shader implementation, which offers better performance. You can refer to the ProjectCard class in this library for implementation. The core code is as follows:</p>
 <pre><code>ShaderBuilder(
   (context, shader, _) {
     return AnimatedSampler(
@@ -109,6 +110,65 @@
 )
 </code></pre>
 <p>backImage is used to draw the background image for the page turn, while curlImage is used to draw the image of the current page during the page turn.</p>
+<p>2.Use the Stack widget to implement the display of the pages.</p>
+<pre><code>Stack(
+      children: [
+        Consumer(
+          builder: (context, PageCurlController controller, child) {
+            return Screenshot(
+              controller: prevScreenshotController,
+              child: getPage(controller.index - 1),
+            );
+          },
+        ),
+
+        Consumer(
+          builder: (context, PageCurlController controller, child) {
+            return Screenshot(
+              controller: nextScreenshotController,
+              child: getPage(controller.index + 1),
+            );
+          },
+        ),
+        Consumer(
+          builder: (context, PageCurlController controller, child) {
+            return Screenshot(
+              controller: currentScreenshotController,
+              child: getPage(controller.index),
+            );
+          },
+        ),
+        AnimatedBuilder(
+            animation: _animation,
+            builder: (BuildContext context, Widget? child) {
+              return Opacity(
+                  opacity: runState == RunState.none ? 0 : 1,
+                  child: _buildAnimatedCard(context));
+            }),
+
+      ],
+    )
+</code></pre>
+<p>The Stack have four child widgets: <code>the previous page</code>, <code>the next page</code>, <code>the current page</code>, and <code>the page-turn animation widget</code>. Use the Screenshot widget to capturing screenshots, we capture the screenshots of the <code>previous page</code>, <code>next page</code>, <code>and current page</code>. During the swipe gesture, based on whether the swipe is left or right, we obtain backImage and curlImage to achieve the page-turn effect.</p>
+<pre tabindex="0"><code>void _getRightImage() async {
+  curlImage = null;
+  backImage = null;
+  curlImage = await prevScreenshotController.captureAsUiImage(
+      pixelRatio: MediaQuery.of(context).devicePixelRatio);
+  backImage = await currentScreenshotController.captureAsUiImage(
+      pixelRatio: MediaQuery.of(context).devicePixelRatio);
+}
+
+void _getLeftImage() async {
+  curlImage = null;
+  backImage = null;
+  curlImage = await currentScreenshotController.captureAsUiImage(
+      pixelRatio: MediaQuery.of(context).devicePixelRatio);
+  backImage = await nextScreenshotController.captureAsUiImage(
+      pixelRatio: MediaQuery.of(context).devicePixelRatio);
+}
+</code></pre><p>3.Handle gestures.
+Handle the page-turn animation.</p>
 
 		</div>
 		<footer class="post__footer">
@@ -117,7 +177,7 @@
 	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
 	<ul class="tags__list">
 		<li class="tags__item">
-			<a class="tags__link btn" href="/tags//" rel="tag"></a>
+			<a class="tags__link btn" href="/tags/flutter/" rel="tag">flutter</a>
 		</li>
 	</ul>
 </div>
