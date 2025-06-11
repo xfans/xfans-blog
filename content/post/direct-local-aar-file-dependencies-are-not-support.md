@@ -5,6 +5,7 @@ date: "2025-06-11T09:46:51+08:00"
 thumbnail: ""
 categories:
   - "Android开发"
+summary: "在Android开发中，当子模块中引用本地aar包的时候，release包会打包失败，提示Direct local .aar file dependencies are not supported。而且Android Studio的新版本中已经找不到直接依赖本地AAR文件的选项了。"
 tags:
   - "Android"
   - "Gradle"
