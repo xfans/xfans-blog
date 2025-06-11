@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gradle on </title>
+    <link>//localhost:1313/tags/gradle/</link>
+    <description>Recent content in Gradle on </description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 11 Jun 2025 09:46:51 +0800</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/gradle/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Direct local .aar file dependencies are not supported子模块中本地AAR依赖的问题</title>
+      <link>//localhost:1313/post/direct-local-aar-file-dependencies-are-not-support/</link>
+      <pubDate>Wed, 11 Jun 2025 09:46:51 +0800</pubDate>
+      <guid>//localhost:1313/post/direct-local-aar-file-dependencies-are-not-support/</guid>
+      <description>在Android开发中，当子模块中引用本地aar包的时候，release包会打包失败，提示Direct local .aar file dependencies are not supported。而且Android Studio的新版本中已经找不到直接依赖本地AAR文件的选项了。&#xA;解决方案 我采用的解决方案是在构建过程开始前，将这些AAR文件发布到本地Maven仓库中。下面是具体实现方法：&#xA;1. 配置构建脚本 首先，在封装模块的build.gradle文件中添加必要的插件和配置：&#xA;plugins { id &amp;#39;com.android.library&amp;#39; id &amp;#39;kotlin-android&amp;#39; id &amp;#39;maven-publish&amp;#39; } // 确保所有项目都能访问本地Maven仓库 parent.allprojects { repositories { mavenLocal() } } 2. 配置发布任务 接下来，配置发布任务将AAR文件发布到本地Maven仓库：&#xA;publishing { publications { libOne(MavenPublication) { groupId &amp;#39;com.example.library&amp;#39; artifactId &amp;#39;module-one&amp;#39; version &amp;#39;1.0&amp;#39; artifact(&amp;#34;$libsDirName/module-one.aar&amp;#34;) } libTwo(MavenPublication) { groupId &amp;#39;com.example.library&amp;#39; artifactId &amp;#39;module-two&amp;#39; version &amp;#39;1.0&amp;#39; artifact(&amp;#34;$libsDirName/module-two.aar&amp;#34;) } libThree(MavenPublication) { groupId &amp;#39;com.example.library&amp;#39; artifactId &amp;#39;module-three&amp;#39; version &amp;#39;1.0&amp;#39; artifact(&amp;#34;$libsDirName/module-three.aar&amp;#34;) } } } 3.</description>
+    </item>
+  </channel>
+</rss>

@@ -15,7 +15,7 @@
 
 		
   <meta itemprop="description" content="xfans，android，flutter，web，java">
-  <meta itemprop="dateModified" content="2024-10-10T17:50:12+08:00">
+  <meta itemprop="dateModified" content="2025-06-11T09:46:51+08:00">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -60,6 +60,27 @@
 			
 <main class="main list" role="main">
 	<article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/direct-local-aar-file-dependencies-are-not-support/" rel="bookmark">
+			Direct local .aar file dependencies are not supported子模块中本地AAR依赖的问题
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2025-06-11T09:46:51&#43;08:00">2025-06-11</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/android%E5%BC%80%E5%8F%91/" rel="category">Android开发</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		在Android开发中，当子模块中引用本地aar包的时候，release包会打包失败，提示Direct local .aar file dependencies are not supported。而且Android Studio的新版本中已经找不到直接依赖本地AAR文件的选项了。
+解决方案 我采用的解决方案是在构建过程开始前，将这些AAR文件发布到本地Maven仓库中。下面是具体实现方法：
+1. 配置构建脚本 首先，在封装模块的build.gradle文件中添加必要的插件和配置：
+plugins { id &#39;com.android.library&#39; id &#39;kotlin-android&#39; id &#39;maven-publish&#39; } // 确保所有项目都能访问本地Maven仓库 parent.allprojects { repositories { mavenLocal() } } 2. 配置发布任务 接下来，配置发布任务将AAR文件发布到本地Maven仓库：
+publishing { publications { libOne(MavenPublication) { groupId &#39;com.example.library&#39; artifactId &#39;module-one&#39; version &#39;1.0&#39; artifact(&#34;$libsDirName/module-one.aar&#34;) } libTwo(MavenPublication) { groupId &#39;com.example.library&#39; artifactId &#39;module-two&#39; version &#39;1.0&#39; artifact(&#34;$libsDirName/module-two.aar&#34;) } libThree(MavenPublication) { groupId &#39;com.example.library&#39; artifactId &#39;module-three&#39; version &#39;1.0&#39; artifact(&#34;$libsDirName/module-three.aar&#34;) } } } 3.
+	</div>
+</article><article class="list__item post">
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
@@ -265,43 +286,6 @@ https://github.com/xfans/flutter_cache_manager_dio
 地址:https://github.com/xfans/flutter_gitee
 地址:https://gitee.com/xfans/flutter_gitee
 	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/archives/309/" rel="bookmark">
-			Flutter常见问题整理
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-03-19T06:46:00Z">2020-03-19</time>
-	<time class="meta__text" datetime="2020-03-19T06:46:00Z">(Last Modified: 2020-03-19)</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/flutter/" rel="category">Flutter</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		问题 问题1 问题:Flutter中Column嵌套Listview报overflowed错误.
-解决:使用Column+Expanded+Listview布局界面.
-问题2 问题:数组json转换成List
-解决:
-问题3 问题:界面中请求网络的时机
-解决:使用&lt;a href=&quot;https://api.flutter-io.cn/flutter/widgets/FutureBuilder-class.html&quot;&gt;FutureBuilder&lt;/a&gt;
-问题4 问题:material-design icon有哪些
-解决:https://material.io/resources/icons/?icon=account_balance&amp;style=baseline
-问题5 问题:抽出appbar 时can&rsquo;t be assigned to the parameter type &lsquo;PreferredSizeWidget&rsquo;
-解决:
-问题6 问题:flutter加载中文乱码
-解决:
-问题7 问题:flutter 写文件报 OS Error: Read-only file system
-解决:使用path_provider插件获取目录
-问题8 问题:设置android中的match_parent
-解决:width: double.infinity
-问题9 问题:AppBar中的leading设置大小无效
-解决:被ConstrainedBox限制了大小,使用UnconstrainedBox嵌套一层即可
-问题10 问题:使用bottomNavigationBar切换page时重新调用initState
-解决:使用PageView包裹body,子page with AutomaticKeepAliveClientMixin,重写bool get wantKeepAlive =&gt; true
-	</div>
 </article>
 </main>
 
@@ -324,6 +308,7 @@ https://github.com/xfans/flutter_cache_manager_dio
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/direct-local-aar-file-dependencies-are-not-support/">Direct local .aar file dependencies are not supported子模块中本地AAR依赖的问题</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/flutter-page-curl-effect-like-epub-reader/">Flutter Page curl effect like epub reader</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/flutter%E5%AE%9E%E7%8E%B0%E6%8B%BC%E5%9B%BE%E6%B8%B8%E6%88%8F/">Flutter实现拼图游戏 jigsaw puzzle game</a></li>
 			<li class="widget__item"><a class="widget__link" href="/archives/392/">Flutter2.5适配ThemeData</a></li>
@@ -333,7 +318,6 @@ https://github.com/xfans/flutter_cache_manager_dio
 			<li class="widget__item"><a class="widget__link" href="/archives/352/">Flutter InheritedWidget源码解析</a></li>
 			<li class="widget__item"><a class="widget__link" href="/archives/346/">替换口袋阅上的Kindle/微信阅读应用</a></li>
 			<li class="widget__item"><a class="widget__link" href="/archives/307/">Flutter实现的gitee客户端(仿github)</a></li>
-			<li class="widget__item"><a class="widget__link" href="/archives/309/">Flutter常见问题整理</a></li>
 		</ul>
 	</div>
 </div>
@@ -343,6 +327,8 @@ https://github.com/xfans/flutter_cache_manager_dio
 		<ul class="widget__list">
 			<li class="widget__item">
 				<a class="widget__link" href="/categories/android/">Android</a></li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/android%E5%BC%80%E5%8F%91/">Android开发</a></li>
 			<li class="widget__item">
 				<a class="widget__link" href="/categories/flutter/">Flutter</a></li>
 			<li class="widget__item">
@@ -360,7 +346,7 @@ https://github.com/xfans/flutter_cache_manager_dio
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2024 Xfans.
+			&copy; 2025 Xfans.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>

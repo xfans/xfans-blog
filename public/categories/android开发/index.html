@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Android开发 - </title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+		<meta property="og:url" content="//localhost:1313/categories/android%E5%BC%80%E5%8F%91/">
+  <meta property="og:title" content="Android开发">
+  <meta property="og:description" content="xfans，android，flutter，web，java">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="website">
+
+		
+  <meta itemprop="name" content="Android开发">
+  <meta itemprop="description" content="xfans，android，flutter，web，java">
+  <meta itemprop="dateModified" content="2025-06-11T09:46:51+08:00">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/custom.css">
+	<link rel="alternate" type="application/rss+xml" href="/categories/android%E5%BC%80%E5%8F%91/index.xml" title="">
+
+	<link rel="shortcut icon" href="/favicon.ico">
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6775869677320164"
+     crossorigin="anonymous"></script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-06FZDMBD56"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-06FZDMBD56');
+</script>
+
+
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="Xfans" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">Xfans</div>
+					<div class="logo__tagline">Xfans blog</div>
+				</div>
+		</a>
+	</div>
+		<div class="divider"></div>
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main list" role="main">
+	<header class="main__header">
+		<h1 class="main__title">Android开发</h1>
+	</header><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/direct-local-aar-file-dependencies-are-not-support/" rel="bookmark">
+			Direct local .aar file dependencies are not supported子模块中本地AAR依赖的问题
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2025-06-11T09:46:51&#43;08:00">2025-06-11</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/android%E5%BC%80%E5%8F%91/" rel="category">Android开发</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		在Android开发中，当子模块中引用本地aar包的时候，release包会打包失败，提示Direct local .aar file dependencies are not supported。而且Android Studio的新版本中已经找不到直接依赖本地AAR文件的选项了。
+解决方案 我采用的解决方案是在构建过程开始前，将这些AAR文件发布到本地Maven仓库中。下面是具体实现方法：
+1. 配置构建脚本 首先，在封装模块的build.gradle文件中添加必要的插件和配置：
+plugins { id &#39;com.android.library&#39; id &#39;kotlin-android&#39; id &#39;maven-publish&#39; } // 确保所有项目都能访问本地Maven仓库 parent.allprojects { repositories { mavenLocal() } } 2. 配置发布任务 接下来，配置发布任务将AAR文件发布到本地Maven仓库：
+publishing { publications { libOne(MavenPublication) { groupId &#39;com.example.library&#39; artifactId &#39;module-one&#39; version &#39;1.0&#39; artifact(&#34;$libsDirName/module-one.aar&#34;) } libTwo(MavenPublication) { groupId &#39;com.example.library&#39; artifactId &#39;module-two&#39; version &#39;1.0&#39; artifact(&#34;$libsDirName/module-two.aar&#34;) } libThree(MavenPublication) { groupId &#39;com.example.library&#39; artifactId &#39;module-three&#39; version &#39;1.0&#39; artifact(&#34;$libsDirName/module-three.aar&#34;) } } } 3.
+	</div>
+</article>
+</main>
+
+
+			</div>
+			
+<aside class="sidebar sidebar--left"><div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
+		<label>
+			<input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="q" aria-label="SEARCH…">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="//localhost:1313/">
+	</form>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/direct-local-aar-file-dependencies-are-not-support/">Direct local .aar file dependencies are not supported子模块中本地AAR依赖的问题</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/flutter-page-curl-effect-like-epub-reader/">Flutter Page curl effect like epub reader</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/flutter%E5%AE%9E%E7%8E%B0%E6%8B%BC%E5%9B%BE%E6%B8%B8%E6%88%8F/">Flutter实现拼图游戏 jigsaw puzzle game</a></li>
+			<li class="widget__item"><a class="widget__link" href="/archives/392/">Flutter2.5适配ThemeData</a></li>
+			<li class="widget__item"><a class="widget__link" href="/archives/388/">View沿着Path移动pathMeasure</a></li>
+			<li class="widget__item"><a class="widget__link" href="/archives/382/">launcher 使用windowIsTranslucent引发的bug</a></li>
+			<li class="widget__item"><a class="widget__link" href="/archives/365/">Flutter cached_network_image使用Dio请求图片</a></li>
+			<li class="widget__item"><a class="widget__link" href="/archives/352/">Flutter InheritedWidget源码解析</a></li>
+			<li class="widget__item"><a class="widget__link" href="/archives/346/">替换口袋阅上的Kindle/微信阅读应用</a></li>
+			<li class="widget__item"><a class="widget__link" href="/archives/307/">Flutter实现的gitee客户端(仿github)</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/android/">Android</a></li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/android%E5%BC%80%E5%8F%91/">Android开发</a></li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/flutter/">Flutter</a></li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/linux/">Linux</a></li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/web/">Web</a></li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/%E5%85%B6%E4%BB%96/">其他</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2025 Xfans.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "https://hm.baidu.com/hm.js?f1cbbf299f9c90f308e8dc562ed839ee";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+		</script>
+		
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+<script src="/js/ads.js"></script><script src="/js/analytics.js"></script></body>
+</html>
